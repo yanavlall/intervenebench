@@ -1,0 +1,124 @@
+{
+  "payload": {
+    "bootstrap": {
+      "confidence_level": 0.95,
+      "replicates": 10000,
+      "seed": 2026081410,
+      "unit": "experiment"
+    },
+    "claim_rule": "three_of_six_exact_is_not_evidence_of_added_value_by_itself; positive decision value requires regret improvement versus simple comparators with exact finite-choice and experiment-level uncertainty",
+    "compute_rule": "additional_draws_on_the_same_six_tasks_do_not_increase_the_experiment_level_sample_size",
+    "experiment_ids": [
+      "tcg8p",
+      "pb2rr",
+      "z358z",
+      "ShannonS2",
+      "Blair1131",
+      "KlarS44"
+    ],
+    "mixed_unit_rule": "tcg8p_raw_usd_regret_is_reported_separately_and_never_pooled_with_normalized_regret",
+    "new_model_calls_authorized": false,
+    "normalized_experiment_ids": [
+      "pb2rr",
+      "z358z",
+      "ShannonS2",
+      "Blair1131",
+      "KlarS44"
+    ],
+    "outcomes_known_when_specified": true,
+    "participant_row_access_authorized": false,
+    "practical_tolerance_sensitivity_grid": [
+      0.0,
+      0.0025,
+      0.005,
+      0.01,
+      0.025,
+      0.05
+    ],
+    "primary_comparators": [
+      "uniform_random_action",
+      "no_effect_control_tie",
+      "frozen_classical_baseline"
+    ],
+    "primary_tests": [
+      "exact_heterogeneous_poisson_binomial_choice_tail",
+      "exact_finite_action_space_regret_enumeration",
+      "paired_exact_experiment_sign_flip",
+      "paired_experiment_cluster_bootstrap"
+    ],
+    "prospective_status": "secondary_analysis_of_a_prospectively_scored_panel_not_a_new_prospective_test",
+    "schema_version": "confirmation_value_audit_spec.v1",
+    "score_file_sha256": "8562d148ce04bc44af1481858b94f5a43f62edf94120199b2156c8920a51c2ec",
+    "score_path": "artifacts/confirmation/confirmation_20260814_v1/score_v1.json",
+    "score_payload_sha256": "fa2acc4661f8397658178a1b4d53e7806b2a35acf032520e625ffdcb79aaf1a7",
+    "secondary_exploratory_comparators": [
+      "frozen_model_plurality_consensus"
+    ],
+    "simulator_or_threshold_tuning_authorized": false,
+    "status": "post_reveal_mechanical_value_audit_spec",
+    "task_contracts": {
+      "Blair1131": {
+        "arm_ids_in_source_order": [
+          "stay_out_no_troops",
+          "threaten_then_no_troops",
+          "threaten_then_engage"
+        ],
+        "control_arm_id": "stay_out_no_troops",
+        "file_sha256": "cce8c0e0c7141960a3f12bdf43f28d317f37bdfc0bc497de72a4b4b5b25dd14e",
+        "path": "data/manifests/contracts/Blair1131_decision_task_candidate.json"
+      },
+      "KlarS44": {
+        "arm_ids_in_source_order": [
+          "general_legislature_frame",
+          "gender_frame",
+          "partisan_frame"
+        ],
+        "control_arm_id": "general_legislature_frame",
+        "file_sha256": "d7944df06bb4e5884b0a6c3e7b2f4aaa2e437f16067dbc33b2b2956161d31004",
+        "path": "data/manifests/contracts/KlarS44_decision_task_candidate.json"
+      },
+      "ShannonS2": {
+        "arm_ids_in_source_order": [
+          "no_cue_no_savings",
+          "no_cue_with_savings",
+          "immigrant_no_savings",
+          "immigrant_with_savings",
+          "illegal_immigrant_no_savings",
+          "illegal_immigrant_with_savings"
+        ],
+        "control_arm_id": "no_cue_no_savings",
+        "file_sha256": "a6ab00ce2e26c2a82de6e8b452b78fe69ecb03e8dd2f12ee614f3253c631efc8",
+        "path": "data/manifests/contracts/ShannonS2_decision_task_candidate.json"
+      },
+      "pb2rr": {
+        "arm_ids_in_source_order": [
+          "iphone_growth_control_article",
+          "hispanic_population_growth_article"
+        ],
+        "control_arm_id": "iphone_growth_control_article",
+        "file_sha256": "2f289c7b57f148ee8d935bcff8dbfa4ea3363c6f1f7890bf2f28257d1806f5f1",
+        "path": "data/manifests/contracts/pb2rr_decision_task_candidate.json"
+      },
+      "tcg8p": {
+        "arm_ids_in_source_order": [
+          "arm_0_no_notice",
+          "arm_1_day_notice",
+          "arm_2_week_notice"
+        ],
+        "control_arm_id": "arm_0_no_notice",
+        "file_sha256": "cb5c8940dec73724567e609960ef8204f1bd52519af87373e60622a88ce09c58",
+        "path": "data/manifests/contracts/tcg8p_continuous_task_candidate.json"
+      },
+      "z358z": {
+        "arm_ids_in_source_order": [
+          "general_notification_policy",
+          "verbal_consent_policy"
+        ],
+        "control_arm_id": "general_notification_policy",
+        "file_sha256": "199ed990485d2a5da09a8b36be321648f3e8756bddbe7f442e8d4133feba7a16",
+        "path": "data/manifests/contracts/z358z_decision_task_candidate.json"
+      }
+    }
+  },
+  "sha256": "023b07fd33b6d1dfe4bb3fbd95b23f2dfb26ceab939bc8ad98797a2f8b2f5338"
+}

@@ -1,0 +1,117 @@
+{
+  "schema_version": "source_ordinal_png_multimodal_decision_task_candidate.v1",
+  "task_id": "es4xw:source-q1-perceived-team-diversity",
+  "experiment_id": "es4xw",
+  "source_id": "TESS2-040-Bauman",
+  "source_question_id": "Q1",
+  "socsci210_task_num": null,
+  "canonical_split_status": "unassigned",
+  "reveal_authorized": false,
+  "outcome_access": "sealed",
+  "paradigm_group": "workplace_diversity_composition",
+  "access_regime": "DESIGN_ONLY",
+  "design_type": "between_subject_four_arm_visual_team_composition_policy",
+  "randomization_unit": "participant",
+  "arms": [
+    {
+      "arm_id": "picture_1",
+      "source_assignment": "XTESS040=1",
+      "description": "Show exact source Picture 1 as the candidate management-team composition",
+      "deployable": true
+    },
+    {
+      "arm_id": "picture_2",
+      "source_assignment": "XTESS040=2",
+      "description": "Show exact source Picture 2 as the candidate management-team composition",
+      "deployable": true
+    },
+    {
+      "arm_id": "picture_3",
+      "source_assignment": "XTESS040=3",
+      "description": "Show exact source Picture 3 as the candidate management-team composition",
+      "deployable": true
+    },
+    {
+      "arm_id": "picture_4",
+      "source_assignment": "XTESS040=4",
+      "description": "Show exact source Picture 4 as the candidate management-team composition",
+      "deployable": true
+    }
+  ],
+  "control_arm_id": "picture_4",
+  "reference_arm_rationale": "Picture 4 is the source composition with no substituted faces relative to the four faces shared across all images. All four randomized complete team compositions remain in the action set.",
+  "primary_outcome_id": "perceived_high_degree_of_ethnic_diversity",
+  "outcome_question": "This team includes a high degree of ethnic diversity.",
+  "outcome_family": "ordinal",
+  "response_options": [
+    {"raw_value": 1, "label": "Strongly disagree", "normalized_utility": 0.0},
+    {"raw_value": 2, "label": "Disagree", "normalized_utility": 0.16666666666666666},
+    {"raw_value": 3, "label": "Somewhat disagree", "normalized_utility": 0.3333333333333333},
+    {"raw_value": 4, "label": "Neither agree nor disagree", "normalized_utility": 0.5},
+    {"raw_value": 5, "label": "Somewhat agree", "normalized_utility": 0.6666666666666666},
+    {"raw_value": 6, "label": "Agree", "normalized_utility": 0.8333333333333334},
+    {"raw_value": 7, "label": "Strongly agree", "normalized_utility": 1.0}
+  ],
+  "scale_lower": 1,
+  "scale_upper": 7,
+  "direction": "higher_is_better",
+  "utility_transform": "U=(y-1)/6",
+  "estimand": "source_weight1_weighted_hajek_intention_to_treat_mean_normalized_utility",
+  "decision_maker": "an employer choosing among the four exact candidate management-team compositions for the narrow objective measured by the source",
+  "beneficiary": "the employer's declared objective of assembling a team perceived as ethnically diverse",
+  "utility_rationale": "Higher normalized utility means stronger respondent perception that the exact pictured team has a high degree of ethnic diversity. It does not measure team performance, fair hiring, employee welfare, or actual protected identities.",
+  "truthfulness_scope": "The contract is image-specific. It does not infer or assign any depicted person's protected identity from appearance, and it must not be generalized into a race-composition or quota recommendation.",
+  "target_population": "U.S. adults represented by the source KnowledgePanel sample and its study-specific weight",
+  "weighting_rule": "Primary estimator uses positive finite source weight1 in a Hajek mean by XTESS040 arm; unweighted and weight2 analyses are prespecified sensitivities.",
+  "missingness_rule": "Exclude source Q1 code -1 and missing values; accept only integer values 1 through 7; require positive finite weight1.",
+  "primary_estimator": "After a separately authorized, recommendation-bound reveal, project only caseid, weight1, XTESS040, and Q1 from the hash-pinned source SAV. Map Q1 to U=(y-1)/6, compute the weight1-weighted Hajek mean by arm, and select the arm with maximum utility.",
+  "sensitivity_estimators": [
+    "unweighted source-data mean normalized utility by XTESS040",
+    "source weight2-weighted Hajek mean normalized utility by XTESS040",
+    "respondent-race-stratified estimates only under a separately frozen subgroup protocol"
+  ],
+  "bootstrap_procedure": "Resample source participants with replacement within randomized arms, preserving each participant's weight, and recompute arm means, effects, winner, and regret using a frozen benchmark seed.",
+  "tie_rule": "lexicographic_arm_id",
+  "practical_regret_tolerance": 0.05,
+  "released_rows_per_arm_before_outcome_missingness": {
+    "picture_1": 636,
+    "picture_2": 644,
+    "picture_3": 625,
+    "picture_4": 607
+  },
+  "source_variable_mapping": {
+    "participant_id_variable": "caseid",
+    "weight_variable": "weight1",
+    "assignment_variable": "XTESS040",
+    "outcome_variable": "Q1",
+    "assignment_to_arm": {
+      "1": "picture_1",
+      "2": "picture_2",
+      "3": "picture_3",
+      "4": "picture_4"
+    },
+    "missing_outcome_codes": [-1]
+  },
+  "source_data_locator": {
+    "container_path": "data/raw/sources/es4xw/Bauman024.zip",
+    "container_sha256": "c67ca4d1f0b2c1967408fd24b4b6d673a9b8689bc27d816743bbf219aed7d1b2",
+    "sav_member": "TESS2_040_Bauman_Client.sav",
+    "sav_member_sha256": "4688a240f4a7746249fc3164538d7f8a5b1cccba82b95dd3de3fea352ab3473c",
+    "authorized_projection": ["caseid", "weight1", "XTESS040", "Q1"]
+  },
+  "source_data_mapping_status": "complete_outcome_blind_source_sav_ordinal_png_multimodal_mapping",
+  "socsci210_scoring_status": "barred_source_instrument_mismatch",
+  "socsci210_mismatch_note": "SocSci210 describes eight-person 3/5 or 5/3 Black/White and Asian/White teams and uses a -3..3 response reconstruction. The final source instrument fields four six-person Picture 1-4 teams and a 1..7 outcome. SocSci210 responses must not score this contract.",
+  "checkpoint_compatibility": "The released Socrates participant_mapping.json lists es4xw as seen. A released Socrates checkpoint evaluation must be labeled training-exposed, never experiment-held-out.",
+  "source_hashes": {
+    "final_questionnaire_sha256": "5205ec35bae465d8b6aafbda88d6b87290d13d566b5690e752c4fd515849ac0d",
+    "official_mixed_archive_sha256": "c67ca4d1f0b2c1967408fd24b4b6d673a9b8689bc27d816743bbf219aed7d1b2",
+    "source_sav_sha256": "4688a240f4a7746249fc3164538d7f8a5b1cccba82b95dd3de3fea352ab3473c",
+    "source_bundle_sha256": "0a2a50e66624952864ca9a4f756551006727219783e5891a222b7805f8f7a669",
+    "picture_1_png_sha256": "600f037ef7dc3f7035df97d8d4a18ce4ec58a6d93e7a471cd0e9bf9cf15bfa63",
+    "picture_2_png_sha256": "44ccf32fb582ddb87072d04ba1fd3e74a7a6acc93a1e3b16308aceef1bdc8a1d",
+    "picture_3_png_sha256": "cd71dd953d9586256d551e9592104acdb636344a159442e904297a07db970a22",
+    "picture_4_png_sha256": "41103aa199879185b811a5730410d2d5bd381755f3420d8f8ce4d1dbfba2a4fa"
+  },
+  "reconstruction_note": "The complete final questionnaire and four exact source images were inspected outcome-blind. The SAV dictionary and only XTESS040, weight1, and weight2 structural values established mapping and support; Q1 and all other outcome values remained unopened. The questionnaire preload XTESS042 is reconciled to archived assignment variable XTESS040 labeled Picture Selected."
+}

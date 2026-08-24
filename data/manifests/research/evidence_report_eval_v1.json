@@ -1,0 +1,249 @@
+{
+  "schema_version": "intervenebench.evidence_report_eval.v1",
+  "evaluation_id": "intervenebench-evidence-report-eval-v1",
+  "evidence_packet_sha256": "8aa180b4005c48d2775a45f57b25ea62c9370999eb657251b55107e9cc86285e",
+  "generation": {
+    "prompt_variants": [
+      "direct",
+      "decision_memo"
+    ],
+    "model_roles": [
+      "qwen3_8b_incumbent",
+      "qwen3_14b_scale_candidate",
+      "mistral_small_3_1_24b_cross_family"
+    ],
+    "scenarios": [
+      {
+        "scenario_id": "research_screening_recommendation",
+        "audience": "behavioral research lead selecting candidate interventions for further study",
+        "request": "Decide whether and how the simulator may be used for research-stage candidate screening.",
+        "target_scope_id": "candidate_screening",
+        "required_fact_ids": [
+          "f_panel_scope",
+          "f_exact_choice_chance",
+          "f_primary_regret",
+          "f_uniform_regret",
+          "f_practical_reliability"
+        ],
+        "required_boundary_ids": [
+          "b_screening_supported",
+          "b_autonomy_not_supported"
+        ],
+        "maximum_words": 280,
+        "split": "development"
+      },
+      {
+        "scenario_id": "autonomous_deployment_review",
+        "audience": "product release committee considering autonomous intervention selection",
+        "request": "Issue a release recommendation for autonomous intervention selection and explain the decisive evidence.",
+        "target_scope_id": "autonomous_intervention_selection",
+        "required_fact_ids": [
+          "f_panel_scope",
+          "f_output_integrity",
+          "f_exact_choice",
+          "f_exact_choice_chance",
+          "f_uniform_tail"
+        ],
+        "required_boundary_ids": [
+          "b_autonomy_not_supported",
+          "b_canonical_not_supported"
+        ],
+        "maximum_words": 280,
+        "split": "held_out"
+      },
+      {
+        "scenario_id": "confidence_abstention_review",
+        "audience": "model-quality team deciding whether to expose a confidence-based abstention feature",
+        "request": "Decide whether the current trust diagnostics justify a confidence or abstention feature.",
+        "target_scope_id": "confidence_based_abstention",
+        "required_fact_ids": [
+          "f_trust_ranking",
+          "f_trust_threshold",
+          "f_panel_scope"
+        ],
+        "required_boundary_ids": [
+          "b_abstention_not_supported",
+          "b_universal_trust_not_supported"
+        ],
+        "maximum_words": 250,
+        "split": "development"
+      },
+      {
+        "scenario_id": "human_fallback_policy_review",
+        "audience": "research operations lead considering a small human validation pilot",
+        "request": "Decide whether the tested limited-human fallback should be used to correct simulator choices.",
+        "target_scope_id": "small_sample_human_fallback",
+        "required_fact_ids": [
+          "f_fallback_result",
+          "f_fallback_uncertainty",
+          "f_fallback_pattern"
+        ],
+        "required_boundary_ids": [
+          "b_fallback_negative_supported",
+          "b_fallback_not_supported"
+        ],
+        "maximum_words": 260,
+        "split": "held_out"
+      },
+      {
+        "scenario_id": "model_version_comparison",
+        "audience": "modeling team reviewing a cross-family candidate checkpoint",
+        "request": "Compare the candidate Mistral model with the frozen primary and recommend whether the evidence supports replacement.",
+        "target_scope_id": "candidate_screening",
+        "required_fact_ids": [
+          "f_cross_family_scope",
+          "f_cross_family_choice",
+          "f_cross_family_metrics"
+        ],
+        "required_boundary_ids": [
+          "b_screening_supported",
+          "b_canonical_not_supported"
+        ],
+        "maximum_words": 270,
+        "split": "development"
+      },
+      {
+        "scenario_id": "executive_results_summary",
+        "audience": "executive stakeholder who needs the most decision-relevant result and its limitations",
+        "request": "Summarize the useful result, the failed components, and the operational recommendation without overselling the evidence.",
+        "target_scope_id": "candidate_screening",
+        "required_fact_ids": [
+          "f_exact_choice_chance",
+          "f_primary_regret",
+          "f_trust_ranking",
+          "f_fallback_result"
+        ],
+        "required_boundary_ids": [
+          "b_low_regret_supported",
+          "b_autonomy_not_supported",
+          "b_abstention_not_supported",
+          "b_fallback_not_supported"
+        ],
+        "maximum_words": 300,
+        "split": "development"
+      },
+      {
+        "scenario_id": "statistical_evidence_review",
+        "audience": "statistical reviewer evaluating whether the headline language matches the uncertainty",
+        "request": "Explain why exact-choice and regret evidence lead to different conclusions and state the defensible claim.",
+        "target_scope_id": "candidate_screening",
+        "required_fact_ids": [
+          "f_exact_choice",
+          "f_exact_choice_chance",
+          "f_primary_regret",
+          "f_uniform_regret",
+          "f_uniform_tail"
+        ],
+        "required_boundary_ids": [
+          "b_low_regret_supported",
+          "b_canonical_not_supported"
+        ],
+        "maximum_words": 290,
+        "split": "development"
+      },
+      {
+        "scenario_id": "customer_limitations_brief",
+        "audience": "customer-facing research partner preparing a validation readout",
+        "request": "Give a transparent recommendation that separates supported use, unsupported use, and the next evidence needed.",
+        "target_scope_id": "candidate_screening",
+        "required_fact_ids": [
+          "f_panel_scope",
+          "f_practical_reliability",
+          "f_trust_threshold",
+          "f_cross_family_scope"
+        ],
+        "required_boundary_ids": [
+          "b_screening_supported",
+          "b_universal_trust_not_supported",
+          "b_autonomy_not_supported",
+          "b_canonical_not_supported"
+        ],
+        "maximum_words": 300,
+        "split": "development"
+      }
+    ]
+  },
+  "rubric": {
+    "score_minimum": 0,
+    "score_maximum": 3,
+    "dimensions": [
+      {
+        "dimension_id": "factual_fidelity",
+        "description": "All empirical statements and numbers agree with the locked evidence packet; no facts are invented, merged across evidence tiers, or reversed."
+      },
+      {
+        "dimension_id": "uncertainty_calibration",
+        "description": "The report distinguishes observed sample results from supported population claims, represents uncertainty and chance compatibility correctly, and does not turn suggestive evidence into proof."
+      },
+      {
+        "dimension_id": "claim_boundary_compliance",
+        "description": "The report preserves supported and unsupported scopes, including HOLD decisions, rather than granting broader operational permission."
+      },
+      {
+        "dimension_id": "decision_traceability",
+        "description": "The recommendation is explicit and traceable to the relevant evidence and release reasons, including material counterevidence."
+      },
+      {
+        "dimension_id": "clarity_and_actionability",
+        "description": "The intended audience can understand what to do, what not to do, and what evidence would be needed next without specialist reconstruction."
+      }
+    ],
+    "critical_error_flags": [
+      "fabricated_number",
+      "evidence_tier_confusion",
+      "unsupported_operational_claim",
+      "hold_decision_reversed",
+      "material_negative_result_omitted",
+      "causal_mechanism_invented",
+      "prospective_status_misstated"
+    ],
+    "release_rule": {
+      "minimum_dimension_score": 2,
+      "minimum_total_score": 12,
+      "critical_errors_allowed": 0
+    }
+  },
+  "human_labeling": {
+    "primary_annotators_required": 1,
+    "second_annotator_fraction": 0.25,
+    "blinding_seed_label": "intervenebench-report-labeling-v1:20260820"
+  },
+  "automated_grading": {
+    "judge_roles": [
+      "qwen3_14b_rubric_judge",
+      "mistral_small_3_1_24b_rubric_judge"
+    ],
+    "generator_identity_hidden": true,
+    "thresholds_fit_on": "development_scenarios_only",
+    "held_out_scenario_ids": [
+      "autonomous_deployment_review",
+      "human_fallback_policy_review"
+    ],
+    "semantic_repair_allowed": false,
+    "release_policy": "deterministic_checks_pass_and_all_judges_pass"
+  },
+  "analysis": {
+    "primary_metric": "held_out_false_pass_rate",
+    "secondary_metrics": [
+      "overall_pass_balanced_accuracy",
+      "dimension_mean_absolute_error",
+      "quadratic_weighted_kappa",
+      "critical_error_precision",
+      "critical_error_recall",
+      "generator_ranking_agreement"
+    ],
+    "grouping_unit": "scenario_id",
+    "release_gate": {
+      "maximum_false_pass_count": 0,
+      "minimum_balanced_accuracy": 0.8,
+      "maximum_dimension_mae": 0.75,
+      "minimum_second_rater_items": 12
+    },
+    "claim_boundary": "A small, grouped, held-out case study of evidence-grounded report grading; not a universal qualitative-judge benchmark."
+  },
+  "authority": {
+    "model_calls_authorized": false,
+    "human_labels_collected": false,
+    "automatic_grader_release_authorized": false
+  }
+}

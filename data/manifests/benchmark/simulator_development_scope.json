@@ -1,0 +1,56 @@
+{
+  "schema_version": "simulator_development_scope.v1",
+  "scope_id": "intervenebench-simulator-development-dry-run-20260813",
+  "freeze_date": "2026-08-13",
+  "status": "response_free_dry_run_not_authorized_to_execute",
+  "purpose": "Plan and validate the multi-family simulator development program using only the five permanently development-only discovery tasks.",
+  "development_experiment_ids": [
+    "5vm8g",
+    "xc4yq",
+    "de5hx",
+    "turagaS11",
+    "wallaceS12"
+  ],
+  "excluded_prospective_experiment_ids": [
+    "tcg8p",
+    "pb2rr",
+    "z358z",
+    "ShannonS2",
+    "Blair1131",
+    "KlarS44"
+  ],
+  "canonical_split_status": "unassigned",
+  "config_path": "configs/simulators/development_v1.json",
+  "config_payload_sha256": "022fc7a19cdd85a0bb45fcd912ffce48c43236138436deffa08b0859b248eed4",
+  "checkpoint_exposure_mapping": "data/raw/socsci210/048481111a4425ed83dc0eacf15f8431f252b21a/metadata/participant_mapping.json",
+  "local_model_execution_authorized": false,
+  "model_download_authorized": false,
+  "paid_inference_authorized": false,
+  "modal_compute_authorized": false,
+  "sealed_task_inference_authorized": false,
+  "sealed_outcome_reveal_authorized": false,
+  "fine_tuning_authorized": false,
+  "dry_run_call_plan": {
+    "stage_calls": {
+      "provider_parser_preflight": 40,
+      "aggregate_model_screen": 240,
+      "adaptive_sampling_reserve": 1020,
+      "source_preserving_prompt_sensitivity": 360,
+      "matched_base_specialist_microsimulation": 1920
+    },
+    "maximum_calls": 3580,
+    "maximum_gpu_seconds": 89500.0,
+    "estimated_gpu_cost_usd": 48.509,
+    "ancillary_cost_reserve_usd": 1.491,
+    "estimated_total_cost_usd": 50.0,
+    "recorded_spend_usd": 0.0
+  },
+  "required_before_execution": [
+    "resolve every checkpoint to an immutable revision",
+    "freeze provider and serving-container revisions",
+    "verify checkpoint exposure dispositions",
+    "record a separate hash-bound execution authorization",
+    "keep all prospective task inference and every reveal separately unauthorized"
+  ],
+  "notes": "This manifest authorizes validation of configs, exposure rules, convergence rules, and call arithmetic only. It authorizes zero model calls, downloads, paid resources, prospective-task inference, or outcome access."
+}

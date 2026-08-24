@@ -1,0 +1,105 @@
+{
+  "schema_version": "factorial_subset_ordinal_decision_task_candidate.v1",
+  "task_id": "z358z:task-2-drug-consent-policy",
+  "experiment_id": "z358z",
+  "source_id": "TESS3-175-Nayak",
+  "source_question_id": "Q3a",
+  "socsci210_task_num": 2,
+  "canonical_split_status": "unassigned",
+  "reveal_authorized": false,
+  "outcome_access": "sealed",
+  "paradigm_group": "research_consent_policy",
+  "access_regime": "DESIGN_ONLY",
+  "design_type": "between_subject",
+  "randomization_unit": "participant",
+  "arms": [
+    {
+      "arm_id": "general_notification_policy",
+      "condition_num": 0,
+      "source_assignment": "XTESS175=1; DOV_OPTION=1",
+      "description": "In the fixed CTD-versus-TRT drug-study scenario, present written consent versus automatic enrollment after general notification through posters, brochures, and letters",
+      "deployable": true
+    },
+    {
+      "arm_id": "verbal_consent_policy",
+      "condition_num": 1,
+      "source_assignment": "XTESS175=1; DOV_OPTION=2",
+      "description": "In the fixed CTD-versus-TRT drug-study scenario, present written consent versus brief verbal consent documented in the medical record",
+      "deployable": true
+    }
+  ],
+  "control_arm_id": "general_notification_policy",
+  "reference_arm_rationale": "The source has no no-message control. General notification is the deterministic reference because DOV_OPTION=1 is the first source-coded deployable policy level.",
+  "omitted_source_cells": [
+    {
+      "condition_num": 2,
+      "source_assignment": "XTESS175=2; DOV_OPTION=1",
+      "reason": "Omitted dosing-time research context; it is not a second independent experiment and cannot be pooled with the fixed drug-study decision context."
+    },
+    {
+      "condition_num": 3,
+      "source_assignment": "XTESS175=2; DOV_OPTION=2",
+      "reason": "Omitted dosing-time research context; it is not a second independent experiment and cannot be pooled with the fixed drug-study decision context."
+    }
+  ],
+  "primary_outcome_id": "perceived_value_of_randomized_drug_study",
+  "outcome_question": "It is valuable to study whether one treatment option is more effective than the other for treating high blood pressure.",
+  "outcome_family": "ordinal",
+  "response_options": [
+    {"raw_value": 1, "label": "Strongly disagree", "normalized_utility": 0.0},
+    {"raw_value": 2, "label": "2", "normalized_utility": 0.16666666666666666},
+    {"raw_value": 3, "label": "3", "normalized_utility": 0.3333333333333333},
+    {"raw_value": 4, "label": "Neutral", "normalized_utility": 0.5},
+    {"raw_value": 5, "label": "5", "normalized_utility": 0.6666666666666666},
+    {"raw_value": 6, "label": "6", "normalized_utility": 0.8333333333333334},
+    {"raw_value": 7, "label": "Strongly agree", "normalized_utility": 1.0}
+  ],
+  "scale_lower": 1,
+  "scale_upper": 7,
+  "direction": "higher_is_better",
+  "estimand": "study_weighted_intention_to_treat_hajek_mean_normalized_utility_within_source_scenario_1",
+  "decision_maker": "an ethics review board choosing between the two fielded lower-burden consent policies for the fixed low-risk drug-comparison protocol",
+  "beneficiary": "the research-governance process under the narrow objective of maintaining public-perceived study value while selecting a consent policy",
+  "utility_rationale": "Higher Q3a agreement means the randomized drug study is viewed as more valuable after the consent-policy proposal. This is a public-legitimacy or acceptability utility only; it is not clinical efficacy, patient welfare, autonomy, legal compliance, or ethical optimality.",
+  "truthfulness_scope": "The task reconstructs a historical hypothetical low-risk learning-health-system protocol. It is not advice to waive written consent, and any real implementation requires independent ethical, legal, clinical, and factual review.",
+  "target_population": "general U.S. adult probability-panel population represented by the source study-specific post-stratification weight",
+  "weighting_rule": "primary study-weighted Hajek arm means using source variable weight within XTESS175=1; report unweighted complete-case means as a prespecified sensitivity",
+  "missingness_rule": "exclude source refusal code -1 for Q3a; never use Q3b or infer missing values from response distributions",
+  "source_variable_mapping": {
+    "assignment_variables": ["XTESS175", "DOV_OPTION"],
+    "outcome_variable": "Q3a",
+    "weight_variable": "weight",
+    "valid_outcome_values": [1, 2, 3, 4, 5, 6, 7],
+    "missing_outcome_codes": [-1],
+    "socsci_condition_map": {
+      "0": {"XTESS175": 1, "DOV_OPTION": 1},
+      "1": {"XTESS175": 1, "DOV_OPTION": 2},
+      "2": {"XTESS175": 2, "DOV_OPTION": 1},
+      "3": {"XTESS175": 2, "DOV_OPTION": 2}
+    }
+  },
+  "primary_estimator": "Within source scenario 1, compute the Hajek weighted mean of normalized Q3a utility for each DOV_OPTION policy and subtract the general-notification reference mean from the verbal-consent mean.",
+  "sensitivity_estimators": [
+    "unweighted complete-case mean normalized Q3a utility by DOV_OPTION within XTESS175=1"
+  ],
+  "bootstrap_procedure": "Resample participants with replacement within the two retained randomized cells, retain source weights, and recompute arm means, the contrast, winner, and regret using the canonical benchmark bootstrap seed after split freeze.",
+  "simulator_sequence_contract": "The sealed z358z_blinded_bundle.json marginalizes over all four programmed Kalla/Nayak/Saperstein module orders. When Kalla precedes Nayak it generates three independently randomized two-candidate profiles, including office context, trait order, and all six source-defined attributes per candidate. When Saperstein precedes Nayak it reproduces both randomized sex/gender question orders. One deterministic nuisance episode is paired across both consent-policy arms and simulation stops immediately after Q3a.",
+  "checkpoint_compatibility": "The released Socrates participant_mapping.json lists z358z as seen. Never describe a released Socrates checkpoint evaluation on this task as experiment-held-out.",
+  "tie_rule": "lexicographic_arm_id",
+  "practical_regret_tolerance": 0.05,
+  "released_rows_per_arm_before_outcome_missingness": {
+    "general_notification_policy": 486,
+    "verbal_consent_policy": 546
+  },
+  "source_assignment_rows_before_outcome_missingness": {
+    "general_notification_policy": 503,
+    "verbal_consent_policy": 558
+  },
+  "source_data_mapping_status": "complete_outcome_blind_schema_design_and_sequence_mapping",
+  "source_hashes": {
+    "final_questionnaire_sha256": "129c0ebf5f49b54dff2abc63c3eed9c7e2f08ef1eed86f0ae38e522583d0b0bc",
+    "official_mixed_archive_sha256": "091236a19b521a4ca02f6edf6601e40532a89aee71b1ebfcf951688e402999fc",
+    "source_bundle_sha256": "98c7cee886c0fd1fb9dd3a319981b6b222fa75b3dab0aebca61af7650f3597ea"
+  },
+  "reconstruction_note": "The complete 24-page final questionnaire was read and visually checked. SocSci210 was projected only for study ID, task, condition, participant identifier, prompt, and stimulus; response, reasoning, and demographics were never selected. The official SAV was read first with zero rows, then only XTESS175, DOV_OPTION, weight, and the row identifier were read to verify assignment support, positive weights, and the exact zero-mismatch SocSci condition join. Q3a metadata supplied the label and refusal code, but no Q1-Q7 value, response distribution, arm outcome statistic, effect, significance result, or winner was opened. Temporary extracted files were deleted automatically."
+}

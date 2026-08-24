@@ -1,0 +1,6 @@
+batch_id,candidate_id,queue_order,status,gate_reached,focused_minutes,blocker_code,outcome_access,runnable_contract
+depth-first-contract-batch-1,socsci210:a42yg,1,blocked,gate_2_contract,0,requires_sequence_ordinal_multimodal_adapter,sealed,false
+depth-first-contract-batch-1,socsci210:nj5dx,2,runnable,gate_4_runnable,0,,sealed,true
+depth-first-contract-batch-1,socsci210:jtgyq,3,blocked,gate_2_contract,0,source_control_arm_outcomes_unavailable_full_action_set_unscoreable,sealed,false
+depth-first-contract-batch-1,socsci210:es4xw,4,runnable,gate_4_runnable,0,,sealed,true
+depth-first-contract-batch-1,socsci210:e2pyb,5,runnable,gate_4_runnable,0,,sealed,true

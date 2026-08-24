@@ -1,0 +1,79 @@
+{
+  "schema_version": "intervenebench.derived_composite_provenance.v1",
+  "experiment_id": "6wbd7",
+  "source_instrument": {
+    "path": "data/raw/sources/6wbd7/8041.097 TESS Schnabel 2021_vFINALsimple.docx",
+    "sha256": "7be42a2e531783a7e00e9ed8862bf1c9029f41fb1aad238430d97b1174a135ac"
+  },
+  "representation_status": {
+    "status": "source_faithful_derived_composite",
+    "exact_components": "Every displayed heading and paragraph is verbatim from the final simple questionnaire. Treatment chart members are copied at their original 1600 by 1067 pixels without scaling or redrawing.",
+    "limitation": "These PNGs are not exact fielded browser screenshots. Typography, line wrapping, whitespace, and chart/text placement are deterministic derived choices; the common instruction page, browser chrome, and 30-second continue-button delay are represented in the simulator context rather than rasterized into the arm image. The neutral arm contains no chart because none was fielded."
+  },
+  "renderer": {
+    "script": "scripts/build_6wbd7_derived_stimuli.swift",
+    "platform": "macOS AppKit",
+    "font_name": "Arial",
+    "heading_point_size": 46,
+    "body_point_size": 31,
+    "canvas_width_pixels": 1800,
+    "horizontal_margin_pixels": 100,
+    "vertical_margin_pixels": 90,
+    "paragraph_spacing_pixels": 28,
+    "chart_spacing_pixels": 48
+  },
+  "arms": [
+    {
+      "arm_id": "giving_rising_total_amount",
+      "heading": "The Top .01% Have Been Giving More and More Since the 1970s",
+      "paragraphs": [
+        "Giving by the top .01% highest earning Americans, or about the 16,000 wealthiest households in America, has gone up rapidly since the 1970s. Their giving has consistently increased in inflation-adjusted dollars year after year, holding steady during recessions and skyrocketing during booms. These wealthiest Americans, the 1% of the 1%, each give back several million dollars every year.",
+        "Unlike other Americans who do not give consistently, almost all wealthy Americans give—and their giving has reached record highs in recent years.",
+        "According to some analysts, we are living in a philanthropic era where the wealthy are doing more to fund our charities than ever before. Many of our country’s most important charities—such as food banks for elderly people, foundations that study terminal illnesses like cancer, and community programs for underprivileged children—depend on the giving of these wealthy philanthropists."
+      ],
+      "source_chart_member": "word/media/image3.png",
+      "source_chart_sha256": "e424896138eacd2f9e71125da3ca6d456ef5933c9e30d8ebaed55e1d90834051",
+      "chart_placement": {
+        "x": 100,
+        "y": 192,
+        "width": 1600,
+        "height": 1067
+      },
+      "output_path": "data/derived/stimuli/6wbd7/giving_rising_total_amount.png",
+      "output_sha256": "91ad97391418d4ea8831d3a09dfbf9b8cbebf648c290ad6d141678d6a34558a4"
+    },
+    {
+      "arm_id": "giving_stagnant_percentage_income",
+      "heading": "Giving by the Top .01% Has Not Increased Since the 1970s",
+      "paragraphs": [
+        "Giving by the top .01% highest earning Americans, or about the 16,000 wealthiest households in America, has stagnated since the 1970s. Since then, the wealthy have grown increasingly wealthy, yet the percentage of their income that they donate has not gone up. The wealthiest Americans, the 1% of the 1%, each give back a small percentage of their income every year.",
+        "Unlike other Americans who donate a larger percentage of their wealth, wealthy Americans give an exceptionally small percentage of their rising wealth—and giving by the wealthiest Americans has plateaued in recent years.",
+        "According to some analysts, the wealthy could easily do much more to fund the charities that help meet America’s needs. Many of our country’s most important charities—such as food banks for elderly people, foundations that study terminal illnesses like cancer, and community programs for underprivileged children—are underfunded because they’re not getting the resources they need from wealthy philanthropists."
+      ],
+      "source_chart_member": "word/media/image4.png",
+      "source_chart_sha256": "98282a83a5bd496e90c6ced6f8f3a313c5ce8abc82f012628a14ed937b8df04b",
+      "chart_placement": {
+        "x": 100,
+        "y": 192,
+        "width": 1600,
+        "height": 1067
+      },
+      "output_path": "data/derived/stimuli/6wbd7/giving_stagnant_percentage_income.png",
+      "output_sha256": "d8fcde5c34864e9a8c46c7471604525bc00183bfc83d3912e3768f8cf0b3d857"
+    },
+    {
+      "arm_id": "neutral_necktie_history_control",
+      "heading": "Why do men wear ties?",
+      "paragraphs": [
+        "As with most things, the answer can be found in history. Neckties date back hundreds of years, coming into existence as the direct results of a war. In 1660, in celebration of its hard-fought victory over the Ottoman Empire, a regiment from Croatia (then part of the Austro-Hungarian Empire) visited Paris. The soldiers were presented as heroes to Luis XIV, a monarch well known for his tendency toward personal adornment. The officers of this regiment were wearing brightly colored handkerchiefs fashioned from silk around their necks. These neck cloths struck the fancy of the king, and he soon made them an insignia of royalty as he created a regiment of Royal Cravattes.",
+        "It wasn’t long before this new style crossed the channel to England. Soon, no gentleman would have considered himself well-dressed without sporting some sort of cloth around his neck—the more decorative, the better.",
+        "How can we account for the continued popularity of neckties? For years, fashion historians and sociologists predicted their demise—the one element of a man’s attire with no obvious function. Perhaps they are merely part of an inherited tradition. As long as world leaders continue to wear ties, the youth of the world will follow suit, and ties will remain a key component to any man’s professional wardrobe."
+      ],
+      "source_chart_member": null,
+      "source_chart_sha256": null,
+      "chart_placement": null,
+      "output_path": "data/derived/stimuli/6wbd7/neutral_necktie_history_control.png",
+      "output_sha256": "aa3a8516b8957e3c63194ec162fcf2aaec771fdb0c8968b071c9a2c2d93b36bc"
+    }
+  ]
+}

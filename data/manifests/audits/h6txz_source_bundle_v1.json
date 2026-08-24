@@ -1,0 +1,43 @@
+{
+  "schema_version": "intervenebench.h6txz_source_bundle.v1",
+  "candidate_id": "h6txz",
+  "source_url": "https://osf.io/h6txz/",
+  "data_materials_node_id": "gm39w",
+  "proposal_node_id": "v8p37",
+  "proposal_opened": false,
+  "source_archive": {
+    "filename": "Kelly207.zip",
+    "osf_object_id": "617216ff6513b1007941ccff",
+    "sha256": "c0514b5b42453330085855d32b0a72defcfe48231c475636c6f427edd5062cb6",
+    "retained": false
+  },
+  "container_members": [
+    {
+      "filename": "Archive of OSF Storage (1).zip",
+      "sha256": "a631dbc8da0d07f2548ae479c2d891f26b7c92a35a2942671244b49790942850",
+      "listing_only": true
+    },
+    {
+      "filename": "Archive of OSF Storage.zip",
+      "sha256": "95d50f2b8a73397b0b6aac073b6973d6a8319c7ded993dda174152a5b95fe982",
+      "listing_only": true
+    }
+  ],
+  "retained_final_questionnaire": {
+    "source_member": "Archive of OSF Storage (1).zip/tess2_096_kelly_FINAL.doc",
+    "path": "data/raw/sources/h6txz/tess2_096_kelly_FINAL.doc",
+    "sha256": "93d1ddeaa210eb7d0312dfe176e5d242289960455eebda3585ab6e87ed060b9f",
+    "opening_basis": "filename_explicitly_identifies_the_final_questionnaire"
+  },
+  "listed_but_not_extracted_or_opened": [
+    "Archive of OSF Storage (1).zip/Knowledge Networks Methodology (English only).pdf",
+    "Archive of OSF Storage.zip/tess2_096_kelly_final_data.sav",
+    "Archive of OSF Storage.zip/TESS2 096 - Kelly Response Rate Report.doc"
+  ],
+  "participant_member_extracted": false,
+  "participant_member_opened": false,
+  "result_text_exposed": false,
+  "outcome_access": "sealed",
+  "model_calls_made": false,
+  "paid_compute_spend_usd": 0
+}

@@ -1,0 +1,43 @@
+{
+  "schema_version": "intervenebench.wr7jg_source_bundle.v1",
+  "candidate_id": "wr7jg",
+  "source_url": "https://osf.io/wr7jg/",
+  "data_materials_node_id": "ruy5d",
+  "proposal_node_id": "9c7wq",
+  "proposal_opened": false,
+  "source_archive": {
+    "filename": "Bryan773.zip",
+    "osf_object_id": "617066186513b1000e419ab9",
+    "sha256": "b654b2943a19cc9445c5e63a4930be3561cdfcb218e959c1a7cf0b7363ce5ccc",
+    "retained": false
+  },
+  "container_members": [
+    {
+      "filename": "Archive of OSF Storage (1).zip",
+      "sha256": "ab282993acf28c254a997ebcf433c05dbf6d9feaf772fe415d0a5289d296ef48",
+      "listing_only": true
+    },
+    {
+      "filename": "Archive of OSF Storage.zip",
+      "sha256": "42145a0af4154922bd243e2dbc093f2dec7b727ada808a8c3438d5e340c64819",
+      "listing_only": true
+    }
+  ],
+  "retained_final_questionnaire": {
+    "source_member": "Archive of OSF Storage (1).zip/tess2_017_bryan_FINAL.doc",
+    "path": "data/raw/sources/wr7jg/tess2_017_bryan_FINAL.doc",
+    "sha256": "957d2044bee7b941a4d8edadc12a2d7e96c98170a47c041f629a67bb2f625aad",
+    "opening_basis": "filename_explicitly_identifies_the_final_questionnaire"
+  },
+  "listed_but_not_extracted_or_opened": [
+    "Archive of OSF Storage (1).zip/Knowledge Networks Methodology.pdf",
+    "Archive of OSF Storage.zip/TESS2 017 - Bryan Response Rate Report.doc",
+    "Archive of OSF Storage.zip/tess2_017_bryan_final_data.sav"
+  ],
+  "participant_member_extracted": false,
+  "participant_member_opened": false,
+  "result_text_exposed": false,
+  "outcome_access": "sealed",
+  "model_calls_made": false,
+  "paid_compute_spend_usd": 0
+}

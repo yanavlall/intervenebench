@@ -1,0 +1,90 @@
+{
+  "schema_version": "intervenebench.independent_replication_protocol.v1",
+  "status": "outcome_blind_protocol_frozen",
+  "freeze_date": "2026-08-14",
+  "claim_boundary": "Tests replicated low-regret intervention selection across the frozen panel. It does not establish a universal calibrated trust model or individual counterfactual validity.",
+  "panel": {
+    "target_experiment_count": 16,
+    "minimum_analyzable_experiment_count": 12,
+    "one_task_per_fielding": true,
+    "one_task_per_conservative_paradigm": true,
+    "prior_revealed_experiments_excluded": true,
+    "minimum_socsci210_count": {
+      "12_experiment_panel": 8,
+      "16_experiment_panel": 10
+    },
+    "minimum_behavioral_or_consequential_for_cross_outcome_claim": 4,
+    "fallback_claim_if_behavioral_minimum_missed": "attitudinal_messaging_decision_replication"
+  },
+  "primary_estimand": {
+    "task_difference": "D_U(e) = R_primary(e) - mean_a R_e(a)",
+    "panel_summary": "mean_e D_U(e)",
+    "direction": "negative_is_better",
+    "random_reference": "exact uniform choice over every admissible action in each experiment",
+    "independent_unit": "experiment"
+  },
+  "minimum_positive_gate": {
+    "experiment_count_at_least": 12,
+    "mean_difference_at_most": -0.01,
+    "one_sided_95_experiment_bootstrap_upper_below": 0.0,
+    "uniform_random_action_tail_probability_at_most": 0.05,
+    "all_leave_one_experiment_means_below": 0.0,
+    "all_leave_one_paradigm_means_below": 0.0,
+    "exact_sign_flip_probability_at_most": 0.1,
+    "default_and_classical_noninferiority": {
+      "point_difference_at_most": 0.0,
+      "one_sided_95_upper_below": 0.01
+    }
+  },
+  "strong_positive_gate": {
+    "experiment_count_at_least": 16,
+    "minimum_positive_gate_required": true,
+    "two_sided_95_experiment_bootstrap_upper_below": 0.0,
+    "exact_sign_flip_probability_at_most": 0.05,
+    "ten_percent_trimmed_mean_at_most": -0.01,
+    "socsci210_only_mean_below": 0.0,
+    "default_and_classical_superiority_two_sided_95_upper_below": 0.0
+  },
+  "negative_completion": {
+    "practically_null_if_one_sided_95_lower_above": -0.01,
+    "harm_if_one_sided_95_lower_above": 0.0,
+    "non_replication_if_mean_nonnegative_or_any_leave_one_out_nonnegative": true,
+    "otherwise": "inconclusive"
+  },
+  "uncertainty": {
+    "experiment_cluster_bootstrap_replicates": 50000,
+    "experiment_cluster_bootstrap_seed": 2026081401,
+    "minimum_gate_central_interval_equivalent_to_one_sided_95": 0.9,
+    "reported_two_sided_interval": 0.95,
+    "uniform_random_action_exact_combination_limit": 2000000,
+    "uniform_random_action_monte_carlo_replicates": 500000,
+    "uniform_random_action_seed": 2026081402,
+    "monte_carlo_gate_uses_one_sided_95_wilson_upper": true
+  },
+  "secondary_outcomes": {
+    "exact_intervention_choice_is_secondary": true,
+    "practical_regret_tolerances": [0, 0.0025, 0.005, 0.01, 0.025, 0.05],
+    "report_normalized_mean_p90_and_worst_regret": true,
+    "report_source_modality_action_count_and_outcome_strata": true,
+    "report_selected_arm_bootstrap_optimality": true
+  },
+  "simulator_policy": {
+    "primary_text_model": "Qwen3-8B",
+    "primary_image_model": "Qwen3-VL-8B-Instruct",
+    "primary_policy_cannot_change_after_target_outcomes": true,
+    "model_plurality_is_secondary": true,
+    "specialist_checkpoint_exposure_must_be_reported_per_task": true
+  },
+  "implementation": {
+    "gate_module": "src/intervenebench/replication_gate.py",
+    "gate_module_sha256": "1dceeecec57e44d96efd7ad7982cc801ac8fc6effda765b57725a58057f5214c",
+    "aggregate_only_input": true,
+    "participant_rows_forbidden": true
+  },
+  "authority": {
+    "authorized_spend_usd": 0,
+    "model_calls_authorized": false,
+    "human_outcome_reveal_authorized": false,
+    "participant_row_access_authorized": false
+  }
+}

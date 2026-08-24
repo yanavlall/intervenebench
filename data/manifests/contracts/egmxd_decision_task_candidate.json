@@ -1,0 +1,105 @@
+{
+  "schema_version": "categorical_multimodal_decision_task_candidate.v1",
+  "task_id": "egmxd:task-0-low-climate-menu-choice",
+  "experiment_id": "egmxd",
+  "source_id": "TESS-1443-Wolfson",
+  "source_question_id": "Q1A|Q1B|Q1C",
+  "socsci210_task_num": 0,
+  "canonical_split_status": "unassigned",
+  "reveal_authorized": false,
+  "outcome_access": "result_text_exposed_non_test",
+  "paradigm_group": "sustainable_food_labels",
+  "access_regime": "DESIGN_ONLY",
+  "design_type": "between_subject_three_arm_visual_menu_label_policy",
+  "randomization_unit": "participant",
+  "arms": [
+    {
+      "arm_id": "qr_code_control_menu",
+      "source_assignment": "P_COND=1",
+      "socsci_condition_num": 0,
+      "description": "Show the exact fielded menu with a QR-code label beside every menu item",
+      "deployable": true
+    },
+    {
+      "arm_id": "low_climate_impact_label_menu",
+      "source_assignment": "P_COND=2",
+      "socsci_condition_num": 1,
+      "description": "Show the same menu with green LOW CLIMATE IMPACT labels on the source-defined lower-impact items",
+      "deployable": true
+    },
+    {
+      "arm_id": "high_climate_impact_warning_menu",
+      "source_assignment": "P_COND=3",
+      "socsci_condition_num": 2,
+      "description": "Show the same menu with red HIGH CLIMATE IMPACT labels on the source-defined higher-impact beef items",
+      "deployable": true
+    }
+  ],
+  "control_arm_id": "qr_code_control_menu",
+  "reference_arm_rationale": "The source independently randomizes the QR-code menu as its attention-matched control. All three complete menu-label policies are retained.",
+  "primary_outcome_id": "selected_source_defined_low_climate_impact_item",
+  "outcome_question": "Imagine you are at a restaurant and about to order dinner. Look at the restaurant menu and click on the ONE item you want to order for yourself.",
+  "outcome_family": "binary_utility_from_categorical_choice",
+  "choice_options": [
+    {"option_id": "1", "label": "Whopper", "normalized_utility": 0.0},
+    {"option_id": "2", "label": "Impossible Whopper", "normalized_utility": 1.0},
+    {"option_id": "3", "label": "Whopper Jr.", "normalized_utility": 0.0},
+    {"option_id": "4", "label": "Double Whopper with Cheese", "normalized_utility": 0.0},
+    {"option_id": "5", "label": "Bacon Double Cheeseburger", "normalized_utility": 0.0},
+    {"option_id": "6", "label": "Cheeseburger", "normalized_utility": 0.0},
+    {"option_id": "7", "label": "Crispy Chicken Sandwich", "normalized_utility": 1.0},
+    {"option_id": "8", "label": "Spicy Crispy Chicken Sandwich", "normalized_utility": 1.0},
+    {"option_id": "9", "label": "Original Chicken Sandwich", "normalized_utility": 1.0},
+    {"option_id": "10", "label": "Chicken Jr.", "normalized_utility": 1.0},
+    {"option_id": "11", "label": "10 Pc. Nuggets", "normalized_utility": 1.0},
+    {"option_id": "12", "label": "Big Fish", "normalized_utility": 1.0},
+    {"option_id": "13", "label": "Chicken Garden Salad", "normalized_utility": 1.0},
+    {"option_id": "14", "label": "Side Garden Salad", "normalized_utility": 1.0}
+  ],
+  "utility_transform": "U=1 when the selected item is one of source options 2 or 7-14, otherwise U=0",
+  "estimand": "study_weighted_intention_to_treat_difference_in_probability_of_selecting_a_source_defined_low_climate_impact_item",
+  "decision_maker": "a restaurant or public-interest food-service program choosing among the three exact fielded menu-label policies",
+  "beneficiary": "the narrow climate-mitigation objective represented by increasing selection of the source-defined lower-climate-impact menu items",
+  "utility_rationale": "The source treatment itself identifies which items receive LOW CLIMATE IMPACT labels. The benchmark scores the behavioral menu choice against that source-defined set; it does not infer health, consumer welfare, or lifecycle emissions beyond the fielded classification.",
+  "truthfulness_scope": "The exact historical menu images and label assignments are reconstructed as fielded. Any current deployment requires independent verification of every product, calorie, QR-code, and climate-impact claim.",
+  "target_population": "general U.S. adult AmeriSpeak population represented by the study-specific post-stratification weight",
+  "weighting_rule": "Primary source-data estimator uses positive finite WEIGHT values and a Hajek mean by P_COND arm. Report the unweighted SocSci210 categorical reconstruction as a prespecified sensitivity.",
+  "missingness_rule": "For source data, exclude Q1 option code 98 and require all 14 indicators plus exactly one selected option. For SocSci210 task 0, group by participant, require all 14 prompt-defined options exactly once under one condition, and require exactly one Yes response after reveal; never collapse sample_id rows as independent respondents.",
+  "source_variable_mapping": {
+    "assignment_variable": "P_COND",
+    "outcome_variables_by_arm": {
+      "1": "Q1A_1|Q1A_2|Q1A_3|Q1A_4|Q1A_5|Q1A_6|Q1A_7|Q1A_8|Q1A_9|Q1A_10|Q1A_11|Q1A_12|Q1A_13|Q1A_14",
+      "2": "Q1B_1|Q1B_2|Q1B_3|Q1B_4|Q1B_5|Q1B_6|Q1B_7|Q1B_8|Q1B_9|Q1B_10|Q1B_11|Q1B_12|Q1B_13|Q1B_14",
+      "3": "Q1C_1|Q1C_2|Q1C_3|Q1C_4|Q1C_5|Q1C_6|Q1C_7|Q1C_8|Q1C_9|Q1C_10|Q1C_11|Q1C_12|Q1C_13|Q1C_14"
+    },
+    "source_indicator_codes": {"not_selected": 0, "selected": 1, "missing": 98},
+    "weight_variable": "WEIGHT",
+    "socsci_response_labels_after_reveal": {"selected": "1 Yes", "not_selected": "2 No"}
+  },
+  "primary_estimator": "For every valid participant, map the sole selected option to normalized utility 0 or 1. Compute the WEIGHT-weighted Hajek mean utility in each P_COND arm. Compare each labeling policy with the QR-code control and choose the arm with maximum mean utility.",
+  "sensitivity_estimators": [
+    "unweighted participant-level source-data mean utility by P_COND",
+    "unweighted SocSci210 task-0 reconstruction after a governed development reveal, grouping the 14 flattened option rows by participant"
+  ],
+  "bootstrap_procedure": "Resample participants with replacement within each randomized arm, retain their complete 14-option choice grids and source weights, and recompute arm means, effects, winner, and regret with the canonical benchmark seed after split freeze.",
+  "tie_rule": "lexicographic_arm_id",
+  "practical_regret_tolerance": 0.05,
+  "released_participants_per_arm_before_outcome_missingness": {
+    "qr_code_control_menu": 1667,
+    "low_climate_impact_label_menu": 1671,
+    "high_climate_impact_warning_menu": 1717
+  },
+  "socsci210_reconstruction_status": "complete_flattened_categorical_choice_mapping",
+  "source_data_mapping_status": "complete_outcome_blind_schema_design_categorical_multimodal_mapping",
+  "checkpoint_compatibility": "The released Socrates participant_mapping.json lists egmxd as seen. Never describe a released Socrates checkpoint evaluation on this task as experiment-held-out.",
+  "source_hashes": {
+    "final_questionnaire_sha256": "dc08a3a01bea7435a852e9b23a12a3927ac6773e431fc82e069fe1a18d121da2",
+    "official_mixed_archive_sha256": "da29df01ecac0722028816781dca064f259f3cf3b5078631768d8398f1ce56c8",
+    "source_bundle_sha256": "3143eb314e5b08785c052c989d8f03440bce6712d49b920e6405d6fc0c9b2fd6",
+    "control_menu_png_sha256": "5d6d56f30ba4fb235c913ff6e513adf3f51eec29848ee8597c7906a2bb8ca2a4",
+    "low_impact_menu_png_sha256": "295cf39f36521297ca84440b1ef5534a71efbdca2d633336a8b73b8b33d64e3e",
+    "high_impact_menu_png_sha256": "26d44646365a50a50ff492aba81f256c2dfda64cfd00c16e9ce4a4ad31391ef5"
+  },
+  "result_exposure_note": "During source-schema inspection, a workbook labelled as a codebook was found to contain Unweighted Frequencies and Weighted Frequencies worksheets. A broad workbook preview accidentally exposed aggregate target menu-choice frequencies before inspection stopped. No participant row or participant outcome file was opened, and no exposed frequency is used in this contract, feature engineering, simulator prompt, model selection, threshold selection, or evaluation. The task is permanently barred from canonical untouched test evaluation and is development-only.",
+  "reconstruction_note": "The complete 21-page final questionnaire and all three embedded fielded menu images were rendered and visually verified. The source DTA was projected only for P_COND and WEIGHT to verify 5,055 rows, arm support, and positive finite weights; Q1 outcome columns were not selected. SocSci210 was projected only for study ID, task, condition, participant, prompt, and stimulus to verify the 14-row participant grouping; response and reasoning were not selected. Temporary participant data were deleted after structural mapping."
+}

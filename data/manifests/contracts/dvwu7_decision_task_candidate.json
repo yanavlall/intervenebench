@@ -1,0 +1,105 @@
+{
+  "schema_version": "interactive_ordinal_decision_task_candidate.v1",
+  "task_id": "dvwu7:q9a:self_threat",
+  "experiment_id": "dvwu7",
+  "source_id": "TESS3-177-Ferrer",
+  "source_question_id": "Q9a",
+  "canonical_split_status": "unassigned",
+  "reveal_authorized": false,
+  "outcome_access": "sealed",
+  "paradigm_group": "self_affirmation_health_risk_behavior_intention",
+  "access_regime": "DESIGN_ONLY",
+  "design_type": "between_subject_action_subset",
+  "randomization_unit": "participant",
+  "source_randomization_variable_from_instrument": "XTESS177",
+  "arms": [
+    {
+      "arm_id": "xtess177_1_self_affirmation_self_threat",
+      "source_assignment_value": 1,
+      "description": "Choose the most important personal value and write about why it matters to the participant before the self-focused cancer-risk passage",
+      "deployable": true
+    },
+    {
+      "arm_id": "xtess177_3_active_control_self_threat",
+      "source_assignment_value": 3,
+      "description": "Choose the least important personal value and write only about why it could matter to another person before the same self-focused cancer-risk passage",
+      "deployable": true
+    }
+  ],
+  "omitted_source_cells": [
+    {
+      "source_assignment_value": 2,
+      "description": "Self-affirmation with close-other-focused cancer-risk context",
+      "reason": "changes_target_and_beneficiary_context"
+    },
+    {
+      "source_assignment_value": 4,
+      "description": "Active control with close-other-focused cancer-risk context",
+      "reason": "changes_target_and_beneficiary_context"
+    }
+  ],
+  "arm_subset_rule": "Among the two source-randomized affirmation contrasts that hold target context fixed, retain lexicographically smaller source cells 1 and 3 under the frozen arm-subset rule.",
+  "control_arm_id": "xtess177_3_active_control_self_threat",
+  "primary_outcome_id": "six_month_weight_loss_intention",
+  "outcome_question": "I intend to lose weight in the next 6 months.",
+  "outcome_family": "ordinal",
+  "response_options": [
+    {"raw_value": 1, "label": "Definitely will not do", "normalized_utility": 0.0},
+    {"raw_value": 2, "label": "2 (unlabeled intermediate)", "normalized_utility": 0.16666666666666666},
+    {"raw_value": 3, "label": "3 (unlabeled intermediate)", "normalized_utility": 0.3333333333333333},
+    {"raw_value": 4, "label": "4 (unlabeled midpoint)", "normalized_utility": 0.5},
+    {"raw_value": 5, "label": "5 (unlabeled intermediate)", "normalized_utility": 0.6666666666666666},
+    {"raw_value": 6, "label": "6 (unlabeled intermediate)", "normalized_utility": 0.8333333333333334},
+    {"raw_value": 7, "label": "Definitely will do", "normalized_utility": 1.0}
+  ],
+  "scale_lower": 1,
+  "scale_upper": 7,
+  "direction": "higher_is_better",
+  "estimand": "unadjusted_intention_to_treat_mean_normalized_utility_for_source_cells_1_vs_3",
+  "decision_maker": "a health-risk communicator deciding whether to precede a self-focused cancer-risk message with the source self-affirmation exercise or its active writing control",
+  "beneficiary": "the overweight adult receiving the self-focused health-risk message",
+  "utility_rationale": "The source restricts the sample to adults with BMI 25 through 55, and the common passage identifies overweight or obesity as a cancer-risk factor. Higher Q9a values therefore represent stronger intention to pursue the source-targeted health behavior. This is a behavioral-intention utility, not verified weight loss or clinical benefit.",
+  "target_population": "Adults aged 40 to 70 with source-screened BMI from 25 through 55, no reported cancer or skin-cancer diagnosis, and an eligible close relationship; the retained self-target contrast does not use the close-other outcome route.",
+  "weighting_rule": "blocked_until_schema_only_weight_metadata_is_authorized_and_frozen",
+  "missingness_rule": "blocked_until_schema_only_Q9a_missing_definitions_are_authorized_and_frozen",
+  "tie_rule": "lexicographic_arm_id",
+  "practical_regret_tolerance": 0.05,
+  "interactive_treatment_contract": {
+    "same_synthetic_persona_state_across_arms": true,
+    "separate_conversation_per_arm": true,
+    "arm_generated_reflection_reused_across_arms": false,
+    "common_cancer_passage_paired_within_persona": true,
+    "procedure": "Arm-local value selection and writing occurs before the common self-focused cancer-risk passage and Q9a."
+  },
+  "source_hashes": {
+    "source_archive_sha256": "4443127aab841afad43443dcbf9c4bb6b18c6ff8d814a30a20b5d136f8fbd050",
+    "final_questionnaire_sha256": "321fdc3fbae3827806f5adb97a6cd839b515eb7d64c8cdf3b20f3431bc75cd40"
+  },
+  "human_scoring_status": "blocked_pending_separate_schema_only_authorization",
+  "future_schema_only_request": {
+    "authorization_required": true,
+    "participant_container": "Ferrer549.zip::TESS3_177_Ferrer_Client.sav",
+    "participant_rows_authorized": false,
+    "frequencies_authorized": false,
+    "outcome_values_authorized": false,
+    "requested_known_variables": ["XTESS177", "Q9a"],
+    "requested_metadata": [
+      "variable_names_and_labels_to_identify_unique_row_id_and_study_weight",
+      "storage_types_for_XTESS177_Q9a_row_id_and_weight",
+      "value_labels_for_XTESS177_and_Q9a",
+      "user_missing_definitions_for_XTESS177_Q9a_and_weight"
+    ],
+    "forbidden_outputs": [
+      "participant_values",
+      "value_frequencies",
+      "arm_counts",
+      "outcome_counts",
+      "outcome_distributions",
+      "arm_summaries",
+      "effects",
+      "winners"
+    ]
+  },
+  "source_data_mapping_status": "blocked_no_participant_or_schema_access_authorized",
+  "reconstruction_note": "The final questionnaire alone freezes source cells 1 and 3, the complete interactive procedure, both sex-routed cancer passages, and Q9a bounds and orientation. No participant member, response value, aggregate, report, proposal, or result text was opened."
+}

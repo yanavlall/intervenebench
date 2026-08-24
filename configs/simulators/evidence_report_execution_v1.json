@@ -1,0 +1,139 @@
+{
+  "payload": {
+    "authority": {
+      "automatic_judging_authorized": false,
+      "automatic_next_stage_authorized": false,
+      "automatic_retries_authorized": false,
+      "experiment_level_human_score_access_authorized": false,
+      "inference_authorized": false,
+      "modal_image_materialization_authorized": false,
+      "model_download_authorized": false,
+      "participant_row_access_authorized": false,
+      "reserve_calls_authorized": false
+    },
+    "evaluation_id": "intervenebench-evidence-report-eval-v1",
+    "evaluation_protocol_sha256": "5a7726f0ca178d8e80327864296c45b7da4da0258aa8c455d810c09b9d35f8d6",
+    "evidence_packet_sha256": "8aa180b4005c48d2775a45f57b25ea62c9370999eb657251b55107e9cc86285e",
+    "generation_plan_payload_sha256": "50994c22dd033d6ca04fa39c6b95a2e9a75efed2e45937b04801e306df4369f3",
+    "limits": {
+      "ancillary_and_failure_reserve_usd": 18.998,
+      "automatic_retries": 0,
+      "completed_call_rerun_forbidden": true,
+      "hard_incremental_cost_cap_usd": 35.0,
+      "maximum_gpu_cost_usd": 16.002,
+      "maximum_gpu_seconds_by_family": {
+        "mistral_vllm": 9000,
+        "qwen_transformers": 18000
+      },
+      "maximum_wall_clock_seconds": 10800,
+      "official_price_usd_per_second": {
+        "A100-80GB:1": 0.000694,
+        "L40S:1": 0.000542
+      },
+      "reserve_calls": 0,
+      "semantic_repair_allowed": false
+    },
+    "models": [
+      {
+        "cache_attestation_payload_sha256": "df0ab5014389b04c65c1d6a403f52d49eecf03d0e74c268495abacc0a9ec0164",
+        "cache_model_id": "mistral_small_3_1_24b_cross_family",
+        "checkpoint_commit": "68faf511d618ef198fef186659617cfd2eb8e33a",
+        "gpu": "A100-80GB:1",
+        "hf_repository": "mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+        "model_download_authorized": false,
+        "model_role": "mistral_small_3_1_24b_cross_family",
+        "runtime_family": "mistral_vllm",
+        "source_manifest_sha256": "7db967c1cba5af9a7c9429a93e2f7a2d6869f6f86c9884ebee5e25f003561fce"
+      },
+      {
+        "cache_attestation_payload_sha256": "a07d537fbee725fa3c5c73be47ba4edc2f85295ec7f0e2c400a7842fdbc52fb4",
+        "cache_model_id": "qwen3_14b_generic",
+        "checkpoint_commit": "40c069824f4251a91eefaf281ebe4c544efd3e18",
+        "gpu": "L40S:1",
+        "hf_repository": "Qwen/Qwen3-14B",
+        "model_download_authorized": false,
+        "model_role": "qwen3_14b_scale_candidate",
+        "runtime_family": "qwen_transformers",
+        "source_manifest_sha256": "9fc1ea2ddf7ddd95dbae43f0fb89bfdc9eeb063026e0acf41ead1c7b89e5f433"
+      },
+      {
+        "cache_attestation_payload_sha256": "a6b873b0da0b21e7cd4efefef1bde4827ddac9daa7d6cbbb83fc4f68b851b56d",
+        "cache_model_id": "qwen3_8b_generic",
+        "checkpoint_commit": "b968826d9c46dd6066d109eabc6255188de91218",
+        "gpu": "L40S:1",
+        "hf_repository": "Qwen/Qwen3-8B",
+        "model_download_authorized": false,
+        "model_role": "qwen3_8b_incumbent",
+        "runtime_family": "qwen_transformers",
+        "source_manifest_sha256": "37d2299d09d12ddb58f9b7a6ea2105e0a6ea3c743c7b8145e3a59df8b366e5fc"
+      }
+    ],
+    "planned_call_count": 48,
+    "planned_calls_by_model_role": {
+      "mistral_small_3_1_24b_cross_family": 16,
+      "qwen3_14b_scale_candidate": 16,
+      "qwen3_8b_incumbent": 16
+    },
+    "privacy": {
+      "experiment_level_human_scores_allowed": false,
+      "human_labels_visible_to_generators": false,
+      "participant_rows_allowed": false,
+      "public_aggregate_evidence_packet_allowed": true
+    },
+    "runtime": {
+      "app_name": "intervenebench-evidence-report-eval-v1",
+      "mistral_image_recipe": {
+        "app_source_sha256": "c973772934ea0d77926d499b0dbe320d95b12fd19bb8cd2a6d3328be23ae5dc1",
+        "base": "modal.Image.debian_slim",
+        "checkpoint_volume": "read_only",
+        "dependency_lock_path": "infra/modal/cross-family-requirements.lock",
+        "dependency_lock_sha256": "5d0b314c40e9e2ded4fbc3f704107ece7f5c02209f70c9ae926c5765797e895a",
+        "embedded_files": [
+          "configs/simulators/evidence_report_execution_v1.json",
+          "data/manifests/qualitative_eval/report_generation_plan_v1.json",
+          "data/manifests/simulators/model_file_manifests_v1.json",
+          "data/manifests/simulators/mistral_small_3_1_24b_source_manifest_v1.json",
+          "infra/modal/multimodal-requirements.lock",
+          "infra/modal/cross-family-requirements.lock",
+          "infra/modal/evidence_report_app.py"
+        ],
+        "network_during_inference": "blocked",
+        "python": "3.11",
+        "requirements_require_hashes": true,
+        "uv_version": "0.12.4"
+      },
+      "mistral_image_recipe_sha256": "efa544de5166db50d3c707a0b9db94fed1014be72b9133a0c241f323b7b381c2",
+      "model_volume_name": "intervenebench-model-cache-v1",
+      "qwen_image_recipe": {
+        "app_source_sha256": "c973772934ea0d77926d499b0dbe320d95b12fd19bb8cd2a6d3328be23ae5dc1",
+        "base": "modal.Image.debian_slim",
+        "checkpoint_volume": "read_only",
+        "dependency_lock_path": "infra/modal/multimodal-requirements.lock",
+        "dependency_lock_sha256": "2a48942504275c937719a64b0e1c35abec3389870cc8e5eab3a83752fe8dce34",
+        "embedded_files": [
+          "configs/simulators/evidence_report_execution_v1.json",
+          "data/manifests/qualitative_eval/report_generation_plan_v1.json",
+          "data/manifests/simulators/model_file_manifests_v1.json",
+          "data/manifests/simulators/mistral_small_3_1_24b_source_manifest_v1.json",
+          "infra/modal/multimodal-requirements.lock",
+          "infra/modal/cross-family-requirements.lock",
+          "infra/modal/evidence_report_app.py"
+        ],
+        "network_during_inference": "blocked",
+        "python": "3.11",
+        "requirements_require_hashes": true,
+        "uv_version": "0.12.4"
+      },
+      "qwen_image_recipe_sha256": "4b45ef82347bff5e864ecf70e11047cbfb34d260d43d004ed450c8744440d068"
+    },
+    "schema_version": "intervenebench.evidence_report_execution_freeze.v1",
+    "source_bindings": {
+      "mistral_cache_attestation_payload_sha256": "df0ab5014389b04c65c1d6a403f52d49eecf03d0e74c268495abacc0a9ec0164",
+      "mistral_model_manifest_payload_sha256": "7db967c1cba5af9a7c9429a93e2f7a2d6869f6f86c9884ebee5e25f003561fce",
+      "qwen_cache_manifest_payload_sha256": "0e82120dd9ea4fa97c58ce5290cf8b3196d685a36b780aa8ba21f3f2f4f5ef24",
+      "qwen_model_manifest_file_sha256": "560bed418f73630aa3a06774b5e844cadda6aed0e894653d1c1193a9c688009b"
+    },
+    "status": "frozen_zero_authority"
+  },
+  "sha256": "fb966e6ce05a327fc45bb058f9a11cd669b0545c96d3e8a460c3881376517a20"
+}

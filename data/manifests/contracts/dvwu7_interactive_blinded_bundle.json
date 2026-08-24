@@ -1,0 +1,61 @@
+{
+  "schema_version": "interactive_ordinal_blinded_bundle.v1",
+  "task_id": "dvwu7:q9a:self_threat",
+  "experiment_id": "dvwu7",
+  "access_regime": "DESIGN_ONLY",
+  "outcome_access": "sealed",
+  "reveal_authorized": false,
+  "source_material": {
+    "path": "data/raw/sources/dvwu7/TESS3_177_Ferrer_Questionnaire_final.doc",
+    "sha256": "321fdc3fbae3827806f5adb97a6cd839b515eb7d64c8cdf3b20f3431bc75cd40"
+  },
+  "population": {
+    "description": "Adults aged 40 to 70 in the source-screened general-population sample",
+    "roster_id": "synthetic-overweight-us-adults-40-70-v1",
+    "eligibility": "BMI 25 through 55; no reported cancer or skin-cancer diagnosis; source close-relationship screen passed"
+  },
+  "arms": [
+    {
+      "arm_id": "xtess177_1_self_affirmation_self_threat",
+      "source_assignment_value": 1,
+      "procedure": {
+        "value_selection": "most_important_value",
+        "self_reference_rule": "self",
+        "writing_prompt": "Please type a statement about why this value is important to you. Take a few minutes to think about this value and how this value has influenced your past behaviors or attitudes. Please write about how you use this value in your everyday life - at work, at home, with friends, or in dealing with strangers. If you can, try to recall and write about specific occasions in which this value determined what you did."
+      }
+    },
+    {
+      "arm_id": "xtess177_3_active_control_self_threat",
+      "source_assignment_value": 3,
+      "procedure": {
+        "value_selection": "least_important_value",
+        "self_reference_rule": "another_person_only",
+        "writing_prompt": "Please type a statement about why this value could be important to another person. Take a few minutes to think about how this value may influence this person's behaviors or attitudes. Please write about how this person may use this value in everyday life - at work, at home, with friends, or in dealing with strangers. Only think about why this value might be important to another person, and not why it is unimportant to you."
+      }
+    }
+  ],
+  "control_arm_id": "xtess177_3_active_control_self_threat",
+  "common_context": "After the arm-specific values exercise, ask the participant to think about how the following cancer-risk information relates to them. Route the cancer passage by the source female/male rule, keep that route identical across arms for the same persona, and then ask source Q9a.",
+  "passage_routing": {
+    "female": "The following information is excerpted from the National Cancer Institute Breast Cancer Information Website. Based on current breast cancer incidence rates, experts estimate that about one out of every eight women in the U.S. born today will be diagnosed with breast cancer at some time during her life. Estimated new cases and deaths from breast cancer in the United States in 2013: New cases: 232,340. Deaths: 39,620. Being overweight or obese can increase the risk of post-menopausal breast cancer. Other risk factors include age (a woman's risk of developing breast cancer increases as she gets older), inherited changes in certain genes, and a personal or family history of breast cancer. There are screening tests available to determine whether a woman is at increased risk for breast cancer. The effectiveness of these tests is variable, depending on age and other risk factors. For this reason, it is important that women engage in a conversation with their healthcare providers about their risk factors related to breast cancer, and to discuss whether a screening test is right for them.",
+    "male": "The following information is excerpted from the National Cancer Institute Prostate Cancer Information Website. Based on current prostate cancer incidence rates, experts estimate that about one out of every five men in the U.S. born today will be diagnosed with prostate cancer at some time during his life. Estimated new cases and deaths from prostate cancer in the United States in 2013: New cases: 238,590. Deaths: 29,720. Being overweight or obese can increase the risk of prostate cancer. Other risk factors include age (a man's risk of developing this disease increases as he gets older). Other factors can also increase a man's risk of developing prostate cancer, including inherited changes in certain genes and a personal or family history of prostate cancer. There are screening tests available to determine whether a man is at increased risk for prostate cancer. The effectiveness of these tests is variable, depending on age and other risk factors. For this reason, it is important that men engage in a conversation with their healthcare providers about their risk factors related to prostate cancer, and to discuss whether a screening test is right for them."
+  },
+  "outcome_question": "I intend to lose weight in the next 6 months.",
+  "response_options": [
+    {"value": 1, "label": "Definitely will not do", "normalized_utility": 0.0},
+    {"value": 2, "label": "2 (unlabeled intermediate)", "normalized_utility": 0.16666666666666666},
+    {"value": 3, "label": "3 (unlabeled intermediate)", "normalized_utility": 0.3333333333333333},
+    {"value": 4, "label": "4 (unlabeled midpoint)", "normalized_utility": 0.5},
+    {"value": 5, "label": "5 (unlabeled intermediate)", "normalized_utility": 0.6666666666666666},
+    {"value": 6, "label": "6 (unlabeled intermediate)", "normalized_utility": 0.8333333333333334},
+    {"value": 7, "label": "Definitely will do", "normalized_utility": 1.0}
+  ],
+  "interaction_contract": {
+    "sequence_unit": "synthetic_persona",
+    "paired_across_arms": true,
+    "same_persona_state_across_arms": true,
+    "separate_arm_conversations": true,
+    "arm_generated_reflection_reused": false,
+    "target_position": "after_arm_specific_writing_then_common_cancer_message"
+  }
+}

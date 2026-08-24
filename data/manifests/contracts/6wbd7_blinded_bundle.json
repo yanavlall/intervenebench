@@ -1,0 +1,65 @@
+{
+  "schema_version": "bounded_integer_png_multimodal_bundle.v1",
+  "task_id": "6wbd7:task-3-provisional-direct-plutocracy",
+  "experiment_id": "6wbd7",
+  "access_regime": "DESIGN_ONLY",
+  "population": {
+    "description": "General-population United States adults age 18 and older in the October 2021 AmeriSpeak probability-based panel fielding.",
+    "roster_id": "aggregate-us-adult-v1"
+  },
+  "arms": [
+    {
+      "arm_id": "giving_rising_total_amount",
+      "accessible_text": "The Top .01% Have Been Giving More and More Since the 1970s\n\nGiving by the top .01% highest earning Americans, or about the 16,000 wealthiest households in America, has gone up rapidly since the 1970s. Their giving has consistently increased in inflation-adjusted dollars year after year, holding steady during recessions and skyrocketing during booms. These wealthiest Americans, the 1% of the 1%, each give back several million dollars every year.\n\nUnlike other Americans who do not give consistently, almost all wealthy Americans give—and their giving has reached record highs in recent years.\n\nAccording to some analysts, we are living in a philanthropic era where the wealthy are doing more to fund our charities than ever before. Many of our country’s most important charities—such as food banks for elderly people, foundations that study terminal illnesses like cancer, and community programs for underprivileged children—depend on the giving of these wealthy philanthropists.",
+      "asset": {
+        "path": "data/derived/stimuli/6wbd7/giving_rising_total_amount.png",
+        "mime_type": "image/png",
+        "sha256": "91ad97391418d4ea8831d3a09dfbf9b8cbebf648c290ad6d141678d6a34558a4"
+      }
+    },
+    {
+      "arm_id": "giving_stagnant_percentage_income",
+      "accessible_text": "Giving by the Top .01% Has Not Increased Since the 1970s\n\nGiving by the top .01% highest earning Americans, or about the 16,000 wealthiest households in America, has stagnated since the 1970s. Since then, the wealthy have grown increasingly wealthy, yet the percentage of their income that they donate has not gone up. The wealthiest Americans, the 1% of the 1%, each give back a small percentage of their income every year.\n\nUnlike other Americans who donate a larger percentage of their wealth, wealthy Americans give an exceptionally small percentage of their rising wealth—and giving by the wealthiest Americans has plateaued in recent years.\n\nAccording to some analysts, the wealthy could easily do much more to fund the charities that help meet America’s needs. Many of our country’s most important charities—such as food banks for elderly people, foundations that study terminal illnesses like cancer, and community programs for underprivileged children—are underfunded because they’re not getting the resources they need from wealthy philanthropists.",
+      "asset": {
+        "path": "data/derived/stimuli/6wbd7/giving_stagnant_percentage_income.png",
+        "mime_type": "image/png",
+        "sha256": "d8fcde5c34864e9a8c46c7471604525bc00183bfc83d3912e3768f8cf0b3d857"
+      }
+    },
+    {
+      "arm_id": "neutral_necktie_history_control",
+      "accessible_text": "Why do men wear ties?\n\nAs with most things, the answer can be found in history. Neckties date back hundreds of years, coming into existence as the direct results of a war. In 1660, in celebration of its hard-fought victory over the Ottoman Empire, a regiment from Croatia (then part of the Austro-Hungarian Empire) visited Paris. The soldiers were presented as heroes to Luis XIV, a monarch well known for his tendency toward personal adornment. The officers of this regiment were wearing brightly colored handkerchiefs fashioned from silk around their necks. These neck cloths struck the fancy of the king, and he soon made them an insignia of royalty as he created a regiment of Royal Cravattes.\n\nIt wasn’t long before this new style crossed the channel to England. Soon, no gentleman would have considered himself well-dressed without sporting some sort of cloth around his neck—the more decorative, the better.\n\nHow can we account for the continued popularity of neckties? For years, fashion historians and sociologists predicted their demise—the one element of a man’s attire with no obvious function. Perhaps they are merely part of an inherited tradition. As long as world leaders continue to wear ties, the youth of the world will follow suit, and ties will remain a key component to any man’s professional wardrobe.",
+      "asset": {
+        "path": "data/derived/stimuli/6wbd7/neutral_necktie_history_control.png",
+        "mime_type": "image/png",
+        "sha256": "aa3a8516b8957e3c63194ec162fcf2aaec771fdb0c8968b071c9a2c2d93b36bc"
+      }
+    }
+  ],
+  "common_context": "The participant is told that the survey is about generosity within the United States, receives the source instruction to inspect one chart-and-description or short story carefully, and cannot continue for 30 seconds. Exactly one arm image is shown.",
+  "outcome_question": "We should shift more decision-making from everyday people toward wealthy people.",
+  "response_contract": {
+    "type": "integer",
+    "minimum": 0,
+    "maximum": 100,
+    "unit": "agreement slider points from 0=Strongly Disagree to 100=Strongly Agree",
+    "utility_direction": "lower_is_better"
+  },
+  "sampling_contract": {
+    "paired_across_arms": true,
+    "checkpoints_per_arm": [5, 10, 20],
+    "arm_mean_tolerance": 0.03,
+    "margin_multiplier": 2.0
+  },
+  "representation_status": {
+    "status": "source_faithful_derived_composite",
+    "provenance_path": "data/manifests/stimuli/6wbd7_derived_composite_v1.json",
+    "provenance_sha256": "03e0491ad1072a1ebd1217b653cbdb550f28066ae57c3933d38427bbbc7a00e5",
+    "limitation": "The PNGs preserve verbatim source prose and exact 1:1 chart pixels but are not fielded browser screenshots; typography, wrapping, whitespace, and chart/text placement are derived."
+  },
+  "source_material_sha256": "7be42a2e531783a7e00e9ed8862bf1c9029f41fb1aad238430d97b1174a135ac",
+  "outcome_access": "sealed",
+  "reveal_authorized": false,
+  "execution_status": "design_only_adapter_ready_scoring_blocked",
+  "scoring_blocker": "Primary outcome or composite, stored outcome variable, missing codes, analysis weight, source-to-SocSci condition crosswalk, and arm support remain unresolved; separate outcome-blind schema authorization is required."
+}

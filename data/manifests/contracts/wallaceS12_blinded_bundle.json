@@ -1,0 +1,48 @@
+{
+  "schema_version": "ordinal_blinded_bundle.v1",
+  "task_id": "wallaceS12:q1:cells-1-6",
+  "experiment_id": "wallaceS12",
+  "access_regime": "DESIGN_ONLY",
+  "population": {
+    "description": "Adults in the United States represented by a probability-based general-population online panel",
+    "roster_id": "aggregate-us-adult-v1"
+  },
+  "arms": [
+    {
+      "arm_id": "hard_treaty_then_use_force",
+      "message": "Over the years, countries in another region of the world have made competing claims over a small nearby island. Sometimes countries want to use military force to resolve disagreements with others. Last year, some natural resources were discovered on the island and a crisis started in the region over what to do. One country, in particular, considered whether or not to send its military forces to take control of the island. The country had previously signed an international treaty where it made a formal promise not to use military force over the island. After considering the situation, the country decided not to keep its treaty promise, and sent its military forces to take control of the island."
+    },
+    {
+      "arm_id": "hard_treaty_then_refrain",
+      "message": "Over the years, countries in another region of the world have made competing claims over a small nearby island. Sometimes countries want to use military force to resolve disagreements with others. Last year, some natural resources were discovered on the island and a crisis started in the region over what to do. One country, in particular, considered whether or not to send its military forces to take control of the island. The country had previously signed an international treaty where it made a formal promise not to use military force over the island. After considering the situation, the country decided to keep its treaty promise, and did not send its military forces to take control of the island."
+    },
+    {
+      "arm_id": "soft_guideline_then_use_force",
+      "message": "Over the years, countries in another region of the world have made competing claims over a small nearby island. Sometimes countries want to use military force to resolve disagreements with others. Last year, some natural resources were discovered on the island and a crisis started in the region over what to do. One country, in particular, considered whether or not to send its military forces to take control of the island. The country had previously taken part in a regional meeting that created guidelines recommending countries not to use military force over the island. After considering the situation, the country decided not to follow these guidelines, and sent its military forces to take control of the island."
+    },
+    {
+      "arm_id": "soft_guideline_then_refrain",
+      "message": "Over the years, countries in another region of the world have made competing claims over a small nearby island. Sometimes countries want to use military force to resolve disagreements with others. Last year, some natural resources were discovered on the island and a crisis started in the region over what to do. One country, in particular, considered whether or not to send its military forces to take control of the island. The country had previously taken part in a regional meeting that created guidelines recommending countries not to use military force over the island. After considering the situation, the country decided to follow these guidelines, and did not send its military forces to take control of the island."
+    },
+    {
+      "arm_id": "no_commitment_then_use_force",
+      "message": "Over the years, countries in another region of the world have made competing claims over a small nearby island. Sometimes countries want to use military force to resolve disagreements with others. Last year, some natural resources were discovered on the island and a crisis started in the region over what to do. One country, in particular, considered whether or not to send its military forces to take control of the island. The country had not previously made any international agreement dealing with the use of military force over the island. After considering the situation, the country decided to send its military forces to take control of the island."
+    },
+    {
+      "arm_id": "no_commitment_then_refrain",
+      "message": "Over the years, countries in another region of the world have made competing claims over a small nearby island. Sometimes countries want to use military force to resolve disagreements with others. Last year, some natural resources were discovered on the island and a crisis started in the region over what to do. One country, in particular, considered whether or not to send its military forces to take control of the island. The country had not previously made any international agreement dealing with the use of military force over the island. After considering the situation, the country decided not to send its military forces to take control of the island."
+    }
+  ],
+  "common_context": "We will describe a situation countries have faced many times and will probably face again. This is a general situation, and is not about a specific country or region in the news today. Countries often make promises to each other across a variety of issues. Sometimes they keep their promises, and sometimes they do not. When considering new policies, some American officials think we should focus on a country's past actions, while other officials think we should focus more on current conditions.",
+  "outcome_question": "The United States is currently thinking about signing an agreement with this country that would involve cooperation over military issues. Would you support or oppose the United States signing a military agreement with this country?",
+  "response_options": [
+    {"value": 1, "label": "Strongly support", "normalized_utility": 1.0},
+    {"value": 2, "label": "Somewhat support", "normalized_utility": 0.75},
+    {"value": 3, "label": "Neither support nor oppose", "normalized_utility": 0.5},
+    {"value": 4, "label": "Somewhat oppose", "normalized_utility": 0.25},
+    {"value": 5, "label": "Strongly oppose", "normalized_utility": 0.0}
+  ],
+  "source_material_sha256": "b45e023efa0eea3b2274e49bc0a0da49fffad75d8203618b408d18632b964316",
+  "outcome_access": "sealed",
+  "reveal_authorized": false
+}

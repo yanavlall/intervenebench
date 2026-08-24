@@ -1,0 +1,107 @@
+{
+  "payload": {
+    "allocation": {
+      "balanced": "source_order_largest_remainder",
+      "hedged": "25_percent_uniform_floor_then_laplace_smoothed_outcome_free_winner_votes"
+    },
+    "budgets": [
+      0,
+      10,
+      25,
+      50,
+      100,
+      250
+    ],
+    "claim_boundary": "Development-only fallback method selection over nine revealed tasks; not prospective confirmation or a canonical benchmark result.",
+    "confirmation_experiment_ids": [
+      "tcg8p",
+      "pb2rr",
+      "z358z",
+      "ShannonS2",
+      "Blair1131",
+      "KlarS44"
+    ],
+    "confirmation_outcome_access_authorized": false,
+    "development_evidence_payload_sha256": "e2411b32d922dc6af0869e0b5dbf4d0b8fbc80b8f7487b34137d2395dcffd0e8",
+    "development_experiment_count": 9,
+    "development_experiment_ids": [
+      "jf46x",
+      "5vm8g",
+      "xc4yq",
+      "de5hx",
+      "turagaS11",
+      "wallaceS12",
+      "nj5dx",
+      "es4xw",
+      "e2pyb"
+    ],
+    "effect_prior": {
+      "alpha_constraint": [
+        0.0,
+        1.0
+      ],
+      "experiment_weighting": "equal_total_weight_per_experiment",
+      "intercept": 0.0,
+      "minimum_variance": 1e-06,
+      "model": "human_effect_equals_alpha_times_synthetic_effect_plus_residual",
+      "pilot_likelihood": "arm_mean_effects_with_shared_control_covariance",
+      "residual_variance": "mean_within_experiment_contrast_residual_mse",
+      "target_human_outcomes_excluded_from_prior": true
+    },
+    "evaluation": "repeated_arm_stratified_disjoint_ten_fold",
+    "experiment_cluster_bootstrap": {
+      "confidence_level": 0.95,
+      "paired_policy_resampling": true,
+      "replicates": 10000,
+      "seed": 2026081307
+    },
+    "fixed_fusion_pseudocount_per_arm": 10,
+    "fold_count": 10,
+    "headline_metrics": [
+      "decision_regret",
+      "correct_intervention_choice",
+      "practical_reliability",
+      "paired_regret_change_vs_synthetic_only",
+      "negative_value_rate"
+    ],
+    "implementation_sha256": {
+      "scripts/run_development_fallback.py": "5e1a966472c28a2fefb618e6caf9832bc20b207f6a13f7c7a7a8768a5a500f74",
+      "src/intervenebench/development_fallback.py": "7c4996d222fff33ca7fa7a870f8caee25d3bdbc5802a7af033e3181f81daebb2",
+      "src/intervenebench/eb_fallback.py": "e47eadb162a2fa0ec61bb05a471a5ab1091b04037644d57907362c83a20e24cb",
+      "src/intervenebench/human_fallback.py": "725dab83e0e980262d099208b004255001a77edaa36d4adb76cbbd57e74dbae5"
+    },
+    "modal_execution_authorized": false,
+    "nested_without_replacement_pilot_prefixes": true,
+    "output_path": "artifacts/development/development_fallback_v1.json",
+    "paid_compute_authorized": false,
+    "participant_rows_may_be_serialized": false,
+    "participant_unit": "participant",
+    "partitions": 20,
+    "policies": [
+      "synthetic_only",
+      "human_only_balanced",
+      "synthetic_plus_balanced_fixed10",
+      "synthetic_plus_hedged_fixed10",
+      "synthetic_plus_balanced_eb",
+      "synthetic_plus_hedged_eb"
+    ],
+    "same_folds_draws_and_seeds_across_policies": true,
+    "schema_version": "development_fallback_protocol.v1",
+    "seed": 2026081306,
+    "source_contract_sha256": {
+      "5vm8g": "7f193ca321f7c9e7386400b17729bf74ee43b8b125c6a1ad108d8ae8aa0d2d9d",
+      "de5hx": "fdd10be379cd3ae564c6fada34bcede8212a45d9ffff725984438c4ca00a847e",
+      "e2pyb": "3b7179b0d49c3f620e8810f58e862efb7f89016c401c6c02895480a53fef5db0",
+      "es4xw": "85c5a56faeded1d2ed26f14c2ff39555684945dbf3f0c1f6475b5001e3fe7646",
+      "jf46x": "33fa9d2f3b505479ba616dbf5b2bcfee6f19651b5afab6204dca8450f380ecc8",
+      "nj5dx": "4c9646f043cb12477a99120ae750c55753accff867122bd6bdbabaf2e74e118a",
+      "turagaS11": "d9ea7dd96cee52b281a86234c3a3ac66834d729990b583a71370bb1078a18677",
+      "wallaceS12": "669e540b709040e19bdd8150c1c2e95b48a928b6af9daf352910610b19ddf09c",
+      "xc4yq": "ed0297ec773eb39d8dbff5b246757e362cc2a0f7aa6aa1ca1a559ae2622f5922"
+    },
+    "status": "development_only_method_frozen_before_unified_policy_result",
+    "stopping_rule": "If balanced EB fails to improve paired mean regret over synthetic-only at each of budgets 25, 50, and 100 and has nonpositive median paired improvement across those budgets, stop fusion tuning and retain the negative result.",
+    "target_prior_fit": "leave_one_experiment_out"
+  },
+  "sha256": "817fe0aaaefd7a22e0cbdfd85de7ed91b2cd3f65500f0c9ebdc07effff778767"
+}

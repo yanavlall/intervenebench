@@ -1,0 +1,71 @@
+{
+  "schema_version": "ordinal_blinded_bundle.v1",
+  "task_id": "Blair1131:q3:cells-1-3",
+  "experiment_id": "Blair1131",
+  "access_regime": "DESIGN_ONLY",
+  "population": {
+    "description": "Adults in the United States represented by the AmeriSpeak general-population panel",
+    "roster_id": "aggregate-us-adult-v1"
+  },
+  "arms": [
+    {
+      "arm_id": "stay_out_no_troops",
+      "message_variants": [
+        {
+          "variant_id": "president_name_eric",
+          "weight": 0.5,
+          "message": "A country sends its military to take over a neighboring country. The attacking country is controlled by a male leader. The Republican U.S. President, Eric Smith, says the United States will stay out of the conflict. The attacking country continues to invade. In the end, Eric Smith decides not to send troops, and the attacking country gains 20% of the contested territory."
+        },
+        {
+          "variant_id": "president_name_steven",
+          "weight": 0.5,
+          "message": "A country sends its military to take over a neighboring country. The attacking country is controlled by a male leader. The Republican U.S. President, Steven Smith, says the United States will stay out of the conflict. The attacking country continues to invade. In the end, Steven Smith decides not to send troops, and the attacking country gains 20% of the contested territory."
+        }
+      ]
+    },
+    {
+      "arm_id": "threaten_then_no_troops",
+      "message_variants": [
+        {
+          "variant_id": "president_name_eric",
+          "weight": 0.5,
+          "message": "A country sends its military to take over a neighboring country. The attacking country is controlled by a male leader. The Republican U.S. President, Eric Smith, says that if the attack continues, the United States military will push out the invaders. The attacking country continues to invade. In the end, Eric Smith does not send troops, and the attacking country gains 20% of the contested territory."
+        },
+        {
+          "variant_id": "president_name_steven",
+          "weight": 0.5,
+          "message": "A country sends its military to take over a neighboring country. The attacking country is controlled by a male leader. The Republican U.S. President, Steven Smith, says that if the attack continues, the United States military will push out the invaders. The attacking country continues to invade. In the end, Steven Smith does not send troops, and the attacking country gains 20% of the contested territory."
+        }
+      ]
+    },
+    {
+      "arm_id": "threaten_then_engage",
+      "message_variants": [
+        {
+          "variant_id": "president_name_eric",
+          "weight": 0.5,
+          "message": "A country sends its military to take over a neighboring country. The attacking country is controlled by a male leader. The Republican U.S. President, Eric Smith, says that if the attack continues, the United States military will push out the invaders. The attacking country continues to invade. In the end, Eric Smith orders the military to engage. The attacking country gains 20% of the contested territory, and the U.S. experiences zero casualties."
+        },
+        {
+          "variant_id": "president_name_steven",
+          "weight": 0.5,
+          "message": "A country sends its military to take over a neighboring country. The attacking country is controlled by a male leader. The Republican U.S. President, Steven Smith, says that if the attack continues, the United States military will push out the invaders. The attacking country continues to invade. In the end, Steven Smith orders the military to engage. The attacking country gains 20% of the contested territory, and the U.S. experiences zero casualties."
+        }
+      ]
+    }
+  ],
+  "common_context": "The following scenario describes one approach U.S. leaders could take in a future international crisis. The attacking leader is male and the U.S. president is a male Republican in every retained arm; only the crisis-response strategy changes. The president's first name is an independently randomized nuisance variant that is averaged equally within every arm.",
+  "outcome_question": "To what extent do you disapprove or approve of how the U.S. President handled the situation?",
+  "response_options": [
+    {"value": 1, "label": "Strongly Disapprove", "normalized_utility": 0.0},
+    {"value": 2, "label": "Disapprove", "normalized_utility": 0.16666666666666666},
+    {"value": 3, "label": "Lean Toward Disapproving", "normalized_utility": 0.3333333333333333},
+    {"value": 4, "label": "Neither Approve Nor Disapprove", "normalized_utility": 0.5},
+    {"value": 5, "label": "Lean Toward Approving", "normalized_utility": 0.6666666666666666},
+    {"value": 6, "label": "Approve", "normalized_utility": 0.8333333333333334},
+    {"value": 7, "label": "Strongly Approve", "normalized_utility": 1.0}
+  ],
+  "source_material_sha256": "26c97d60874445b54f054460233c569a8a2bd5b7fa7096aca7a54b19c727036e",
+  "outcome_access": "sealed",
+  "reveal_authorized": false
+}

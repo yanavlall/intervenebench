@@ -1,0 +1,33 @@
+{
+  "schema_version": "lora_development_gate.v1",
+  "status": "not_authorized_not_scientifically_justified",
+  "decision": "do_not_run_before_confirmation",
+  "reasons": [
+    "The current data-use decision permits private local analysis but defers cloud fine-tuning and prohibits participant-level external transmission without separate approval.",
+    "Only nine decision-eligible development experiments are available, three of which require visual stimuli; their aggregate arm effects are insufficient training data for a meaningful 7B/14B LoRA.",
+    "The project plan makes LoRA optional until it serves a specific decision-level hypothesis, and the current prompted suite already has a more urgent prospective confirmation need."
+  ],
+  "prohibited_actions": [
+    "upload participant rows or target covariates to Modal or another managed service",
+    "train on any of the six confirmation experiments",
+    "tune a fine-tune after seeing confirmation outcomes",
+    "describe an aggregate-only toy fine-tune as a behavioral simulator"
+  ],
+  "reopen_only_if": [
+    "a documented data-use decision separately permits the exact training transfer and compute environment",
+    "an experiment-level train/validation split with adequate eligible study support is frozen",
+    "a decision-level hypothesis and target-excluded cross-fitting plan are prespecified",
+    "exact checkpoint, training records, seeds, learning rates, data sizes, cost ceiling, and stopping rules are frozen before execution"
+  ],
+  "confirmation_experiment_ids": [
+    "tcg8p",
+    "pb2rr",
+    "z358z",
+    "ShannonS2",
+    "Blair1131",
+    "KlarS44"
+  ],
+  "fine_tuning_authorized": false,
+  "modal_spend_authorized": false,
+  "confirmation_outcomes_accessed": false
+}

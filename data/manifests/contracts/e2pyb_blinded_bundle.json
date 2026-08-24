@@ -1,0 +1,41 @@
+{
+  "schema_version": "ordinal_png_multimodal_bundle.v1",
+  "task_id": "e2pyb:task-0-racial-disparities-unjust",
+  "experiment_id": "e2pyb",
+  "access_regime": "DESIGN_ONLY",
+  "population": {
+    "description": "Adults in the United States represented by the AmeriSpeak general-population sample",
+    "roster_id": "aggregate-us-adult-v1"
+  },
+  "arms": [
+    {
+      "arm_id": "health_disparities_message",
+      "accessible_text": "The exact fielded infographic says health disparities persist between Black and White Americans, involving greater physical danger or difficulty meeting basic medical needs, and gives unequal access to hospitals, pharmacies, and medical care as an example.",
+      "asset": {"path": "data/derived/stimuli/e2pyb/health_disparities.png", "mime_type": "image/png", "sha256": "915ae6b57de8f1de25bf545abfc8618bf2c08baccbea74f5d76e616b171dab59"}
+    },
+    {
+      "arm_id": "economic_disparities_message",
+      "accessible_text": "The exact fielded infographic says economic disparities persist between Black and White Americans, involving financial insecurity or difficulty meeting economic needs, and gives home ownership, income, and intergenerational assets as examples.",
+      "asset": {"path": "data/derived/stimuli/e2pyb/economic_disparities.png", "mime_type": "image/png", "sha256": "824579567d3a78ed67de6326203245c2c815da51d5a1527e3d8479060911c360"}
+    },
+    {
+      "arm_id": "belonging_disparities_message",
+      "accessible_text": "The exact fielded infographic says social disparities persist between Black and White Americans, involving worse face-to-face treatment or difficulty meeting interpersonal needs, and gives feeling less welcome in shops, restaurants, and public spaces as an example.",
+      "asset": {"path": "data/derived/stimuli/e2pyb/belonging_disparities.png", "mime_type": "image/png", "sha256": "f018646bd4ddad514a2551e34b5d2de006ea40b243f42cd3a48bfa01e7ba7be0"}
+    }
+  ],
+  "common_context": "View exactly one source-fielded infographic about a documented dimension of Black-White disparity before answering the same fixed outcome question.",
+  "outcome_question": "These racial disparities are unjust.",
+  "response_options": [
+    {"value": 1, "label": "Strongly disagree", "normalized_utility": 0.0},
+    {"value": 2, "label": "Disagree", "normalized_utility": 0.16666666666666666},
+    {"value": 3, "label": "Somewhat disagree", "normalized_utility": 0.3333333333333333},
+    {"value": 4, "label": "Neither agree nor disagree", "normalized_utility": 0.5},
+    {"value": 5, "label": "Somewhat agree", "normalized_utility": 0.6666666666666666},
+    {"value": 6, "label": "Agree", "normalized_utility": 0.8333333333333334},
+    {"value": 7, "label": "Strongly agree", "normalized_utility": 1.0}
+  ],
+  "source_material_sha256": "ca26f4b2c7813416f66806f26db5c8ef48f1b37147466604c225e3dbc3567fad",
+  "outcome_access": "sealed",
+  "reveal_authorized": false
+}

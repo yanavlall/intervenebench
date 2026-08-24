@@ -1,0 +1,36 @@
+{
+  "schema_version": "ordinal_blinded_bundle.v1",
+  "task_id": "turagaS11:q6a",
+  "experiment_id": "turagaS11",
+  "access_regime": "DESIGN_ONLY",
+  "population": {
+    "description": "Adults in the United States represented by a probability-based general-population online panel",
+    "roster_id": "aggregate-us-adult-v1"
+  },
+  "arms": [
+    {
+      "arm_id": "control_common_mercury_context",
+      "message": "No additional statistic is shown."
+    },
+    {
+      "arm_id": "state_contamination_statistic",
+      "message": "Scientific data on mercury concentration in water bodies show that currently 40% of lake area in the country has mercury fish tissue concentrations exceeding environmental guidelines."
+    },
+    {
+      "arm_id": "household_responsibility_statistic",
+      "message": "Scientific studies indicate that approximately 30% of all mercury released to the environment in the U.S. can be attributed to households such as yours."
+    }
+  ],
+  "common_context": "Mercury is a toxic substance which, when released into the environment, can accumulate in fish. Certain population groups who rely on fish for a large part of their diet, such as subsistence fishers, are at increased risk of health impacts including heart disease. Mercury can also impact future generations by lowering the IQ of children exposed to mercury as a developing fetus. In addition, mercury contamination has adverse impacts on the wildlife populations of lake and estuarine ecosystems.",
+  "outcome_question": "Given this information and the information in the common context, how unwilling or willing are you to write a letter to your local newspaper supporting stronger mercury control policies?",
+  "response_options": [
+    {"value": 1, "label": "Very Unwilling", "normalized_utility": 0.0},
+    {"value": 2, "label": "Somewhat Unwilling", "normalized_utility": 0.25},
+    {"value": 3, "label": "Not Sure", "normalized_utility": 0.5},
+    {"value": 4, "label": "Somewhat Willing", "normalized_utility": 0.75},
+    {"value": 5, "label": "Very Willing", "normalized_utility": 1.0}
+  ],
+  "source_material_sha256": "8259b893cb29223cdaee42ee2c31f8abe340fc657d209cad228a44b0f7e81fa9",
+  "outcome_access": "sealed",
+  "reveal_authorized": false
+}

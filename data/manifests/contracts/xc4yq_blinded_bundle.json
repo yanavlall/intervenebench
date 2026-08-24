@@ -1,0 +1,39 @@
+{
+  "schema_version": "ordinal_blinded_bundle.v1",
+  "task_id": "xc4yq:task-7",
+  "experiment_id": "xc4yq",
+  "access_regime": "DESIGN_ONLY",
+  "population": {
+    "description": "Adults in the United States represented by a probability-based general-population online panel",
+    "roster_id": "aggregate-us-adult-v1"
+  },
+  "arms": [
+    {
+      "arm_id": "arm_0_plain_low_fear",
+      "message": "The Department of Homeland Security is protecting you against terrorist activities in a number of ways and there are additional precautions that you can take to protect yourself and your family. If you are flying, be prepared for extra security measures and screening at the airport. At home, prepare your family for a possible attack by making a home kit that contains items you would need if basic services are interrupted (e.g., water, food, batteries, flashlight, battery-based radio, extra eye-glasses and medications). In addition, you and your family should have a plan for emergencies. For example, make sure every member of your family has a cell-phone or phone card and knows the number to call in an emergency. Take the time to sit down with family members to plan where you will go from work or school if an emergency occurs. Whether on a plane flight, in your neighborhood, or at work, all Americans should continue to be vigilant, take notice of their surroundings, and report suspicious items or activities to local authorities immediately. If you see something, say something."
+    },
+    {
+      "arm_id": "arm_1_high_fear",
+      "message": "Terrorists have many ways to attack the U.S. mainland. Snipers can target crowded areas to incite fear and suicide bombers can disrupt transportation and communication. The destruction of power grids and water sources can have widespread effects. If a large scale attack occurs, it may be a while before basic services are restored. You should take precautions now. If you are flying, be prepared for extra security measures and screening at the airport. At home, prepare your family for a possible attack by making a home kit that contains items you would need if basic services are interrupted (e.g., water, food, batteries, flashlight, battery-based radio, extra eye-glasses and medications). In addition, you and your family should have a plan for emergencies. For example, make sure every member of your family has a cell-phone or phone card and knows the number to call in an emergency. Take the time to sit down with family members to plan where you will go from work or school if an emergency occurs. Whether on a plane flight, in your neighborhood, or at work, all Americans should continue to be vigilant, take notice of their surroundings, and report suspicious items or activities to local authorities immediately. If you see something, say something."
+    },
+    {
+      "arm_id": "arm_2_positive_protection",
+      "message": "The Department of Homeland Security is protecting you against terrorist activities in a number of ways and there are additional precautions that you can take to protect yourself and your family. If you are flying, be prepared for extra security measures and screening at the airport. More experienced travelers appreciate the security of knowing that this extra level of security is being used. At home, you can protect your family in several ways. John Mercer, for example, has followed the Homeland Security suggestions for how to be prepared by making a home kit that contains items his family would need if basic services are interrupted (e.g., water, food, batteries, flashlight, battery-based radio, extra eye-glasses and medications). In addition, he made sure that his family had a plan for emergencies, for example, each member has a cell-phone or phone card and knows the number to call in an emergency. The family took the time to decide how each family member would get home from work or school if an emergency occurs. According to John, it was the right thing to do for his family and easy to accomplish. Whether on a plane flight, in your neighborhood, or at work, all Americans should continue to be vigilant, take notice of their surroundings, and report suspicious items or activities to local authorities immediately. If you see something, say something."
+    }
+  ],
+  "common_context": "Please read the following message and then indicate how you would respond if you received this notice.",
+  "outcome_question": "How likely is it that you will put together a home emergency kit with food, water, and other items?",
+  "response_options": [
+    {"value": 1, "label": "Very unlikely", "normalized_utility": 0.0},
+    {"value": 2, "label": "2", "normalized_utility": 0.14285714285714285},
+    {"value": 3, "label": "3", "normalized_utility": 0.2857142857142857},
+    {"value": 4, "label": "4", "normalized_utility": 0.42857142857142855},
+    {"value": 5, "label": "5", "normalized_utility": 0.5714285714285714},
+    {"value": 6, "label": "6", "normalized_utility": 0.7142857142857143},
+    {"value": 7, "label": "Very likely", "normalized_utility": 0.8571428571428571},
+    {"value": 8, "label": "I already do", "normalized_utility": 1.0}
+  ],
+  "source_material_sha256": "b7467979e24199e1d9e19373c6a8d1aae981e524ab62ea767a2b07f72ae8f5d2",
+  "outcome_access": "sealed",
+  "reveal_authorized": false
+}

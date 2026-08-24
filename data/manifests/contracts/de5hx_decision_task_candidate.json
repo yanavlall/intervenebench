@@ -1,0 +1,105 @@
+{
+  "schema_version": "ordinal_decision_task_candidate.v1",
+  "task_id": "de5hx:task-0",
+  "experiment_id": "de5hx",
+  "source_id": "TESS2-054-Kam-Simas",
+  "source_question_id": "Q8",
+  "socsci210_task_num": 0,
+  "canonical_split_status": "unassigned",
+  "reveal_authorized": false,
+  "outcome_access": "sealed",
+  "paradigm_group": "electoral_risk_framing",
+  "access_regime": "DESIGN_ONLY",
+  "design_type": "between_subject",
+  "randomization_unit": "participant",
+  "arms": [
+    {
+      "arm_id": "neutral_economy_article",
+      "condition_num": 0,
+      "source_assignment": "XTESS054=3",
+      "description": "Show the balanced control article about the local economy and the candidates' experience",
+      "deployable": true
+    },
+    {
+      "arm_id": "inexperience_risk_article",
+      "condition_num": 1,
+      "source_assignment": "XTESS054=1",
+      "description": "Show the article framing challenger Jack Tucker's inexperience and departure from the status quo as risky",
+      "deployable": true
+    },
+    {
+      "arm_id": "new_ideas_article",
+      "condition_num": 2,
+      "source_assignment": "XTESS054=2",
+      "description": "Show the article framing challenger Jack Tucker's outsider status and departure from the status quo as beneficial",
+      "deployable": true
+    }
+  ],
+  "control_arm_id": "neutral_economy_article",
+  "primary_outcome_id": "jack_tucker_vote_preference",
+  "outcome_question": "If you were a resident of this city, which candidate would you vote for?",
+  "outcome_family": "ordinal",
+  "response_options": [
+    {"raw_value": 1, "label": "Definitely vote for Jack Tucker", "normalized_utility": 1.0},
+    {"raw_value": 2, "label": "Probably vote for Jack Tucker", "normalized_utility": 0.6666666666666666},
+    {"raw_value": 3, "label": "Probably vote for Gary Rogers", "normalized_utility": 0.3333333333333333},
+    {"raw_value": 4, "label": "Definitely vote for Gary Rogers", "normalized_utility": 0.0}
+  ],
+  "scale_lower": 1,
+  "scale_upper": 4,
+  "direction": "lower_is_better",
+  "estimand": "unadjusted_intention_to_treat_mean_normalized_utility_marginal_over_programmed_response_order",
+  "randomized_nuisance_contract": "The fielded survey randomized whether the Jack or Gary response labels appeared first. The primary human ITT marginalizes over achieved order; the simulator averages the two programmed display orders equally within every article arm.",
+  "decision_maker": "a campaign communications adviser choosing which of the three fielded news-style articles to place for the Jack Tucker campaign",
+  "beneficiary": "the Jack Tucker campaign's narrow objective of increasing vote preference for the source-defined status-quo-departing challenger",
+  "utility_rationale": "Lower raw Q8 values mean stronger preference for Jack Tucker, so primary normalized utility is (4-Y)/3. Jack is frozen as the primary beneficiary because the experiment consistently defines him as the outsider challenger whose departure from the status quo is framed. This is a campaign-persuasion objective, not voter welfare or election quality.",
+  "prespecified_utility_sensitivity": {
+    "beneficiary": "Gary Rogers campaign",
+    "normalized_utility": "(Y-1)/3",
+    "reporting_rule": "Recompute every human and synthetic arm mean, recommendation, correctness label, and regret under the exact opposite Gary-campaign utility. Never choose between beneficiaries using observed outcomes."
+  },
+  "truthfulness_scope": "The contract reconstructs fictitious fielded campaign articles and their stated claims exactly as survey stimuli. It does not authorize fabricated news in real elections or claim that either framing is normatively desirable.",
+  "target_population": "unweighted released SocSci210 analytic sample corresponding to the Knowledge Networks general-population experiment",
+  "weighting_rule": "unweighted_released_analytic_sample",
+  "missingness_rule": "complete case for SocSci210 task 0; accept only source Q8 values 1 through 4",
+  "source_variable_mapping": {
+    "socsci210_assignment_variable": "condition_num",
+    "socsci210_outcome_variable": "response",
+    "socsci210_task_num": 0,
+    "condition_to_source_assignment": {
+      "0": "XTESS054=3",
+      "1": "XTESS054=1",
+      "2": "XTESS054=2"
+    },
+    "source_assignment_variable": "xtess054",
+    "source_outcome_variable": "Q8",
+    "source_response_order_variables": ["DOVQ81", "DOVQ82"],
+    "valid_outcome_values": [1, 2, 3, 4],
+    "source_missing_outcome_codes": [-1]
+  },
+  "primary_estimator": "For each SocSci210 condition, compute the unweighted complete-case mean of primary normalized Q8 utility; effects subtract the neutral-economy control mean.",
+  "sensitivity_estimators": [
+    "the same unweighted ITT estimator under the prespecified Gary Rogers campaign utility",
+    "source-data-only response-order standardization at 0.5 Jack-first and 0.5 Gary-first if the source experiment is used in a separately authorized robustness analysis"
+  ],
+  "bootstrap_procedure": "Resample participants with replacement within SocSci210 condition and recompute arm means, effects, winner, and regret under both frozen beneficiary utilities; use the canonical benchmark bootstrap seed after split freeze.",
+  "tie_rule": "lexicographic_arm_id",
+  "practical_regret_tolerance": 0.05,
+  "released_rows_per_arm_before_outcome_missingness": {
+    "neutral_economy_article": 322,
+    "inexperience_risk_article": 323,
+    "new_ideas_article": 341
+  },
+  "source_rows_per_arm_before_outcome_missingness": {
+    "neutral_economy_article": 353,
+    "inexperience_risk_article": 332,
+    "new_ideas_article": 334
+  },
+  "source_data_mapping_status": "complete_outcome_blind_schema_and_design_mapping",
+  "source_hashes": {
+    "final_questionnaire_sha256": "3d59c81363d588e2744dedefd20e8dbb56df0525502dd96a3894786acabe53c8",
+    "official_mixed_archive_sha256": "a8ed87a14b291cd5638feabecffb70e9efd340d2c8201bc9adfa98a061880bed",
+    "source_participant_file_sha256": "41f630f1170f5e6c308ed55a1f707fac28ecaed1a8ef64fbf11dc0be5990a2c9"
+  },
+  "reconstruction_note": "The final questionnaire was read completely and visually checked across all 13 rendered pages. SocSci210 was queried only for study ID, task number, condition, sample ID, and stimulus text to verify the released condition mapping and pre-outcome support. The source SAV was read first with zero rows, then only xtess054, DOVQ81, and DOVQ82 were read to verify assignment and response-order support. No Q8 value, SocSci210 response, outcome missingness count, arm mean, effect, significance result, or winner was opened. The temporary source participant file was deleted after mapping."
+}

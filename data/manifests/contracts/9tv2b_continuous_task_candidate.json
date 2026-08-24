@@ -1,0 +1,118 @@
+{
+  "schema_version": "bounded_numeric_decision_task_candidate.v1",
+  "task_id": "9tv2b:task-0-republican-official-likability",
+  "experiment_id": "9tv2b",
+  "source_id": "TESS-082-Utych-S77",
+  "source_question_id": "U1",
+  "socsci210_task_num": 0,
+  "canonical_split_status": "unassigned",
+  "reveal_authorized": false,
+  "outcome_access": "sealed",
+  "paradigm_group": "partisan_outgroup_labeling",
+  "access_regime": "DESIGN_ONLY",
+  "design_type": "between_subject_two_arm_text_wording_policy",
+  "randomization_unit": "participant",
+  "arms": [
+    {
+      "arm_id": "democratic_party_wording",
+      "source_assignment": "P_DEM=2",
+      "condition_num": 0,
+      "description": "Show the exact fielded quote using Democratic Party, Democratic politicians, Democratic policies, and Democratic run cities",
+      "deployable": true
+    },
+    {
+      "arm_id": "democrat_party_wording",
+      "source_assignment": "P_DEM=1",
+      "condition_num": 1,
+      "description": "Show the otherwise identical exact fielded quote using Democrat Party, Democrat politicians, Democrat policies, and Democrat run cities",
+      "deployable": true
+    }
+  ],
+  "control_arm_id": "democratic_party_wording",
+  "reference_arm_rationale": "Democratic Party is the conventional grammatical label and source P_DEM=2. The two screens are otherwise identical, so both labels are deployable actions under the same fixed partisan message world.",
+  "primary_outcome_id": "perceived_likability_of_republican_official",
+  "outcome_question": "On a scale of 0 to 100 where 0 is strongly disagree, 50 is neutral, and 100 is strongly agree, please rate the following statement: I think this Republican official is likable.",
+  "outcome_family": "continuous",
+  "outcome_unit": "likability_rating_points",
+  "direction": "higher_is_better",
+  "utility_transform": "U=y/100",
+  "valid_response": {
+    "lower_bound": 0,
+    "upper_bound": 100,
+    "integer_only": true,
+    "missing_codes": [],
+    "missing_labels": ["source or SocSci null only"]
+  },
+  "estimand": "unweighted_socsci210_analytic_sample_intention_to_treat_mean_normalized_utility",
+  "decision_maker": "a Republican political communicator choosing between the two exact source-fielded party labels in an otherwise fixed quote",
+  "beneficiary": "the quoted official, under the narrow operational objective of being perceived as likable by message recipients",
+  "utility_rationale": "Higher normalized utility means greater perceived likability of the Republican official. This is a communication objective, not a claim that either label improves voter welfare, factual accuracy, democratic discourse, or social value.",
+  "truthfulness_scope": "The benchmark preserves the exact historical partisan quote as fielded and varies only Democrat versus Democratic. It does not endorse the quote's factual claims or authorize deployment as current political information.",
+  "target_population": "unweighted released SocSci210 analytic sample corresponding to the source AmeriSpeak probability-based U.S. general-population panel age 18+",
+  "weighting_rule": "Primary estimator uses the unweighted released SocSci210 analytic sample. A source WEIGHT-weighted Hajek mean is a prespecified sensitivity after a separately authorized reveal.",
+  "missingness_rule": "Accept only integer U1 responses from 0 through 100 inclusive and exclude nulls. Values 77, 98, and 99 are inside the substantive scale and must never be treated as generic missing codes.",
+  "primary_estimator": "Map each valid response y to U=y/100, compute the unweighted mean normalized utility within each SocSci210 condition, and select the arm with maximum mean utility.",
+  "sensitivity_estimators": [
+    "source-data WEIGHT-weighted Hajek mean normalized utility by P_DEM arm",
+    "unweighted source-data mean normalized utility by P_DEM arm",
+    "median response by arm as a prespecified robustness location"
+  ],
+  "estimator": {
+    "location": "mean",
+    "robustness_locations": ["median"],
+    "contrast": "arm_mean_normalized_utility_minus_control_mean_normalized_utility",
+    "uncertainty": "participant_within_arm_nonparametric_bootstrap",
+    "practical_regret_tolerance": 0.01,
+    "practical_regret_sensitivity": [0.0, 0.0025, 0.005, 0.01, 0.025, 0.05],
+    "regret_unit": "normalized_utility",
+    "normalized_for_pooled_regret": true
+  },
+  "bootstrap_procedure": "Resample participants with replacement within randomized arms and recompute normalized arm means, treatment effect, winner, and regret using the benchmark seed frozen after panel-role assignment.",
+  "tie_rule": "lexicographic_arm_id",
+  "released_rows_per_arm_before_outcome_missingness": {
+    "democratic_party_wording": 943,
+    "democrat_party_wording": 966
+  },
+  "source_assignment_support_before_outcome_missingness": {
+    "democratic_party_wording": 994,
+    "democrat_party_wording": 1015
+  },
+  "source_variable_mapping": {
+    "assignment_variable": "P_DEM",
+    "outcome_variable": "U1",
+    "weight_variable": "WEIGHT",
+    "assignment_to_arm": {
+      "1": "democrat_party_wording",
+      "2": "democratic_party_wording"
+    },
+    "utility_transform": "U1/100",
+    "valid_outcome_range": [0, 100],
+    "missing_outcome_rule": "null_only"
+  },
+  "source_data_locator": {
+    "container_path": "data/raw/sources/9tv2b/UtychS77.zip",
+    "container_sha256": "a8091323e883623b61f5d4fb6708b9310d31a12bb51e4fff02a7afd222dce218",
+    "dta_member": "TESS082_UTYCH.dta",
+    "dta_member_sha256": "24bcece26c5bc999b0a2b17570b9c12eabde3dd5937b7a2ffd8e98d045997284",
+    "authorized_sensitivity_projection": ["P_DEM", "WEIGHT", "U1"]
+  },
+  "source_data_mapping_status": "complete_outcome_blind_source_design_and_bounded_numeric_mapping",
+  "scoring_binding": {
+    "recommendation_schema": "bounded_numeric_recommendation.v1",
+    "reveal_authorization_schema": "bounded_numeric_reveal_authorization.v1",
+    "score_schema": "bounded_numeric_score.v1",
+    "required_hashes": ["split_manifest_sha256", "decision_task_sha256", "blinded_bundle_sha256", "simulator_outputs_sha256"],
+    "scoring_adapter": "intervenebench.bounded_numeric",
+    "real_outcome_access_before_frozen_recommendation": false,
+    "explicit_reveal_authorization_after_frozen_recommendation": true,
+    "source_sensitivity_requires_separate_projection_authorization": true
+  },
+  "checkpoint_compatibility": "The released Socrates participant mapping lists 9tv2b as seen. Any released Socrates checkpoint evaluation must be labeled training-exposed, never experiment-held-out.",
+  "source_hashes": {
+    "final_programmed_questionnaire_sha256": "fd4aa6c4b0e7cbf18d8805eebf7fb388f2ab4da3358d91ecd2d19cee03f77519",
+    "final_simple_questionnaire_sha256": "adcaad31485a9ee7b173f1e74a37bea456bde45ab32f92f5a13450dafdc56969",
+    "official_mixed_archive_sha256": "a8091323e883623b61f5d4fb6708b9310d31a12bb51e4fff02a7afd222dce218",
+    "source_dta_sha256": "24bcece26c5bc999b0a2b17570b9c12eabde3dd5937b7a2ffd8e98d045997284"
+  },
+  "reconstruction_note": "The complete final simple and programmed questionnaires were inspected outcome-blind. Source P_DEM=1 maps to SocSci condition 1 and the Democrat wording; source P_DEM=2 maps to SocSci condition 0 and the Democratic wording. U1 immediately follows the randomized quote and is bounded 0-100. Only structural SocSci fields established task-0 support. No SocSci response, reasoning, source U1 value, arm aggregate, treatment effect, winner, or publication result was opened."
+}

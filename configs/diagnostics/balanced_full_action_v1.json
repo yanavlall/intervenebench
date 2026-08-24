@@ -1,0 +1,84 @@
+{
+  "aggregation_rules": {
+    "experiment_is_primary_unit": true,
+    "generic_models_reported_separately_from_specialist": true,
+    "model_rows_do_not_inflate_experiment_n": true,
+    "socrates_known_exposure_labels_preserved": true,
+    "ties_follow_source_arm_order": true
+  },
+  "authority": {
+    "human_outcome_access_authorized": false,
+    "next_stage_authorized": false,
+    "outcome_reveal_authorized": false,
+    "paid_inference_authorized": false,
+    "simulator_selection_authorized": false,
+    "trust_model_fit_authorized": false,
+    "trust_threshold_selection_authorized": false
+  },
+  "feature_definitions": {
+    "cross_model_choice_agreement": "maximum and pairwise agreement among complete arm choices",
+    "cross_model_utility_dispersion": "population SD across model expected utilities, computed per arm",
+    "order_choice_stability": "whether complete source-order and reverse-order arm choices agree",
+    "order_total_variation": "TV between source and inverse-mapped reverse response distributions",
+    "response_entropy": "Shannon entropy of balanced response distribution divided by log option count",
+    "winner_margin": "largest minus second-largest balanced expected normalized arm utility"
+  },
+  "feature_directions": {
+    "cross_model_choice_agreement": "larger_hypothesized_more_reliable",
+    "cross_model_utility_dispersion": "smaller_hypothesized_more_reliable",
+    "order_choice_stability": "stable_hypothesized_more_reliable",
+    "order_total_variation": "smaller_hypothesized_more_reliable",
+    "response_entropy": "smaller_hypothesized_more_reliable",
+    "winner_margin": "larger_hypothesized_more_reliable"
+  },
+  "freeze_date": "2026-08-13",
+  "freeze_id": "intervenebench-full-action-diagnostics-20260813-v1",
+  "implementation_hashes": [
+    {
+      "file_sha256": "4d0beefeaf44668f0be8fca5fafa7ca3d60356bd9dd49a139bb0a0dd1ba3ec0c",
+      "path": "src/intervenebench/full_action_diagnostics.py"
+    },
+    {
+      "file_sha256": "dcd001cb95f45a20550a78c94409bbe4499b0edc763a580347aa3bf3e9afa66d",
+      "path": "scripts/build_full_action_diagnostics_freeze.py"
+    },
+    {
+      "file_sha256": "ccb53238d9d2c8ce5be42fa3b5f28e4f0c2140f71cc811bffe83e409e82a76f1",
+      "path": "scripts/build_full_action_diagnostics.py"
+    }
+  ],
+  "input_artifacts": [
+    {
+      "file_sha256": "e98af2b4283423253a4703662c167908cb87b2bfe5d9b334b18475f9e13dbaa9",
+      "json_payload_sha256": "8300df7cd2a821631cdbbcc672fb2e474329bbdb7e929d94a470ed9f546d14ae",
+      "path": "data/manifests/simulators/balanced_full_action_plan_v1.json"
+    },
+    {
+      "file_sha256": "fdbbe56e07df285a84eafaf1b3f5b600b7024c9f17c9dd099a6b115b808b5391",
+      "json_payload_sha256": "b4f1481cb4d76af4e31dbeb04e8414aad6cd27b700a1e812c6bafa20709aa927",
+      "path": "configs/simulators/balanced_full_action_v1.json"
+    },
+    {
+      "envelope_payload_sha256": "60d72ccdf9e5715d9f510999b705e53cf60f9eda24c5880f9996c0b13e8e8186",
+      "file_sha256": "3590ac06888891b6244bbed19a164cb3a356574357fe0b425551f4a749cac6b3",
+      "path": "artifacts/balanced_full_action/balanced_full_action_20260813_v1/final_manifest.json"
+    },
+    {
+      "envelope_payload_sha256": "6fe6f5d00d1197e8fdbc2d512e184a35ec0de6b2b39049eeb7b118480125e00d",
+      "file_sha256": "87f7d843022a182169c45de95cf10b41e3fd76c1c4a1fc0a8cd2a3af1f37483e",
+      "path": "artifacts/balanced_full_action/balanced_full_action_20260813_v1/full_action_recommendations.json"
+    }
+  ],
+  "purpose": "Construct candidate reliability features on the previously revealed development discovery set without reading outcomes during this build.",
+  "schema_version": "balanced_full_action_diagnostics_freeze.v1",
+  "selection_boundary": {
+    "human_reliability_labels_available_in_repository": true,
+    "human_reliability_labels_used_to_construct_features": false,
+    "primary_simulator_selected": false,
+    "prospective_validation_eligible": false,
+    "target_experiment_outcomes_previously_revealed": true,
+    "trust_score_selected": false,
+    "trust_threshold_selected": false
+  },
+  "status": "frozen_outcome_free_feature_definitions"
+}

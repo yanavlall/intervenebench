@@ -1,0 +1,27 @@
+{
+  "schema_version": "blinded_bundle.v1",
+  "task_id": "jf46x:task-0",
+  "experiment_id": "jf46x",
+  "access_regime": "DESIGN_ONLY",
+  "population": {
+    "description": "Adults in the United States represented by a probability-based general-population online panel",
+    "roster_id": "aggregate-us-adult-v1"
+  },
+  "arms": [
+    {
+      "arm_id": "arm_0_shared_values",
+      "message": "Several cases of smallpox were recently confirmed in your community. As one of several government entities responsible for detecting and managing a bioterrorist attack, the Department of Homeland Security (DHS) takes this responsibility very seriously and acts carefully and compassionately to protect the public in the event of a laboratory confirmed case of smallpox. Officials are investigating these cases as an act of terrorism and health officials are dedicated to quickly finding, vaccinating, and treating people who may have been exposed to the smallpox virus. The Department of Homeland Security is committed to an open and honest process of decision making that guarantees timely, consistent, and accurate information during a biological terrorist attack. The smallpox vaccine is the best way to defend yourself if you are exposed to the smallpox virus. Vaccination within 3 days of exposure will prevent or significantly lessen the severity of smallpox symptoms in the vast majority of people. If you had a smallpox vaccine as a child it will not protect you now, as the vaccine only provides high protection for about 5 years. Anyone directly exposed to smallpox, regardless of health status, will be offered the smallpox vaccine because the risks associated with smallpox disease are far greater than those posed by the vaccine. The Department of Homeland Security is collaborating with the County Health Department to assign local health workers to your community who are responsible for getting accurate information out to your neighborhood. These local health workers are recommending vaccinations as the best way to care for you and your neighbors."
+    },
+    {
+      "arm_id": "arm_1_past_performance",
+      "message": "Several cases of smallpox were recently confirmed in your community. Officials are investigating these cases as an act of terrorism and health officials are using their expertise to quickly find, vaccinate, and treat people who may have been exposed to the smallpox virus. Finding people who have been exposed, vaccinating, and treating them and their contacts is a proven method for stopping the spread of smallpox. As one of several government entities responsible for detecting and managing a bioterrorist attack, the Department of Homeland Security's (DHS) response to the current smallpox outbreak builds on concepts and approaches that were successfully employed 30 to 40 years ago to control smallpox outbreaks. These overall concepts for outbreak containment contributed greatly to the eventual global eradication of smallpox. In addition, lessons learned from recent public health crises, such as the emergence of SARS in 2003 have been incorporated into the response to the current smallpox outbreak. Over time, the Department of Homeland Security has learned that the smallpox vaccine is the best protection you can get if you are exposed to the smallpox virus. Vaccination within 3 days of exposure will prevent or significantly lessen the severity of smallpox symptoms in the vast majority of people. If you had a smallpox vaccine as a child it will not protect you now, as the vaccine only provides high protection for about 5 years. Anyone directly exposed to smallpox, regardless of health status, will be offered the smallpox vaccine because the risks associated with smallpox disease are far greater than those posed by the vaccine. Based on past experiences with disease outbreaks, the Department of Homeland Security is collaborating with the County Health Department to assign local health workers to your community to direct the response to this threat in your neighborhood. These local health workers are recommending vaccinations as a proven method to protect you and your neighbors against smallpox."
+    }
+  ],
+  "common_context": "Thanks to the success of vaccination, the last natural outbreak of smallpox in the U.S. occurred in 1949. In 1980, smallpox was said to be wiped out worldwide, and no cases of naturally occurring smallpox have happened since. Today, the smallpox virus is kept in two approved labs in the U.S. and Russia. However, credible concern exists that the virus was made into a weapon by some countries and that terrorists may have obtained it. A single case of smallpox is likely to represent a bioterrorism release and will require an immediate and coordinated public health, medical, and law enforcement response to control the outbreak and to protect the public from any additional release. The information below describes a fictional smallpox outbreak designed to mimic the events and public health decisions that might occur during an actual bioterrorist attack scenario.",
+  "outcome_question": "If you had to make a decision now, would you get the recommended smallpox vaccine?",
+  "response_options": [
+    {"value": 1, "label": "Yes", "normalized_utility": 1.0},
+    {"value": 2, "label": "No", "normalized_utility": 0.0}
+  ],
+  "source_material_sha256": "40a96a1acbcb8a6197e07b979b7c6729b067ea90207674fad1daa5d71691c502"
+}

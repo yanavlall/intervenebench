@@ -1,0 +1,31 @@
+{
+  "schema_version": "bounded_numeric_blinded_bundle.v1",
+  "task_id": "9tv2b:task-0-republican-official-likability",
+  "experiment_id": "9tv2b",
+  "access_regime": "DESIGN_ONLY",
+  "population": {
+    "description": "Adults age 18+ in the United States represented by the AmeriSpeak probability-based general-population panel",
+    "roster_id": "aggregate-us-adult-v1"
+  },
+  "arms": [
+    {
+      "arm_id": "democratic_party_wording",
+      "message": "DEMOCRATIC.\n\nImagine you have read the following quote from a Republican official:\n\nThe Democratic Party is, quite frankly, one of the biggest threats to democracy today. Look at all of these Democratic politicians – they want to pack the courts, add states… it’s ridiculous! Democratic policies are going to be rammed through over the next two years. Pretty soon, the rest of the country is going to look as terrible as Democratic run cities. Once people see what the Democratic Party does, we will be back in power soon."
+    },
+    {
+      "arm_id": "democrat_party_wording",
+      "message": "DEMOCRAT.\n\nImagine you have read the following quote from a Republican official:\n\nThe Democrat Party is, quite frankly, one of the biggest threats to democracy today. Look at all of these Democrat politicians – they want to pack the courts, add states… it’s ridiculous! Democrat policies are going to be rammed through over the next two years. Pretty soon, the rest of the country is going to look as terrible as Democrat run cities. Once people see what the Democrat Party does, we will be back in power soon."
+    }
+  ],
+  "common_context": "The respondent is shown exactly one of the two source-fielded quote screens before answering the same rating item.",
+  "outcome_question": "On a scale of 0 to 100 where 0 is strongly disagree, 50 is neutral, and 100 is strongly agree, please rate the following statement: I think this Republican official is likable.",
+  "response_contract": {
+    "type": "integer",
+    "unit": "likability_rating_points",
+    "minimum": 0,
+    "maximum": 100
+  },
+  "source_material_sha256": "adcaad31485a9ee7b173f1e74a37bea456bde45ab32f92f5a13450dafdc56969",
+  "outcome_access": "sealed",
+  "reveal_authorized": false
+}

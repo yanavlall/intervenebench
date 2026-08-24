@@ -1,0 +1,56 @@
+{
+  "canonical_split_authorized": false,
+  "canonical_split_fractions": {
+    "test": 0.2,
+    "train": 0.65,
+    "validation": 0.15
+  },
+  "exploratory_claim_gate": {
+    "checks": {
+      "all_fielding_clusters_final": false,
+      "independent_experiments": false,
+      "paradigm_groups": false
+    },
+    "minimum_independent_experiments": 60,
+    "minimum_paradigm_groups": 20,
+    "passed": false
+  },
+  "fielding_cluster_sizes": {
+    "known_fielding:tess3_173_175_176": 1,
+    "known_shared:tess_8041_040_043": 1,
+    "provisional:external:Blair1131": 1,
+    "provisional:external:ShannonS2": 1,
+    "provisional:socsci210:pb2rr": 1,
+    "provisional:socsci210:tcg8p": 1
+  },
+  "forbidden_shortcut": "Do not turn the current runnable set into a nominal canonical split. More arms, prompts, personas, simulators, seeds, outcomes, or tasks from one experiment do not increase the independent experiment count.",
+  "full_trust_claim_gate": {
+    "checks": {
+      "all_fielding_clusters_final": false,
+      "independent_experiments": false,
+      "paradigm_groups": false,
+      "projected_test_experiments": false
+    },
+    "minimum_independent_experiments": 100,
+    "minimum_paradigm_groups": 25,
+    "minimum_test_experiments": 20,
+    "passed": false
+  },
+  "independent_fielding_count": 6,
+  "outcome_access": "sealed",
+  "paradigm_group_count": 6,
+  "projected_floor_test_experiment_count": 1,
+  "provisional_fielding_clusters_remain": true,
+  "reveal_authorized": false,
+  "runnable_candidate_ids": [
+    "socsci210:tcg8p",
+    "socsci210:pb2rr",
+    "socsci210:z358z",
+    "external_archive_v1:ShannonS2",
+    "external_archive_v1:Blair1131",
+    "external_archive_v1:KlarS44"
+  ],
+  "runnable_sealed_task_count": 6,
+  "schema_version": "canonical_split_preflight.v1",
+  "status": "blocked_insufficient_independent_tasks"
+}

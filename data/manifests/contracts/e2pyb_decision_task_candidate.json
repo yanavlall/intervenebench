@@ -1,0 +1,101 @@
+{
+  "schema_version": "ordinal_png_multimodal_decision_task_candidate.v1",
+  "task_id": "e2pyb:task-0-racial-disparities-unjust",
+  "experiment_id": "e2pyb",
+  "source_id": "TESS-M10-Brown",
+  "source_question_id": "BROWN1",
+  "socsci210_task_num": 0,
+  "canonical_split_status": "unassigned",
+  "reveal_authorized": false,
+  "outcome_access": "sealed",
+  "paradigm_group": "racial_disparity_dimension_messaging",
+  "access_regime": "DESIGN_ONLY",
+  "design_type": "between_subject_three_arm_visual_message_policy",
+  "randomization_unit": "participant",
+  "arms": [
+    {
+      "arm_id": "health_disparities_message",
+      "source_assignment": "DOV_EXP_BROWN=1",
+      "socsci_condition_num": 0,
+      "description": "Show the exact fielded infographic highlighting Black-White health disparities",
+      "deployable": true
+    },
+    {
+      "arm_id": "economic_disparities_message",
+      "source_assignment": "DOV_EXP_BROWN=2",
+      "socsci_condition_num": 1,
+      "description": "Show the exact fielded infographic highlighting Black-White economic disparities",
+      "deployable": true
+    },
+    {
+      "arm_id": "belonging_disparities_message",
+      "source_assignment": "DOV_EXP_BROWN=3",
+      "socsci_condition_num": 2,
+      "description": "Show the exact fielded infographic highlighting Black-White social and belonging disparities",
+      "deployable": true
+    }
+  ],
+  "control_arm_id": "health_disparities_message",
+  "reference_arm_rationale": "The source randomizes three complete inequality-dimension messages and no no-message control. Source condition 1 is the stable comparison reference; recommendation still maximizes across all three actions.",
+  "primary_outcome_id": "agreement_racial_disparities_are_unjust",
+  "outcome_question": "These racial disparities are unjust.",
+  "outcome_family": "ordinal",
+  "response_options": [
+    {"raw_value": 1, "label": "Strongly disagree", "normalized_utility": 0.0},
+    {"raw_value": 2, "label": "Disagree", "normalized_utility": 0.16666666666666666},
+    {"raw_value": 3, "label": "Somewhat disagree", "normalized_utility": 0.3333333333333333},
+    {"raw_value": 4, "label": "Neither agree nor disagree", "normalized_utility": 0.5},
+    {"raw_value": 5, "label": "Somewhat agree", "normalized_utility": 0.6666666666666666},
+    {"raw_value": 6, "label": "Agree", "normalized_utility": 0.8333333333333334},
+    {"raw_value": 7, "label": "Strongly agree", "normalized_utility": 1.0}
+  ],
+  "scale_lower": 1,
+  "scale_upper": 7,
+  "direction": "higher_is_better",
+  "utility_transform": "U=(y-1)/6",
+  "estimand": "unweighted_socsci210_analytic_sample_intention_to_treat_mean_normalized_utility",
+  "decision_maker": "a public-interest communicator choosing which documented dimension of Black-White inequality to highlight",
+  "beneficiary": "message recipients whose recognition of unjust racial disparity is the declared communication objective",
+  "utility_rationale": "Higher normalized utility means stronger agreement that the source-described racial disparities are unjust. This is a narrow awareness objective, not evidence that one message improves policy, welfare, or behavior.",
+  "truthfulness_scope": "The benchmark faithfully reconstructs the historical messages. Any current deployment requires independent verification of the factual claims in all three infographics.",
+  "target_population": "unweighted released SocSci210 analytic sample from the AmeriSpeak general-population panel",
+  "weighting_rule": "Primary estimator uses the unweighted SocSci210 analytic sample; a source WEIGHT-weighted Hajek mean is a prespecified sensitivity after authorized reveal.",
+  "missingness_rule": "For SocSci210 task 0, accept only integer responses 1 through 7. For source sensitivity, exclude BROWN1 codes 77, 98, and 99 and require a positive finite WEIGHT.",
+  "primary_estimator": "Map each valid response y to U=(y-1)/6, compute unweighted mean utility within each SocSci210 condition, and select the arm with maximum mean utility.",
+  "sensitivity_estimators": [
+    "source-data WEIGHT-weighted Hajek mean normalized utility by DOV_EXP_BROWN",
+    "unweighted source-data mean normalized utility by DOV_EXP_BROWN"
+  ],
+  "bootstrap_procedure": "Resample participants with replacement within randomized arms and recompute arm means, treatment effects, winner, and regret using the canonical benchmark seed after role freeze.",
+  "tie_rule": "lexicographic_arm_id",
+  "practical_regret_tolerance": 0.05,
+  "released_rows_per_arm_before_outcome_missingness": {
+    "health_disparities_message": 540,
+    "economic_disparities_message": 532,
+    "belonging_disparities_message": 528
+  },
+  "source_assignment_support_before_outcome_missingness": {
+    "health_disparities_message": 542,
+    "economic_disparities_message": 535,
+    "belonging_disparities_message": 530
+  },
+  "source_variable_mapping": {
+    "assignment_variable": "DOV_EXP_BROWN",
+    "outcome_variable": "BROWN1",
+    "weight_variable": "WEIGHT",
+    "source_missing_codes": [77, 98, 99]
+  },
+  "source_data_mapping_status": "complete_outcome_blind_schema_design_ordinal_png_multimodal_mapping",
+  "checkpoint_compatibility": "The released Socrates participant_mapping.json lists e2pyb as seen. A released Socrates checkpoint evaluation must be labeled training-exposed, never experiment-held-out.",
+  "source_hashes": {
+    "final_simple_questionnaire_sha256": "33192bc84b1df2e218e56aa3b1af9053d2daf40156659ece9172ebbbf5132bb6",
+    "final_programmed_questionnaire_sha256": "dc743bd9b8c82cea84d2c08a69179689f6101cbcd03725b9f9988bf6d65b0e45",
+    "official_mixed_archive_sha256": "64142696e61babd880fa9114e1b7783551297859dd341bc5f3dbd29675ce867c",
+    "source_dta_sha256": "19a5be4c81805a650a1cbc924b6465af9547ec2b84a80bd6d6f426e26a429b02",
+    "source_bundle_sha256": "ca26f4b2c7813416f66806f26db5c8ef48f1b37147466604c225e3dbc3567fad",
+    "health_infographic_sha256": "915ae6b57de8f1de25bf545abfc8618bf2c08baccbea74f5d76e616b171dab59",
+    "economic_infographic_sha256": "824579567d3a78ed67de6326203245c2c815da51d5a1527e3d8479060911c360",
+    "belonging_infographic_sha256": "f018646bd4ddad514a2551e34b5d2de006ea40b243f42cd3a48bfa01e7ba7be0"
+  },
+  "reconstruction_note": "The complete final simple questionnaire and all three exact fielded infographics were inspected outcome-blind. Source assignment and weight structural fields plus SocSci210 structural fields established mapping and arm support. No SocSci response, reasoning, source BROWN outcome value, aggregate, effect, winner, or publication result was used."
+}

@@ -1,0 +1,97 @@
+{
+  "schema_version": "external_ordinal_decision_task_candidate.v1",
+  "task_id": "Blair1131:q3:cells-1-3",
+  "experiment_id": "Blair1131",
+  "source_id": "8u3vd",
+  "source_question_id": "Q3",
+  "canonical_split_status": "unassigned",
+  "reveal_authorized": false,
+  "outcome_access": "sealed",
+  "paradigm_group": "crisis_response_strategy_and_public_approval",
+  "access_regime": "DESIGN_ONLY",
+  "design_type": "between_subject_factorial_action_subset",
+  "randomization_unit": "participant",
+  "subset_rule": "Hold attacking-leader gender, president party, and president gender fixed; retain the largest complete crisis-action set; break context ties by lexicographically smallest source cell IDs. This selects source cells 1, 2, and 3 before outcomes are opened.",
+  "arms": [
+    {
+      "arm_id": "stay_out_no_troops",
+      "source_assignment": "P_BLAIR=1",
+      "description": "Promise to stay out and do not send troops; the attacker gains 20% of the contested territory",
+      "deployable": true
+    },
+    {
+      "arm_id": "threaten_then_no_troops",
+      "source_assignment": "P_BLAIR=2",
+      "description": "Threaten to push out the invaders and then do not send troops; the attacker gains 20% of the contested territory",
+      "deployable": true
+    },
+    {
+      "arm_id": "threaten_then_engage",
+      "source_assignment": "P_BLAIR=3",
+      "description": "Threaten to push out the invaders and then engage; the attacker gains 20% of the contested territory and the U.S. has zero casualties",
+      "deployable": true
+    }
+  ],
+  "control_arm_id": "stay_out_no_troops",
+  "primary_outcome_id": "approval_of_presidential_crisis_handling",
+  "outcome_question": "To what extent do you disapprove or approve of how the U.S. President handled the situation?",
+  "outcome_family": "ordinal",
+  "response_options": [
+    {"raw_value": 1, "label": "Strongly Disapprove", "normalized_utility": 0.0},
+    {"raw_value": 2, "label": "Disapprove", "normalized_utility": 0.16666666666666666},
+    {"raw_value": 3, "label": "Lean Toward Disapproving", "normalized_utility": 0.3333333333333333},
+    {"raw_value": 4, "label": "Neither Approve Nor Disapprove", "normalized_utility": 0.5},
+    {"raw_value": 5, "label": "Lean Toward Approving", "normalized_utility": 0.6666666666666666},
+    {"raw_value": 6, "label": "Approve", "normalized_utility": 0.8333333333333334},
+    {"raw_value": 7, "label": "Strongly Approve", "normalized_utility": 1.0}
+  ],
+  "scale_lower": 1,
+  "scale_upper": 7,
+  "direction": "higher_is_better",
+  "estimand": "study_weighted_intention_to_treat_hajek_mean_normalized_utility_with_prespecified_block_and_name_sensitivities",
+  "randomized_nuisance_contract": "Marginalize each action arm equally over the programmed Eric and Steven name variants. Do not choose a name using outcomes.",
+  "decision_maker": "a presidential political adviser choosing among complete crisis-response strategies in the fixed hypothetical context",
+  "beneficiary": "the incumbent president's narrow public-approval and reputational objective",
+  "utility_rationale": "Higher normalized utility means greater public approval of the president's handling. This is deliberately not interpreted as national-security, humanitarian, peace, or general public-welfare utility.",
+  "truthfulness_scope": "The source presents a hypothetical future scenario. The contract compares complete strategies and stated consequences exactly as fielded; it does not claim those consequences would follow in a real crisis.",
+  "target_population": "general U.S. adult AmeriSpeak population represented by the study-specific survey weight",
+  "weighting_rule": "primary study-weighted Hajek arm means using WEIGHT; report unweighted arm means and a party-block/name-adjusted estimator as prespecified sensitivities",
+  "missingness_rule": "complete case for Q3 after excluding source codes 77 (Don't know), 98 (Skipped on web), and 99 (Refused)",
+  "source_variable_mapping": {
+    "assignment_variable": "BLAIR",
+    "outcome_variable": "Q3",
+    "weight_variable": "WEIGHT",
+    "president_name_variable": "RND_02",
+    "party_block_variable": "PARTYID7",
+    "valid_outcome_values": [1, 2, 3, 4, 5, 6, 7],
+    "missing_outcome_codes": [77, 98, 99]
+  },
+  "primary_estimator": "Restrict to source cells 1, 2, and 3. For each action, compute the Hajek weighted mean of normalized Q3 utility using positive finite WEIGHT values; effects subtract cell 1.",
+  "sensitivity_estimators": [
+    "unweighted complete-case mean normalized utility by retained randomized cell",
+    "weighted marginal standardization from a prespecified additive model with action indicators, categorical PARTYID7 including a missing category, and RND_02; standardize president name at 0.5/0.5 and party over the weighted retained-sample distribution"
+  ],
+  "bootstrap_procedure": "Resample participants with replacement within retained randomized cell, retain WEIGHT and pretreatment/block fields, recompute primary and sensitivity estimators, winner, and regret; use the canonical benchmark bootstrap seed after split freeze.",
+  "tie_rule": "lexicographic_arm_id",
+  "practical_regret_tolerance": 0.05,
+  "released_rows_per_arm_before_outcome_missingness": {
+    "stay_out_no_troops": 104,
+    "threaten_then_no_troops": 88,
+    "threaten_then_engage": 99
+  },
+  "released_rows_per_name_variant_before_outcome_missingness": {
+    "stay_out_no_troops": {"president_name_eric": 59, "president_name_steven": 45},
+    "threaten_then_no_troops": {"president_name_eric": 40, "president_name_steven": 48},
+    "threaten_then_engage": {"president_name_eric": 54, "president_name_steven": 45}
+  },
+  "support_note": "This is a factorial action-subset extension, not a Phase 1 core task. One retained arm has 88 assigned rows and another has 99, so it does not satisfy the stricter Phase 1 minimum of 100 per arm; uncertainty and support limitations must be reported.",
+  "source_data_mapping_status": "complete_outcome_blind_schema_and_design_mapping",
+  "source_hashes": {
+    "final_questionnaire_sha256": "26c97d60874445b54f054460233c569a8a2bd5b7fa7096aca7a54b19c727036e",
+    "codebook_sha256": "16a98fa574d53350afdc8bfa63252796c456edb45fb3658d3dc5d5fc0118527f",
+    "field_report_sha256": "e3753354201100c95dc5a31a30ee7e8966f219759a19e96e79e8f31fac5bfb9f",
+    "design_description_sha256": "621e423ca3aacc1375aacad31f869552514d5af9ec9a37ab2aacdfe8874190ff",
+    "official_mixed_archive_sha256": "66ec9b7b879a2858f4445cf60eadc1d3b04e32343e8c0c1955dc22d7dc3762c0"
+  },
+  "reconstruction_note": "The final instrument and zero-row codebook verify all 24 cells, the fixed cells 1-3 subset, Eric/Steven randomization, Q3 labels, and missing codes. The participant CSV header was read, then only WEIGHT, BLAIR, RND_02, and PARTYID7 were read to verify pre-outcome support and weight availability. No Q3 value, outcome missingness count, response distribution, arm outcome statistic, effect, significance result, or winner was opened. The temporary participant file was deleted after mapping."
+}

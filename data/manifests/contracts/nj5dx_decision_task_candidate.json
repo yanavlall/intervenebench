@@ -1,0 +1,90 @@
+{
+  "schema_version": "ordinal_png_multimodal_decision_task_candidate.v1",
+  "task_id": "nj5dx:task-0-inequality-unjust",
+  "experiment_id": "nj5dx",
+  "source_id": "TESS-0961-Dietze",
+  "source_question_id": "Q3",
+  "socsci210_task_num": 0,
+  "canonical_split_status": "unassigned",
+  "reveal_authorized": false,
+  "outcome_access": "sealed",
+  "paradigm_group": "inequality_and_power_framing",
+  "access_regime": "DESIGN_ONLY",
+  "design_type": "between_subject_two_arm_visual_message_policy",
+  "randomization_unit": "participant",
+  "arms": [
+    {
+      "arm_id": "lower_class_disadvantage_frame",
+      "source_assignment": "INFO=1",
+      "socsci_condition_num": 0,
+      "description": "Show the exact fielded infographic framing class inequality as disadvantages of being lower-class",
+      "deployable": true
+    },
+    {
+      "arm_id": "upper_class_privilege_frame",
+      "source_assignment": "INFO=2",
+      "socsci_condition_num": 1,
+      "description": "Show the exact fielded infographic framing the reciprocal class inequalities as privileges of being upper-class",
+      "deployable": true
+    }
+  ],
+  "control_arm_id": "lower_class_disadvantage_frame",
+  "reference_arm_rationale": "The source randomizes two complete reciprocal infographic frames and no no-message control. The lower-class-disadvantage frame is the lexicographically stable reference; both source arms remain admissible actions.",
+  "primary_outcome_id": "agreement_us_class_inequality_is_unjust",
+  "outcome_question": "The level of social class inequality in the United States is unjust.",
+  "outcome_family": "ordinal",
+  "response_options": [
+    {"raw_value": 1, "label": "Strongly agree", "normalized_utility": 1.0},
+    {"raw_value": 2, "label": "Agree", "normalized_utility": 0.8333333333333334},
+    {"raw_value": 3, "label": "Somewhat agree", "normalized_utility": 0.6666666666666666},
+    {"raw_value": 4, "label": "Neither agree nor disagree", "normalized_utility": 0.5},
+    {"raw_value": 5, "label": "Somewhat disagree", "normalized_utility": 0.3333333333333333},
+    {"raw_value": 6, "label": "Disagree", "normalized_utility": 0.16666666666666666},
+    {"raw_value": 7, "label": "Strongly disagree", "normalized_utility": 0.0}
+  ],
+  "scale_lower": 1,
+  "scale_upper": 7,
+  "direction": "lower_is_better",
+  "utility_transform": "U=(7-y)/6",
+  "estimand": "unweighted_socsci210_analytic_sample_intention_to_treat_mean_normalized_utility",
+  "decision_maker": "a public-interest communicator choosing which source-faithful class-inequality infographic frame to show",
+  "beneficiary": "message recipients whose recognition of unjust class inequality is the declared communication objective",
+  "utility_rationale": "Higher normalized utility means stronger agreement that the fielded level of U.S. class inequality is unjust. This is a narrow awareness and solidarity objective, not a general welfare or ideological-truth claim.",
+  "truthfulness_scope": "The benchmark reconstructs the exact historical infographics as fielded. Any present-day deployment requires independent verification of every numerical and descriptive claim in both images.",
+  "target_population": "unweighted released SocSci210 analytic sample from the AmeriSpeak general-population panel",
+  "weighting_rule": "Primary estimator uses the unweighted SocSci210 analytic sample; source-data WEIGHT1 Hajek arm means are a prespecified sensitivity after an authorized reveal.",
+  "missingness_rule": "For SocSci210 task 0, accept only integer responses 1 through 7 and exclude all other values. For the source sensitivity, exclude Q3 codes 77, 98, and 99 and require a positive finite WEIGHT1.",
+  "primary_estimator": "Map every valid response y to U=(7-y)/6, compute the unweighted mean utility within each randomized SocSci210 condition, and choose the arm with maximum mean utility.",
+  "sensitivity_estimators": [
+    "source-data WEIGHT1-weighted Hajek mean normalized utility by INFO arm",
+    "unweighted source-data mean normalized utility by INFO arm"
+  ],
+  "bootstrap_procedure": "Resample participants with replacement within randomized arms and recompute arm means, treatment effects, winner, and regret using the canonical benchmark seed after role freeze.",
+  "tie_rule": "lexicographic_arm_id",
+  "practical_regret_tolerance": 0.05,
+  "released_rows_per_arm_before_outcome_missingness": {
+    "lower_class_disadvantage_frame": 907,
+    "upper_class_privilege_frame": 903
+  },
+  "source_assignment_support_before_outcome_missingness": {
+    "lower_class_disadvantage_frame": 911,
+    "upper_class_privilege_frame": 905
+  },
+  "source_variable_mapping": {
+    "assignment_variable": "INFO",
+    "outcome_variable": "Q3",
+    "weight_variable": "WEIGHT1",
+    "source_missing_codes": [77, 98, 99]
+  },
+  "source_data_mapping_status": "complete_outcome_blind_schema_design_ordinal_png_multimodal_mapping",
+  "checkpoint_compatibility": "The released Socrates participant_mapping.json lists nj5dx as seen. A released Socrates checkpoint evaluation on this task must be labeled training-exposed, never experiment-held-out.",
+  "source_hashes": {
+    "final_questionnaire_sha256": "1acf2e509957fb168ae82e602ddbe55cdcc5b218a9832894353a5853e9c6676f",
+    "source_description_container_sha256": "f453446482771cc8ff3f2e84ed8bd2b2728e999117259f4df4f7e374ae3f18e1",
+    "codebook_sha256": "d9ca5532f1993d7ec6a4a9a30b7b094171bf1f3e0943a7a6b682f6c9f6b06630",
+    "source_bundle_sha256": "6d8327ef3975c788544af381b75d2e4d2d0c99885ae6590f065639a9468051db",
+    "lower_class_infographic_sha256": "cbc82160ab6fb5d93c78a7e21c8300accf903c8ad9d930fed76c05604c8c825c",
+    "upper_class_infographic_sha256": "45dfeb94e9626170f694518470c89c76370496a951ae4f9155f798f61ecf8cc6"
+  },
+  "reconstruction_note": "The complete final instrument and exact source infographics were inspected outcome-blind. SocSci210 condition 0 maps to source INFO=1 and condition 1 maps to source INFO=2. Q3 is fixed immediately after the assigned infographic and before later randomized grids, so no sequence adapter is required. No response, reasoning, Q3 source value, arm mean, effect, winner, or publication result was used."
+}

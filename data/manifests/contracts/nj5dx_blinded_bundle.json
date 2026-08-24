@@ -1,0 +1,44 @@
+{
+  "schema_version": "ordinal_png_multimodal_bundle.v1",
+  "task_id": "nj5dx:task-0-inequality-unjust",
+  "experiment_id": "nj5dx",
+  "access_regime": "DESIGN_ONLY",
+  "population": {
+    "description": "Adults in the United States represented by the AmeriSpeak general-population sample",
+    "roster_id": "aggregate-us-adult-v1"
+  },
+  "arms": [
+    {
+      "arm_id": "lower_class_disadvantage_frame",
+      "accessible_text": "The exact fielded infographic is titled DISADVANTAGES OF BEING LOWER-CLASS. It says lower-class households have lower public-school budgets, worse medical treatment, lower hiring chances, worse fresh-food access, and less real-estate ownership than upper-class households, with the numerical comparisons displayed in the source image.",
+      "asset": {
+        "path": "data/derived/stimuli/nj5dx/lower_class_disadvantage.png",
+        "mime_type": "image/png",
+        "sha256": "cbc82160ab6fb5d93c78a7e21c8300accf903c8ad9d930fed76c05604c8c825c"
+      }
+    },
+    {
+      "arm_id": "upper_class_privilege_frame",
+      "accessible_text": "The exact fielded infographic is titled PRIVILEGES OF BEING UPPER-CLASS. It presents the reciprocal inequalities as higher public-school budgets, better medical treatment, higher hiring chances, better fresh-food access, and more real-estate ownership for upper-class households, with the numerical comparisons displayed in the source image.",
+      "asset": {
+        "path": "data/derived/stimuli/nj5dx/upper_class_privilege.png",
+        "mime_type": "image/png",
+        "sha256": "45dfeb94e9626170f694518470c89c76370496a951ae4f9155f798f61ecf8cc6"
+      }
+    }
+  ],
+  "common_context": "View exactly one source-fielded social-class infographic before answering the question. The two randomized arms describe reciprocal aspects of the same class-inequality setting using different reference frames.",
+  "outcome_question": "The level of social class inequality in the United States is unjust.",
+  "response_options": [
+    {"value": 1, "label": "Strongly agree", "normalized_utility": 1.0},
+    {"value": 2, "label": "Agree", "normalized_utility": 0.8333333333333334},
+    {"value": 3, "label": "Somewhat agree", "normalized_utility": 0.6666666666666666},
+    {"value": 4, "label": "Neither agree nor disagree", "normalized_utility": 0.5},
+    {"value": 5, "label": "Somewhat disagree", "normalized_utility": 0.3333333333333333},
+    {"value": 6, "label": "Disagree", "normalized_utility": 0.16666666666666666},
+    {"value": 7, "label": "Strongly disagree", "normalized_utility": 0.0}
+  ],
+  "source_material_sha256": "6d8327ef3975c788544af381b75d2e4d2d0c99885ae6590f065639a9468051db",
+  "outcome_access": "sealed",
+  "reveal_authorized": false
+}

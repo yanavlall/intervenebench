@@ -1,0 +1,471 @@
+{
+  "access_regime": "DESIGN_ONLY",
+  "arms": [
+    {
+      "arm_id": "no_cue_no_savings",
+      "arm_substitutions": {
+        "{{child_message}}": "The child tax credit provides an annual refund to working parents with low incomes and is an important tool to keep people out of poverty. Also, when these families spend these tax refunds it provides a boost to our economy. We must encourage every qualifying tax payer to file for child tax credits.",
+        "{{food_message}}": "Prior Shannon food-nutrition item: The food nutrition program helps low income children and new mothers get access to healthy food. This improves outcomes for their babies, prevents developmental delays, and generates enormous savings for schools and the health care system. We must make it easier for every eligible woman and child to access the food nutrition program.",
+        "{{tuition_message}}": "Prior Shannon in-state-tuition item: In-state tuition rates can make college more affordable and help to prepare these students for higher-wage and higher-skilled jobs. On average, individuals who receive a college education earn more money over their lifetime and contribute more in taxes. We must maximize our economic benefit by increasing the number of students that qualify for in-state tuition."
+      },
+      "message_template": "{{shannon_prior_vignettes}}\nTarget child-tax-credit item: {{child_message}}"
+    },
+    {
+      "arm_id": "no_cue_with_savings",
+      "arm_substitutions": {
+        "{{child_message}}": "The child tax credit provides an annual refund to working parents with low incomes and is an important tool to keep people out of poverty. Also, when these families spend these tax refunds it provides a boost to our economy. It is estimated that every $1,000 credited to working parents generates $1,380 in local economic activity. We must encourage every qualifying tax payer to file for child tax credits.",
+        "{{food_message}}": "Prior Shannon food-nutrition item: The food nutrition program helps low income children and new mothers get access to healthy food. This improves outcomes for their babies, prevents developmental delays, and generates enormous savings for schools and the health care system. For example, every $1.00 spent on food nutrition programs results in $3.10 in health care savings alone. We must make it easier for every eligible woman and child to access the food nutrition program.",
+        "{{tuition_message}}": "Prior Shannon in-state-tuition item: In-state tuition rates can make college more affordable and help to prepare these students for higher-wage and higher-skilled jobs. On average, individuals who receive a college education earn more money over their lifetime and contribute more in taxes. Estimates show every $1.00 spent in getting students through college provides a $4.50 return in higher tax revenue and reduced social services costs. We must maximize our economic benefit by increasing the number of students that qualify for in-state tuition."
+      },
+      "message_template": "{{shannon_prior_vignettes}}\nTarget child-tax-credit item: {{child_message}}"
+    },
+    {
+      "arm_id": "immigrant_no_savings",
+      "arm_substitutions": {
+        "{{child_message}}": "The child tax credit provides an annual refund to working parents with low incomes and is an important tool to keep immigrants out of poverty. Also, when these families spend these tax refunds it provides a boost to our economy. We must encourage every qualifying tax payer to file for child tax credits.",
+        "{{food_message}}": "Prior Shannon food-nutrition item: The food nutrition program helps low income immigrant children and new mothers get access to healthy food. This improves outcomes for their babies, prevents developmental delays, and generates enormous savings for schools and the health care system. We must make it easier for every eligible woman and child to access the food nutrition program.",
+        "{{tuition_message}}": "Prior Shannon in-state-tuition item: In-state tuition rates can make college more affordable for immigrants and help to prepare these students for higher-wage and higher-skilled jobs. On average, individuals who receive a college education earn more money over their lifetime and contribute more in taxes. We must maximize our economic benefit by increasing the number of students that qualify for in-state tuition."
+      },
+      "message_template": "{{shannon_prior_vignettes}}\nTarget child-tax-credit item: {{child_message}}"
+    },
+    {
+      "arm_id": "immigrant_with_savings",
+      "arm_substitutions": {
+        "{{child_message}}": "The child tax credit provides an annual refund to working parents with low incomes and is an important tool to keep immigrants out of poverty. Also, when these families spend these tax refunds it provides a boost to our economy. It is estimated that every $1,000 credited to working parents generates $1,380 in local economic activity. We must encourage every qualifying tax payer to file for child tax credits.",
+        "{{food_message}}": "Prior Shannon food-nutrition item: The food nutrition program helps low income immigrant children and new mothers get access to healthy food. This improves outcomes for their babies, prevents developmental delays, and generates enormous savings for schools and the health care system. For example, every $1.00 spent on food nutrition programs results in $3.10 in health care savings alone. We must make it easier for every eligible woman and child to access the food nutrition program.",
+        "{{tuition_message}}": "Prior Shannon in-state-tuition item: In-state tuition rates can make college more affordable for immigrants and help to prepare these students for higher-wage and higher-skilled jobs. On average, individuals who receive a college education earn more money over their lifetime and contribute more in taxes. Estimates show every $1.00 spent in getting students through college provides a $4.50 return in higher tax revenue and reduced social services costs. We must maximize our economic benefit by increasing the number of students that qualify for in-state tuition."
+      },
+      "message_template": "{{shannon_prior_vignettes}}\nTarget child-tax-credit item: {{child_message}}"
+    },
+    {
+      "arm_id": "illegal_immigrant_no_savings",
+      "arm_substitutions": {
+        "{{child_message}}": "The child tax credit provides an annual refund to working parents with low incomes and is an important tool to keep illegal immigrants out of poverty. Also, when these families spend these tax refunds it provides a boost to our economy. We must encourage every qualifying tax payer to file for child tax credits.",
+        "{{food_message}}": "Prior Shannon food-nutrition item: The food nutrition program helps low income illegal immigrant children and new mothers get access to healthy food. This improves outcomes for their babies, prevents developmental delays, and generates enormous savings for schools and the health care system. We must make it easier for every eligible woman and child to access the food nutrition program.",
+        "{{tuition_message}}": "Prior Shannon in-state-tuition item: In-state tuition rates can make college more affordable for illegal immigrants and help to prepare these students for higher-wage and higher-skilled jobs. On average, individuals who receive a college education earn more money over their lifetime and contribute more in taxes. We must maximize our economic benefit by increasing the number of students that qualify for in-state tuition."
+      },
+      "message_template": "{{shannon_prior_vignettes}}\nTarget child-tax-credit item: {{child_message}}"
+    },
+    {
+      "arm_id": "illegal_immigrant_with_savings",
+      "arm_substitutions": {
+        "{{child_message}}": "The child tax credit provides an annual refund to working parents with low incomes and is an important tool to keep illegal immigrants out of poverty. Also, when these families spend these tax refunds it provides a boost to our economy. It is estimated that every $1,000 credited to working parents generates $1,380 in local economic activity. We must encourage every qualifying tax payer to file for child tax credits.",
+        "{{food_message}}": "Prior Shannon food-nutrition item: The food nutrition program helps low income illegal immigrant children and new mothers get access to healthy food. This improves outcomes for their babies, prevents developmental delays, and generates enormous savings for schools and the health care system. For example, every $1.00 spent on food nutrition programs results in $3.10 in health care savings alone. We must make it easier for every eligible woman and child to access the food nutrition program.",
+        "{{tuition_message}}": "Prior Shannon in-state-tuition item: In-state tuition rates can make college more affordable for illegal immigrants and help to prepare these students for higher-wage and higher-skilled jobs. On average, individuals who receive a college education earn more money over their lifetime and contribute more in taxes. Estimates show every $1.00 spent in getting students through college provides a $4.50 return in higher tax revenue and reduced social services costs. We must maximize our economic benefit by increasing the number of students that qualify for in-state tuition."
+      },
+      "message_template": "{{shannon_prior_vignettes}}\nTarget child-tax-credit item: {{child_message}}"
+    }
+  ],
+  "common_context": "Reconstruct the exact randomized Shannon/Powell/Farrow survey order and stop immediately after the routed child-tax-credit response. The same whole-survey order, Powell path, Farrow path, and within-Shannon vignette order must be paired across all six Shannon message arms for a persona.",
+  "experiment_id": "ShannonS2",
+  "outcome_access": "sealed",
+  "outcome_question": "How strongly do you agree or disagree with the statement encouraging every qualifying taxpayer to file for child tax credits?",
+  "population": {
+    "description": "Adults in the United States represented by the AmeriSpeak general-population sample in 2017",
+    "roster_id": "aggregate-us-adult-v1"
+  },
+  "response_options": [
+    {
+      "label": "Strongly disagree",
+      "normalized_utility": 0.0,
+      "value": 1
+    },
+    {
+      "label": "Disagree",
+      "normalized_utility": 0.25,
+      "value": 2
+    },
+    {
+      "label": "Neither agree nor disagree",
+      "normalized_utility": 0.5,
+      "value": 3
+    },
+    {
+      "label": "Agree",
+      "normalized_utility": 0.75,
+      "value": 4
+    },
+    {
+      "label": "Strongly agree",
+      "normalized_utility": 1.0,
+      "value": 5
+    }
+  ],
+  "reveal_authorized": false,
+  "schema_version": "sequence_ordinal_blinded_bundle.v1",
+  "sequence_contract": {
+    "paired_across_arms": true,
+    "prior_exposure_template": "{{shannon_module_order_prior}}",
+    "randomizations": [
+      {
+        "kind": "categorical",
+        "levels": [
+          {
+            "level_id": "shannon_powell_farrow",
+            "text": "",
+            "weight": 0.16666666666666666
+          },
+          {
+            "level_id": "shannon_farrow_powell",
+            "text": "",
+            "weight": 0.16666666666666666
+          },
+          {
+            "level_id": "powell_shannon_farrow",
+            "text": "{{powell_module}}",
+            "weight": 0.16666666666666666
+          },
+          {
+            "level_id": "farrow_shannon_powell",
+            "text": "{{farrow_module}}",
+            "weight": 0.16666666666666666
+          },
+          {
+            "level_id": "powell_farrow_shannon",
+            "text": "{{powell_module}}\n{{farrow_module}}",
+            "weight": 0.16666666666666666
+          },
+          {
+            "level_id": "farrow_powell_shannon",
+            "text": "{{farrow_module}}\n{{powell_module}}",
+            "weight": 0.16666666666666666
+          }
+        ],
+        "randomization_id": "shannon_powell_farrow_module_order",
+        "token": "{{shannon_module_order_prior}}"
+      },
+      {
+        "kind": "categorical",
+        "levels": [
+          {
+            "level_id": "transman_adult_conforming_store_men_then_women",
+            "text": "A prior randomized Powell module appeared. Please read the following story and form an impression, then privately answer the questions. Casey is 36 years old and was born a female, but now identifies as a man. When meeting Casey for the first time, most people assume Casey is man.\nQ1. Suppose Casey is at a local store and needs to use the restroom. Which restroom should Casey use? Answers: The men's restroom; The women's restroom; Other.\nQ2. Why do you think Casey should use the selected restroom? Privately form a few-sentence explanation.\nQ3. Regardless of the earlier answer, do you personally consider Casey to be a male or a female? {{powell_q3_options}}\nQ4. Do you personally know anyone who is lesbian, gay, bisexual, or transgender, including a close friend or family member? Then answer sexual identity, religiousness, and born-again/evangelical profile questions.",
+            "weight": 0.03125
+          },
+          {
+            "level_id": "transman_adult_conforming_store_women_then_men",
+            "text": "A prior randomized Powell module appeared. Please read the following story and form an impression, then privately answer the questions. Casey is 36 years old and was born a female, but now identifies as a man. When meeting Casey for the first time, most people assume Casey is man.\nQ1. Suppose Casey is at a local store and needs to use the restroom. Which restroom should Casey use? Answers: The women's restroom; The men's restroom; Other.\nQ2. Why do you think Casey should use the selected restroom? Privately form a few-sentence explanation.\nQ3. Regardless of the earlier answer, do you personally consider Casey to be a male or a female? {{powell_q3_options}}\nQ4. Do you personally know anyone who is lesbian, gay, bisexual, or transgender, including a close friend or family member? Then answer sexual identity, religiousness, and born-again/evangelical profile questions.",
+            "weight": 0.03125
+          },
+          {
+            "level_id": "transman_adult_nonconforming_store_men_then_women",
+            "text": "A prior randomized Powell module appeared. Please read the following story and form an impression, then privately answer the questions. Casey is 36 years old and was born a female, but now identifies as a man. When meeting Casey for the first time, most people assume Casey is woman.\nQ1. Suppose Casey is at a local store and needs to use the restroom. Which restroom should Casey use? Answers: The men's restroom; The women's restroom; Other.\nQ2. Why do you think Casey should use the selected restroom? Privately form a few-sentence explanation.\nQ3. Regardless of the earlier answer, do you personally consider Casey to be a male or a female? {{powell_q3_options}}\nQ4. Do you personally know anyone who is lesbian, gay, bisexual, or transgender, including a close friend or family member? Then answer sexual identity, religiousness, and born-again/evangelical profile questions.",
+            "weight": 0.03125
+          },
+          {
+            "level_id": "transman_adult_nonconforming_store_women_then_men",
+            "text": "A prior randomized Powell module appeared. Please read the following story and form an impression, then privately answer the questions. Casey is 36 years old and was born a female, but now identifies as a man. When meeting Casey for the first time, most people assume Casey is woman.\nQ1. Suppose Casey is at a local store and needs to use the restroom. Which restroom should Casey use? Answers: The women's restroom; The men's restroom; Other.\nQ2. Why do you think Casey should use the selected restroom? Privately form a few-sentence explanation.\nQ3. Regardless of the earlier answer, do you personally consider Casey to be a male or a female? {{powell_q3_options}}\nQ4. Do you personally know anyone who is lesbian, gay, bisexual, or transgender, including a close friend or family member? Then answer sexual identity, religiousness, and born-again/evangelical profile questions.",
+            "weight": 0.03125
+          },
+          {
+            "level_id": "transman_adult_ambiguous_store_men_then_women",
+            "text": "A prior randomized Powell module appeared. Please read the following story and form an impression, then privately answer the questions. Casey is 36 years old and was born a female, but now identifies as a man. When meeting Casey for the first time, most people are unsure whether Casey is man or woman.\nQ1. Suppose Casey is at a local store and needs to use the restroom. Which restroom should Casey use? Answers: The men's restroom; The women's restroom; Other.\nQ2. Why do you think Casey should use the selected restroom? Privately form a few-sentence explanation.\nQ3. Regardless of the earlier answer, do you personally consider Casey to be a male or a female? {{powell_q3_options}}\nQ4. Do you personally know anyone who is lesbian, gay, bisexual, or transgender, including a close friend or family member? Then answer sexual identity, religiousness, and born-again/evangelical profile questions.",
+            "weight": 0.03125
+          },
+          {
+            "level_id": "transman_adult_ambiguous_store_women_then_men",
+            "text": "A prior randomized Powell module appeared. Please read the following story and form an impression, then privately answer the questions. Casey is 36 years old and was born a female, but now identifies as a man. When meeting Casey for the first time, most people are unsure whether Casey is man or woman.\nQ1. Suppose Casey is at a local store and needs to use the restroom. Which restroom should Casey use? Answers: The women's restroom; The men's restroom; Other.\nQ2. Why do you think Casey should use the selected restroom? Privately form a few-sentence explanation.\nQ3. Regardless of the earlier answer, do you personally consider Casey to be a male or a female? {{powell_q3_options}}\nQ4. Do you personally know anyone who is lesbian, gay, bisexual, or transgender, including a close friend or family member? Then answer sexual identity, religiousness, and born-again/evangelical profile questions.",
+            "weight": 0.03125
+          },
+          {
+            "level_id": "transman_adult_unspecified_store_men_then_women",
+            "text": "A prior randomized Powell module appeared. Please read the following story and form an impression, then privately answer the questions. Casey is 36 years old and was born a female, but now identifies as a man.\nQ1. Suppose Casey is at a local store and needs to use the restroom. Which restroom should Casey use? Answers: The men's restroom; The women's restroom; Other.\nQ2. Why do you think Casey should use the selected restroom? Privately form a few-sentence explanation.\nQ3. Regardless of the earlier answer, do you personally consider Casey to be a male or a female? {{powell_q3_options}}\nQ4. Do you personally know anyone who is lesbian, gay, bisexual, or transgender, including a close friend or family member? Then answer sexual identity, religiousness, and born-again/evangelical profile questions.",
+            "weight": 0.03125
+          },
+          {
+            "level_id": "transman_adult_unspecified_store_women_then_men",
+            "text": "A prior randomized Powell module appeared. Please read the following story and form an impression, then privately answer the questions. Casey is 36 years old and was born a female, but now identifies as a man.\nQ1. Suppose Casey is at a local store and needs to use the restroom. Which restroom should Casey use? Answers: The women's restroom; The men's restroom; Other.\nQ2. Why do you think Casey should use the selected restroom? Privately form a few-sentence explanation.\nQ3. Regardless of the earlier answer, do you personally consider Casey to be a male or a female? {{powell_q3_options}}\nQ4. Do you personally know anyone who is lesbian, gay, bisexual, or transgender, including a close friend or family member? Then answer sexual identity, religiousness, and born-again/evangelical profile questions.",
+            "weight": 0.03125
+          },
+          {
+            "level_id": "transman_teen_conforming_school_boys_then_girls",
+            "text": "A prior randomized Powell module appeared. Please read the following story and form an impression, then privately answer the questions. Casey is 16 years old and was born a female, but now identifies as a boy. When meeting Casey for the first time, most people assume Casey is boy.\nQ1. Suppose Casey is at school and needs to use the restroom. Which restroom should Casey use? Answers: The boy's restroom; The girl's restroom; Other.\nQ2. Why do you think Casey should use the selected restroom? Privately form a few-sentence explanation.\nQ3. Regardless of the earlier answer, do you personally consider Casey to be a male or a female? {{powell_q3_options}}\nQ4. Do you personally know anyone who is lesbian, gay, bisexual, or transgender, including a close friend or family member? Then answer sexual identity, religiousness, and born-again/evangelical profile questions.",
+            "weight": 0.015625
+          },
+          {
+            "level_id": "transman_teen_conforming_store_boys_then_girls",
+            "text": "A prior randomized Powell module appeared. Please read the following story and form an impression, then privately answer the questions. Casey is 16 years old and was born a female, but now identifies as a boy. When meeting Casey for the first time, most people assume Casey is boy.\nQ1. Suppose Casey is at a local store and needs to use the restroom. Which restroom should Casey use? Answers: The boy's restroom; The girl's restroom; Other.\nQ2. Why do you think Casey should use the selected restroom? Privately form a few-sentence explanation.\nQ3. Regardless of the earlier answer, do you personally consider Casey to be a male or a female? {{powell_q3_options}}\nQ4. Do you personally know anyone who is lesbian, gay, bisexual, or transgender, including a close friend or family member? Then answer sexual identity, religiousness, and born-again/evangelical profile questions.",
+            "weight": 0.015625
+          },
+          {
+            "level_id": "transman_teen_conforming_store_men_then_women",
+            "text": "A prior randomized Powell module appeared. Please read the following story and form an impression, then privately answer the questions. Casey is 16 years old and was born a female, but now identifies as a boy. When meeting Casey for the first time, most people assume Casey is boy.\nQ1. Suppose Casey is at a local store and needs to use the restroom. Which restroom should Casey use? Answers: The men's restroom; The women's restroom; Other.\nQ2. Why do you think Casey should use the selected restroom? Privately form a few-sentence explanation.\nQ3. Regardless of the earlier answer, do you personally consider Casey to be a male or a female? {{powell_q3_options}}\nQ4. Do you personally know anyone who is lesbian, gay, bisexual, or transgender, including a close friend or family member? Then answer sexual identity, religiousness, and born-again/evangelical profile questions.",
+            "weight": 0.015625
+          },
+          {
+            "level_id": "transman_teen_conforming_store_women_then_men",
+            "text": "A prior randomized Powell module appeared. Please read the following story and form an impression, then privately answer the questions. Casey is 16 years old and was born a female, but now identifies as a boy. When meeting Casey for the first time, most people assume Casey is boy.\nQ1. Suppose Casey is at a local store and needs to use the restroom. Which restroom should Casey use? Answers: The women's restroom; The men's restroom; Other.\nQ2. Why do you think Casey should use the selected restroom? Privately form a few-sentence explanation.\nQ3. Regardless of the earlier answer, do you personally consider Casey to be a male or a female? {{powell_q3_options}}\nQ4. Do you personally know anyone who is lesbian, gay, bisexual, or transgender, including a close friend or family member? Then answer sexual identity, religiousness, and born-again/evangelical profile questions.",
+            "weight": 0.015625
+          },
+          {
+            "level_id": "transman_teen_nonconforming_school_boys_then_girls",
+            "text": "A prior randomized Powell module appeared. Please read the following story and form an impression, then privately answer the questions. Casey is 16 years old and was born a female, but now identifies as a boy. When meeting Casey for the first time, most people assume Casey is girl.\nQ1. Suppose Casey is at school and needs to use the restroom. Which restroom should Casey use? Answers: The boy's restroom; The girl's restroom; Other.\nQ2. Why do you think Casey should use the selected restroom? Privately form a few-sentence explanation.\nQ3. Regardless of the earlier answer, do you personally consider Casey to be a male or a female? {{powell_q3_options}}\nQ4. Do you personally know anyone who is lesbian, gay, bisexual, or transgender, including a close friend or family member? Then answer sexual identity, religiousness, and born-again/evangelical profile questions.",
+            "weight": 0.015625
+          },
+          {
+            "level_id": "transman_teen_nonconforming_store_boys_then_girls",
+            "text": "A prior randomized Powell module appeared. Please read the following story and form an impression, then privately answer the questions. Casey is 16 years old and was born a female, but now identifies as a boy. When meeting Casey for the first time, most people assume Casey is girl.\nQ1. Suppose Casey is at a local store and needs to use the restroom. Which restroom should Casey use? Answers: The boy's restroom; The girl's restroom; Other.\nQ2. Why do you think Casey should use the selected restroom? Privately form a few-sentence explanation.\nQ3. Regardless of the earlier answer, do you personally consider Casey to be a male or a female? {{powell_q3_options}}\nQ4. Do you personally know anyone who is lesbian, gay, bisexual, or transgender, including a close friend or family member? Then answer sexual identity, religiousness, and born-again/evangelical profile questions.",
+            "weight": 0.015625
+          },
+          {
+            "level_id": "transman_teen_nonconforming_store_men_then_women",
+            "text": "A prior randomized Powell module appeared. Please read the following story and form an impression, then privately answer the questions. Casey is 16 years old and was born a female, but now identifies as a boy. When meeting Casey for the first time, most people assume Casey is girl.\nQ1. Suppose Casey is at a local store and needs to use the restroom. Which restroom should Casey use? Answers: The men's restroom; The women's restroom; Other.\nQ2. Why do you think Casey should use the selected restroom? Privately form a few-sentence explanation.\nQ3. Regardless of the earlier answer, do you personally consider Casey to be a male or a female? {{powell_q3_options}}\nQ4. Do you personally know anyone who is lesbian, gay, bisexual, or transgender, including a close friend or family member? Then answer sexual identity, religiousness, and born-again/evangelical profile questions.",
+            "weight": 0.015625
+          },
+          {
+            "level_id": "transman_teen_nonconforming_store_women_then_men",
+            "text": "A prior randomized Powell module appeared. Please read the following story and form an impression, then privately answer the questions. Casey is 16 years old and was born a female, but now identifies as a boy. When meeting Casey for the first time, most people assume Casey is girl.\nQ1. Suppose Casey is at a local store and needs to use the restroom. Which restroom should Casey use? Answers: The women's restroom; The men's restroom; Other.\nQ2. Why do you think Casey should use the selected restroom? Privately form a few-sentence explanation.\nQ3. Regardless of the earlier answer, do you personally consider Casey to be a male or a female? {{powell_q3_options}}\nQ4. Do you personally know anyone who is lesbian, gay, bisexual, or transgender, including a close friend or family member? Then answer sexual identity, religiousness, and born-again/evangelical profile questions.",
+            "weight": 0.015625
+          },
+          {
+            "level_id": "transman_teen_ambiguous_school_boys_then_girls",
+            "text": "A prior randomized Powell module appeared. Please read the following story and form an impression, then privately answer the questions. Casey is 16 years old and was born a female, but now identifies as a boy. When meeting Casey for the first time, most people are unsure whether Casey is boy or girl.\nQ1. Suppose Casey is at school and needs to use the restroom. Which restroom should Casey use? Answers: The boy's restroom; The girl's restroom; Other.\nQ2. Why do you think Casey should use the selected restroom? Privately form a few-sentence explanation.\nQ3. Regardless of the earlier answer, do you personally consider Casey to be a male or a female? {{powell_q3_options}}\nQ4. Do you personally know anyone who is lesbian, gay, bisexual, or transgender, including a close friend or family member? Then answer sexual identity, religiousness, and born-again/evangelical profile questions.",
+            "weight": 0.015625
+          },
+          {
+            "level_id": "transman_teen_ambiguous_store_boys_then_girls",
+            "text": "A prior randomized Powell module appeared. Please read the following story and form an impression, then privately answer the questions. Casey is 16 years old and was born a female, but now identifies as a boy. When meeting Casey for the first time, most people are unsure whether Casey is boy or girl.\nQ1. Suppose Casey is at a local store and needs to use the restroom. Which restroom should Casey use? Answers: The boy's restroom; The girl's restroom; Other.\nQ2. Why do you think Casey should use the selected restroom? Privately form a few-sentence explanation.\nQ3. Regardless of the earlier answer, do you personally consider Casey to be a male or a female? {{powell_q3_options}}\nQ4. Do you personally know anyone who is lesbian, gay, bisexual, or transgender, including a close friend or family member? Then answer sexual identity, religiousness, and born-again/evangelical profile questions.",
+            "weight": 0.015625
+          },
+          {
+            "level_id": "transman_teen_ambiguous_store_men_then_women",
+            "text": "A prior randomized Powell module appeared. Please read the following story and form an impression, then privately answer the questions. Casey is 16 years old and was born a female, but now identifies as a boy. When meeting Casey for the first time, most people are unsure whether Casey is boy or girl.\nQ1. Suppose Casey is at a local store and needs to use the restroom. Which restroom should Casey use? Answers: The men's restroom; The women's restroom; Other.\nQ2. Why do you think Casey should use the selected restroom? Privately form a few-sentence explanation.\nQ3. Regardless of the earlier answer, do you personally consider Casey to be a male or a female? {{powell_q3_options}}\nQ4. Do you personally know anyone who is lesbian, gay, bisexual, or transgender, including a close friend or family member? Then answer sexual identity, religiousness, and born-again/evangelical profile questions.",
+            "weight": 0.015625
+          },
+          {
+            "level_id": "transman_teen_ambiguous_store_women_then_men",
+            "text": "A prior randomized Powell module appeared. Please read the following story and form an impression, then privately answer the questions. Casey is 16 years old and was born a female, but now identifies as a boy. When meeting Casey for the first time, most people are unsure whether Casey is boy or girl.\nQ1. Suppose Casey is at a local store and needs to use the restroom. Which restroom should Casey use? Answers: The women's restroom; The men's restroom; Other.\nQ2. Why do you think Casey should use the selected restroom? Privately form a few-sentence explanation.\nQ3. Regardless of the earlier answer, do you personally consider Casey to be a male or a female? {{powell_q3_options}}\nQ4. Do you personally know anyone who is lesbian, gay, bisexual, or transgender, including a close friend or family member? Then answer sexual identity, religiousness, and born-again/evangelical profile questions.",
+            "weight": 0.015625
+          },
+          {
+            "level_id": "transman_teen_unspecified_school_boys_then_girls",
+            "text": "A prior randomized Powell module appeared. Please read the following story and form an impression, then privately answer the questions. Casey is 16 years old and was born a female, but now identifies as a boy.\nQ1. Suppose Casey is at school and needs to use the restroom. Which restroom should Casey use? Answers: The boy's restroom; The girl's restroom; Other.\nQ2. Why do you think Casey should use the selected restroom? Privately form a few-sentence explanation.\nQ3. Regardless of the earlier answer, do you personally consider Casey to be a male or a female? {{powell_q3_options}}\nQ4. Do you personally know anyone who is lesbian, gay, bisexual, or transgender, including a close friend or family member? Then answer sexual identity, religiousness, and born-again/evangelical profile questions.",
+            "weight": 0.015625
+          },
+          {
+            "level_id": "transman_teen_unspecified_store_boys_then_girls",
+            "text": "A prior randomized Powell module appeared. Please read the following story and form an impression, then privately answer the questions. Casey is 16 years old and was born a female, but now identifies as a boy.\nQ1. Suppose Casey is at a local store and needs to use the restroom. Which restroom should Casey use? Answers: The boy's restroom; The girl's restroom; Other.\nQ2. Why do you think Casey should use the selected restroom? Privately form a few-sentence explanation.\nQ3. Regardless of the earlier answer, do you personally consider Casey to be a male or a female? {{powell_q3_options}}\nQ4. Do you personally know anyone who is lesbian, gay, bisexual, or transgender, including a close friend or family member? Then answer sexual identity, religiousness, and born-again/evangelical profile questions.",
+            "weight": 0.015625
+          },
+          {
+            "level_id": "transman_teen_unspecified_store_men_then_women",
+            "text": "A prior randomized Powell module appeared. Please read the following story and form an impression, then privately answer the questions. Casey is 16 years old and was born a female, but now identifies as a boy.\nQ1. Suppose Casey is at a local store and needs to use the restroom. Which restroom should Casey use? Answers: The men's restroom; The women's restroom; Other.\nQ2. Why do you think Casey should use the selected restroom? Privately form a few-sentence explanation.\nQ3. Regardless of the earlier answer, do you personally consider Casey to be a male or a female? {{powell_q3_options}}\nQ4. Do you personally know anyone who is lesbian, gay, bisexual, or transgender, including a close friend or family member? Then answer sexual identity, religiousness, and born-again/evangelical profile questions.",
+            "weight": 0.015625
+          },
+          {
+            "level_id": "transman_teen_unspecified_store_women_then_men",
+            "text": "A prior randomized Powell module appeared. Please read the following story and form an impression, then privately answer the questions. Casey is 16 years old and was born a female, but now identifies as a boy.\nQ1. Suppose Casey is at a local store and needs to use the restroom. Which restroom should Casey use? Answers: The women's restroom; The men's restroom; Other.\nQ2. Why do you think Casey should use the selected restroom? Privately form a few-sentence explanation.\nQ3. Regardless of the earlier answer, do you personally consider Casey to be a male or a female? {{powell_q3_options}}\nQ4. Do you personally know anyone who is lesbian, gay, bisexual, or transgender, including a close friend or family member? Then answer sexual identity, religiousness, and born-again/evangelical profile questions.",
+            "weight": 0.015625
+          },
+          {
+            "level_id": "transwoman_adult_conforming_store_men_then_women",
+            "text": "A prior randomized Powell module appeared. Please read the following story and form an impression, then privately answer the questions. Casey is 36 years old and was born a male, but now identifies as a woman. When meeting Casey for the first time, most people assume Casey is woman.\nQ1. Suppose Casey is at a local store and needs to use the restroom. Which restroom should Casey use? Answers: The men's restroom; The women's restroom; Other.\nQ2. Why do you think Casey should use the selected restroom? Privately form a few-sentence explanation.\nQ3. Regardless of the earlier answer, do you personally consider Casey to be a male or a female? {{powell_q3_options}}\nQ4. Do you personally know anyone who is lesbian, gay, bisexual, or transgender, including a close friend or family member? Then answer sexual identity, religiousness, and born-again/evangelical profile questions.",
+            "weight": 0.03125
+          },
+          {
+            "level_id": "transwoman_adult_conforming_store_women_then_men",
+            "text": "A prior randomized Powell module appeared. Please read the following story and form an impression, then privately answer the questions. Casey is 36 years old and was born a male, but now identifies as a woman. When meeting Casey for the first time, most people assume Casey is woman.\nQ1. Suppose Casey is at a local store and needs to use the restroom. Which restroom should Casey use? Answers: The women's restroom; The men's restroom; Other.\nQ2. Why do you think Casey should use the selected restroom? Privately form a few-sentence explanation.\nQ3. Regardless of the earlier answer, do you personally consider Casey to be a male or a female? {{powell_q3_options}}\nQ4. Do you personally know anyone who is lesbian, gay, bisexual, or transgender, including a close friend or family member? Then answer sexual identity, religiousness, and born-again/evangelical profile questions.",
+            "weight": 0.03125
+          },
+          {
+            "level_id": "transwoman_adult_nonconforming_store_men_then_women",
+            "text": "A prior randomized Powell module appeared. Please read the following story and form an impression, then privately answer the questions. Casey is 36 years old and was born a male, but now identifies as a woman. When meeting Casey for the first time, most people assume Casey is man.\nQ1. Suppose Casey is at a local store and needs to use the restroom. Which restroom should Casey use? Answers: The men's restroom; The women's restroom; Other.\nQ2. Why do you think Casey should use the selected restroom? Privately form a few-sentence explanation.\nQ3. Regardless of the earlier answer, do you personally consider Casey to be a male or a female? {{powell_q3_options}}\nQ4. Do you personally know anyone who is lesbian, gay, bisexual, or transgender, including a close friend or family member? Then answer sexual identity, religiousness, and born-again/evangelical profile questions.",
+            "weight": 0.03125
+          },
+          {
+            "level_id": "transwoman_adult_nonconforming_store_women_then_men",
+            "text": "A prior randomized Powell module appeared. Please read the following story and form an impression, then privately answer the questions. Casey is 36 years old and was born a male, but now identifies as a woman. When meeting Casey for the first time, most people assume Casey is man.\nQ1. Suppose Casey is at a local store and needs to use the restroom. Which restroom should Casey use? Answers: The women's restroom; The men's restroom; Other.\nQ2. Why do you think Casey should use the selected restroom? Privately form a few-sentence explanation.\nQ3. Regardless of the earlier answer, do you personally consider Casey to be a male or a female? {{powell_q3_options}}\nQ4. Do you personally know anyone who is lesbian, gay, bisexual, or transgender, including a close friend or family member? Then answer sexual identity, religiousness, and born-again/evangelical profile questions.",
+            "weight": 0.03125
+          },
+          {
+            "level_id": "transwoman_adult_ambiguous_store_men_then_women",
+            "text": "A prior randomized Powell module appeared. Please read the following story and form an impression, then privately answer the questions. Casey is 36 years old and was born a male, but now identifies as a woman. When meeting Casey for the first time, most people are unsure whether Casey is woman or man.\nQ1. Suppose Casey is at a local store and needs to use the restroom. Which restroom should Casey use? Answers: The men's restroom; The women's restroom; Other.\nQ2. Why do you think Casey should use the selected restroom? Privately form a few-sentence explanation.\nQ3. Regardless of the earlier answer, do you personally consider Casey to be a male or a female? {{powell_q3_options}}\nQ4. Do you personally know anyone who is lesbian, gay, bisexual, or transgender, including a close friend or family member? Then answer sexual identity, religiousness, and born-again/evangelical profile questions.",
+            "weight": 0.03125
+          },
+          {
+            "level_id": "transwoman_adult_ambiguous_store_women_then_men",
+            "text": "A prior randomized Powell module appeared. Please read the following story and form an impression, then privately answer the questions. Casey is 36 years old and was born a male, but now identifies as a woman. When meeting Casey for the first time, most people are unsure whether Casey is woman or man.\nQ1. Suppose Casey is at a local store and needs to use the restroom. Which restroom should Casey use? Answers: The women's restroom; The men's restroom; Other.\nQ2. Why do you think Casey should use the selected restroom? Privately form a few-sentence explanation.\nQ3. Regardless of the earlier answer, do you personally consider Casey to be a male or a female? {{powell_q3_options}}\nQ4. Do you personally know anyone who is lesbian, gay, bisexual, or transgender, including a close friend or family member? Then answer sexual identity, religiousness, and born-again/evangelical profile questions.",
+            "weight": 0.03125
+          },
+          {
+            "level_id": "transwoman_adult_unspecified_store_men_then_women",
+            "text": "A prior randomized Powell module appeared. Please read the following story and form an impression, then privately answer the questions. Casey is 36 years old and was born a male, but now identifies as a woman.\nQ1. Suppose Casey is at a local store and needs to use the restroom. Which restroom should Casey use? Answers: The men's restroom; The women's restroom; Other.\nQ2. Why do you think Casey should use the selected restroom? Privately form a few-sentence explanation.\nQ3. Regardless of the earlier answer, do you personally consider Casey to be a male or a female? {{powell_q3_options}}\nQ4. Do you personally know anyone who is lesbian, gay, bisexual, or transgender, including a close friend or family member? Then answer sexual identity, religiousness, and born-again/evangelical profile questions.",
+            "weight": 0.03125
+          },
+          {
+            "level_id": "transwoman_adult_unspecified_store_women_then_men",
+            "text": "A prior randomized Powell module appeared. Please read the following story and form an impression, then privately answer the questions. Casey is 36 years old and was born a male, but now identifies as a woman.\nQ1. Suppose Casey is at a local store and needs to use the restroom. Which restroom should Casey use? Answers: The women's restroom; The men's restroom; Other.\nQ2. Why do you think Casey should use the selected restroom? Privately form a few-sentence explanation.\nQ3. Regardless of the earlier answer, do you personally consider Casey to be a male or a female? {{powell_q3_options}}\nQ4. Do you personally know anyone who is lesbian, gay, bisexual, or transgender, including a close friend or family member? Then answer sexual identity, religiousness, and born-again/evangelical profile questions.",
+            "weight": 0.03125
+          },
+          {
+            "level_id": "transwoman_teen_conforming_school_boys_then_girls",
+            "text": "A prior randomized Powell module appeared. Please read the following story and form an impression, then privately answer the questions. Casey is 16 years old and was born a male, but now identifies as a girl. When meeting Casey for the first time, most people assume Casey is girl.\nQ1. Suppose Casey is at school and needs to use the restroom. Which restroom should Casey use? Answers: The boy's restroom; The girl's restroom; Other.\nQ2. Why do you think Casey should use the selected restroom? Privately form a few-sentence explanation.\nQ3. Regardless of the earlier answer, do you personally consider Casey to be a male or a female? {{powell_q3_options}}\nQ4. Do you personally know anyone who is lesbian, gay, bisexual, or transgender, including a close friend or family member? Then answer sexual identity, religiousness, and born-again/evangelical profile questions.",
+            "weight": 0.015625
+          },
+          {
+            "level_id": "transwoman_teen_conforming_store_boys_then_girls",
+            "text": "A prior randomized Powell module appeared. Please read the following story and form an impression, then privately answer the questions. Casey is 16 years old and was born a male, but now identifies as a girl. When meeting Casey for the first time, most people assume Casey is girl.\nQ1. Suppose Casey is at a local store and needs to use the restroom. Which restroom should Casey use? Answers: The boy's restroom; The girl's restroom; Other.\nQ2. Why do you think Casey should use the selected restroom? Privately form a few-sentence explanation.\nQ3. Regardless of the earlier answer, do you personally consider Casey to be a male or a female? {{powell_q3_options}}\nQ4. Do you personally know anyone who is lesbian, gay, bisexual, or transgender, including a close friend or family member? Then answer sexual identity, religiousness, and born-again/evangelical profile questions.",
+            "weight": 0.015625
+          },
+          {
+            "level_id": "transwoman_teen_conforming_store_men_then_women",
+            "text": "A prior randomized Powell module appeared. Please read the following story and form an impression, then privately answer the questions. Casey is 16 years old and was born a male, but now identifies as a girl. When meeting Casey for the first time, most people assume Casey is girl.\nQ1. Suppose Casey is at a local store and needs to use the restroom. Which restroom should Casey use? Answers: The men's restroom; The women's restroom; Other.\nQ2. Why do you think Casey should use the selected restroom? Privately form a few-sentence explanation.\nQ3. Regardless of the earlier answer, do you personally consider Casey to be a male or a female? {{powell_q3_options}}\nQ4. Do you personally know anyone who is lesbian, gay, bisexual, or transgender, including a close friend or family member? Then answer sexual identity, religiousness, and born-again/evangelical profile questions.",
+            "weight": 0.015625
+          },
+          {
+            "level_id": "transwoman_teen_conforming_store_women_then_men",
+            "text": "A prior randomized Powell module appeared. Please read the following story and form an impression, then privately answer the questions. Casey is 16 years old and was born a male, but now identifies as a girl. When meeting Casey for the first time, most people assume Casey is girl.\nQ1. Suppose Casey is at a local store and needs to use the restroom. Which restroom should Casey use? Answers: The women's restroom; The men's restroom; Other.\nQ2. Why do you think Casey should use the selected restroom? Privately form a few-sentence explanation.\nQ3. Regardless of the earlier answer, do you personally consider Casey to be a male or a female? {{powell_q3_options}}\nQ4. Do you personally know anyone who is lesbian, gay, bisexual, or transgender, including a close friend or family member? Then answer sexual identity, religiousness, and born-again/evangelical profile questions.",
+            "weight": 0.015625
+          },
+          {
+            "level_id": "transwoman_teen_nonconforming_school_boys_then_girls",
+            "text": "A prior randomized Powell module appeared. Please read the following story and form an impression, then privately answer the questions. Casey is 16 years old and was born a male, but now identifies as a girl. When meeting Casey for the first time, most people assume Casey is boy.\nQ1. Suppose Casey is at school and needs to use the restroom. Which restroom should Casey use? Answers: The boy's restroom; The girl's restroom; Other.\nQ2. Why do you think Casey should use the selected restroom? Privately form a few-sentence explanation.\nQ3. Regardless of the earlier answer, do you personally consider Casey to be a male or a female? {{powell_q3_options}}\nQ4. Do you personally know anyone who is lesbian, gay, bisexual, or transgender, including a close friend or family member? Then answer sexual identity, religiousness, and born-again/evangelical profile questions.",
+            "weight": 0.015625
+          },
+          {
+            "level_id": "transwoman_teen_nonconforming_store_boys_then_girls",
+            "text": "A prior randomized Powell module appeared. Please read the following story and form an impression, then privately answer the questions. Casey is 16 years old and was born a male, but now identifies as a girl. When meeting Casey for the first time, most people assume Casey is boy.\nQ1. Suppose Casey is at a local store and needs to use the restroom. Which restroom should Casey use? Answers: The boy's restroom; The girl's restroom; Other.\nQ2. Why do you think Casey should use the selected restroom? Privately form a few-sentence explanation.\nQ3. Regardless of the earlier answer, do you personally consider Casey to be a male or a female? {{powell_q3_options}}\nQ4. Do you personally know anyone who is lesbian, gay, bisexual, or transgender, including a close friend or family member? Then answer sexual identity, religiousness, and born-again/evangelical profile questions.",
+            "weight": 0.015625
+          },
+          {
+            "level_id": "transwoman_teen_nonconforming_store_men_then_women",
+            "text": "A prior randomized Powell module appeared. Please read the following story and form an impression, then privately answer the questions. Casey is 16 years old and was born a male, but now identifies as a girl. When meeting Casey for the first time, most people assume Casey is boy.\nQ1. Suppose Casey is at a local store and needs to use the restroom. Which restroom should Casey use? Answers: The men's restroom; The women's restroom; Other.\nQ2. Why do you think Casey should use the selected restroom? Privately form a few-sentence explanation.\nQ3. Regardless of the earlier answer, do you personally consider Casey to be a male or a female? {{powell_q3_options}}\nQ4. Do you personally know anyone who is lesbian, gay, bisexual, or transgender, including a close friend or family member? Then answer sexual identity, religiousness, and born-again/evangelical profile questions.",
+            "weight": 0.015625
+          },
+          {
+            "level_id": "transwoman_teen_nonconforming_store_women_then_men",
+            "text": "A prior randomized Powell module appeared. Please read the following story and form an impression, then privately answer the questions. Casey is 16 years old and was born a male, but now identifies as a girl. When meeting Casey for the first time, most people assume Casey is boy.\nQ1. Suppose Casey is at a local store and needs to use the restroom. Which restroom should Casey use? Answers: The women's restroom; The men's restroom; Other.\nQ2. Why do you think Casey should use the selected restroom? Privately form a few-sentence explanation.\nQ3. Regardless of the earlier answer, do you personally consider Casey to be a male or a female? {{powell_q3_options}}\nQ4. Do you personally know anyone who is lesbian, gay, bisexual, or transgender, including a close friend or family member? Then answer sexual identity, religiousness, and born-again/evangelical profile questions.",
+            "weight": 0.015625
+          },
+          {
+            "level_id": "transwoman_teen_ambiguous_school_boys_then_girls",
+            "text": "A prior randomized Powell module appeared. Please read the following story and form an impression, then privately answer the questions. Casey is 16 years old and was born a male, but now identifies as a girl. When meeting Casey for the first time, most people are unsure whether Casey is girl or boy.\nQ1. Suppose Casey is at school and needs to use the restroom. Which restroom should Casey use? Answers: The boy's restroom; The girl's restroom; Other.\nQ2. Why do you think Casey should use the selected restroom? Privately form a few-sentence explanation.\nQ3. Regardless of the earlier answer, do you personally consider Casey to be a male or a female? {{powell_q3_options}}\nQ4. Do you personally know anyone who is lesbian, gay, bisexual, or transgender, including a close friend or family member? Then answer sexual identity, religiousness, and born-again/evangelical profile questions.",
+            "weight": 0.015625
+          },
+          {
+            "level_id": "transwoman_teen_ambiguous_store_boys_then_girls",
+            "text": "A prior randomized Powell module appeared. Please read the following story and form an impression, then privately answer the questions. Casey is 16 years old and was born a male, but now identifies as a girl. When meeting Casey for the first time, most people are unsure whether Casey is girl or boy.\nQ1. Suppose Casey is at a local store and needs to use the restroom. Which restroom should Casey use? Answers: The boy's restroom; The girl's restroom; Other.\nQ2. Why do you think Casey should use the selected restroom? Privately form a few-sentence explanation.\nQ3. Regardless of the earlier answer, do you personally consider Casey to be a male or a female? {{powell_q3_options}}\nQ4. Do you personally know anyone who is lesbian, gay, bisexual, or transgender, including a close friend or family member? Then answer sexual identity, religiousness, and born-again/evangelical profile questions.",
+            "weight": 0.015625
+          },
+          {
+            "level_id": "transwoman_teen_ambiguous_store_men_then_women",
+            "text": "A prior randomized Powell module appeared. Please read the following story and form an impression, then privately answer the questions. Casey is 16 years old and was born a male, but now identifies as a girl. When meeting Casey for the first time, most people are unsure whether Casey is girl or boy.\nQ1. Suppose Casey is at a local store and needs to use the restroom. Which restroom should Casey use? Answers: The men's restroom; The women's restroom; Other.\nQ2. Why do you think Casey should use the selected restroom? Privately form a few-sentence explanation.\nQ3. Regardless of the earlier answer, do you personally consider Casey to be a male or a female? {{powell_q3_options}}\nQ4. Do you personally know anyone who is lesbian, gay, bisexual, or transgender, including a close friend or family member? Then answer sexual identity, religiousness, and born-again/evangelical profile questions.",
+            "weight": 0.015625
+          },
+          {
+            "level_id": "transwoman_teen_ambiguous_store_women_then_men",
+            "text": "A prior randomized Powell module appeared. Please read the following story and form an impression, then privately answer the questions. Casey is 16 years old and was born a male, but now identifies as a girl. When meeting Casey for the first time, most people are unsure whether Casey is girl or boy.\nQ1. Suppose Casey is at a local store and needs to use the restroom. Which restroom should Casey use? Answers: The women's restroom; The men's restroom; Other.\nQ2. Why do you think Casey should use the selected restroom? Privately form a few-sentence explanation.\nQ3. Regardless of the earlier answer, do you personally consider Casey to be a male or a female? {{powell_q3_options}}\nQ4. Do you personally know anyone who is lesbian, gay, bisexual, or transgender, including a close friend or family member? Then answer sexual identity, religiousness, and born-again/evangelical profile questions.",
+            "weight": 0.015625
+          },
+          {
+            "level_id": "transwoman_teen_unspecified_school_boys_then_girls",
+            "text": "A prior randomized Powell module appeared. Please read the following story and form an impression, then privately answer the questions. Casey is 16 years old and was born a male, but now identifies as a girl.\nQ1. Suppose Casey is at school and needs to use the restroom. Which restroom should Casey use? Answers: The boy's restroom; The girl's restroom; Other.\nQ2. Why do you think Casey should use the selected restroom? Privately form a few-sentence explanation.\nQ3. Regardless of the earlier answer, do you personally consider Casey to be a male or a female? {{powell_q3_options}}\nQ4. Do you personally know anyone who is lesbian, gay, bisexual, or transgender, including a close friend or family member? Then answer sexual identity, religiousness, and born-again/evangelical profile questions.",
+            "weight": 0.015625
+          },
+          {
+            "level_id": "transwoman_teen_unspecified_store_boys_then_girls",
+            "text": "A prior randomized Powell module appeared. Please read the following story and form an impression, then privately answer the questions. Casey is 16 years old and was born a male, but now identifies as a girl.\nQ1. Suppose Casey is at a local store and needs to use the restroom. Which restroom should Casey use? Answers: The boy's restroom; The girl's restroom; Other.\nQ2. Why do you think Casey should use the selected restroom? Privately form a few-sentence explanation.\nQ3. Regardless of the earlier answer, do you personally consider Casey to be a male or a female? {{powell_q3_options}}\nQ4. Do you personally know anyone who is lesbian, gay, bisexual, or transgender, including a close friend or family member? Then answer sexual identity, religiousness, and born-again/evangelical profile questions.",
+            "weight": 0.015625
+          },
+          {
+            "level_id": "transwoman_teen_unspecified_store_men_then_women",
+            "text": "A prior randomized Powell module appeared. Please read the following story and form an impression, then privately answer the questions. Casey is 16 years old and was born a male, but now identifies as a girl.\nQ1. Suppose Casey is at a local store and needs to use the restroom. Which restroom should Casey use? Answers: The men's restroom; The women's restroom; Other.\nQ2. Why do you think Casey should use the selected restroom? Privately form a few-sentence explanation.\nQ3. Regardless of the earlier answer, do you personally consider Casey to be a male or a female? {{powell_q3_options}}\nQ4. Do you personally know anyone who is lesbian, gay, bisexual, or transgender, including a close friend or family member? Then answer sexual identity, religiousness, and born-again/evangelical profile questions.",
+            "weight": 0.015625
+          },
+          {
+            "level_id": "transwoman_teen_unspecified_store_women_then_men",
+            "text": "A prior randomized Powell module appeared. Please read the following story and form an impression, then privately answer the questions. Casey is 16 years old and was born a male, but now identifies as a girl.\nQ1. Suppose Casey is at a local store and needs to use the restroom. Which restroom should Casey use? Answers: The women's restroom; The men's restroom; Other.\nQ2. Why do you think Casey should use the selected restroom? Privately form a few-sentence explanation.\nQ3. Regardless of the earlier answer, do you personally consider Casey to be a male or a female? {{powell_q3_options}}\nQ4. Do you personally know anyone who is lesbian, gay, bisexual, or transgender, including a close friend or family member? Then answer sexual identity, religiousness, and born-again/evangelical profile questions.",
+            "weight": 0.015625
+          }
+        ],
+        "randomization_id": "powell_programmed_path",
+        "token": "{{powell_module}}"
+      },
+      {
+        "kind": "categorical",
+        "levels": [
+          {
+            "level_id": "male_first",
+            "text": "Answers: Male; Female; Other",
+            "weight": 0.5
+          },
+          {
+            "level_id": "female_first",
+            "text": "Answers: Female; Male; Other",
+            "weight": 0.5
+          }
+        ],
+        "randomization_id": "powell_q3_answer_order",
+        "token": "{{powell_q3_options}}"
+      },
+      {
+        "kind": "categorical",
+        "levels": [
+          {
+            "level_id": "loss_no_social_information",
+            "text": "A prior randomized Farrow module asked the respondent to imagine losing a superb park view because a roadway structure would obstruct it, then rate disappointment from 1=Not at all disappointed to 7=Extremely disappointed.",
+            "weight": 0.25
+          },
+          {
+            "level_id": "loss_with_social_information",
+            "text": "A prior randomized Farrow module asked the respondent to imagine losing a superb park view because a roadway structure would obstruct it, stated that 85% of building residents would also lose the view, then asked for disappointment from 1 to 7.",
+            "weight": 0.25
+          },
+          {
+            "level_id": "gain_no_social_information",
+            "text": "A prior randomized Farrow module asked the respondent to imagine a roadway obstruction being removed so a superb park view would be gained, then rate satisfaction from 1=Not at all satisfied to 7=Extremely satisfied.",
+            "weight": 0.25
+          },
+          {
+            "level_id": "gain_with_social_information",
+            "text": "A prior randomized Farrow module asked the respondent to imagine a roadway obstruction being removed so a superb park view would be gained, stated that 85% of building residents would also gain the view, then asked for satisfaction from 1 to 7.",
+            "weight": 0.25
+          }
+        ],
+        "randomization_id": "farrow_condition",
+        "token": "{{farrow_module}}"
+      },
+      {
+        "kind": "categorical",
+        "levels": [
+          {
+            "level_id": "child_first_a",
+            "text": "",
+            "weight": 0.16666666666666666
+          },
+          {
+            "level_id": "child_first_b",
+            "text": "",
+            "weight": 0.16666666666666666
+          },
+          {
+            "level_id": "food_then_child",
+            "text": "{{food_message}}",
+            "weight": 0.16666666666666666
+          },
+          {
+            "level_id": "tuition_then_child",
+            "text": "{{tuition_message}}",
+            "weight": 0.16666666666666666
+          },
+          {
+            "level_id": "food_tuition_child",
+            "text": "{{food_message}}\n{{tuition_message}}",
+            "weight": 0.16666666666666666
+          },
+          {
+            "level_id": "tuition_food_child",
+            "text": "{{tuition_message}}\n{{food_message}}",
+            "weight": 0.16666666666666666
+          }
+        ],
+        "randomization_id": "within_shannon_vignette_order_before_child",
+        "token": "{{shannon_prior_vignettes}}"
+      }
+    ],
+    "sequence_unit": "synthetic_persona",
+    "target_position": "stop_immediately_after_target_question"
+  },
+  "source_material_sha256": "012fb797696843b6f27f5e85c52891813eb09a1ebae30e3e616c34b74f84c5dd",
+  "task_id": "ShannonS2:child-tax-credit"
+}

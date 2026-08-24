@@ -1,0 +1,74 @@
+{
+  "schema_version": "continuous_decision_task_candidate.v1",
+  "task_id": "tcg8p:task-0",
+  "experiment_id": "tcg8p",
+  "source_id": "TESS-101-Gorman",
+  "source_question_id": "Q11",
+  "socsci210_task_num": 0,
+  "canonical_split_status": "unassigned",
+  "reveal_authorized": false,
+  "outcome_access": "sealed",
+  "paradigm_group": "power_outage_notice_policy",
+  "access_regime": "DESIGN_ONLY",
+  "design_type": "between_subject",
+  "randomization_unit": "participant",
+  "arms": [
+    {
+      "arm_id": "arm_0_no_notice",
+      "condition_num": 0,
+      "description": "No advance notice before each outage",
+      "deployable": true
+    },
+    {
+      "arm_id": "arm_1_day_notice",
+      "condition_num": 1,
+      "description": "24 hours advance notice before each outage",
+      "deployable": true
+    },
+    {
+      "arm_id": "arm_2_week_notice",
+      "condition_num": 2,
+      "description": "One week advance notice before each outage",
+      "deployable": true
+    }
+  ],
+  "control_arm_id": "arm_0_no_notice",
+  "primary_outcome_id": "monthly_willingness_to_pay_to_avoid_outages",
+  "outcome_question": "How much would you be willing to pay, per month, to avoid these two outages?",
+  "outcome_family": "continuous",
+  "outcome_unit": "usd_per_month",
+  "direction": "lower_is_better",
+  "valid_response": {
+    "lower_bound": 0,
+    "upper_bound": null,
+    "integer_only": true,
+    "missing_codes": [77777, 99998, 99999],
+    "missing_labels": ["DON'T KNOW", "SKIPPED ON WEB", "REFUSED"]
+  },
+  "estimator": {
+    "location": "mean",
+    "robustness_locations": ["median"],
+    "contrast": "control_mean_minus_arm_mean_for_lower_is_better_utility",
+    "uncertainty": "participant_within_arm_nonparametric_bootstrap",
+    "practical_regret_tolerance": 0.0,
+    "practical_regret_sensitivity": [0.0, 5.0, 10.0, 20.0],
+    "regret_unit": "usd_per_month",
+    "normalized_for_pooled_regret": false,
+    "pooled_normalization_blocker": "Q11 is source-verified but uncapped; pooled normalized regret requires a development-only scale declared before canonical test reveal."
+  },
+  "target_population": "unweighted released SocSci210 analytic sample for the fielded TESS study",
+  "weighting_rule": "unweighted_released_analytic_sample",
+  "missingness_rule": "complete_case_excluding_source_declared_Q11_missing_codes",
+  "tie_rule": "lexicographic_arm_id",
+  "released_rows_per_arm_before_outcome_missingness": {
+    "arm_0_no_notice": 669,
+    "arm_1_day_notice": 678,
+    "arm_2_week_notice": 718
+  },
+  "source_hashes": {
+    "final_questionnaire_sha256": "10848b27e0a52f53db50336eb93ef831c1c0c02d82a733e7b302d401bcddfe6c",
+    "codebook_sha256": "7f40c3470eaced3816c093d33a031ae27bad923c34695a25d3e06cb73a028179",
+    "proposal_sha256": "3e8a05847f41bef0f0af997cd598874744c7d39594ea72ba3b796a82ecaa88af"
+  },
+  "reconstruction_note": "SocSci210 conditions 0, 1, and 2 preserve no notice, 24-hour notice, and one-week notice. Task 0 preserves the integer monthly-dollar response. No response value was used to construct this record."
+}

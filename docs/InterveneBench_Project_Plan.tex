@@ -1,0 +1,524 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{riskred}{RGB}{150,35,35}
+\definecolor{safegray}{RGB}{245,245,245}
+
+\title{\textbf{InterveneBench}\\Knowing When Human Simulations Can Be Trusted for Decisions}
+\author{Prospective benchmark plan}
+\date{Revised August 14, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+InterveneBench evaluates behavioral simulators at the level that matters for deployment: intervention decisions. Before target human outcomes are revealed, a simulator receives a blinded description of an experiment, estimates outcomes under each admissible intervention, and commits to a recommendation and trust decision. The recommendation is then scored against a randomized human experiment using treatment-effect fidelity, best-arm reliability, and normalized decision regret. The benchmark further tests whether outcome-free diagnostics support useful abstention and how much independent human evidence is required to rescue low-confidence decisions. The primary dataset is SocSci210, with experiments grouped by paradigm and held out intact.
+\end{abstract}
+
+\section{Scientific Claim}
+
+The benchmark asks:
+
+\begin{quote}
+Given an experiment's design, intervention arms, target-population information allowed by a declared access regime, and outcome definition---but not its human outcomes---can a simulator choose an intervention with low regret, and can a policy know when to abstain or collect human evidence?
+\end{quote}
+
+InterveneBench does not claim that a simulator understands people, substitutes for human participants, or identifies individual counterfactuals. It evaluates the utility of synthetic evidence for specified population-level decisions under empirical validation.
+
+\subsection*{Immediate portfolio claim}
+
+The immediate deliverable is deliberately narrower than the full research program. Five source-verified bounded-ordinal experiments test whether frozen synthetic recommendations reproduce human intervention rankings and what regret follows when they do not. The completed prospective development portfolio selected the exact human point-estimate winner in three of five experiments, with mean normalized regret 0.0038, compared with zero of five and regret 0.0308 for a no-effect/control-tie policy. An arm-count-aware uniform-random policy has expected accuracy 0.333 and regret 0.0293. The simulator's treatment-effect mean absolute error was nevertheless worse, 0.0467 versus 0.0361. Leave-one-experiment-out attenuation lowered it to 0.0394 without changing any decision, but still did not beat the no-effect policy. All three pre-reveal confidence diagnostics ranked the clearest regret failure as most trustworthy. This divergence between decision ranking, effect calibration, and confidence is the central portfolio finding. The result cannot validate a general trust model or universal simulation reliability. Corpus expansion, fine-tuning, Modal-scale inference, and the full trust program remain contingent extensions rather than prerequisites for a finished project.
+
+\subsection*{Active depth-first research claim}
+
+The active expansion is a bounded 15-experiment study rather than an open-ended corpus search. Six already revealed experiments form a discovery set, three source-audited candidates are being completed as a prospectively frozen development set, and six currently runnable experiments remain sealed for one prospective confirmation. The study retains corpus construction, multi-family simulator evaluation, outcome-free abstention, and independent human fallback. It is explicitly noncanonical: trust prediction remains exploratory, and the full 100-experiment, 25-paradigm, 20-test-experiment gate is unchanged.
+
+The six confirmation tasks are \texttt{tcg8p}, \texttt{pb2rr}, \texttt{z358z}, \texttt{ShannonS2}, \texttt{Blair1131}, and \texttt{KlarS44}. Before any of their outcomes are opened, the project freezes checkpoints, prompts, parsers, rosters, diagnostics, trust direction and threshold procedure, fallback folds and fusion, seeds, uncertainty, and report skeleton.
+
+That confirmation has now been completed. Its six experiments remain the
+project's noncanonical prospective case study, and all 15 revealed experiments
+may serve as development evidence. A separately frozen attempt to assemble a
+12--16 experiment independent-replication panel stopped before inference or
+reveal after the available public-source lanes failed their outcome-blind yield
+rules. The historical replication protocol remains part of the audit trail but
+is no longer a project-completion dependency or execution authority.
+
+External acquisition is bounded by explicit no-progress gates. A
+metadata-blind random TESS-root lane closed at order 20 after zero clean passes.
+The replacement lane uses only a frozen high-precision title lexicon for
+action-oriented experiments, preserves the original hash order, and audits at
+most 12 rows with checkpoints after orders 6 and 9. No human outcomes or
+simulator results participate in this selection.
+
+The targeted lane closed at order 9 with one strict scientific survivor,
+\texttt{dvwu7}, below its frozen minimum of two. Orders 10--12 remain
+unopened. The surviving self-affirmation task proceeds only to mechanical
+human-mapping and adapter completion; open-ended external corpus search stops.
+
+The active program is now a role-focused evaluation product. It preserves the
+prospective case study and delivers a reproducible simulator-evaluation
+lifecycle, experiment-paired model regression, scoped release gating,
+aggregate-only public evidence, a results explorer, and a technical report.
+This changes the allocation of engineering effort, not the empirical claim:
+universal trust, autonomous intervention selection, confidence-based
+abstention, and small-sample human fallback remain unsupported.
+
+\section{Why the Contribution Must Be Decision-Centric}
+
+The research bar has moved beyond response imitation. Socrates evaluates distributional fidelity on unseen social-science studies \cite{kolluri2025}. Recent work predicts treatment effects and evaluates intervention-selection and human-plus-LLM pilot use cases \cite{ashokkumar2026}. Persona or user drift has also been formalized as a source of confounding in synthetic interventions \cite{lin2026}.
+
+InterveneBench therefore does not claim novelty from treatment-effect prediction alone. Its contribution is the integration of:
+
+\begin{enumerate}
+\item a real pre-reveal commitment boundary;
+\item normalized decision regret and practical equivalence;
+\item prospective trust and abstention evaluated by risk-coverage;
+\item out-of-fold trust-model training examples; and
+\item human fallback scored on participants not consumed by the fallback policy.
+\end{enumerate}
+
+\section{Units of Analysis}
+
+\subsection{Experiment}
+
+The experiment is the indivisible unit for splitting, cross-fitting, generalization, and headline uncertainty. Participants, response rows, conditions, and outcomes from one experiment remain in the same partition.
+
+\subsection{Paradigm Group}
+
+A paradigm group contains experiments with a materially similar task, intervention mechanism, or outcome paradigm. Paradigm groups are assigned across train, validation, and test. This implements a stronger requirement than merely holding out study identifiers.
+
+Grouping uses design metadata and treatment/outcome text while blinded to human responses, effect sizes, significance, and winners. The grouping procedure is frozen before outcome analysis.
+
+\subsection{Decision Task}
+
+The scored object is a predeclared decision task:
+
+\[
+\text{experiment} + \text{target population} + \text{outcome utility} + \text{admissible arms} + \text{estimand}.
+\]
+
+The primary benchmark contains at most one primary decision task per experiment. Secondary outcomes remain clustered within experiment and do not create additional independent experiments.
+
+\section{Primary Dataset and Audit Gate}
+
+The primary dataset is \textbf{SocSci210}, pinned to revision:
+
+\begin{center}
+\texttt{048481111a4425ed83dc0eacf15f8431f252b21a}
+\end{center}
+
+SocSci210 contains a flattened representation of personas, conditions, outcome questions, and responses. It is not a ready-made causal benchmark. The public schema does not explicitly encode design type, control arms, deployable action sets, outcome family, scale bounds, outcome orientation, or survey weights.
+
+Before implementation, the project must:
+
+\begin{itemize}
+\item resolve local, API, fine-tuning, and redistribution permissions;
+\item verify file hashes and identifier scope;
+\item trace eligible studies to original TESS or OSF materials;
+\item reconstruct and manually verify randomization, conditions, outcomes, scales, and weights;
+\item create a response-blinded eligibility registry; and
+\item create a response-blinded paradigm taxonomy.
+\end{itemize}
+
+The released \texttt{reasoning} field is outcome-derived oracle material and is forbidden in target prompts, features, embeddings, diagnostics, and trust-model inputs. Prompts must be reconstructed from an explicit allowlist.
+
+An outcome-blind qualification audit verified all 17 shard hashes and the released totals of 2,901,390 rows, 210 studies, and 400,491 study-participant pairs. The structural screen found 175 studies with between-subject assignment patterns, 161 with at least two conditions and a task shared across conditions, and 121 that also expose at least one stable stimulus per arm for a shared task. These are upper bounds, not causal eligibility decisions.
+
+SocSci210 therefore supplies benchmark scale rather than automatic ground-truth semantics. The evidence architecture has four layers:
+
+\begin{enumerate}
+\item source-verified SocSci210 tasks form the primary benchmark;
+\item SocSci210 studies matched to the independently curated 70-experiment Nature/TESS archive form a gold audit stratum; and
+\item source-verified randomized experiments de-duplicated against SocSci210 form a preregistered augmentation stratum before the canonical split; and
+\item later temporal or otherwise untouched experiments are reserved for post-freeze replication, if available.
+\end{enumerate}
+
+The title crosswalk identifies 40 curated-archive overlaps, including 17 strict Phase 1 structural candidates. All 17 received an outcome-blind source audit; three survived the locked clean-design gate. A deterministic smoke split assigned \texttt{5vm8g} to train, \texttt{jf46x} to validation, and \texttt{xc4yq} to test. This three-task split validates the protocol only; it is not the canonical full-benchmark split. Paradigm grouping still takes precedence over exact split proportions, and the overlap may not be balanced by inspecting effects or simulator performance.
+
+A second deterministic, outcome-sealed audit sampled 40 of the 57 previously unaudited studies in the strict 74-study structural pool. Its design screen identified five provisional simple-core tasks, 23 extension tasks, and 12 ineligible studies. Source-primary-outcome mapping then moved three provisional cores to source-data, utility-sensitivity, and composite extensions, leaving two structurally core-simple and 26 extension tasks without changing the 28-study scientifically usable census. For the two remaining core tasks, final questionnaire labels and released prompts reverse the same response scales. A bounded provenance search recovered no construction artifact or variable-level crosswalk, so both are barred from Benchmark v1 scoring unless author-supplied provenance arrives before the canonical split. Combined with the earlier audit, the strict SocSci210 pool projects to roughly 50--59 structurally usable experiments before task-contract attrition and only about 10--12 experiments in a 20\% test split before paradigm constraints.
+
+The first external census is frozen from the 70-study archive and fully adjudicated. Its 31 rows contain seven scientifically usable modules, three source-blocked rows, and 21 ineligible rows including five exact SocSci210 duplicates. Five usable modules remain sealed and two are development-only. One usable module shares respondents and fielding with an existing SocSci210 experiment, so the census adds only six distinct usable fieldings. Participant records were never opened. Logged result-text exposure bars affected studies from untouched evaluation; a qualitative abstract exposure during duplicate adjudication also makes SocSci210 study \texttt{345ms} development-only. This census cannot approach 100 experiments, so a second independent external corpus is required. SocSci210 remains primary.
+
+The cost-controlled Benchmark v1 candidate scope remains frozen at 38 audited modules: 31 SocSci210 and seven external. After the five-task portfolio reveal, 27 remain outcome sealed, 22 remain potentially eligible for a later canonical test after task-contract completion, and 11 are development-only because of a smoke reveal, result exposure, or the portfolio reveal. Six source-faithful contracts remain runnable and sealed: \texttt{tcg8p}, \texttt{z358z}, \texttt{pb2rr}, \texttt{Blair1131}, \texttt{ShannonS2}, and \texttt{KlarS44}. Every full-benchmark canonical split assignment remains unassigned. The executable preflight blocks splitting because six provisional independent runnable fieldings and six paradigms would yield only one test experiment, below both the exploratory and full-claim gates.
+
+The immediate portfolio contains \texttt{5vm8g}, \texttt{xc4yq}, \texttt{de5hx}, \texttt{turagaS11}, and \texttt{wallaceS12}. A local \texttt{llama3.2:3b} simulator completed 60 structured calls and froze five recommendation artifacts before outcome access. A separate hash-bound authorization then opened only the declared human outcomes and permanently labeled the five development-only. Exact choice was correct in three cases. The two errors had normalized regrets 0.0025 and 0.0166; all five decisions were within the prespecified 0.05 practical tolerance. Mean arm-level total-variation distance was 0.205. The local policy had lower point-estimate regret than the no-effect policy in all five experiments, although the two-sided exact sign test is 0.0625. Winner margin, generation stability, and low entropy were anti-informative in this small sample. A fixed disjoint fallback simulation found that balanced human-only pilots improved gradually with sample size, but neither simple synthetic-plus-human fusion policy beat synthetic-only on average by 250 participants. These negative results are preserved. Paid cost was zero and Modal was not used. The six other runnable contracts remain sealed.
+
+\section{Eligibility and Decision Registry}
+
+Every candidate experiment receives a registry entry before effect estimates are computed. The entry records:
+
+\begin{itemize}
+\item source and stable identifiers;
+\item study design and randomization unit;
+\item arm descriptions and deployable action set;
+\item control or comparison reference;
+\item primary outcome, family, response options, and questionnaire bounds;
+\item utility orientation;
+\item missing-data and weighting rules;
+\item modality and paradigm group; and
+\item eligibility decision with a design-based reason.
+\end{itemize}
+
+Eligibility must not depend on observed treatment effects, significance, simulator performance, or winners.
+
+\section{Canonical Split}
+
+The target split is approximately:
+
+\begin{itemize}
+\item 65\% train experiments;
+\item 15\% validation experiments; and
+\item 20\% held-out test experiments.
+\end{itemize}
+
+Paradigm-group integrity takes precedence over exact percentages. The manifest records dataset and registry hashes, grouping version, seed, experiment-to-group mapping, experiment-to-split mapping, and test-seal status.
+
+Validation is used for prompt and model selection, calibration choices, trust thresholds, and Phase 1 debugging. Test is opened only after the protocol, report skeleton, and analysis plan are frozen.
+
+\subsection{Checkpoint Exposure}
+
+A project split does not make an experiment unseen to a released checkpoint. For Socrates and other fine-tuned models, the project records training-study membership. A model is described as experiment-held-out only on studies confirmed absent from its fine-tuning data. Otherwise it is retrained, restricted to a leakage-safe intersection, or reported as potentially exposed.
+
+\subsection{Foundation-Model Contamination}
+
+Benchmark holdout does not prove absence from foundation-model pretraining. Prompts exclude study titles, authors, citations, and result-bearing paper text. The project records model knowledge cutoffs and experiment publication dates where available, runs prespecified contamination proxies, and uses the term \emph{benchmark-held-out} unless stronger absence can be demonstrated.
+
+\section{Prospective Freeze and Reveal}
+
+The required execution order is:
+
+\begin{center}
+\fcolorbox{black}{safegray}{\parbox{0.88\linewidth}{\centering
+metadata-only registry $\rightarrow$ paradigm split $\rightarrow$ blinded simulator bundle $\rightarrow$ synthetic effects and recommendation $\rightarrow$ frozen trust decision $\rightarrow$ human-outcome reveal $\rightarrow$ scoring}}
+\end{center}
+
+Before reveal, an immutable recommendation artifact records:
+
+\begin{itemize}
+\item dataset, registry, split, task, prompt, parser, and code hashes;
+\item simulator and checkpoint revision;
+\item persona roster and access regime;
+\item synthetic arm means, effects, rankings, and selected arm;
+\item outcome-free diagnostics and trust decision;
+\item seeds and sampling parameters; and
+\item timestamp and final artifact hash.
+\end{itemize}
+
+Scoring rejects a missing or modified artifact. Human outcomes are accessible only after artifact verification.
+
+\section{Population-Access Regimes}
+
+Every result declares one regime:
+
+\begin{enumerate}
+\item \texttt{DESIGN\_ONLY}: design information and a public population distribution, with no target participant records;
+\item \texttt{TARGET\_COVARIATES}: target pre-treatment covariates or demographic distribution, with no target outcomes; or
+\item \texttt{HUMAN\_PILOT\_BUDGET\_k}: the above plus exactly $k$ target human outcome observations.
+\end{enumerate}
+
+Within a task, the same synthetic persona roster is evaluated under every arm. This targets intervention differences in a fixed population and prevents population composition from masquerading as a treatment effect.
+
+\section{Outcome Utility and Estimand}
+
+For declared questionnaire bounds $[L,H]$, define normalized utility as:
+
+\[
+U(Y)=
+\begin{cases}
+(Y-L)/(H-L), & \text{if higher is better},\\
+(H-Y)/(H-L), & \text{if lower is better}.
+\end{cases}
+\]
+
+Bounds and orientation come from study materials, never observed held-out minima or maxima.
+
+For arm $j$:
+
+\[
+\mu_{H,j}=E[U(Y)\mid A=j], \qquad
+\mu_{S,j}=E[U(\hat{Y})\mid A=j].
+\]
+
+Relative to control:
+
+\[
+\tau_{H,j}=\mu_{H,j}-\mu_{H,0}, \qquad
+\tau_{S,j}=\mu_{S,j}-\mu_{S,0}.
+\]
+
+The initial estimand is the unadjusted intention-to-treat difference in mean normalized utility for a verified between-subject randomized experiment. Control is an admissible action by default. Survey weighting, covariate adjustment, repeated measures, factorial designs, and noncompliance require explicit later estimators.
+
+For uncapped continuous outcomes, the project preserves the source unit rather than manufacturing a scale from target responses. The first contract, \texttt{tcg8p} Q11, uses source-aligned mean monthly willingness to pay as primary, median willingness to pay as mandatory robustness, and source missing codes \texttt{77777}, \texttt{99998}, and \texttt{99999}. Lower willingness to pay is better for the declared notice-policy objective. Exact choice is primary; raw-dollar regret sensitivities are 0, 5, 10, and 20 USD/month. Because the source declares no upper bound, the task is excluded from pooled normalized regret until a development-only scale is frozen before canonical test reveal. The task itself remains split-unassigned and outcome sealed.
+
+\section{Simulator Suite}
+
+\subsection{No-Effect Control Policy}
+
+Predict equal normalized expected utility for every arm and select control using a frozen tie rule. This is a transparent default that cannot leak target outcomes.
+
+\subsection{Classical Cross-Experiment Baseline}
+
+Use structured experiment metadata and frozen text representations. Study-local condition and task numbers are not meaningful cross-experiment predictors by themselves. Candidate models include regularized linear, logistic, or ordinal regression and simple tree-based methods.
+
+\subsection{Generic Prompted LLM}
+
+Prompt with the permitted profile, experiment context, intervention, outcome question, and valid response options. Request a response distribution when reliable or use repeated constrained samples. Save all raw outputs and provenance.
+
+\subsection{Behavioral Specialist}
+
+Use Socrates or another specialist only on a checkpoint-compatible held-out set.
+
+\subsection{Project Fine-Tune}
+
+An open 7B/14B-class LoRA fine-tune is optional until it serves a decision-level hypothesis. Reproducing existing distributional-fidelity gains is not by itself a sufficient contribution. Compute should first support benchmark breadth, out-of-fold recommendations, repeated simulation, diagnostics, and human fallback.
+
+\section{Evaluation}
+
+\subsection{Descriptive Fidelity}
+
+Use outcome-appropriate accuracy, MAE, log loss, Brier score, Wasserstein distance, total variation, Jensen-Shannon divergence, correlation, and subgroup error. Test whether descriptive realism predicts intervention fidelity and regret rather than assuming it does.
+
+\subsection{Intervention Fidelity}
+
+Report human and synthetic normalized treatment effects, absolute error, sign correctness, effect-size correlation, arm-ranking correlation, and subgroup error where adequately supported. Relative error is secondary and requires a stabilized prespecified denominator.
+
+\subsection{Decision Reliability and Regret}
+
+Let $\hat{j}$ be the synthetic-selected arm and $j^*$ the human point-estimate best arm:
+
+\[
+\hat{j}=\arg\max_j \mu_{S,j}, \qquad
+j^*=\arg\max_j \mu_{H,j}.
+\]
+
+Normalized regret is:
+
+\[
+R=\mu_{H,j^*}-\mu_{H,\hat{j}}.
+\]
+
+Report exact best-arm accuracy, practical reliability $\mathbf{1}[R\leq\delta]$, bootstrap probability that the selected arm is optimal, top-2 accuracy where meaningful, ranking correlation, mean and median regret, upper-tail regret, worst-case regret, and subgroup regret.
+
+The tolerance $\delta$ is frozen before test evaluation. Results include exact choice ($\delta=0$) and a prespecified sensitivity grid. Near-tied arms are not portrayed as meaningfully different without uncertainty.
+
+\section{Outcome-Free Failure Diagnostics}
+
+Diagnostics include:
+
+\begin{itemize}
+\item response entropy and synthetic winner margin;
+\item repeated-generation variance, ranking consistency, and winner stability;
+\item model disagreement in arm effects and winners;
+\item formatting, wording, condition-order, and answer-order sensitivity;
+\item OOD distance in design, text, outcome family, and intervention type;
+\item demographic support and missingness; and
+\item persona/user drift through stable-answer changes, negative controls, KL divergence, or embedding distance.
+\end{itemize}
+
+The scientific question is whether these features predict held-out error or regret beyond simple baselines such as winner margin. Diagnostics are hypotheses, not guaranteed contributions.
+
+\section{Trust and Abstention}
+
+The trust model predicts:
+
+\[
+P(\hat{j}=j^*\mid D), \qquad
+P(R\leq\delta\mid D),
+\]
+
+where $D$ contains only outcome-free diagnostics. Expected normalized regret may be an additional target.
+
+Allowed inputs include simulator identity, prespecified metadata, outcome family, entropy, synthetic margin, instability, disagreement, prompt sensitivity, drift, OOD distance, demographic support, and missingness. Human target outcomes, effects, winners, regret, and significance are forbidden.
+
+\subsection{Cross-Fitting}
+
+For a fine-tuned simulator, development recommendations used to train the trust model must be out of fold. The simulator producing a recommendation cannot have trained on that experiment. All tasks from an experiment stay in one fold.
+
+The effective sample size is the number of experiments, not the number of outcomes, arms, simulators, or seeds. Start with simple regularized models and calibration appropriate to that sample size.
+
+\subsection{Trust Metrics}
+
+Report calibration, Brier score, AUROC/AUPRC when supported, risk-coverage, area under the risk-coverage curve, regret at fixed coverage, coverage at fixed risk, and comparison with random abstention and single-diagnostic policies.
+
+A failed trust model is a valid result if the protocol is prospective.
+
+\section{Independent Human Fallback}
+
+Evaluate budgets of 0, 10, 25, 50, 100, and 250 human outcome observations. Compare humans only, synthetic only, uniform human augmentation, and outcome-free adaptive allocation.
+
+For each acquisition replicate:
+
+\begin{enumerate}
+\item sample pilot participants according to the declared budget and allocation rule;
+\item update or validate the frozen synthetic decision using only those pilot outcomes;
+\item score the resulting decision on disjoint remaining participants; and
+\item repeat with fixed seeds and aggregate at the experiment level.
+\end{enumerate}
+
+Any synthetic-human fusion rule is trained or calibrated only on development experiments. The primary result is normalized regret versus human-data cost, accompanied by exact and practical reliability and marginal regret reduction per additional observation.
+
+\section{Statistical Rigor}
+
+\begin{itemize}
+\item Resample experiments as clusters for benchmark-level intervals.
+\item Preserve paired comparisons between simulators.
+\item Keep all outcomes and simulator variants from one experiment clustered.
+\item Use multiple seeds for stochastic simulation and acquisition.
+\item Report effective experiment counts and trust-label balance.
+\item Report effect sizes and uncertainty, not only $p$-values.
+\item Scope or correct multiple subgroup analyses.
+\item Preserve null and negative findings.
+\end{itemize}
+
+Millions of participant rows do not constitute millions of independent benchmark observations.
+
+\section{Phase 1: Validation Smoke Test}
+
+\subsection*{Completion status}
+
+Phase 1 completed on \texttt{jf46x:task-0} using the \texttt{DESIGN\_ONLY} regime and a local \texttt{llama3.2:3b} simulator. The recommendation was hashed before validation outcomes were accessible. The simulator selected the human point-estimate winner and incurred zero sample regret, but the human arm contrast was only 0.0071 normalized utility and the selected arm's bootstrap optimality probability was 57.0\%. This is a successful protocol smoke test, not evidence of general simulator reliability. The held-out \texttt{xc4yq} outcomes remain sealed.
+
+Phase 1 uses one clean validation decision task with:
+
+\begin{itemize}
+\item verified between-subject randomization;
+\item one experimental factor and two to four deployable arms;
+\item a text-only intervention;
+\item one binary or ordinal outcome with explicit scale and direction;
+\item at least 100 valid observations per arm; and
+\item no unmodeled order, carryover, conjoint, list, factorial, or multi-wave complication.
+\end{itemize}
+
+If several validation tasks qualify, choose using a frozen outcome-free rule.
+
+The smoke run must:
+
+\begin{enumerate}
+\item resolve the data-use gate and pin the dataset;
+\item create the blinded registry and paradigm split;
+\item create a simulator bundle that excludes responses and oracle reasoning;
+\item run the no-effect policy and one real non-oracle simulator;
+\item compute and freeze synthetic effects and recommendation;
+\item reveal validation outcomes only after artifact verification;
+\item compute human effects, correctness, bootstrap optimality, and regret; and
+\item replay the report exactly from frozen outputs without another model call.
+\end{enumerate}
+
+No test outcome is loaded or summarized in Phase 1.
+
+\section{Milestones}
+
+\subsection*{Immediate portfolio milestone}
+
+The complete five-experiment empirical package now includes frozen no-effect and local-model recommendations, an analytic random-choice baseline, human and synthetic effects after a separately authorized development reveal, exact intervention-choice accuracy, regret, bootstrap uncertainty, distribution fidelity, utility sensitivity, experiment-level paired comparisons, leave-one-experiment-out effect attenuation, outcome-free diagnostic risk-coverage, and disjoint human-fallback curves. The package is reproducible and presentable; a general trust model is not claimed.
+
+\subsection*{Phase 1: Prospective Validation Smoke Test}
+
+Prove one complete freeze/reveal path with focused tests and provenance.
+
+\subsection*{Optional Phase 2: Benchmark Registry and Breadth}
+
+The first continuous-outcome extension is implemented and fixture-tested. Sequence-aware and source-data adapters preserve design complications rather than flattening them. The 38-module Benchmark v1 candidate scope remains split-unassigned; its preflight refuses a premature split at six runnable sealed fieldings and one projected test experiment. Expansion should proceed only if a stronger prospective trust claim is worth the additional corpus and compute burden.
+
+\subsection*{Active depth-first program}
+
+Complete three high-yield contracts from the already-audited SocSci210 queue, then stop corpus work at 15 independent tasks. The program pauses a candidate lane after one three-candidate batch yields zero runnable contracts, stops repeated investigation after two candidates fail for the same structural reason, and caps focused contract completion at 20 hours. If the target cannot be reached within that cap, the project freezes a smaller corpus and narrows its claims rather than admitting ambiguous tasks.
+
+The first bounded conversion batch has produced three new outcome-sealed runnable tasks. 
+\texttt{nj5dx} preserves a two-arm reciprocal inequality-framing experiment using the exact source infographics and a generic PNG-backed ordinal simulator adapter. 
+\texttt{es4xw} preserves four exact management-team images and bars the incompatible SocSci210 reconstruction from scoring; a recommendation-bound source-SAV reader projects only participant ID, weight, assignment, and the frozen ordinal outcome after separate reveal authorization. 
+\texttt{e2pyb} reuses the image adapter for three exact racial-disparity message dimensions and a common ordinal outcome. 
+\texttt{jtgyq} was rejected because SocSci210 omits its randomized no-message control and no source participant file can restore the full action set. 
+\texttt{a42yg} remains scientifically eligible but was replaced under the speed rule because it requires an interactive, sequence-aware multimodal adapter. These dispositions were made without opening target outcomes.
+
+New simulator configurations first run on two discovery experiments and must pass a 98\% semantic-parser gate. A configuration is dropped when it exceeds its frozen cost cap or duplicates a cheaper model without testing a distinct decision hypothesis. Diagnostic proliferation stops when no prespecified score improves both development risk-coverage and regret over random abstention. Synthetic-informed fallback tuning stops if it fails to improve paired regret at the 25, 50, and 100-person budgets. Null results are preserved.
+
+\subsection*{Phase 3: Cross-Fitted Diagnostics and Trust}
+
+Generate out-of-fold development recommendations, evaluate diagnostics, fit simple trust models, and freeze the abstention policy.
+
+\subsection*{Phase 4: Test and Human Fallback}
+
+Open test once, score frozen decisions, run disjoint human-acquisition evaluation, and produce the research package.
+
+\subsection*{Optional Phase 5: Post-Freeze Replication}
+
+Apply the frozen policy to later temporal or otherwise untouched experiments not used in augmentation.
+
+\section{Compute Budget}
+
+The approximate \$500 Modal credit balance is optional capacity, not a spending target. The portfolio milestone first uses zero-cost local inference. The completed response-free run cost zero dollars and used no Modal resources. A frozen 25-dollar ceiling permits a later stronger prompted configuration only after explicit authorization.
+
+If the empirical pilot warrants a larger research program, remaining credits should prioritize evidence:
+
+\begin{itemize}
+\item about \$75 for development and small inference;
+\item about \$225 for broad repeated simulation across experiments and models;
+\item about \$75 for cross-fitted diagnostics and trust experiments;
+\item about \$50 for independent human-fallback simulation; and
+\item about \$75 reserve for the most informative follow-up.
+\end{itemize}
+
+Fine-tuning receives budget only after the benchmark works and only if it tests a decision-level hypothesis. Existing Socrates checkpoints should be used where leakage-safe before funding a duplicative training run.
+
+\section{Test Reveal Freeze Checklist}
+
+Before test outcomes are opened, commit:
+
+\begin{itemize}
+\item dataset revision and data-use decision;
+\item eligibility registry, paradigm groups, and split;
+\item primary task, utility, action set, control, tie rule, and tolerance per experiment;
+\item simulator suite, checkpoints, prompts, and parsers;
+\item diagnostic definitions;
+\item trust fitting and threshold procedure;
+\item fallback sampling, allocation, fusion, and scoring rules;
+\item seeds, bootstrap procedure, metrics, and report skeleton; and
+\item permitted claims and planned sensitivity analyses.
+\end{itemize}
+
+After reveal, genuine implementation corrections are logged with original results retained. A corrected test is not presented as a fresh untouched test.
+
+\section{Go/No-Go Conditions}
+
+The full trust-model claim proceeds only if the combined, de-duplicated audit retains at least 100 independent eligible experiments across at least 25 paradigm groups, leaves at least 20 frozen test experiments, and yields enough failure-label variation for meaningful held-out evaluation. SocSci210 remains the primary named stratum, and SocSci210 and augmentation results are reported separately before pooling. Dataset identity remains visible in diagnostics, splitting, and uncertainty analysis.
+
+The Phase 2 viability audit triggered the augmentation branch. The first manually verified external archive is included in Benchmark v1 under the same source-trace, decision-task, and leakage requirements rather than forcing ambiguous SocSci studies into the benchmark. The first frozen archive cannot meet the full scale gate even under perfect retention, so the universal trust-model claim is not currently authorized. A second corpus is paused while Benchmark v1 is completed and piloted under a hard cost cap. If the thresholds remain missed or nearly all simulators choose the same arm, label trust modeling exploratory and use nested repeated grouped cross-validation on development data while preserving the smaller untouched test as descriptive evidence. Outcomes, arms, models, prompts, and seeds from one experiment never count as independent experiments.
+
+\section{Claim Discipline}
+
+Valid claims concern the evaluated tasks, models, populations, and access regimes. InterveneBench may establish whether synthetic evidence led to low-regret decisions, whether outcome-free diagnostics enabled useful abstention, and how independent human evidence changed regret.
+
+It must not claim human substitutability, individual counterfactual validity, universal confidence calibration, absence from foundation-model training without evidence, or reliability outside the evaluated distribution.
+
+\begingroup
+\footnotesize
+\begin{thebibliography}{9}
+
+\bibitem{kolluri2025}
+Akaash Kolluri, Shengguang Wu, Joon Sung Park, and Michael S. Bernstein.
+\newblock Finetuning LLMs for Human Behavior Prediction in Social Science Experiments.
+\newblock In \emph{Proceedings of EMNLP}, 2025.
+\newblock \href{https://aclanthology.org/2025.emnlp-main.1530/}{ACL Anthology}.
+
+\bibitem{ashokkumar2026}
+Ashwini Ashokkumar, Luke Hewitt, Isaias Ghezae, and Robb Willer.
+\newblock Large language models can predict the results of social science experiments.
+\newblock \emph{Nature}, 656:115--122, 2026.
+\newblock \href{https://doi.org/10.1038/s41586-026-10742-x}{doi:10.1038/s41586-026-10742-x}.
+
+\bibitem{lin2026}
+Victoria Lin, Taedong Yun, Maja Matari\'c, John Canny, Arthur Gretton, and Alexander D'Amour.
+\newblock The Illusion of Intervention: Your LLM-Simulated Experiment is an Observational Study.
+\newblock arXiv:2605.20767, 2026.
+\newblock \href{https://arxiv.org/abs/2605.20767}{arXiv:2605.20767}.
+
+\end{thebibliography}
+\endgroup
+
+\end{document}

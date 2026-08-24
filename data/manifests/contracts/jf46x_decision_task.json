@@ -1,0 +1,46 @@
+{
+  "schema_version": "decision_task.v1",
+  "task_id": "jf46x:task-0",
+  "experiment_id": "jf46x",
+  "source_id": "Parmer-DHS-2011",
+  "source_question_id": "Q2",
+  "socsci210_task_num": 0,
+  "split": "validation",
+  "paradigm_group": "vaccine_risk_trust",
+  "access_regime": "DESIGN_ONLY",
+  "design_type": "between_subject",
+  "randomization_unit": "participant",
+  "arms": [
+    {
+      "arm_id": "arm_0_shared_values",
+      "condition_num": 0,
+      "description": "DHS shared-values, care, openness, and honesty message",
+      "deployable": true
+    },
+    {
+      "arm_id": "arm_1_past_performance",
+      "condition_num": 1,
+      "description": "DHS expertise and successful past-performance message",
+      "deployable": true
+    }
+  ],
+  "control_arm_id": "arm_0_shared_values",
+  "primary_outcome_id": "vaccine_intention",
+  "outcome_question": "If you had to make a decision now, would you get the recommended smallpox vaccine?",
+  "outcome_family": "binary",
+  "response_options": [
+    {"raw_value": 1, "label": "Yes", "normalized_utility": 1.0},
+    {"raw_value": 2, "label": "No", "normalized_utility": 0.0}
+  ],
+  "scale_lower": 1,
+  "scale_upper": 2,
+  "direction": "lower_is_better",
+  "estimand": "unadjusted_intention_to_treat_mean_normalized_utility",
+  "target_population": "released SocSci210 analytic sample from the Knowledge Networks general-population panel",
+  "weighting_rule": "unweighted_released_analytic_sample",
+  "missingness_rule": "complete_case_for_declared_outcome",
+  "tie_rule": "lexicographic_arm_id",
+  "practical_regret_tolerance": 0.05,
+  "source_questionnaire_sha256": "40a96a1acbcb8a6197e07b979b7c6729b067ea90207674fad1daa5d71691c502",
+  "reconstruction_note": "Use the final fielded DHS questionnaire. Do not use the released SocSci210 CDC paraphrase."
+}

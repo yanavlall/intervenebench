@@ -1,0 +1,46 @@
+{
+  "schema_version": "portfolio_pilot_scope.v1",
+  "scope_id": "intervenebench-portfolio-pilot-20260813",
+  "freeze_date": "2026-08-13",
+  "status": "response_free_local_execution_authorized",
+  "objective": "Produce a finished five-experiment portfolio study of synthetic intervention choice and regret before deciding whether additional corpus construction is worthwhile.",
+  "experiment_ids": [
+    "5vm8g",
+    "xc4yq",
+    "de5hx",
+    "turagaS11",
+    "wallaceS12"
+  ],
+  "current_independent_experiment_count": 5,
+  "eventual_role_if_revealed": "development_evidence_within_any_later_expanded_benchmark",
+  "canonical_split_status": "unassigned",
+  "engineering_split_path": "data/manifests/splits/supported_ordinal_pilot.json",
+  "engineering_split_sha256": "92fe26a68082b85b631b171801ebb508fcb0d95cf4cb5476a856c26d0175caf0",
+  "local_zero_cost_inference_authorized": true,
+  "human_outcome_reveal_authorized": false,
+  "paid_inference_authorized": false,
+  "modal_compute_authorized": false,
+  "fine_tuning_authorized": false,
+  "trust_model_claim_authorized": false,
+  "minimum_simulator_suite": [
+    "frozen no-effect policy",
+    "local llama3.2:3b outcome-blind simulator"
+  ],
+  "frozen_local_configuration": {
+    "model": "llama3.2:3b",
+    "base_seed": 2102026,
+    "draws_per_arm_variant": 3,
+    "temperature": 0.35,
+    "top_p": 0.9,
+    "parser": "explicit_relative_weight_normalization.v1",
+    "population_access_regime": "DESIGN_ONLY"
+  },
+  "required_before_any_reveal": [
+    "all five local recommendations exist and verify against their raw-output, task, bundle, split, and scope hashes",
+    "the zero-cost run has zero unreported parse failures",
+    "a separate explicit development-reveal decision is recorded",
+    "the five revealed experiments are permanently labelled development rather than untouched canonical test"
+  ],
+  "portfolio_claim_boundary": "The five-task pilot may establish pipeline behavior and concrete decision successes or failures on these tasks. It cannot validate a general trust model or broad cross-paradigm reliability.",
+  "expansion_gate": "Decide whether to run all eleven contracts or audit another corpus only after the five-task development results are available and the incremental value is explicit."
+}

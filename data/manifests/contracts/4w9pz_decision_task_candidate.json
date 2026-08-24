@@ -1,0 +1,119 @@
+{
+  "schema_version": "source_binary_sequence_decision_task_candidate.v1",
+  "task_id": "4w9pz:source-t70-14-teacher-policy",
+  "experiment_id": "4w9pz",
+  "source_id": "TESS-1248-Hecht",
+  "source_question_id": "T70_14",
+  "socsci210_task_num": null,
+  "canonical_split_status": "unassigned",
+  "reveal_authorized": false,
+  "outcome_access": "sealed",
+  "paradigm_group": "teacher_growth_mindset_communication",
+  "access_regime": "DESIGN_ONLY",
+  "design_type": "between_subject_two_arm_with_randomized_prior_comodule_order",
+  "randomization_unit": "participant",
+  "arms": [
+    {
+      "arm_id": "undermining_teacher_policy",
+      "source_assignment": "P_COND70=1",
+      "description": "Seven-part teacher policy emphasizing fixed math ability, delayed questions, final grades, no test recovery, stable performance, and priority for star students",
+      "deployable": true
+    },
+    {
+      "arm_id": "affording_teacher_policy",
+      "source_assignment": "P_COND70=2",
+      "description": "Seven-part teacher policy emphasizing learnable ability, mistakes as learning, encouraged questions, revision, grade recovery for improvement, and support for every student",
+      "deployable": true
+    }
+  ],
+  "control_arm_id": "undermining_teacher_policy",
+  "reference_arm_rationale": "The source randomly assigns the undermining policy as the comparison to the affording teacher policy. Both complete policies are retained; no component is selected post hoc.",
+  "primary_outcome_id": "hard_challenge_extra_credit_choice",
+  "outcome_question": "With equal credit and equal time, choose an easy review assignment likely to be answered correctly or a hard challenge likely to be answered incorrectly but possibly teach something new.",
+  "outcome_family": "binary",
+  "response_options": [
+    {
+      "raw_value": 1,
+      "label": "Easy review assignment",
+      "normalized_utility": 0.0
+    },
+    {
+      "raw_value": 2,
+      "label": "Hard challenge assignment",
+      "normalized_utility": 1.0
+    }
+  ],
+  "scale_lower": 0,
+  "scale_upper": 1,
+  "direction": "higher_is_better",
+  "estimand": "study_weighted_intention_to_treat_difference_in_probability_of_selecting_the_hard_challenge_marginal_over_randomized_comodule_order",
+  "decision_maker": "a mathematics teacher-education program choosing which complete classroom policy to train and recommend",
+  "beneficiary": "adolescent mathematics students under the narrow objective of encouraging an equal-cost opportunity to attempt productive challenge",
+  "utility_rationale": "The hard challenge is assigned utility 1 only for the declared productive-challenge objective because time and extra-credit points are held equal and the source describes possible new learning. This is not a direct measure of learning, achievement, well-being, or long-run educational welfare.",
+  "truthfulness_scope": "The contract compares the complete historically fielded hypothetical teacher policies. A contemporary deployment must preserve every policy component or explicitly define a new intervention; it may not present an isolated growth-mindset slogan as equivalent to the source treatment.",
+  "target_population": "U.S. adolescents represented by the source teen-sample study weight",
+  "weighting_rule": "For each P_COND70 arm, compute the Hajek weighted mean of binary T70_14 utility using positive finite WEIGHT values; report an unweighted complete-case mean as a prespecified sensitivity.",
+  "missingness_rule": "Accept only T70_14 values 1 and 2 and exclude 77, 98, and 99. Never infer response coding or missingness from observed distributions.",
+  "source_variable_mapping": {
+    "participant_id_variable": "CaseId",
+    "assignment_variable": "P_COND70",
+    "outcome_variable": "T70_14",
+    "weight_variable": "WEIGHT",
+    "assignment_to_arm": {
+      "1": "undermining_teacher_policy",
+      "2": "affording_teacher_policy"
+    },
+    "outcome_to_utility": {
+      "1": 0.0,
+      "2": 1.0
+    },
+    "valid_outcome_values": [1, 2],
+    "missing_outcome_codes": [77, 98, 99]
+  },
+  "source_data_locator": {
+    "container_path": "data/raw/sources/4w9pz/Hecht1248.zip",
+    "container_sha256": "7b3788bc57506a238fe3462a1ca8ee4132dcf803844eeab4b98fb71f93b6acf3",
+    "csv_member": "8041.070_TESS 070 Hecht.csv",
+    "csv_member_sha256": "1ca99a4e24348f331774af79e2deb71922d1f6b826290cacca6f32a321446cfa",
+    "authorized_projection": ["CaseId", "WEIGHT", "P_COND70", "T70_14"]
+  },
+  "primary_estimator": "Project only CaseId, WEIGHT, P_COND70, and T70_14 after a split-bound recommendation authorizes source-outcome access. Compute the weighted arm utilities and subtract undermining from affording.",
+  "sensitivity_estimators": [
+    "unweighted complete-case binary arm means",
+    "the same weighted estimator reported separately by programmed module order only if an independently verified order variable is later recovered before reveal"
+  ],
+  "bootstrap_procedure": "Resample participant value-weight pairs with replacement within P_COND70 arm, recompute Hajek arm means, the affording-minus-undermining effect, winner, and regret using the canonical benchmark seed after split freeze.",
+  "tie_rule": "control_arm_id",
+  "practical_regret_tolerance": 0.05,
+  "source_rows_before_outcome_missingness": 803,
+  "released_rows_per_arm_before_outcome_missingness": {
+    "undermining_teacher_policy": 392,
+    "affording_teacher_policy": 411
+  },
+  "source_data_mapping_status": "complete_outcome_blind_human_mapping_sequence_assets_pending",
+  "socsci210_reconstruction_status": "source_primary_absent_from_socsci210",
+  "socsci210_reconstruction_note": "SocSci210 contains earlier attitudinal and help-seeking items but omits T70_14. No SocSci210 response may substitute for the behavioral choice, and the future human score must come from the original source file after recommendation freeze.",
+  "simulator_status": "blocked_missing_exact_cofielded_comodule_and_visual_assets",
+  "fielding_sequence_dependency": {
+    "programmed_modules": [
+      "TESS_065 Campbell teen module",
+      "TESS_070 Hecht module"
+    ],
+    "programmed_order_rule": "RANDOMIZE BLOCKS 1 thru 2 PROTECT AND RECORD BLOCK ORDER",
+    "focal_module_can_appear_first": true,
+    "focal_module_can_follow_campbell": true,
+    "exact_campbell_teen_module_in_hecht_deposit": false,
+    "exact_campbell_visual_assets_in_hecht_deposit": false,
+    "adult_campbell_source_may_not_be_substituted": true,
+    "required_resolution": "Recover and hash the exact co-fielded Campbell teen module, photographs, arm probabilities, and order variable or obtain an independent fielding record proving that the Hecht release represents a different exposure path. Then implement paired first-versus-second sequence simulation before promotion."
+  },
+  "checkpoint_compatibility": "The released Socrates participant_mapping.json lists 4w9pz as seen. Never describe a released Socrates checkpoint evaluation on this task as experiment-held-out.",
+  "source_hashes": {
+    "final_questionnaire_sha256": "b925ffa716d2f32463cf91e1e9f606f93086b66cd2491eadeb8604a7382c446c",
+    "codebook_sha256": "8079c7a4f300133ee1383b1ce8a1bb1e54e298c932c3cb50e41c2a4838fc2f90",
+    "official_mixed_archive_sha256": "7b3788bc57506a238fe3462a1ca8ee4132dcf803844eeab4b98fb71f93b6acf3",
+    "source_participant_dta_sha256": "4f3943142587214568c5c356da96b95ef675a99561ee287f4532cd0c6283402f",
+    "source_participant_csv_sha256": "1ca99a4e24348f331774af79e2deb71922d1f6b826290cacca6f32a321446cfa"
+  },
+  "reconstruction_note": "The complete 17-page final questionnaire was rendered and visually checked. It verifies the final two-arm fielding, both seven-part policies, randomized Campbell-versus-Hecht block order, and T70_14 wording. The result-free codebook and a zero-row DTA dictionary verified labels and missing codes. Only P_COND70 and WEIGHT were projected to confirm 392/411 assignment support and positive finite weights; T70_14 and every other response were not projected or opened. The earlier 3x2 proposal is superseded by the final two-arm questionnaire. The temporary participant file and render directory were deleted after mapping."
+}

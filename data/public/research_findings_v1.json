@@ -1,0 +1,158 @@
+{
+  "payload": {
+    "claim_boundary": {
+      "not_supported": [
+        "autonomous intervention selection",
+        "universal simulator trust",
+        "validated confidence-based abstention",
+        "reliable small-sample human correction",
+        "a canonical benchmark or calibrated trust model"
+      ],
+      "supported": [
+        "limited research-stage candidate screening",
+        "prospective low-regret signal on this six-experiment panel",
+        "prospectively replicated negative result for the tested fallback family"
+      ]
+    },
+    "contributions": [
+      "source-verified decision-task corpus construction with explicit utilities",
+      "prospective freeze-reveal evaluation of intervention choice and regret",
+      "outcome-free trust diagnostics preserved when they fail",
+      "disjoint limited-human fallback evaluation with negative-value analysis",
+      "hash-bound aggregate artifacts and deterministic replay"
+    ],
+    "evidence": {
+      "development_context": {
+        "canonical_test_claim": false,
+        "evidence_tier": "mixed_development_only",
+        "exact_choice_count": 8,
+        "experiment_count": 9,
+        "mean_normalized_regret": 0.002316616844669365,
+        "practically_reliable_count": 9,
+        "worst_normalized_regret": 0.020849551602024285
+      },
+      "prospective_confirmation": {
+        "evidence_tier": "noncanonical_prospective_confirmation",
+        "exact_choice_count": 3,
+        "exact_choice_uniform_tail_probability": 0.3734567901234568,
+        "experiment_count": 6,
+        "mean_normalized_regret": 0.003520577798391078,
+        "normalized_experiment_count": 5,
+        "practically_reliable_count": 6,
+        "primary_minus_uniform_mean_regret": -0.03743840121702888,
+        "uniform_mean_normalized_regret": 0.040958979015419957,
+        "uniform_mean_regret_tail_probability": 0.05555555555555555,
+        "worst_normalized_regret": 0.008544627721005615
+      },
+      "prospective_human_fallback": {
+        "any_tested_policy_improved_at_any_nonzero_budget": false,
+        "balanced_eb_decision": "stop_tuning_and_preserve_replicated_negative_result",
+        "balanced_eb_directionally_replicated": true,
+        "causal_mechanism_identified": false,
+        "corrective_task_budget_cells": 3,
+        "experiment_count": 5,
+        "harm_to_correction_magnitude_ratio": 13.59010662821557,
+        "harmful_task_budget_cells": 6,
+        "hedged_allocation_beat_balanced": false,
+        "human_only_all_point_estimates_worse": true,
+        "human_only_budgets_resolved_worse_at_95pct": [
+          10,
+          25,
+          50,
+          100
+        ],
+        "unchanged_task_budget_cells": 6
+      },
+      "prospective_trust_diagnostics": {
+        "aurc": 0.7111111111111111,
+        "conclusion": "not_validated_do_not_deploy",
+        "exact_choice_auroc": 0.2222222222222222,
+        "random_abstention_expected_aurc": 0.5,
+        "ranking_better_than_random_abstention": false,
+        "validated_threshold": false
+      },
+      "retrospective_cross_family": {
+        "adds_prospective_experiment_n": false,
+        "evidence_tier": "post_reveal_architecture_robustness",
+        "experiment_count": 5,
+        "mistral_exact_choice_rate": 0.4,
+        "mistral_mean_regret": 0.004295147420206114,
+        "mistral_treatment_effect_mae": 0.050255692268200404,
+        "model_disagreement_predictive_signal": false,
+        "primary_exact_choice_rate": 0.4,
+        "primary_mean_regret": 0.003520577798391078,
+        "primary_treatment_effect_mae": 0.06370846108314762
+      }
+    },
+    "privacy": {
+      "contains_experiment_level_human_scores": false,
+      "contains_human_arm_means": false,
+      "contains_human_treatment_effects": false,
+      "participant_rows_accessed": 0,
+      "participant_rows_serialized": 0
+    },
+    "provenance": {
+      "cross_family": {
+        "file_sha256": "33a760f0ab6253cba918ea93511a1447f8efb8a0f9f9ed360d5820a240bb3fe5",
+        "path": "artifacts/cross_family_target/target_run_20260815_v1_continuation_seedfix_v2/retrospective_cross_family_score_v2.json",
+        "payload_sha256": "0539f471b9dcff3eb97ee0b553c59322e847681fefaa55c4c03fdfe3d5b8e86d"
+      },
+      "development_evidence": {
+        "file_sha256": "6e899dc4af135920ed92437f1adfb12a9033e186a72b69df777148af35c83fb4",
+        "path": "artifacts/development/development_evidence_v1.json",
+        "payload_sha256": "e2411b32d922dc6af0869e0b5dbf4d0b8fbc80b8f7487b34137d2395dcffd0e8"
+      },
+      "fallback_mechanism": {
+        "file_sha256": "6bcc9205c9115059c08c81d3a58466a939172fd5ea03d461e6da658f160f2065",
+        "path": "artifacts/confirmation/confirmation_20260814_v1/fallback_failure_mechanism_v1.json",
+        "payload_sha256": "aad756e0b47aff0470b4f94f4223a892fe6b7a5e365a8eaaaf649c7307cf5b55"
+      },
+      "fallback_replication": {
+        "file_sha256": "53814b5578950bf0038387750bbd7a432afee2cfffd1b41de4de99707b88fcf1",
+        "path": "artifacts/confirmation/confirmation_20260814_v1/fallback_replication_audit_v1.json",
+        "payload_sha256": "5fadef43f6bb5d35a0fbc338cfebaf5d490deda564125f618adfe6002f60d932"
+      },
+      "public_confirmation": {
+        "file_sha256": "50d12c04266d30ea482ad7fc798464dc5d02477cfa356232f44f25aeffe30e7a",
+        "path": "data/public/confirmation_case_study_v1.json",
+        "payload_sha256": "e52dbb86f7df8350d70c683ea62c65a40c850ada7e53749cbe3aba19452602b1"
+      }
+    },
+    "release_decisions": {
+      "autonomous_intervention_selection": {
+        "decision": "hold",
+        "reasons": [
+          "small prospective panel",
+          "insufficient normalized decision tasks",
+          "exact choice remains chance-compatible",
+          "uniform-action regret gate is not established",
+          "schema-validity rate is below autonomous threshold"
+        ]
+      },
+      "candidate_screening": {
+        "decision": "limited_research_use",
+        "reasons": [
+          "low-regret screening criteria passed"
+        ]
+      },
+      "confidence_based_abstention": {
+        "decision": "hold",
+        "reasons": [
+          "trust ranking did not beat random abstention",
+          "no prospectively validated trust threshold"
+        ]
+      },
+      "small_sample_human_fallback": {
+        "decision": "hold",
+        "reasons": [
+          "tested limited-human fallback did not improve decisions"
+        ]
+      }
+    },
+    "schema_version": "intervenebench.research_findings.v1",
+    "scientific_conclusion": "The simulator showed a preliminary low-regret intervention-selection signal on a small prospective panel, while exact choice remained chance-compatible. The tested trust ranking and limited-human fallback did not work and must not be deployed.",
+    "status": "complete_aggregate_only_research_synthesis",
+    "thesis": "Evaluate simulated humans by the interventions they choose, the utility lost when they are wrong, and whether failure can be detected before human outcomes are revealed."
+  },
+  "sha256": "4e819978fca7634025b21e619a9c918def9bd66d0a2249b205c84f651a3383fb"
+}

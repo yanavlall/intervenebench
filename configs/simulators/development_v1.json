@@ -1,0 +1,114 @@
+{
+  "schema_version": "simulator_development_config.v1",
+  "config_id": "intervenebench-simulator-development-v1",
+  "status": "dry_run_only_no_execution_authority",
+  "access_regime": "DESIGN_ONLY",
+  "experiments": {
+    "5vm8g": 2,
+    "xc4yq": 3,
+    "de5hx": 6,
+    "turagaS11": 3,
+    "wallaceS12": 6
+  },
+  "model_catalog": [
+    {
+      "model_id": "qwen3_8b_generic",
+      "model_ref": "Qwen/Qwen3-8B",
+      "checkpoint_revision": null,
+      "execution_status": "unresolved_dry_run_only",
+      "role": "generic_size_screen"
+    },
+    {
+      "model_id": "qwen3_14b_generic",
+      "model_ref": "Qwen/Qwen3-14B",
+      "checkpoint_revision": null,
+      "execution_status": "unresolved_dry_run_only",
+      "role": "generic_size_screen"
+    },
+    {
+      "model_id": "qwen2_5_14b_generic",
+      "model_ref": "Qwen/Qwen2.5-14B-Instruct",
+      "checkpoint_revision": null,
+      "execution_status": "unresolved_dry_run_only",
+      "role": "matched_generic_base"
+    },
+    {
+      "model_id": "socrates_qwen2_5_14b_sft",
+      "model_ref": "socratesft/socrates-qwen2.5-14b-sft",
+      "checkpoint_revision": null,
+      "execution_status": "unresolved_dry_run_only",
+      "role": "behavioral_specialist"
+    }
+  ],
+  "stages": [
+    {
+      "stage_id": "provider_parser_preflight",
+      "type": "parser_preflight",
+      "model_ids": [
+        "qwen3_8b_generic",
+        "qwen3_14b_generic",
+        "qwen2_5_14b_generic",
+        "socrates_qwen2_5_14b_sft"
+      ],
+      "calls_per_model": 10
+    },
+    {
+      "stage_id": "aggregate_model_screen",
+      "type": "aggregate_screen",
+      "model_ids": [
+        "qwen3_8b_generic",
+        "qwen3_14b_generic",
+        "qwen2_5_14b_generic",
+        "socrates_qwen2_5_14b_sft"
+      ],
+      "draws_per_cell": 3
+    },
+    {
+      "stage_id": "adaptive_sampling_reserve",
+      "type": "convergence_reserve",
+      "maximum_retained_models": 3,
+      "maximum_added_draws_per_cell": 17
+    },
+    {
+      "stage_id": "source_preserving_prompt_sensitivity",
+      "type": "prompt_sensitivity",
+      "maximum_retained_models": 3,
+      "perturbation_count": 2,
+      "draws_per_cell": 3
+    },
+    {
+      "stage_id": "matched_base_specialist_microsimulation",
+      "type": "matched_microsimulation",
+      "model_ids": [
+        "qwen2_5_14b_generic",
+        "socrates_qwen2_5_14b_sft"
+      ],
+      "mode_count": 2,
+      "samples_per_cell": 24
+    }
+  ],
+  "sampling_convergence": {
+    "cumulative_checkpoints": [3, 5, 10, 20],
+    "minimum_samples": 5,
+    "arm_mean_tolerance": 0.01,
+    "margin_multiplier": 2.0,
+    "nonconvergence_disposition": "retain_cap_and_mark_unstable"
+  },
+  "prompt_sensitivity": {
+    "perturbations": [
+      "reverse_response_option_order_with_exact_inverse_mapping",
+      "response_format_instruction_paraphrase_only"
+    ],
+    "source_intervention_paraphrase_allowed": false,
+    "source_outcome_paraphrase_allowed": false
+  },
+  "compute_ceiling": {
+    "pricing_basis": "Modal public L40S list rate checked 2026-08-13",
+    "pricing_url": "https://modal.com/pricing",
+    "gpu_usd_per_second": 0.000542,
+    "gpu_seconds_per_call_ceiling": 25.0,
+    "ancillary_cost_reserve_usd": 1.491,
+    "hard_cost_cap_usd": 50.0
+  },
+  "notes": "This configuration computes a conservative dry-run ceiling only. It cannot launch a model, download a checkpoint, spend money, access a prospective task, or authorize a reveal."
+}

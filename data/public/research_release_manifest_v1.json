@@ -1,0 +1,114 @@
+{
+  "payload": {
+    "automatic_next_stage_authorized": false,
+    "file_count": 25,
+    "files": [
+      {
+        "file_sha256": "5b00270c88c87406e1ea4dee6bb43120774c2aec7bcce14fd35158dbffd72f37",
+        "path": "pyproject.toml"
+      },
+      {
+        "file_sha256": "e0cdde28974dc65a38e18cad58b7bd6f724a47a25efb2e5d95ec3aa0ab125591",
+        "path": "README.md"
+      },
+      {
+        "file_sha256": "a09276a434011e9abcc568221d3dc5961e5d88b622902c0f85f4277bdde186e6",
+        "path": "docs/README.md"
+      },
+      {
+        "file_sha256": "532995f5fdb76836106a0f76e130c3708eac8228e49315681ffbdaf71e334f5a",
+        "path": "docs/PORTFOLIO_BRIEF.md"
+      },
+      {
+        "file_sha256": "3f05ed65a8d71654a4ec7d595536912600b8f75b95267b1b65d8dfee3311b8b9",
+        "path": "docs/SIMILE_EVALS_CASE_STUDY.md"
+      },
+      {
+        "file_sha256": "f77accee71e3ce99a2c670f1b0ea90845d3a013431f4164ab508b5d62ec7fc5c",
+        "path": "docs/decisions/role_focused_evaluation_program_v1.md"
+      },
+      {
+        "file_sha256": "1a819721fb0f3e2be8c5d689def5826126041bd7e5d74dbde35f8937e036c7b3",
+        "path": "docs/reports/research_findings_v1.md"
+      },
+      {
+        "file_sha256": "80be1614be37b732f20f0d2965aac1c2b426db92bc8fb0b571e0d3942e75ba8f",
+        "path": "docs/reports/figures/fallback_failure_mechanism_v1.svg"
+      },
+      {
+        "file_sha256": "0ddb24f392c4b8439574894a7040253d6feeeeb84c914212d55dcb63c77b874c",
+        "path": "docs/results/index.html"
+      },
+      {
+        "file_sha256": "519ced6fcf5425df3b73544e5b85ff4dc33ae39bbc03ef5da52487c9de925253",
+        "path": "data/manifests/research/role_focused_evaluation_program_v1.json"
+      },
+      {
+        "file_sha256": "50d12c04266d30ea482ad7fc798464dc5d02477cfa356232f44f25aeffe30e7a",
+        "path": "data/public/confirmation_case_study_v1.json"
+      },
+      {
+        "file_sha256": "f98959f9af61baa499508dea3ee201b89d1021675917822e18faf623154d71ee",
+        "path": "data/public/research_findings_v1.json"
+      },
+      {
+        "file_sha256": "137bd6d4ef1c29c37490c2e8998f0c33a007d14287a9d8edeeb25afa4493e472",
+        "path": "src/intervenebench/__init__.py"
+      },
+      {
+        "file_sha256": "31bc9e7afdc335cf086f1489859113d33d511f02c54c9ae99de25c6e649e9dbd",
+        "path": "src/intervenebench/schemas.py"
+      },
+      {
+        "file_sha256": "57a4775af7df3a60d40cbf16479274db12cfcf11d04277f8ed7f927358dd22a6",
+        "path": "src/intervenebench/protocol.py"
+      },
+      {
+        "file_sha256": "a0c109fb4dc159cc144ebfb15918d955cb46bf2de00e2bd8c28db137488e219a",
+        "path": "src/intervenebench/release_decision.py"
+      },
+      {
+        "file_sha256": "17b7952413a3977b88d125d7dd2c0d13009f934abea7ed0c738fa24f81af51f7",
+        "path": "src/intervenebench/public_case_study.py"
+      },
+      {
+        "file_sha256": "64f8e8f671fb652dfb8811fe879758886df3a541bbfc1bbde7998fab40e6176a",
+        "path": "src/intervenebench/research_findings_release.py"
+      },
+      {
+        "file_sha256": "29565762816663daf9af99e298f15c220f7c47663dd86e0803c765860556c11b",
+        "path": "src/intervenebench/release_audit.py"
+      },
+      {
+        "file_sha256": "8f477587fe01687de7469440e3610173c51625bb178567b63d1e5c78012ddcc5",
+        "path": "src/intervenebench/public_cli.py"
+      },
+      {
+        "file_sha256": "0f80fb02a37706f5c6068cf6fa9905b8b77537c4c24880ace81c67ffe6026b53",
+        "path": "scripts/build_research_findings.py"
+      },
+      {
+        "file_sha256": "c7f0488f9e9792a883ae3dfb5f7189be1ed59fc2efe3333c8831aa84201d1646",
+        "path": "scripts/build_research_release_manifest.py"
+      },
+      {
+        "file_sha256": "41c8ecf82b757ee9603ca18a3dab4cd3b4fb5ba5e263da5bd5162920e73882a4",
+        "path": "scripts/verify_research_release.py"
+      },
+      {
+        "file_sha256": "50c3f4ae6d49294ef336ab9b6c724f25b278ebf7be5dd912d1d5c7a9e7ed0fc9",
+        "path": "tests/test_research_findings_release.py"
+      },
+      {
+        "file_sha256": "23b2de75759c35a633ba91489573a50701b8e73039b00a671ec2f7d975181fc3",
+        "path": "tests/test_public_release_portability.py"
+      }
+    ],
+    "findings_payload_sha256": "4e819978fca7634025b21e619a9c918def9bd66d0a2249b205c84f651a3383fb",
+    "model_calls_authorized": false,
+    "participant_row_access_authorized": false,
+    "schema_version": "intervenebench.research_release_manifest.v1",
+    "status": "frozen_public_research_release"
+  },
+  "sha256": "c4d2bde068d0a52d1a3183e4e6f490d6bc6b9f322884f0bd284ef724ec5a135e"
+}

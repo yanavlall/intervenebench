@@ -1,0 +1,78 @@
+{
+  "schema_version": "external_cofielded_ordinal_decision_task_candidate.v1",
+  "task_id": "KlarS44:q2",
+  "experiment_id": "KlarS44",
+  "source_id": "ndtfe",
+  "source_question_id": "Q2_KLAR",
+  "canonical_split_status": "unassigned",
+  "reveal_authorized": false,
+  "outcome_access": "sealed",
+  "paradigm_group": "abortion_issue_framing_and_civic_efficacy",
+  "access_regime": "DESIGN_ONLY",
+  "design_type": "between_subject_three_arm_frame_with_randomized_comodule_order",
+  "randomization_unit": "participant",
+  "arms": [
+    {"arm_id": "general_legislature_frame", "source_assignment": "P_KLAR=1", "description": "Describe the restrictive laws as supported by a majority of state-legislature members and called a political attack", "deployable": true},
+    {"arm_id": "gender_frame", "source_assignment": "P_KLAR=2", "description": "Describe the laws as supported by a majority of men and called a political attack on women", "deployable": true},
+    {"arm_id": "partisan_frame", "source_assignment": "P_KLAR=3", "description": "Describe the laws as supported by a majority of Republicans and called a political attack on Democrats", "deployable": true}
+  ],
+  "control_arm_id": "general_legislature_frame",
+  "primary_outcome_id": "perceived_citizen_efficacy_on_abortion_policy",
+  "outcome_question": "Thinking about the issue of abortion, do you agree or disagree with the following statement: As a citizen I have the power to influence what politicians do about abortion laws in America.",
+  "outcome_family": "ordinal",
+  "response_options": [
+    {"raw_value": 1, "label": "Strongly agree", "normalized_utility": 1.0},
+    {"raw_value": 2, "label": "Somewhat agree", "normalized_utility": 0.8333333333333334},
+    {"raw_value": 3, "label": "Slightly agree", "normalized_utility": 0.6666666666666666},
+    {"raw_value": 4, "label": "Neither agree nor disagree", "normalized_utility": 0.5},
+    {"raw_value": 5, "label": "Slightly disagree", "normalized_utility": 0.3333333333333333},
+    {"raw_value": 6, "label": "Somewhat disagree", "normalized_utility": 0.16666666666666666},
+    {"raw_value": 7, "label": "Strongly disagree", "normalized_utility": 0.0}
+  ],
+  "scale_lower": 1,
+  "scale_upper": 7,
+  "direction": "lower_is_better",
+  "estimand": "study_weighted_intention_to_treat_hajek_mean_normalized_utility_marginal_over_randomized_comodule_order",
+  "decision_maker": "a civic or issue-engagement communicator choosing among the three historically fielded frames",
+  "beneficiary": "message recipients under the narrow objective of increasing perceived capacity to influence policy",
+  "utility_rationale": "Lower raw Q2 responses mean stronger perceived citizen efficacy, so normalized utility is (7-Y)/6. This is not an abortion-policy position, a public-welfare measure, or an endorsement of any frame.",
+  "truthfulness_scope": "The three claims are benchmarked only in their historical 2019 field context. They must not be treated as current facts or deployed without independent factual review.",
+  "target_population": "general U.S. adult AmeriSpeak population represented by the source study-specific post-stratification weight",
+  "weighting_rule": "primary study-weighted Hajek arm means using WEIGHT, marginal over achieved RND_00 order; report unweighted and equal-order-standardized estimates as prespecified sensitivities",
+  "missingness_rule": "complete case for Q2_KLAR after excluding 77, 98, and 99",
+  "source_variable_mapping": {
+    "assignment_variable": "P_KLAR",
+    "outcome_variable": "Q2_KLAR",
+    "weight_variable": "WEIGHT",
+    "comodule_order_variable": "RND_00",
+    "valid_outcome_values": [1, 2, 3, 4, 5, 6, 7],
+    "missing_outcome_codes": [77, 98, 99]
+  },
+  "primary_estimator": "For each P_KLAR arm, compute the Hajek weighted mean of normalized Q2_KLAR utility. This is the randomized ITT marginal over the achieved Klar-first versus Thorson-first distribution.",
+  "sensitivity_estimators": [
+    "unweighted complete-case mean normalized utility by P_KLAR",
+    "weighted arm-by-RND_00 means standardized to 0.5 Klar-first and 0.5 Thorson-first, with no outcome-driven interaction selection"
+  ],
+  "simulator_sequence_contract": "The sealed KlarS44_blinded_bundle.json represents the equal-probability Klar-first versus Thorson-first order, both Thorson wording conditions, both Thorson outcome-block orders, and the programmed permutations of all three Thorson item lists. One deterministic nuisance episode is sampled per synthetic persona and paired across all three Klar arms. The simulator stops immediately after Q2_KLAR.",
+  "fielding_dependency": "Klar shares the TESS 8041.040/043 respondents and fielding with the Thorson module represented by SocSci210 xtvu5. Keep the shared fielding in one split and count it once for fielding-level uncertainty.",
+  "tie_rule": "lexicographic_arm_id",
+  "practical_regret_tolerance": 0.05,
+  "released_rows_per_arm_before_outcome_missingness": {
+    "general_legislature_frame": 679,
+    "gender_frame": 733,
+    "partisan_frame": 706
+  },
+  "released_rows_by_arm_and_order_before_outcome_missingness": {
+    "general_legislature_frame": {"klar_first": 339, "thorson_first": 340},
+    "gender_frame": {"klar_first": 348, "thorson_first": 385},
+    "partisan_frame": {"klar_first": 353, "thorson_first": 353}
+  },
+  "source_data_mapping_status": "complete_outcome_blind_schema_design_and_sequence_mapping",
+  "source_hashes": {
+    "final_questionnaire_sha256": "1c4e3fd5bbed380b71051f4ae0ba6871f2483c1bbdbf659aaec93e44b6adeaaf",
+    "codebook_sha256": "492222837da72cd0018ca983dd4b27463860caaf813fad130e04224db6f4e2fb",
+    "field_report_sha256": "632b24e3b382b3f06ae39a6bc22a762f9f6081d48566e0613c8bd475f94c7744",
+    "official_mixed_archive_sha256": "8337694961dffa3f95e16c7b0e6f26ca29b86951a5191260ec7c03fdbd620a6c"
+  },
+  "reconstruction_note": "The 13-page final combined questionnaire was read completely and visually checked. The SAV was read first with zero rows, then only P_KLAR, RND_00, and WEIGHT were read to verify pre-outcome support and weight validity. The source-programmed Thorson/Klar sequence distribution was encoded without opening Thorson assignments or any outcome. No Q2_KLAR value, outcome missingness count, response distribution, arm outcome statistic, effect, significance result, or winner was opened. The temporary participant file and mixed archive were deleted after mapping."
+}

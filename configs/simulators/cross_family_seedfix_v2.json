@@ -1,0 +1,53 @@
+{
+  "payload": {
+    "automatic_next_stage_authorized": false,
+    "automatic_retry_authorized": false,
+    "completed_target_inference_count_before_v2": 0,
+    "correction": {
+      "affected_method_id": "forced_choice_next_token_softmax.v1",
+      "effective_engine_seed": 0,
+      "maximum_target_answer_code_count": 11,
+      "probability_extraction": "original_allowed_token_logits_only",
+      "prompt_or_asset_changed": false,
+      "request_hashes_changed": false,
+      "request_payloads_changed": false,
+      "requested_logprob_count": 20,
+      "semantic_repair": false
+    },
+    "human_outcome_access_authorized": false,
+    "implementation_hashes": {
+      "infra/modal/cross_family_target_seedfix_app.py": "46547bfbee975dd5ddf0bc34dcc17506fcb518600182de6989a3e836ced8b4b6",
+      "infra/modal/cross_family_target_seedfix_v2_app.py": "c696600aa5ed9402b0f6f56d0d714f4cd8e3877f5e4f3deb38dc50565d132f93"
+    },
+    "modal_compute_authorized": false,
+    "modal_image_materialization_authorized": false,
+    "model_download_authorized": false,
+    "paid_inference_authorized": false,
+    "parent_seedfix_v1_canary_failure_payload_sha256": "001f54d0325a494e20807de972e74f5b5d853452620e542732c41720a51d9cc1",
+    "parent_seedfix_v1_materialization_payload_sha256": "887927b9eb09a8037a90aff7acd0718681211f5f3d5a472e3d55547ced3d85a6",
+    "parent_seedfix_v1_payload_sha256": "fc8f0ae1a226b49a2e1ebfd2564af48bcb700b63d26fe7419589a5f00a0872b5",
+    "participant_row_access_authorized": false,
+    "participant_row_serialization_authorized": false,
+    "preserved_target_output_count_before_v2": 0,
+    "recommendation_aggregation_authorized": false,
+    "regression_scoring_authorized": false,
+    "remaining_call_count": 504,
+    "remaining_target_calls_authorized": false,
+    "reserve_call_authorized": false,
+    "runtime": {
+      "app_name": "intervenebench-cross-family-seedfix-v2",
+      "automatic_retries": 0,
+      "gpu": "A100-80GB:1",
+      "model_downloads": 0,
+      "parent_seedfix_v1_modal_image_id": "im-p0yHqxzPRPMzDD9gS7DDry"
+    },
+    "schema_version": "intervenebench.cross_family_seedfix_v2_freeze.v1",
+    "seedfix_canary_authorized": false,
+    "status": "frozen_wider_logprob_interface_correction_zero_authority",
+    "strict_parse_authorized": false,
+    "tcg8p_rerun_authorized": false,
+    "unavailable_call_count": 120,
+    "unavailable_experiment_id": "tcg8p"
+  },
+  "sha256": "9639933502818be7fecac2cceecf29b7ef9270baeb04d3c92494855a78e21763"
+}

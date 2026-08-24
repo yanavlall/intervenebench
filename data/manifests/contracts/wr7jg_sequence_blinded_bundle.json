@@ -1,0 +1,117 @@
+{
+  "schema_version": "binary_sequence_blinded_bundle.v1",
+  "task_id": "wr7jg:matched-turnout:verb-vs-noun",
+  "experiment_id": "wr7jg",
+  "access_regime": "DESIGN_ONLY",
+  "outcome_access": "sealed",
+  "reveal_authorized": false,
+  "source_material": {
+    "path": "data/raw/sources/wr7jg/tess2_017_bryan_FINAL.doc",
+    "sha256": "957d2044bee7b941a4d8edadc12a2d7e96c98170a47c041f629a67bb2f625aad"
+  },
+  "population": {
+    "description": "Registered New Jersey voters surveyed immediately before the November 3, 2009 gubernatorial election",
+    "roster_id": "synthetic-registered-new-jersey-voters-2009-v1",
+    "eligibility": "Age 18 or older; source target population is registered New Jersey voters"
+  },
+  "fielding_contexts": [
+    {
+      "context_id": "november_2_before_midnight_tomorrows_election",
+      "source_window": "November 2, 2009 before 23:59 EST",
+      "election_day_reference": "TOMORROW'S"
+    },
+    {
+      "context_id": "november_3_after_midnight_before_9am_todays_election",
+      "source_window": "November 3, 2009 after 00:00 EST and before 9:00 AM",
+      "election_day_reference": "TODAY’S"
+    }
+  ],
+  "response_scales": {
+    "yes_no": ["Yes", "No"],
+    "english_comfort": ["I am a native English speaker", "I am not a native English speaker but I am very comfortable in English", "I am moderately comfortable in English", "I am not very comfortable in English"],
+    "voter_identity": ["Not at all", "A little", "Moderately", "Quite a bit", "Very much"],
+    "importance": ["Not at all important", "Slightly important", "Moderately important", "Very important", "Extremely important"],
+    "care_all": ["Don’t care at all", "Care a little", "Care a moderate amount", "Care quite a bit", "Care a great deal"],
+    "excitement": ["Not at all excited", "Slightly excited", "Moderately excited", "Very excited", "Extremely excited"],
+    "care_treatment": ["Don’t care at all", "Care slightly", "Care somewhat", "Care quite a bit", "Care a great deal"],
+    "desire": ["Not at all", "A little", "A moderate amount", "Quite a bit", "A great deal"],
+    "relevance": ["Not at all relevant", "Slightly relevant", "Somewhat relevant", "Very relevant", "Extremely relevant"],
+    "ease": ["Not at all easy", "Slightly easy", "Somewhat easy", "Very easy", "Extremely easy"],
+    "convenience": ["Not at all convenient", "Slightly convenient", "Somewhat convenient", "Very convenient", "Extremely convenient"],
+    "consistency": ["Not at all consistent", "Slightly consistent", "Somewhat consistent", "Very consistent", "Extremely consistent"],
+    "clarity": ["Not at all clear", "Slightly clear", "Somewhat clear", "Very clear", "Extremely clear"],
+    "similarity": ["Not at all similar", "Slightly similar", "Somewhat similar", "Very similar", "Extremely similar"],
+    "difference": ["Not at all different", "Slightly different", "Somewhat different", "Very different", "Extremely different"]
+  },
+  "common_pretreatment_items": [
+    {"item_id": "ALL1", "text": "Are you currently registered to vote in New Jersey?", "scale_id": "yes_no"},
+    {"item_id": "ALL2", "text": "Have you already voted in the New Jersey gubernatorial election between Jon Corzine and Chris Christie?", "scale_id": "yes_no"},
+    {"item_id": "ALL3", "text": "Which of the following best describes your level of comfort with English?", "scale_id": "english_comfort"},
+    {"item_id": "ALL4", "text": "To what extent do you think of yourself as the kind of person who votes in elections?", "scale_id": "voter_identity"},
+    {"item_id": "ALL5", "text": "How important is it to you to be the kind of person who votes in elections?", "scale_id": "importance"},
+    {"item_id": "ALL6", "text": "How much do you care about the outcome of the New Jersey gubernatorial election between Jon Corzine and Chris Christie?", "scale_id": "care_all"},
+    {"item_id": "ALL7", "text": "How excited are you about the New Jersey gubernatorial election between Jon Corzine and Chris Christie?", "scale_id": "excitement"}
+  ],
+  "arms": [
+    {
+      "arm_id": "verb_phrase_action_frame",
+      "source_assignment_value": 1,
+      "source_item_prefix": "V",
+      "display_text": "In answering the questions that follow, please take your time and read each question carefully. Thank you, we appreciate it!",
+      "items": [
+        {"item_id": "V1", "text": "How important is it to you to vote in {{ELECTION_DAY_REFERENCE}} election?", "scale_id": "importance"},
+        {"item_id": "V2", "text": "How much do you care about voting in {{ELECTION_DAY_REFERENCE}} election?", "scale_id": "care_treatment"},
+        {"item_id": "V3", "text": "How much do you want to vote in {{ELECTION_DAY_REFERENCE}} election?", "scale_id": "desire"},
+        {"item_id": "V4", "text": "How personally relevant is it to you to vote in {{ELECTION_DAY_REFERENCE}} election?", "scale_id": "relevance"},
+        {"item_id": "V5", "text": "How easy do you think it is to vote in {{ELECTION_DAY_REFERENCE}} election?", "scale_id": "ease"},
+        {"item_id": "V6", "text": "How convenient do you think it is to vote in {{ELECTION_DAY_REFERENCE}} election?", "scale_id": "convenience"},
+        {"item_id": "V7", "text": "How consistent are your thoughts and feelings about voting in {{ELECTION_DAY_REFERENCE}} election?", "scale_id": "consistency"},
+        {"item_id": "V8", "text": "How clear are your thoughts and feelings about voting in {{ELECTION_DAY_REFERENCE}} election?", "scale_id": "clarity"},
+        {"item_id": "V9", "text": "To what extent are your thoughts about voting in {{ELECTION_DAY_REFERENCE}} election similar to your feelings about voting?", "scale_id": "similarity"},
+        {"item_id": "V10", "text": "To what extent are your thoughts about voting in {{ELECTION_DAY_REFERENCE}} election different from your feelings about voting?", "scale_id": "difference"}
+      ]
+    },
+    {
+      "arm_id": "noun_phrase_voter_identity_frame",
+      "source_assignment_value": 2,
+      "source_item_prefix": "N",
+      "display_text": "In answering the questions that follow, please take your time and read each question carefully. Thank you, we appreciate it!",
+      "items": [
+        {"item_id": "N1", "text": "How important is it to you to be a voter in {{ELECTION_DAY_REFERENCE}} election?", "scale_id": "importance"},
+        {"item_id": "N2", "text": "How much do you care about being a voter in {{ELECTION_DAY_REFERENCE}} election?", "scale_id": "care_treatment"},
+        {"item_id": "N3", "text": "How much do you want to be a voter in {{ELECTION_DAY_REFERENCE}} election?", "scale_id": "desire"},
+        {"item_id": "N4", "text": "How personally relevant is it to you to be a voter in {{ELECTION_DAY_REFERENCE}} election?", "scale_id": "relevance"},
+        {"item_id": "N5", "text": "How easy do you think it is to be a voter in {{ELECTION_DAY_REFERENCE}} election?", "scale_id": "ease"},
+        {"item_id": "N6", "text": "How convenient do you think it is to be a voter in {{ELECTION_DAY_REFERENCE}} election?", "scale_id": "convenience"},
+        {"item_id": "N7", "text": "How consistent are your thoughts and feelings about being a voter in {{ELECTION_DAY_REFERENCE}} election?", "scale_id": "consistency"},
+        {"item_id": "N8", "text": "How clear are your thoughts and feelings about being a voter in {{ELECTION_DAY_REFERENCE}} election?", "scale_id": "clarity"},
+        {"item_id": "N9", "text": "To what extent are your thoughts about being a voter in {{ELECTION_DAY_REFERENCE}} election similar to your feelings about being a voter?", "scale_id": "similarity"},
+        {"item_id": "N10", "text": "To what extent are your thoughts about being a voter in {{ELECTION_DAY_REFERENCE}} election different from your feelings about being a voter?", "scale_id": "difference"}
+      ]
+    }
+  ],
+  "reference_arm_id": "verb_phrase_action_frame",
+  "untreated_control_available": false,
+  "terminal_outcome": {
+    "human_endpoint": "binary post-election turnout determined by matching the participant to New Jersey voter turnout records",
+    "synthetic_endpoint": "predicted probability that the stable synthetic persona would be recorded as having voted after receiving this complete sequence",
+    "utility": "U(voted)=1 and U(did_not_vote)=0",
+    "not_a_survey_self_report": true
+  },
+  "interaction_contract": {
+    "sequence_unit": "synthetic_persona_by_fielding_context",
+    "paired_across_arms": true,
+    "same_persona_state_across_arms": true,
+    "same_fielding_context_across_arms": true,
+    "common_pretreatment_responses_fixed_across_arms": true,
+    "separate_arm_conversations": true,
+    "arm_generated_sequence_responses_reused": false,
+    "target_position": "after_all_seven_common_items_and_all_ten_arm_specific_items"
+  },
+  "reconstruction_policy": {
+    "question_wording_order_and_response_labels": "verbatim_from_final_questionnaire",
+    "normalization": "programming_brackets_are_resolved_to_the_source_TOMORROW'S_or_TODAY’S_route_and_inconsistent_source_whitespace_is_normalized",
+    "fielded_browser_typography_recovered": false,
+    "claim_boundary": "The adapter is source-faithful in wording, order, response labels, and date routing, but does not claim pixel-identical browser reconstruction."
+  }
+}

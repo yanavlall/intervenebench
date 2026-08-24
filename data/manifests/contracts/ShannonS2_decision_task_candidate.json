@@ -1,0 +1,83 @@
+{
+  "schema_version": "external_repeated_ordinal_decision_task_candidate.v1",
+  "task_id": "ShannonS2:child-tax-credit",
+  "experiment_id": "ShannonS2",
+  "source_id": "qdg32",
+  "source_question_id": "Q1|Q4|Q7|Q10|Q13|Q16",
+  "canonical_split_status": "unassigned",
+  "reveal_authorized": false,
+  "outcome_access": "sealed",
+  "paradigm_group": "public_benefit_immigrant_cue_and_savings",
+  "access_regime": "DESIGN_ONLY",
+  "design_type": "between_subject_factorial_with_repeated_ordered_vignettes_and_randomized_comodules",
+  "randomization_unit": "participant",
+  "arms": [
+    {"arm_id": "no_cue_no_savings", "source_assignment": "GROUP=1", "description": "No beneficiary-status cue and no numeric savings claim", "deployable": true},
+    {"arm_id": "no_cue_with_savings", "source_assignment": "GROUP=2", "description": "No beneficiary-status cue plus the fielded numeric savings claim", "deployable": true},
+    {"arm_id": "immigrant_no_savings", "source_assignment": "GROUP=3", "description": "Immigrant beneficiary cue without a numeric savings claim", "deployable": true},
+    {"arm_id": "immigrant_with_savings", "source_assignment": "GROUP=4", "description": "Immigrant beneficiary cue plus the fielded numeric savings claim", "deployable": true},
+    {"arm_id": "illegal_immigrant_no_savings", "source_assignment": "GROUP=5", "description": "Fielded illegal-immigrant beneficiary cue without a numeric savings claim", "deployable": true},
+    {"arm_id": "illegal_immigrant_with_savings", "source_assignment": "GROUP=6", "description": "Fielded illegal-immigrant beneficiary cue plus the fielded numeric savings claim", "deployable": true}
+  ],
+  "control_arm_id": "no_cue_no_savings",
+  "primary_outcome_id": "agreement_with_encouraging_child_tax_credit_filing",
+  "outcome_question": "How strongly do you agree or disagree with the statement encouraging every qualifying taxpayer to file for child tax credits?",
+  "outcome_family": "ordinal",
+  "response_options": [
+    {"raw_value": 1, "label": "Strongly disagree", "normalized_utility": 0.0},
+    {"raw_value": 2, "label": "Disagree", "normalized_utility": 0.25},
+    {"raw_value": 3, "label": "Neither agree nor disagree", "normalized_utility": 0.5},
+    {"raw_value": 4, "label": "Agree", "normalized_utility": 0.75},
+    {"raw_value": 5, "label": "Strongly agree", "normalized_utility": 1.0}
+  ],
+  "scale_lower": 1,
+  "scale_upper": 5,
+  "direction": "higher_is_better",
+  "estimand": "study_weighted_intention_to_treat_hajek_mean_normalized_child_tax_credit_utility_marginal_over_programmed_orders",
+  "decision_maker": "a child-tax-credit outreach communicator choosing among the six source-randomized message policies",
+  "beneficiary": "eligible low-income working parents under the narrow objective of increasing public support for encouraging eligible child-tax-credit filing",
+  "utility_rationale": "Higher agreement is treated as better only for the declared outreach-support objective. It is not a direct measure of program effectiveness, take-up, truth, or general welfare.",
+  "truthfulness_scope": "The contract reconstructs the historically fielded messages, including source terminology that is now stigmatizing. Contemporary use would require updated terminology and independent verification of every fiscal claim; those changes would be a new intervention, not this benchmark task.",
+  "target_population": "general U.S. adult population represented by the source study-specific post-stratification weight",
+  "weighting_rule": "primary study-weighted Hajek means using WEIGHT2; report unweighted released-sample arm means as a prespecified sensitivity",
+  "missingness_rule": "within each randomized GROUP use only its routed child-tax-credit field and exclude 77, 98, and 99; never coalesce non-routed fields",
+  "source_variable_mapping": {
+    "assignment_variable": "GROUP",
+    "weight_variable": "WEIGHT2",
+    "arm_outcome_variables": {
+      "no_cue_no_savings": "Q1",
+      "no_cue_with_savings": "Q4",
+      "immigrant_no_savings": "Q7",
+      "immigrant_with_savings": "Q10",
+      "illegal_immigrant_no_savings": "Q13",
+      "illegal_immigrant_with_savings": "Q16"
+    },
+    "valid_outcome_values": [1, 2, 3, 4, 5],
+    "missing_outcome_codes": [77, 98, 99],
+    "vignette_order_variable": null,
+    "comodule_order_variable": null
+  },
+  "primary_estimator": "For each GROUP, compute the Hajek weighted mean of its routed normalized child-tax-credit response. Because message group, six vignette orders, and six whole-module orders were programmed independently, this is the randomized ITT marginal over their fielded order distributions.",
+  "sensitivity_estimators": [
+    "unweighted complete-case mean normalized utility by GROUP"
+  ],
+  "simulator_sequence_contract": "The sealed ShannonS2_blinded_bundle.json represents all six Shannon/Powell/Farrow module orders, all six within-Shannon vignette orders, the 48 programmed Powell paths plus its independent final answer-order randomization, and all four Farrow paths. One deterministic nuisance episode is sampled per synthetic persona and paired across all six Shannon arms. The simulator stops immediately after the routed child-tax-credit response.",
+  "tie_rule": "lexicographic_arm_id",
+  "practical_regret_tolerance": 0.05,
+  "released_rows_per_arm_before_outcome_missingness": {
+    "no_cue_no_savings": 418,
+    "no_cue_with_savings": 421,
+    "immigrant_no_savings": 436,
+    "immigrant_with_savings": 403,
+    "illegal_immigrant_no_savings": 428,
+    "illegal_immigrant_with_savings": 437
+  },
+  "source_data_mapping_status": "complete_outcome_blind_schema_design_and_sequence_mapping",
+  "source_hashes": {
+    "final_questionnaire_sha256": "012fb797696843b6f27f5e85c52891813eb09a1ebae30e3e616c34b74f84c5dd",
+    "codebook_sha256": "b91c0c33c7e34ce4f5db9459288b041d908af78784a98a94afe98f34af81437a",
+    "field_report_sha256": "ce4aa78ae8cdcbd4caa721e60b4da4621ea58ba5a7b295183df5bdb7b0e95bc7",
+    "official_mixed_archive_sha256": "755bb9261008e2704c1fe33c24dc2b407a50f8e2ad3b98c78bfa4bdef071bae0"
+  },
+  "reconstruction_note": "The 31-page final combined questionnaire was read completely and visually checked. The zero-row SAV dictionary was inspected, then only GROUP and WEIGHT2 were read to verify pre-outcome support and weight validity. The source-programmed sequence distribution was encoded without participant order fields or outcomes. No routed outcome value, outcome missingness count, response distribution, arm outcome statistic, effect, significance result, or winner was opened. The temporary participant file and mixed archive were deleted after mapping."
+}

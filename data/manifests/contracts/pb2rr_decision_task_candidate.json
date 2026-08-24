@@ -1,0 +1,125 @@
+{
+  "schema_version": "factorial_nuisance_standardized_bounded_decision_task_candidate.v1",
+  "task_id": "pb2rr:source-q4-prime-policy",
+  "experiment_id": "pb2rr",
+  "source_id": "TESS3-187-Abascal",
+  "source_question_id": "Q4",
+  "socsci210_task_num": null,
+  "canonical_split_status": "unassigned",
+  "reveal_authorized": false,
+  "outcome_access": "sealed",
+  "paradigm_group": "demographic_threat_and_generosity",
+  "access_regime": "DESIGN_ONLY",
+  "design_type": "between_subject_2x2_factorial_with_randomized_name_implementation",
+  "randomization_unit": "participant",
+  "arms": [
+    {
+      "arm_id": "iphone_growth_control_article",
+      "source_assignments": ["XTESS187=3", "XTESS187=4"],
+      "description": "Show the source-formatted article excerpt about growth in Apple iPhone market share",
+      "deployable": true
+    },
+    {
+      "arm_id": "hispanic_population_growth_article",
+      "source_assignments": ["XTESS187=1", "XTESS187=2"],
+      "description": "Show the source-formatted article excerpt about growth in the U.S. Hispanic population",
+      "deployable": true
+    }
+  ],
+  "control_arm_id": "iphone_growth_control_article",
+  "reference_arm_rationale": "The source independently randomizes an attention-matched iPhone-growth article as the control topic. The benchmark retains both article policies and does not invent a no-message arm.",
+  "nuisance_factor": {
+    "source_variable": "DOV_INSERT_NAME",
+    "standardization_rule": "Average every article arm equally over the 16 programmed recipient names. This preserves the planned 50/50 White-name versus Black-name factor and the uniform 1/8 implementation distribution within each name-race level.",
+    "paired_across_simulated_arms": true,
+    "levels": [
+      {"nuisance_id": "carrie", "source_value": 1, "weight": 0.0625},
+      {"nuisance_id": "jill", "source_value": 2, "weight": 0.0625},
+      {"nuisance_id": "laurie", "source_value": 3, "weight": 0.0625},
+      {"nuisance_id": "sarah", "source_value": 4, "weight": 0.0625},
+      {"nuisance_id": "brad", "source_value": 5, "weight": 0.0625},
+      {"nuisance_id": "greg", "source_value": 6, "weight": 0.0625},
+      {"nuisance_id": "jay", "source_value": 7, "weight": 0.0625},
+      {"nuisance_id": "todd", "source_value": 8, "weight": 0.0625},
+      {"nuisance_id": "aaliyah", "source_value": 9, "weight": 0.0625},
+      {"nuisance_id": "aisha", "source_value": 10, "weight": 0.0625},
+      {"nuisance_id": "jada", "source_value": 11, "weight": 0.0625},
+      {"nuisance_id": "keisha", "source_value": 12, "weight": 0.0625},
+      {"nuisance_id": "darnell", "source_value": 13, "weight": 0.0625},
+      {"nuisance_id": "jamal", "source_value": 14, "weight": 0.0625},
+      {"nuisance_id": "jermaine", "source_value": 15, "weight": 0.0625},
+      {"nuisance_id": "kareem", "source_value": 16, "weight": 0.0625}
+    ]
+  },
+  "primary_outcome_id": "incentivized_dictator_game_donation",
+  "outcome_question": "Below, please indicate how much money you would like to give the randomly named person you have been paired with.",
+  "outcome_family": "bounded_numeric",
+  "response_options": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "scale_lower": 0,
+  "scale_upper": 10,
+  "direction": "higher_is_better",
+  "utility_transform": "U=Q4/10",
+  "estimand": "equal_name_standardized_study_weighted_intention_to_treat_difference_in_mean_normalized_donation",
+  "decision_maker": "a public-interest communicator choosing which one of the two fielded informational article policies to place before an anonymous giving opportunity",
+  "beneficiary": "anonymous recipients under the narrow objective of increasing the amount transferred to them",
+  "utility_rationale": "Higher Q4 directly transfers more of a real $10 endowment to the paired recipient. This is a recipient-transfer utility, not a claim that demographic threat, induced anxiety, or either article improves general social welfare.",
+  "truthfulness_scope": "The exact historical article screenshots are reconstructed as fielded. Any new deployment would require independent verification of every factual and source-attribution claim and must not imply current Wall Street Journal publication or endorsement.",
+  "target_population": "U.S. adults identifying as White or Black/African American represented by the study-specific post-stratification weight",
+  "weighting_rule": "Within each article-by-name cell, compute the Hajek weighted mean using positive finite source weight; average the 16 cell means equally within article arm. Report the unstandardized weighted article-arm mean and the four-cell XTESS187 estimator as prespecified sensitivities.",
+  "missingness_rule": "Exclude source refusal code -1 from Q4; accept only whole-dollar values 0 through 10; never infer missingness from outcome distributions.",
+  "source_variable_mapping": {
+    "assignment_variable": "XTESS187",
+    "nuisance_variable": "DOV_INSERT_NAME",
+    "outcome_variable": "Q4",
+    "weight_variable": "weight",
+    "valid_outcome_values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    "missing_outcome_codes": [-1],
+    "article_arm_map": {
+      "1": "hispanic_population_growth_article",
+      "2": "hispanic_population_growth_article",
+      "3": "iphone_growth_control_article",
+      "4": "iphone_growth_control_article"
+    }
+  },
+  "primary_estimator": "Normalize valid Q4 as Q4/10. Compute a source-weighted Hajek mean within each of the 32 article-by-name cells, then average the 16 name-cell means with frozen weight 1/16 for each article. Subtract the iPhone-control mean from the Hispanic-growth mean.",
+  "sensitivity_estimators": [
+    "study-weighted Hajek mean normalized donation by article arm without name standardization",
+    "study-weighted four-cell XTESS187 means, reported without turning the randomized recipient-name factor into four competing policy arms",
+    "unweighted equal-name standardized mean normalized donation"
+  ],
+  "bootstrap_procedure": "Resample participants with replacement within each of the 32 randomized article-by-name cells, retain the source weight, recompute all cell means and the equal-name standardized arm means, winner, and regret using the canonical benchmark seed after split freeze.",
+  "tie_rule": "lexicographic_arm_id",
+  "practical_regret_tolerance": 0.05,
+  "source_rows_before_outcome_missingness": 781,
+  "source_rows_per_article_arm_before_outcome_missingness": {
+    "iphone_growth_control_article": 385,
+    "hispanic_population_growth_article": 396
+  },
+  "source_rows_per_article_name_cell_before_outcome_missingness": {
+    "iphone_growth_control_article": {
+      "carrie": 34, "jill": 20, "laurie": 26, "sarah": 15,
+      "brad": 21, "greg": 24, "jay": 24, "todd": 31,
+      "aaliyah": 22, "aisha": 28, "jada": 22, "keisha": 30,
+      "darnell": 17, "jamal": 21, "jermaine": 32, "kareem": 18
+    },
+    "hispanic_population_growth_article": {
+      "carrie": 37, "jill": 23, "laurie": 24, "sarah": 22,
+      "brad": 21, "greg": 31, "jay": 23, "todd": 17,
+      "aaliyah": 32, "aisha": 25, "jada": 16, "keisha": 20,
+      "darnell": 29, "jamal": 27, "jermaine": 28, "kareem": 21
+    }
+  },
+  "socsci210_reconstruction_status": "source_primary_absent_from_socsci210",
+  "socsci210_reconstruction_note": "SocSci210 exposes only later identity and threat tasks 1 through 5 and collapses XTESS187 to the article-prime factor. It omits source Q4 donation and the recipient-name factor. No SocSci response may substitute for Q4, and the primary human score must come from the original source data after split assignment and recommendation freeze.",
+  "source_data_mapping_status": "complete_outcome_blind_schema_design_multimodal_and_nuisance_mapping",
+  "checkpoint_compatibility": "The released Socrates participant_mapping.json lists pb2rr as seen. Never describe a released Socrates checkpoint evaluation on this task as experiment-held-out.",
+  "source_hashes": {
+    "final_questionnaire_sha256": "dd7cbf117ef33eaca8d7e4ed1938c80bf3bf6b5144d3609c56428ac40f457b95",
+    "control_stimulus_pdf_sha256": "1c81b348fa757c5973f8b8c2ed0e8b67e63295b29a2e034c234c664c818e674e",
+    "treatment_stimulus_pdf_sha256": "1b1a8187d7797da5184004a39f5fde0e60f6beac0e7fea60a8b2327394392f65",
+    "proposal_sha256": "5889eddf18f648a7d44c11498847a10173e6b77d5edc8c21e74e8f1566cd53d4",
+    "official_mixed_archive_sha256": "010b2b9413214458046f7f152ad5ed7625291e014ddc01d0dbc5e5910c6bc24e",
+    "source_bundle_sha256": "86b895939458c4c0b30754059a5e3801a88626a11091c91c64aaf71276fa7218"
+  },
+  "reconstruction_note": "The complete 12-page final questionnaire and both one-page fielded PDF stimuli were rendered and visually verified. The mixed archive was not newly downloaded. Its already-local participant SAV was extracted to a temporary directory, read first at zero rows for labels, then read only for XTESS187, DOV_INSERT_NAME, and weight to verify 781 rows, positive weights, all 32 article-by-name cells, and pre-outcome support. Q4 was not projected or opened; no outcome missingness, distribution, arm statistic, effect, significance result, or winner was computed. The temporary SAV was deleted after mapping."
+}

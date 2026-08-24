@@ -1,0 +1,213 @@
+{
+  "access_regime": "DESIGN_ONLY",
+  "arms": [
+    {
+      "arm_id": "general_legislature_frame",
+      "message": "Recently, several states have enacted especially restrictive abortion laws. These laws were supported by the majority of the members in the state legislatures. Some report that these laws are a political attack.\nQ1. As you think about the upcoming Presidential election in 2020, how unimportant or important is the issue of abortion to you? Answers: 1=Very unimportant; 2=Somewhat unimportant; 3=Neither unimportant nor important; 4=Somewhat important; 5=Very important."
+    },
+    {
+      "arm_id": "gender_frame",
+      "message": "Recently, several states have enacted especially restrictive abortion laws. These laws were supported by the majority of men in the state legislatures. Some report that these laws are a political attack on women.\nQ1. As you think about the upcoming Presidential election in 2020, how unimportant or important is the issue of abortion to you? Answers: 1=Very unimportant; 2=Somewhat unimportant; 3=Neither unimportant nor important; 4=Somewhat important; 5=Very important."
+    },
+    {
+      "arm_id": "partisan_frame",
+      "message": "Recently, several states have enacted especially restrictive abortion laws. These laws were supported by the majority of Republicans in the state legislatures. Some report that these laws are a political attack on Democrats.\nQ1. As you think about the upcoming Presidential election in 2020, how unimportant or important is the issue of abortion to you? Answers: 1=Very unimportant; 2=Somewhat unimportant; 3=Neither unimportant nor important; 4=Somewhat important; 5=Very important."
+    }
+  ],
+  "common_context": "Reconstruct the exact randomized Klar/Thorson survey order. The target is the Klar Q2 civic-efficacy item immediately after the arm-specific Klar Q1 frame. Any randomized Thorson block shown first is nuisance exposure and must be paired identically across all Klar arms for the same persona.",
+  "experiment_id": "KlarS44",
+  "outcome_access": "sealed",
+  "outcome_question": "Thinking about the issue of abortion, do you agree or disagree with the following statement: As a citizen I have the power to influence what politicians do about abortion laws in America.",
+  "population": {
+    "description": "Adults in the United States represented by the AmeriSpeak general-population panel in December 2019",
+    "roster_id": "aggregate-us-adult-v1"
+  },
+  "response_options": [
+    {
+      "label": "Strongly agree",
+      "normalized_utility": 1.0,
+      "value": 1
+    },
+    {
+      "label": "Somewhat agree",
+      "normalized_utility": 0.8333333333333334,
+      "value": 2
+    },
+    {
+      "label": "Slightly agree",
+      "normalized_utility": 0.6666666666666666,
+      "value": 3
+    },
+    {
+      "label": "Neither agree nor disagree",
+      "normalized_utility": 0.5,
+      "value": 4
+    },
+    {
+      "label": "Slightly disagree",
+      "normalized_utility": 0.3333333333333333,
+      "value": 5
+    },
+    {
+      "label": "Somewhat disagree",
+      "normalized_utility": 0.16666666666666666,
+      "value": 6
+    },
+    {
+      "label": "Strongly disagree",
+      "normalized_utility": 0.0,
+      "value": 7
+    }
+  ],
+  "reveal_authorized": false,
+  "schema_version": "sequence_ordinal_blinded_bundle.v1",
+  "sequence_contract": {
+    "paired_across_arms": true,
+    "prior_exposure_template": "{{klar_block_order}}",
+    "randomizations": [
+      {
+        "kind": "categorical",
+        "levels": [
+          {
+            "level_id": "klar_first",
+            "text": "",
+            "weight": 0.5
+          },
+          {
+            "level_id": "thorson_first",
+            "text": "A prior randomized Thorson survey module appeared before the target module.\nQ1. How closely do you follow politics and government affairs? Answers: Very closely; Somewhat closely; Not that closely; Not at all.\nQ2. People get news from many different sources. Please indicate how often you get news from each source, using Never; Hardly ever; Sometimes; Often.\n{{thorson_news_source_order}}\n{{thorson_outcome_order}}",
+            "weight": 0.5
+          }
+        ],
+        "randomization_id": "klar_thorson_block_order",
+        "token": "{{klar_block_order}}"
+      },
+      {
+        "kind": "categorical",
+        "levels": [
+          {
+            "level_id": "social_media_specific",
+            "text": "Q3. Lately, there have been a lot of news stories about the spread of political misinformation on social media websites like Facebook and Twitter. How closely are you following news about this issue? Answers: Very closely; Somewhat closely; Not that closely; Not at all closely.\nQ4. In your opinion, how much of a problem is the spread of political misinformation on social media like Facebook and Twitter? Answers: A very important problem; A somewhat important problem; A minor problem; Not a problem.",
+            "weight": 0.5
+          },
+          {
+            "level_id": "generic_misinformation",
+            "text": "Q3. Lately, there have been a lot of news stories about the spread of political misinformation. How closely are you following news about this issue? Answers: Very closely; Somewhat closely; Not that closely; Not at all closely.\nQ4. In your opinion, how much of a problem is the spread of political misinformation? Answers: A very important problem; A somewhat important problem; A minor problem; Not a problem.",
+            "weight": 0.5
+          }
+        ],
+        "randomization_id": "thorson_wording",
+        "token": "{{thorson_wording}}"
+      },
+      {
+        "kind": "categorical",
+        "levels": [
+          {
+            "level_id": "misinformation_then_trust_after_wording",
+            "text": "{{thorson_wording}}\nQ5. Overall, about what percentage of the news that appears in the following places do you think is misinformation? Enter 0-100 for each.\n{{thorson_misinformation_order}}\nQ6. How much do you trust news from the following sources? For each source, answer from 1=Not at all through 5=A great deal.\n{{thorson_trust_order}}",
+            "weight": 0.5
+          },
+          {
+            "level_id": "trust_then_misinformation_before_wording",
+            "text": "Q6. How much do you trust news from the following sources? For each source, answer from 1=Not at all through 5=A great deal.\n{{thorson_trust_order}}\nQ5. Overall, about what percentage of the news that appears in the following places do you think is misinformation? Enter 0-100 for each.\n{{thorson_misinformation_order}}\n{{thorson_wording}}",
+            "weight": 0.5
+          }
+        ],
+        "randomization_id": "thorson_outcome_order",
+        "token": "{{thorson_outcome_order}}"
+      },
+      {
+        "items": [
+          {
+            "item_id": "facebook",
+            "text": "Facebook"
+          },
+          {
+            "item_id": "twitter",
+            "text": "Twitter"
+          },
+          {
+            "item_id": "print_newspaper",
+            "text": "Print newspaper"
+          },
+          {
+            "item_id": "local_tv",
+            "text": "Local TV news"
+          },
+          {
+            "item_id": "fox",
+            "text": "Fox News"
+          },
+          {
+            "item_id": "msnbc",
+            "text": "MSNBC"
+          },
+          {
+            "item_id": "online",
+            "text": "Online news websites"
+          }
+        ],
+        "kind": "permutation",
+        "randomization_id": "thorson_news_source_order",
+        "separator": "; ",
+        "token": "{{thorson_news_source_order}}"
+      },
+      {
+        "items": [
+          {
+            "item_id": "social_media",
+            "text": "Social media"
+          },
+          {
+            "item_id": "newspapers",
+            "text": "Newspapers"
+          },
+          {
+            "item_id": "television",
+            "text": "Television"
+          }
+        ],
+        "kind": "permutation",
+        "randomization_id": "thorson_misinformation_order",
+        "separator": "; ",
+        "token": "{{thorson_misinformation_order}}"
+      },
+      {
+        "items": [
+          {
+            "item_id": "local_newspapers",
+            "text": "Local newspapers"
+          },
+          {
+            "item_id": "national_newspapers",
+            "text": "National newspapers"
+          },
+          {
+            "item_id": "facebook",
+            "text": "Facebook"
+          },
+          {
+            "item_id": "twitter",
+            "text": "Twitter"
+          },
+          {
+            "item_id": "network_tv",
+            "text": "Network TV news"
+          },
+          {
+            "item_id": "local_tv",
+            "text": "Local TV news"
+          }
+        ],
+        "kind": "permutation",
+        "randomization_id": "thorson_trust_order",
+        "separator": "; ",
+        "token": "{{thorson_trust_order}}"
+      }
+    ],
+    "sequence_unit": "synthetic_persona",
+    "target_position": "stop_immediately_after_target_question"
+  },
+  "source_material_sha256": "1c4e3fd5bbed380b71051f4ae0ba6871f2483c1bbdbf659aaec93e44b6adeaaf",
+  "task_id": "KlarS44:q2"
+}

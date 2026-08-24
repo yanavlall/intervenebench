@@ -1,0 +1,126 @@
+{
+  "schema_version": "binary_sequence_decision_task_candidate.v1",
+  "task_id": "wr7jg:matched-turnout:verb-vs-noun",
+  "experiment_id": "wr7jg",
+  "source_id": "TESS2-017-Bryan",
+  "source_question_id": "post_election_matched_new_jersey_voter_file_turnout",
+  "canonical_split_status": "unassigned",
+  "reveal_authorized": false,
+  "outcome_access": "sealed",
+  "paradigm_group": "voter_identity_noun_phrase_turnout_prompting",
+  "access_regime": "DESIGN_ONLY",
+  "design_type": "between_subject_two_arm_pre_election_question_sequence",
+  "randomization_unit": "participant",
+  "source_randomization_variable_from_instrument": "XTESS017",
+  "arms": [
+    {
+      "arm_id": "verb_phrase_action_frame",
+      "source_assignment_value": 1,
+      "description": "Administer the ten source questions using vote or voting as the focal action phrase",
+      "deployable": true
+    },
+    {
+      "arm_id": "noun_phrase_voter_identity_frame",
+      "source_assignment_value": 2,
+      "description": "Administer the ten otherwise matched source questions using be a voter or being a voter as the focal identity phrase",
+      "deployable": true
+    }
+  ],
+  "control_arm_id": "verb_phrase_action_frame",
+  "control_arm_is_active_reference": true,
+  "untreated_control_available": false,
+  "reference_arm_rationale": "The source has no untreated arm. XTESS017=1 is frozen only as the active verb-phrase reference for the noun-minus-verb contrast and no-effect tie handling.",
+  "primary_outcome_id": "matched_voter_file_turnout",
+  "outcome_family": "binary",
+  "outcome_definition": "After the November 3, 2009 New Jersey gubernatorial election, the source design matches respondents to New Jersey voter turnout records and identifies whether each respondent voted.",
+  "valid_outcome_values": [
+    0,
+    1
+  ],
+  "direction": "higher_is_better",
+  "utility_transform": "U(y)=y",
+  "estimand": "intention_to_treat_difference_in_mean_binary_matched_turnout_for_XTESS017_2_minus_XTESS017_1",
+  "primary_estimator": "Unadjusted difference in valid matched-turnout means, noun-phrase arm minus verb-phrase arm; the exact stored match, nonmatch, missing, and linkage-failure codes must be resolved before scoring.",
+  "decision_maker": "a nonpartisan civic-turnout program choosing which complete pre-election question sequence to administer",
+  "beneficiary": "registered New Jersey voters offered the pre-election reflection sequence",
+  "utility_rationale": "Higher verified turnout is better only for the narrow operational objective of increasing lawful electoral participation. It is not a claim about candidate choice, public welfare, political equality, or the normative value of pressuring any individual to vote.",
+  "target_population": "Registered New Jersey voters surveyed from 9 AM on November 2 through 9 AM on November 3, 2009, including respondents who may report having already voted.",
+  "truthfulness_scope": "Both arms ask compatible self-assessment questions in the same historical election context and differ only in action-versus-identity phrasing. The benchmark reconstructs the 2009 fielded intervention; any contemporary deployment must update the election context and independently satisfy consent, privacy, voter-file linkage, and election-law requirements.",
+  "fielding_route_contract": {
+    "source_routes": [
+      "november_2_before_midnight_tomorrows_election",
+      "november_3_after_midnight_before_9am_todays_election"
+    ],
+    "same_route_across_arms_for_each_synthetic_persona": true,
+    "route_distribution_status": "must_be_frozen_outcome_blind_in_the_simulator_roster_before_calls",
+    "routes_are_nuisance_contexts_not_independent_experiments": true
+  },
+  "sequence_contract": {
+    "common_pretreatment_items": [
+      "ALL1",
+      "ALL2",
+      "ALL3",
+      "ALL4",
+      "ALL5",
+      "ALL6",
+      "ALL7"
+    ],
+    "arm_specific_item_count": 10,
+    "arm_specific_order_fixed": true,
+    "same_synthetic_persona_state_across_arms": true,
+    "separate_conversation_per_arm": true,
+    "arm_generated_sequence_responses_reused_across_arms": false,
+    "synthetic_target": "predicted_probability_of_the_source_external_matched_turnout_event"
+  },
+  "tie_rule": "active_reference_arm_first_then_lexicographic_arm_id",
+  "practical_regret_tolerance": 0.01,
+  "weighting_rule": "Primary randomized comparison is unweighted; a source study-weight sensitivity may be added only if schema-only metadata establishes a study-specific weight before scoring.",
+  "missingness_rule": "Fail closed until schema-only metadata distinguishes voted, did not vote, unmatched, linkage failure, refusal, and other user-missing codes. Never coerce an unmatched or unknown record to did-not-vote without an explicit source label.",
+  "source_hashes": {
+    "source_archive_sha256": "b654b2943a19cc9445c5e63a4930be3561cdfcb218e959c1a7cf0b7363ce5ccc",
+    "final_questionnaire_sha256": "957d2044bee7b941a4d8edadc12a2d7e96c98170a47c041f629a67bb2f625aad"
+  },
+  "human_scoring_status": "blocked_pending_separate_schema_only_authorization",
+  "future_schema_only_request": {
+    "authorization_required": true,
+    "participant_container": "Bryan773.zip::Archive of OSF Storage.zip::tess2_017_bryan_final_data.sav",
+    "participant_rows_authorized": false,
+    "frequencies_authorized": false,
+    "outcome_values_authorized": false,
+    "requested_known_variables": [
+      "XTESS017",
+      "ALL1",
+      "ALL2"
+    ],
+    "requested_unknown_variable_roles": [
+      "post_election_matched_new_jersey_voter_file_turnout",
+      "unique_anonymous_row_identifier",
+      "study_specific_weight_if_present"
+    ],
+    "requested_metadata": [
+      "variable_names_and_labels_only_for_the_requested_known_variables_and_unknown_roles",
+      "storage_types_for_assignment_turnout_ALL1_ALL2_row_id_and_weight_if_present",
+      "value_labels_for_XTESS017_ALL1_ALL2_and_the_matched_turnout_field",
+      "user_missing_definitions_for_XTESS017_ALL1_ALL2_turnout_and_weight_if_present"
+    ],
+    "forbidden_outputs": [
+      "participant_values",
+      "direct_identifiers_or_linkage_keys",
+      "value_frequencies",
+      "arm_counts",
+      "turnout_counts",
+      "outcome_distributions",
+      "arm_summaries",
+      "effects",
+      "winners"
+    ]
+  },
+  "source_data_mapping_status": "blocked_no_participant_or_schema_access_authorized",
+  "scoring_binding": {
+    "simulator_adapter": "intervenebench.wr7jg_sequence",
+    "synthetic_output": "strict_turnout_probability_json",
+    "real_outcome_access_before_frozen_recommendation": false,
+    "human_scoring_requires_separate_schema_only_authorization": true
+  },
+  "reconstruction_note": "The explicitly labeled final questionnaire freezes the assignment, seven common pretreatment items, two ordered ten-item phrase bundles, both date routes, and downstream matched-turnout design. No participant member, response value, voter-file outcome, aggregate, report, methodology file, proposal, manuscript, or result text was opened."
+}

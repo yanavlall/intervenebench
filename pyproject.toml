@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=80"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "intervenebench"
+version = "0.1.0"
+description = "Prospective evaluation of synthetic-human intervention decisions"
+requires-python = ">=3.11"
+dependencies = [
+  "pyarrow>=25,<26",
+]
+
+[project.scripts]
+intervenebench = "intervenebench.cli:main"
+intervenebench-release = "intervenebench.public_cli:main"
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.4,<9",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]
+pythonpath = ["src"]

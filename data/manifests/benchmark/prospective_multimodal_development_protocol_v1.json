@@ -1,0 +1,404 @@
+{
+  "authority": {
+    "automatic_next_stage_authorized": false,
+    "canonical_test_claim_authorized": false,
+    "human_outcome_reveal_authorized": false,
+    "modal_compute_authorized": false,
+    "paid_inference_authorized": false,
+    "trust_model_claim_authorized": false
+  },
+  "claim_boundary": "Three prospective-development experiments can test frozen methods descriptively but cannot establish a canonical trust model, calibrated threshold, or general human-simulation reliability.",
+  "evidence_tier": "prospective_development_noncanonical",
+  "experiment_ids": [
+    "nj5dx",
+    "es4xw",
+    "e2pyb"
+  ],
+  "human_fallback": {
+    "balanced_allocation_tie_rule": "source_arm_order",
+    "budgets_total_outcome_observations": [
+      0,
+      10,
+      25,
+      50,
+      100,
+      250
+    ],
+    "fold_count": 10,
+    "fusion": {
+      "formula": "(10*synthetic_mean+n_arm*pilot_hajek_mean)/(10+n_arm)",
+      "status": "transparent_fixed_baseline_not_empirical_bayes",
+      "synthetic_prior_pseudocount_per_arm": 10
+    },
+    "hedged_allocation": {
+      "integerization": "largest_remainder_then_source_arm_order",
+      "minimum_one_per_arm_when_budget_positive": true,
+      "remaining_weight": "Laplace-smoothed winner votes from three models crossed with source/reverse order; no human target outcomes",
+      "uniform_exploration_fraction": 0.25
+    },
+    "nested_arm_prefixes_within_policy": true,
+    "outputs": [
+      "mean_regret",
+      "exact_choice_rate",
+      "practical_reliability_rate",
+      "paired_mean_regret_change_vs_synthetic",
+      "negative_value_rate_vs_synthetic",
+      "marginal_regret_reduction_per_human"
+    ],
+    "partitions": 20,
+    "pilot_evaluation_people_disjoint": true,
+    "policies": [
+      "synthetic_only",
+      "human_only_balanced",
+      "synthetic_plus_balanced_fixed10",
+      "synthetic_plus_hedged_fixed10"
+    ],
+    "same_folds_and_arm_orders_across_policies": true,
+    "sampling_without_replacement": true,
+    "seed": 2026081303
+  },
+  "implementation_hashes": [
+    {
+      "path": "src/intervenebench/prospective_development_protocol.py",
+      "sha256": "c75bc8ea8da691cb6b0c6ff843b8ca62144f905caac7176e45d010515307e78d"
+    },
+    {
+      "path": "src/intervenebench/prospective_development_score.py",
+      "sha256": "c1c52a858de3fd80d0bc1860a42877a7ce05b2c59e97d4c1bb5e04d1f619d0e0"
+    },
+    {
+      "path": "src/intervenebench/human_fallback.py",
+      "sha256": "725dab83e0e980262d099208b004255001a77edaa36d4adb76cbbd57e74dbae5"
+    },
+    {
+      "path": "src/intervenebench/multimodal_recommendations.py",
+      "sha256": "89de8e5ac0ab7544a7b0a264e279b1b651b7494faa1d7853e843a6f6976fc2bb"
+    },
+    {
+      "path": "scripts/build_prospective_development_protocol.py",
+      "sha256": "9216230d0ba1729a8e26e596e71e7df73a5c01798d10c28c22a641d45a11dcad"
+    },
+    {
+      "path": "scripts/authorize_prospective_development_reveal.py",
+      "sha256": "1f9d993263ea9597a163c35f2ce2a2572ad53bf5a4475592cbd6fa36e0c4d956"
+    },
+    {
+      "path": "scripts/score_prospective_multimodal_development.py",
+      "sha256": "81c1f4963b4519f7eac67abebad86895ec88280db3eaf65bdb89cb5fe17d56ea"
+    }
+  ],
+  "other_experiments_must_remain_sealed": [
+    "tcg8p",
+    "pb2rr",
+    "z358z",
+    "ShannonS2",
+    "Blair1131",
+    "KlarS44"
+  ],
+  "outcome_column_allowlist": {
+    "e2pyb": {
+      "columns": [
+        "study_id",
+        "sample_id",
+        "participant",
+        "condition_num",
+        "task_num",
+        "response"
+      ],
+      "source": "socsci210",
+      "task_num": 0
+    },
+    "es4xw": {
+      "assignment_column": "XTESS040",
+      "columns": [
+        "caseid",
+        "weight1",
+        "XTESS040",
+        "Q1"
+      ],
+      "outcome_column": "Q1",
+      "source": "official_source_sav",
+      "weight_column": "weight1"
+    },
+    "nj5dx": {
+      "columns": [
+        "study_id",
+        "sample_id",
+        "participant",
+        "condition_num",
+        "task_num",
+        "response"
+      ],
+      "source": "socsci210",
+      "task_num": 0
+    }
+  },
+  "outcome_sources": {
+    "es4xw": {
+      "path": "data/raw/sources/es4xw/Bauman024.zip",
+      "sav_member": "TESS2_040_Bauman_Client.sav",
+      "sav_member_sha256": "4688a240f4a7746249fc3164538d7f8a5b1cccba82b95dd3de3fea352ab3473c",
+      "sha256": "c67ca4d1f0b2c1967408fd24b4b6d673a9b8689bc27d816743bbf219aed7d1b2",
+      "size_bytes": 703552
+    },
+    "socsci210": {
+      "dataset_revision": "048481111a4425ed83dc0eacf15f8431f252b21a",
+      "shards": [
+        {
+          "path": "data/raw/socsci210/048481111a4425ed83dc0eacf15f8431f252b21a/data/train-00000-of-00017.parquet",
+          "sha256": "ac083d6772c35849fa414e289a1d4337b5c69cf250e625dab1eece91d766712a",
+          "size_bytes": 89653340
+        },
+        {
+          "path": "data/raw/socsci210/048481111a4425ed83dc0eacf15f8431f252b21a/data/train-00001-of-00017.parquet",
+          "sha256": "d1a8998c4444e8e6ae8c2988cd1a9182ad92760a3c6efe8c72a07e9aeb00b8da",
+          "size_bytes": 85028411
+        },
+        {
+          "path": "data/raw/socsci210/048481111a4425ed83dc0eacf15f8431f252b21a/data/train-00002-of-00017.parquet",
+          "sha256": "518be0949a12c2f2522bd08f5d6617cfd8729ee8c8ea86384463227d647d9599",
+          "size_bytes": 82002010
+        },
+        {
+          "path": "data/raw/socsci210/048481111a4425ed83dc0eacf15f8431f252b21a/data/train-00003-of-00017.parquet",
+          "sha256": "3aa211415aa323d32c42afbd1b5386a1b9bf431c79f2d145567afe0bddfc45c2",
+          "size_bytes": 97349737
+        },
+        {
+          "path": "data/raw/socsci210/048481111a4425ed83dc0eacf15f8431f252b21a/data/train-00004-of-00017.parquet",
+          "sha256": "2ab0950174fe7bbf4aa9952a5fb6a4ed8d189cc489b9fa4b4d1b286cf72a1ad1",
+          "size_bytes": 77526696
+        },
+        {
+          "path": "data/raw/socsci210/048481111a4425ed83dc0eacf15f8431f252b21a/data/train-00005-of-00017.parquet",
+          "sha256": "49adf49c452f6351afc7daaf51a3a07e6729413a5a2e33fa8317c09ed29befe7",
+          "size_bytes": 83246335
+        },
+        {
+          "path": "data/raw/socsci210/048481111a4425ed83dc0eacf15f8431f252b21a/data/train-00006-of-00017.parquet",
+          "sha256": "f931488cb5eabeeda6c947023cdd6b604a9ac810d09bef11f92b7da6968fdf0b",
+          "size_bytes": 82086735
+        },
+        {
+          "path": "data/raw/socsci210/048481111a4425ed83dc0eacf15f8431f252b21a/data/train-00007-of-00017.parquet",
+          "sha256": "d7d8638dbcb54b3ee9533a25bbf0ec40a6231adffcf2aa40b5cf52e7cb8ed1a6",
+          "size_bytes": 82010698
+        },
+        {
+          "path": "data/raw/socsci210/048481111a4425ed83dc0eacf15f8431f252b21a/data/train-00008-of-00017.parquet",
+          "sha256": "3277fcd2b85e6d8a565c4d7aff251c6c42810e716f8c0bb2084b4cbe60c34144",
+          "size_bytes": 90799594
+        },
+        {
+          "path": "data/raw/socsci210/048481111a4425ed83dc0eacf15f8431f252b21a/data/train-00009-of-00017.parquet",
+          "sha256": "c5876289f03182216ea544f8e70e2355a2820dbb3fdf558871b57273fdf14e5d",
+          "size_bytes": 88584957
+        },
+        {
+          "path": "data/raw/socsci210/048481111a4425ed83dc0eacf15f8431f252b21a/data/train-00010-of-00017.parquet",
+          "sha256": "5e2dfe26bbcebd42f6981291d2a827e58ab1ab33551e9634cbdc8fec60a5188f",
+          "size_bytes": 90871556
+        },
+        {
+          "path": "data/raw/socsci210/048481111a4425ed83dc0eacf15f8431f252b21a/data/train-00011-of-00017.parquet",
+          "sha256": "9d03d6ad6b0f6e16734b08c526161bd987df985617976c5d591f6dd4702ebbd6",
+          "size_bytes": 82443907
+        },
+        {
+          "path": "data/raw/socsci210/048481111a4425ed83dc0eacf15f8431f252b21a/data/train-00012-of-00017.parquet",
+          "sha256": "2efdbe80e9c3f805443cce0dbf68db6680ad9d42e142214f58b25cf2ba02b262",
+          "size_bytes": 80094698
+        },
+        {
+          "path": "data/raw/socsci210/048481111a4425ed83dc0eacf15f8431f252b21a/data/train-00013-of-00017.parquet",
+          "sha256": "64262c055c6ca38971d474f7acb14bd603209b2354dc9f9bb0fa6be96d4df39d",
+          "size_bytes": 84028861
+        },
+        {
+          "path": "data/raw/socsci210/048481111a4425ed83dc0eacf15f8431f252b21a/data/train-00014-of-00017.parquet",
+          "sha256": "9ed4321648c26917d226218258d8ccb07a3bc13319f3475d7b0af17e2ecda1de",
+          "size_bytes": 79955657
+        },
+        {
+          "path": "data/raw/socsci210/048481111a4425ed83dc0eacf15f8431f252b21a/data/train-00015-of-00017.parquet",
+          "sha256": "e6a1597be20ab9fdd1f737e02ee46ad886b1cce71065898cb8ed7e43e5b25384",
+          "size_bytes": 76357402
+        },
+        {
+          "path": "data/raw/socsci210/048481111a4425ed83dc0eacf15f8431f252b21a/data/train-00016-of-00017.parquet",
+          "sha256": "8c4ec7b82819a9503a9de55bdae0a072e75d87a39454e7608eddb8906add8d97",
+          "size_bytes": 82513903
+        }
+      ]
+    }
+  },
+  "primary_scoring": {
+    "descriptive_metrics": [
+      "total_variation",
+      "ordinal_wasserstein_normalized",
+      "jensen_shannon_divergence_bits"
+    ],
+    "experiment_cluster_bootstrap": {
+      "claim_boundary": "descriptive_only_at_three_experiments",
+      "confidence_level": 0.95,
+      "replicates": 10000,
+      "seed": 2026081302,
+      "unit": "experiment"
+    },
+    "headline_metrics": [
+      "treatment_effect_mae",
+      "effect_sign_accuracy",
+      "correct_intervention_choice",
+      "decision_regret",
+      "practically_reliable_at_task_tolerance"
+    ],
+    "human_arm_estimators": "exactly_as_frozen_in_each_task_contract",
+    "tie_rule": "lexicographic_arm_id",
+    "treatment_effect_reference": "task_control_arm_id",
+    "within_experiment_bootstrap": {
+      "confidence_level": 0.95,
+      "replicates": 5000,
+      "seed": 2026081301,
+      "unit": "participant_within_randomized_arm",
+      "weights_travel_with_participant": true
+    }
+  },
+  "protocol_id": "intervenebench-prospective-mm-development-20260813-v1",
+  "report": {
+    "preserve_null_and_negative_results": true,
+    "skeleton_path": "docs/reports/prospective_multimodal_development_results.md",
+    "skeleton_sha256": "1f6004e4bdad912c39b150cb2febca1dd22a5e4d8d0f500f3ba4ab539a89c308"
+  },
+  "schema_version": "prospective_multimodal_development_protocol.v1",
+  "selective_decision": {
+    "classifier_or_calibration_authorized": false,
+    "confidence": {
+      "component_rank_scores": {
+        "low_order_total_variation": {
+          "e2pyb": 0.0,
+          "es4xw": 0.5,
+          "nj5dx": 1.0
+        },
+        "source_reverse_choice_stability": {
+          "e2pyb": 0.5,
+          "es4xw": 0.5,
+          "nj5dx": 0.5
+        },
+        "two_vlm_choice_agreement": {
+          "e2pyb": 0.75,
+          "es4xw": 0.0,
+          "nj5dx": 0.75
+        },
+        "vision_text_choice_agreement": {
+          "e2pyb": 1.0,
+          "es4xw": 0.25,
+          "nj5dx": 0.25
+        },
+        "winner_margin": {
+          "e2pyb": 0.5,
+          "es4xw": 0.0,
+          "nj5dx": 1.0
+        }
+      },
+      "confidence_by_experiment": {
+        "e2pyb": 0.55,
+        "es4xw": 0.25,
+        "nj5dx": 0.7
+      },
+      "feature_order": [
+        "winner_margin",
+        "source_reverse_choice_stability",
+        "low_order_total_variation",
+        "two_vlm_choice_agreement",
+        "vision_text_choice_agreement"
+      ],
+      "method": "equal_mean_of_five_directional_midrank_scores",
+      "raw_outcome_free_values": {
+        "low_order_total_variation": {
+          "e2pyb": 0.538437880981173,
+          "es4xw": 0.11533545152552786,
+          "nj5dx": 0.05243453324133507
+        },
+        "source_reverse_choice_stability": {
+          "e2pyb": 1.0,
+          "es4xw": 1.0,
+          "nj5dx": 1.0
+        },
+        "two_vlm_choice_agreement": {
+          "e2pyb": 1.0,
+          "es4xw": 0.0,
+          "nj5dx": 1.0
+        },
+        "vision_text_choice_agreement": {
+          "e2pyb": 1.0,
+          "es4xw": 0.0,
+          "nj5dx": 0.0
+        },
+        "winner_margin": {
+          "e2pyb": 0.017037293901179584,
+          "es4xw": 0.0013221626024796373,
+          "nj5dx": 0.041121757074806364
+        }
+      },
+      "tie_break": "experiment_id_ascending_for_fixed_coverage_only"
+    },
+    "evaluation": "risk_coverage_and_continuous_regret_ranking_only",
+    "fixed_coverage_counts": [
+      1,
+      2,
+      3
+    ],
+    "minimum_class_count_for_binary_metrics": 3,
+    "primary_model_id": "qwen3_vl_8b_primary",
+    "threshold_selection_authorized": false
+  },
+  "status": "frozen_pre_reveal_zero_outcome_access",
+  "synthetic_inputs": {
+    "call_plan_path": "data/manifests/simulators/prospective_multimodal_plan_v1.json",
+    "call_plan_payload_sha256": "d74920321f4c95ee19839e19812f55e32938ea8adbcbd3c31ac0aa05dd11b025",
+    "recommendations_path": "artifacts/prospective_multimodal/prospective_multimodal_20260813_v4/prospective_recommendations.json",
+    "recommendations_payload_sha256": "9ef47f0becc821f00f54f783d90267db31b8f58351348f532e819abf2d27c49c",
+    "run_manifest_path": "artifacts/prospective_multimodal/prospective_multimodal_20260813_v4/final_manifest.json",
+    "run_manifest_payload_sha256": "cb7f0fecaca7fe37cf121ee5a369d7690675d024a3e09fed60d99296161c30ce",
+    "simulator_freeze_path": "configs/simulators/prospective_multimodal_v4.json",
+    "simulator_freeze_payload_sha256": "85a8fc5b409315b18050b2012c0ded9602ae01f3afdadd583518fdd56596e050"
+  },
+  "tasks": [
+    {
+      "bundle_path": "data/manifests/contracts/nj5dx_blinded_bundle.json",
+      "bundle_payload_sha256": "43c8e898ee5f9dfceb4e3b0e7530ec05bf5131fde478c280f28f7cae955e5162",
+      "canonical_test_eligible": false,
+      "control_arm_id": "lower_class_disadvantage_frame",
+      "experiment_id": "nj5dx",
+      "permanent_role": "prospective_development_noncanonical",
+      "practical_regret_tolerance": 0.05,
+      "primary_estimand": "unweighted_socsci210_analytic_sample_intention_to_treat_mean_normalized_utility",
+      "task_path": "data/manifests/contracts/nj5dx_decision_task_candidate.json",
+      "task_payload_sha256": "01713132789ae1d39fc2addb8e6003b53c27035aa0b00e7a9e8ed2a2c9f376b8"
+    },
+    {
+      "bundle_path": "data/manifests/contracts/es4xw_blinded_bundle.json",
+      "bundle_payload_sha256": "ce0710637a48749f52f3bb53bf930b6ffbf5688f80a0a8e07192d17a03795f14",
+      "canonical_test_eligible": false,
+      "control_arm_id": "picture_4",
+      "experiment_id": "es4xw",
+      "permanent_role": "prospective_development_noncanonical",
+      "practical_regret_tolerance": 0.05,
+      "primary_estimand": "source_weight1_weighted_hajek_intention_to_treat_mean_normalized_utility",
+      "task_path": "data/manifests/contracts/es4xw_decision_task_candidate.json",
+      "task_payload_sha256": "474c1bc4524b5008174cf586d39997d7513fb4866d25ef648621cf079f763c4f"
+    },
+    {
+      "bundle_path": "data/manifests/contracts/e2pyb_blinded_bundle.json",
+      "bundle_payload_sha256": "edb84df3b8dce2f5a624408d78849ab2e0dc7928e086bde5f498c4b4ce1f8b0f",
+      "canonical_test_eligible": false,
+      "control_arm_id": "health_disparities_message",
+      "experiment_id": "e2pyb",
+      "permanent_role": "prospective_development_noncanonical",
+      "practical_regret_tolerance": 0.05,
+      "primary_estimand": "unweighted_socsci210_analytic_sample_intention_to_treat_mean_normalized_utility",
+      "task_path": "data/manifests/contracts/e2pyb_decision_task_candidate.json",
+      "task_payload_sha256": "8ace55d52588626349a50a922c079f18e2b5f6e5cf99d142ba9365ccde614f3b"
+    }
+  ]
+}

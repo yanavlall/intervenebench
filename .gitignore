@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+*.egg-info/
+
+# Data and generated artifacts
+data/raw/
+data/interim/
+data/processed/
+reports/
+outputs/
+artifacts/
+.work/
+tmp/
+docs/.work/
+
+# Secrets
+.env
+.env.*
+!.env.example
+.modal.toml
+modal.toml
+.modal/
+
+# Private project context and agent-local instructions
+PERSONAL_CONTEXT.md
+AGENTS.md
+.agents/
+.codex/
+
+# Local human-review exports
+report-labels.json
+
+# System files
+.DS_Store
+.Rhistory
+
+# LaTeX build intermediates
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+missfont.log

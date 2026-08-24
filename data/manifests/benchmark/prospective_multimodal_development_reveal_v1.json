@@ -1,0 +1,69 @@
+{
+  "authorization_id": "intervenebench-prospective-mm-reveal-20260813-v1",
+  "automatic_next_stage_authorized": false,
+  "canonical_test_claim_authorized": false,
+  "canonical_test_eligible": false,
+  "claim_boundary": "Three prospective-development experiments can test frozen methods descriptively but cannot establish a canonical trust model, calibrated threshold, or general human-simulation reliability.",
+  "experiment_ids": [
+    "nj5dx",
+    "es4xw",
+    "e2pyb"
+  ],
+  "human_outcome_reveal_authorized": true,
+  "modal_compute_authorized": false,
+  "other_experiments_must_remain_sealed": [
+    "tcg8p",
+    "pb2rr",
+    "z358z",
+    "ShannonS2",
+    "Blair1131",
+    "KlarS44"
+  ],
+  "outcome_column_allowlist": {
+    "e2pyb": {
+      "columns": [
+        "study_id",
+        "sample_id",
+        "participant",
+        "condition_num",
+        "task_num",
+        "response"
+      ],
+      "source": "socsci210",
+      "task_num": 0
+    },
+    "es4xw": {
+      "assignment_column": "XTESS040",
+      "columns": [
+        "caseid",
+        "weight1",
+        "XTESS040",
+        "Q1"
+      ],
+      "outcome_column": "Q1",
+      "source": "official_source_sav",
+      "weight_column": "weight1"
+    },
+    "nj5dx": {
+      "columns": [
+        "study_id",
+        "sample_id",
+        "participant",
+        "condition_num",
+        "task_num",
+        "response"
+      ],
+      "source": "socsci210",
+      "task_num": 0
+    }
+  },
+  "paid_inference_authorized": false,
+  "participant_row_serialization_authorized": false,
+  "permanent_role": "prospective_development_noncanonical",
+  "protocol_path": "data/manifests/benchmark/prospective_multimodal_development_protocol_v1.json",
+  "protocol_payload_sha256": "34fc9e361a0257dfc1e3bbbbc40a1b6ddb8202d91c3756228a26c6459f6b02f2",
+  "recommendations_payload_sha256": "9ef47f0becc821f00f54f783d90267db31b8f58351348f532e819abf2d27c49c",
+  "schema_version": "prospective_multimodal_development_reveal.v1",
+  "status": "prospective_development_reveal_authorized",
+  "trust_model_claim_authorized": false
+}

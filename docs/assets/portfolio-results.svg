@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="360" viewBox="0 0 960 360" role="img" aria-labelledby="title desc">
+  <title id="title">InterveneBench five-experiment development results</title>
+  <desc id="desc">Three comparisons between a local llama 3.2 3B simulator and a no-effect control-tie baseline. The local model has 60 percent exact choice accuracy versus zero, mean decision regret 0.0038 versus 0.0308, and treatment-effect mean absolute error 0.0467 versus 0.0361. Lower is better for regret and treatment-effect error.</desc>
+  <rect width="960" height="360" fill="#ffffff"/>
+  <style>
+    .title { font: 700 22px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #111827; }
+    .subtitle { font: 400 13px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #4b5563; }
+    .panel { font: 650 14px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #111827; }
+    .label { font: 500 12px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #374151; }
+    .value { font: 700 13px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #111827; }
+    .note { font: 500 12px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #4b5563; }
+  </style>
+
+  <text class="title" x="40" y="38">Decision ranking improved; effect calibration did not</text>
+  <text class="subtitle" x="40" y="61">Five development experiments · frozen recommendations before outcome reveal · local llama3.2:3b</text>
+
+  <line x1="320" y1="92" x2="320" y2="298" stroke="#e5e7eb"/>
+  <line x1="640" y1="92" x2="640" y2="298" stroke="#e5e7eb"/>
+
+  <text class="panel" x="40" y="112">Exact best-intervention choice</text>
+  <text class="subtitle" x="40" y="132">Higher is better</text>
+  <text class="label" x="40" y="171">Local model</text>
+  <rect x="132" y="155" width="132" height="22" rx="3" fill="#2563eb"/>
+  <text class="value" x="272" y="171">3/5</text>
+  <text class="label" x="40" y="214">No-effect</text>
+  <rect x="132" y="198" width="2" height="22" fill="#9ca3af"/>
+  <text class="value" x="142" y="214">0/5</text>
+  <text class="note" x="40" y="268">All five local choices were within</text>
+  <text class="note" x="40" y="286">the frozen 0.05 regret tolerance.</text>
+
+  <text class="panel" x="360" y="112">Mean normalized decision regret</text>
+  <text class="subtitle" x="360" y="132">Lower is better</text>
+  <text class="label" x="360" y="171">Local model</text>
+  <rect x="452" y="155" width="27" height="22" rx="3" fill="#2563eb"/>
+  <text class="value" x="487" y="171">0.0038</text>
+  <text class="label" x="360" y="214">No-effect</text>
+  <rect x="452" y="198" width="150" height="22" rx="3" fill="#9ca3af"/>
+  <text class="value" x="610" y="214">0.0308</text>
+  <text class="note" x="360" y="268">The local model reduced mean regret</text>
+  <text class="note" x="360" y="286">by about 88% on this portfolio.</text>
+
+  <text class="panel" x="680" y="112">Treatment-effect MAE</text>
+  <text class="subtitle" x="680" y="132">Lower is better</text>
+  <text class="label" x="680" y="171">Local model</text>
+  <rect x="772" y="155" width="140" height="22" rx="3" fill="#2563eb"/>
+  <text class="value" x="902" y="148" text-anchor="end">0.0467</text>
+  <text class="label" x="680" y="214">No-effect</text>
+  <rect x="772" y="198" width="108" height="22" rx="3" fill="#9ca3af"/>
+  <text class="value" x="902" y="214" text-anchor="end">0.0361</text>
+  <text class="note" x="680" y="268">The simpler baseline estimated effect</text>
+  <text class="note" x="680" y="286">magnitudes more accurately.</text>
+
+  <rect x="40" y="326" width="12" height="12" rx="2" fill="#2563eb"/>
+  <text class="label" x="60" y="336">Local model</text>
+  <rect x="154" y="326" width="12" height="12" rx="2" fill="#9ca3af"/>
+  <text class="label" x="174" y="336">No-effect/control-tie baseline</text>
+  <text class="subtitle" x="920" y="336" text-anchor="end">Development evidence, not a canonical held-out test</text>
+</svg>

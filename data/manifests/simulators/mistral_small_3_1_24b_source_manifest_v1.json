@@ -1,0 +1,128 @@
+{
+  "payload": {
+    "authority": {
+      "automatic_next_stage_authorized": false,
+      "automatic_retry_authorized": false,
+      "candidate_inference_authorized": false,
+      "human_outcome_access_authorized": false,
+      "modal_compute_authorized": false,
+      "modal_resource_creation_authorized": false,
+      "model_download_authorized": false,
+      "paid_inference_authorized": false,
+      "participant_row_access_authorized": false,
+      "participant_row_serialization_authorized": false,
+      "regression_scoring_authorized": false,
+      "reserve_call_authorized": false
+    },
+    "checkpoint_commit": "68faf511d618ef198fef186659617cfd2eb8e33a",
+    "dtype": "bfloat16",
+    "excluded_repository_paths": [
+      "model-00001-of-00010.safetensors",
+      "model-00002-of-00010.safetensors",
+      "model-00003-of-00010.safetensors",
+      "model-00004-of-00010.safetensors",
+      "model-00005-of-00010.safetensors",
+      "model-00006-of-00010.safetensors",
+      "model-00007-of-00010.safetensors",
+      "model-00008-of-00010.safetensors",
+      "model-00009-of-00010.safetensors",
+      "model-00010-of-00010.safetensors",
+      "model.safetensors.index.json"
+    ],
+    "files": [
+      {
+        "content_sha256": null,
+        "git_oid": "d55f535097412122ac3724c76c903294da3c1152",
+        "path": "chat_template.json",
+        "size_bytes": 2772,
+        "storage": "git"
+      },
+      {
+        "content_sha256": null,
+        "git_oid": "c83e216efe7b6355ec25ad037f0471fd24bc47d1",
+        "path": "config.json",
+        "size_bytes": 1177,
+        "storage": "git"
+      },
+      {
+        "content_sha256": "d446ca97599fa9d98b2e3744d8b83019837a2fe34a80f4353120b1e9b6249b1e",
+        "git_oid": "618d053088e76b36f97b83ca7fb6bbd728245a42",
+        "path": "consolidated.safetensors",
+        "size_bytes": 48022792280,
+        "storage": "git_lfs"
+      },
+      {
+        "content_sha256": null,
+        "git_oid": "e88987414d68707443ffc03c9cac772d95cfce2e",
+        "path": "generation_config.json",
+        "size_bytes": 116,
+        "storage": "git"
+      },
+      {
+        "content_sha256": null,
+        "git_oid": "ba80d5d1ebf33f2b8e7ad064f7a0c05057af7ab0",
+        "path": "params.json",
+        "size_bytes": 807,
+        "storage": "git"
+      },
+      {
+        "content_sha256": null,
+        "git_oid": "e6fae040b04cba893fc9a65582c4eec3c525fb79",
+        "path": "preprocessor_config.json",
+        "size_bytes": 634,
+        "storage": "git"
+      },
+      {
+        "content_sha256": null,
+        "git_oid": "0092b0f4fb04cc78378859f013badda71e5262c5",
+        "path": "processor_config.json",
+        "size_bytes": 189,
+        "storage": "git"
+      },
+      {
+        "content_sha256": null,
+        "git_oid": "a47054b449916f808ab94e6d2375c00ead78cb8f",
+        "path": "special_tokens_map.json",
+        "size_bytes": 21449,
+        "storage": "git"
+      },
+      {
+        "content_sha256": "c604f35d1035f534519622c0ec83fed6184978d4fdee92a5bd2a50bc05438094",
+        "git_oid": "1368b463037a4728b8a9ed7edba3c5e821c44e89",
+        "path": "tekken.json",
+        "size_bytes": 14801330,
+        "storage": "git_lfs"
+      },
+      {
+        "content_sha256": "b76085f9923309d873994d444989f7eb6ec074b06f25b58f1e8d7b7741070949",
+        "git_oid": "4135d4bbc86571775430fa644e1bd376590cb74b",
+        "path": "tokenizer.json",
+        "size_bytes": 17078037,
+        "storage": "git_lfs"
+      },
+      {
+        "content_sha256": null,
+        "git_oid": "c61ab81def9a66ae3c0789385d9587904ca2d840",
+        "path": "tokenizer_config.json",
+        "size_bytes": 198120,
+        "storage": "git"
+      }
+    ],
+    "hf_repository": "mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+    "license_id": "apache-2.0",
+    "load_format": "mistral_original_consolidated",
+    "metadata_source": "official_hugging_face_model_api",
+    "metadata_verified_at_utc": "2026-08-15T05:42:17Z",
+    "model_card_url": "https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+    "model_id": "mistral_small_3_1_24b_cross_family",
+    "parameter_count": 24011361280,
+    "quantization": "none",
+    "repository_gated": false,
+    "repository_private": false,
+    "required_gpu": "A100-80GB",
+    "schema_version": "intervenebench.model_source_manifest.v1",
+    "small_git_file_content_hash_status": "compute_and_freeze_after_separately_authorized_cache_materialization",
+    "trust_remote_code": false
+  },
+  "sha256": "7db967c1cba5af9a7c9429a93e2f7a2d6869f6f86c9884ebee5e25f003561fce"
+}

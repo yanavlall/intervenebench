@@ -1,0 +1,122 @@
+{
+  "calls": [
+    {
+      "answer_codes": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "arm_id": "arm_0_no_additional_information",
+      "artifact_relative_path": "qwen3_8b_generic/5vm8g/arm_0_no_additional_information.json",
+      "bundle_payload_sha256": "00c6d05656df9dbfc982d820e70b0a3807aab4e5bc17f671ca14258caf8090f8",
+      "call_id": "forced-choice--qwen3_8b_generic--5vm8g--arm_0_no_additional_information",
+      "experiment_id": "5vm8g",
+      "method_id": "forced_choice_next_token_softmax.v1",
+      "model_id": "qwen3_8b_generic",
+      "option_values": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "prompt_sha256": "058eb8bea76b8a87a833ff0db2c4546e763c226e8a67ddcf771987c4f574045d",
+      "temperature": 1.0,
+      "variant_id": "direct"
+    },
+    {
+      "answer_codes": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "arm_id": "arm_0_no_additional_information",
+      "artifact_relative_path": "qwen3_14b_generic/5vm8g/arm_0_no_additional_information.json",
+      "bundle_payload_sha256": "00c6d05656df9dbfc982d820e70b0a3807aab4e5bc17f671ca14258caf8090f8",
+      "call_id": "forced-choice--qwen3_14b_generic--5vm8g--arm_0_no_additional_information",
+      "experiment_id": "5vm8g",
+      "method_id": "forced_choice_next_token_softmax.v1",
+      "model_id": "qwen3_14b_generic",
+      "option_values": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "prompt_sha256": "058eb8bea76b8a87a833ff0db2c4546e763c226e8a67ddcf771987c4f574045d",
+      "temperature": 1.0,
+      "variant_id": "direct"
+    },
+    {
+      "answer_codes": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "arm_id": "arm_0_no_additional_information",
+      "artifact_relative_path": "qwen2_5_14b_generic/5vm8g/arm_0_no_additional_information.json",
+      "bundle_payload_sha256": "00c6d05656df9dbfc982d820e70b0a3807aab4e5bc17f671ca14258caf8090f8",
+      "call_id": "forced-choice--qwen2_5_14b_generic--5vm8g--arm_0_no_additional_information",
+      "experiment_id": "5vm8g",
+      "method_id": "forced_choice_next_token_softmax.v1",
+      "model_id": "qwen2_5_14b_generic",
+      "option_values": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "prompt_sha256": "058eb8bea76b8a87a833ff0db2c4546e763c226e8a67ddcf771987c4f574045d",
+      "temperature": 1.0,
+      "variant_id": "direct"
+    },
+    {
+      "answer_codes": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "arm_id": "arm_0_no_additional_information",
+      "artifact_relative_path": "socrates_qwen2_5_14b_sft/5vm8g/arm_0_no_additional_information.json",
+      "bundle_payload_sha256": "00c6d05656df9dbfc982d820e70b0a3807aab4e5bc17f671ca14258caf8090f8",
+      "call_id": "forced-choice--socrates_qwen2_5_14b_sft--5vm8g--arm_0_no_additional_information",
+      "experiment_id": "5vm8g",
+      "method_id": "forced_choice_next_token_softmax.v1",
+      "model_id": "socrates_qwen2_5_14b_sft",
+      "option_values": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "prompt_sha256": "058eb8bea76b8a87a833ff0db2c4546e763c226e8a67ddcf771987c4f574045d",
+      "temperature": 1.0,
+      "variant_id": "direct"
+    }
+  ],
+  "experiment_ids": [
+    "5vm8g"
+  ],
+  "freeze_date": "2026-08-13",
+  "model_ids": [
+    "qwen3_8b_generic",
+    "qwen3_14b_generic",
+    "qwen2_5_14b_generic",
+    "socrates_qwen2_5_14b_sft"
+  ],
+  "plan_id": "intervenebench-four-model-forced-choice-canary-20260813-v1",
+  "schema_version": "modal_forced_choice_call_plan.v1",
+  "selection_rule": "same first source-order arm of 5vm8g for every model",
+  "status": "frozen_nonexecuting_zero_authority"
+}

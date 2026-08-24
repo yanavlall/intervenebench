@@ -1,0 +1,60 @@
+{
+  "schema_version": "intervenebench.independent_replication_socsci_reserve.v1",
+  "status": "uniform_audit_active",
+  "source_protocol": "docs/protocol/phase2_viability_protocol.md",
+  "source_selection_label": "phase2-viability-v1:2102026",
+  "source_dataset_revision": "048481111a4425ed83dc0eacf15f8431f252b21a",
+  "source_frozen_batch_sha256": "24cba5b0dd12e95856a09c393ba1bcce76677024be21d4c8d884078faf54ebad",
+  "reason_for_extension": "The original 40-candidate viability sample left 17 strict-pool candidates unaudited. The first three reserve candidates all failed the replication gates, triggering the earlier efficiency stop. A second prospective replication now requires a larger outcome-clean candidate census, so every remaining reserve candidate is opened in the original deterministic order rather than selecting promising-looking rows.",
+  "selection_policy": {
+    "audit_every_remaining_candidate": true,
+    "allow_selective_skipping": false,
+    "use_human_results_for_selection": false,
+    "result_exposure_is_automatic_prospective_failure": true,
+    "candidate_order_formula": "SHA256('phase2-viability-v1:2102026:' + experiment_id)",
+    "opened_orders": [
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57
+    ]
+  },
+  "candidates": [
+    {"order": 41, "candidate_id": "h84nt", "selection_sha256": "9ebe0933cf55dcbe83201c775f19c09dad6105616e1f571035983c52cbc1b8b5", "audit_status": "hard_fail_measurement_only"},
+    {"order": 42, "candidate_id": "r9v2d", "selection_sha256": "a090cb9ec5a55566278919ff36031a31175133397bdca04c3462c33fdc085038", "audit_status": "hard_fail_no_stable_utility"},
+    {"order": 43, "candidate_id": "zrwjp", "selection_sha256": "a4607b8a5334b858667becf2c5265ac7727fc73b4c2b4fc9305eb6fa83a3e243", "audit_status": "hard_fail_no_stable_utility"},
+    {"order": 44, "candidate_id": "v6kqy", "selection_sha256": "a4710d5c5ff010fd621170ad3ec32b04af9b76f1ba73339f216a3853531c0cff", "audit_status": "pending_uniform_audit"},
+    {"order": 45, "candidate_id": "326nv", "selection_sha256": "a6119dfb281a09715673409f44fe34269af818537c81c49ecf3389009373197a", "audit_status": "pending_uniform_audit"},
+    {"order": 46, "candidate_id": "ac9jm", "selection_sha256": "c3c4d5ffa7599e32e1c90ec1ae9ea3448e4c0afde8fe6af893e40e5051b8ad63", "audit_status": "pending_uniform_audit"},
+    {"order": 47, "candidate_id": "9tv2b", "selection_sha256": "c852187aaeff3bdccea22cf725566bd49f996153e78fa3764e200d73f399432a", "audit_status": "pending_uniform_audit"},
+    {"order": 48, "candidate_id": "3xy9j", "selection_sha256": "c9cacedb3441d098c0afbed7c2579cc9e6b89a894c3386bf0ef49c295081e045", "audit_status": "pending_uniform_audit"},
+    {"order": 49, "candidate_id": "j38gd", "selection_sha256": "cc981e85ce0f6f532f89770eabbf1c0009c3a48b5e66edf49f1188b019292569", "audit_status": "pending_uniform_audit"},
+    {"order": 50, "candidate_id": "mkgvp", "selection_sha256": "cd2b284dd38621402f4471c663eb3785ad0db98c846bfb790a3d6473db8b58b2", "audit_status": "prospective_fail_result_text_exposed"},
+    {"order": 51, "candidate_id": "waq4m", "selection_sha256": "d43e3c0db80daadd77b621739bda30d0f820596cee1dbb84043c940bb66cb15a", "audit_status": "prospective_fail_result_text_exposed"},
+    {"order": 52, "candidate_id": "m52pd", "selection_sha256": "d94d3c27420f1830b3a8dfcc097ac658f9b23eafd178b9d70cdd56d73b4b8342", "audit_status": "pending_uniform_audit"},
+    {"order": 53, "candidate_id": "ux8qt", "selection_sha256": "e2ccc475aaf10a3de996f847138a96243b88b22fd2685afb809f0f8a74737238", "audit_status": "prospective_fail_result_text_exposed"},
+    {"order": 54, "candidate_id": "gzdnf", "selection_sha256": "e519860155c49b4def912ef778dfd57bb320e4e74d49ebb697f93c938765f5a1", "audit_status": "prospective_fail_result_text_exposed"},
+    {"order": 55, "candidate_id": "yh2ef", "selection_sha256": "e7a2e97274b19050ede4a17ec71b19185fa746b56d7d9ad1daa7ebf1c300e482", "audit_status": "pending_uniform_audit"},
+    {"order": 56, "candidate_id": "3bzxg", "selection_sha256": "e9a22d871f42aaeea3400b1d0263eb8f16900002be2d4154dd793c4677d7fa46", "audit_status": "pending_uniform_audit"},
+    {"order": 57, "candidate_id": "k9bwj", "selection_sha256": "fde506495739c2e482d523c4ba67a3b7f890ed8ef0733cc8865ee14f265f1d75", "audit_status": "pending_uniform_audit"}
+  ],
+  "compute_boundary": {
+    "authorized_spend_usd": 0,
+    "paid_model_calls_authorized": false,
+    "human_outcome_reveal_authorized": false,
+    "participant_row_access_authorized": false
+  }
+}

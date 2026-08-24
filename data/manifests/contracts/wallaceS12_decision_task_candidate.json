@@ -1,0 +1,104 @@
+{
+  "schema_version": "external_ordinal_decision_task_candidate.v1",
+  "task_id": "wallaceS12:q1:cells-1-6",
+  "experiment_id": "wallaceS12",
+  "source_id": "ps5a2",
+  "source_question_id": "Q1",
+  "canonical_split_status": "unassigned",
+  "reveal_authorized": false,
+  "outcome_access": "sealed",
+  "paradigm_group": "international_law_commitment_compliance_and_reputation",
+  "access_regime": "DESIGN_ONLY",
+  "design_type": "between_subject_factorial_action_subset",
+  "randomization_unit": "participant",
+  "subset_rule": "Hold the substantive scenario fixed and retain the largest complete commitment-by-conduct strategy set; break the military-versus-economic context tie by lexicographically smallest source cell IDs. This selects military source cells 1 through 6 before outcomes are opened. Economic cells 7 through 12 are an omitted context and cannot become a second experiment.",
+  "arms": [
+    {
+      "arm_id": "hard_treaty_then_use_force",
+      "source_assignment": "XTESS097=1",
+      "description": "Make a formal treaty promise not to use force, then break the promise and use force",
+      "deployable": true
+    },
+    {
+      "arm_id": "hard_treaty_then_refrain",
+      "source_assignment": "XTESS097=2",
+      "description": "Make a formal treaty promise not to use force, then keep the promise and refrain",
+      "deployable": true
+    },
+    {
+      "arm_id": "soft_guideline_then_use_force",
+      "source_assignment": "XTESS097=3",
+      "description": "Join nonbinding regional guidelines against force, then disregard them and use force",
+      "deployable": true
+    },
+    {
+      "arm_id": "soft_guideline_then_refrain",
+      "source_assignment": "XTESS097=4",
+      "description": "Join nonbinding regional guidelines against force, then follow them and refrain",
+      "deployable": true
+    },
+    {
+      "arm_id": "no_commitment_then_use_force",
+      "source_assignment": "XTESS097=5",
+      "description": "Make no prior international commitment about force, then use force",
+      "deployable": true
+    },
+    {
+      "arm_id": "no_commitment_then_refrain",
+      "source_assignment": "XTESS097=6",
+      "description": "Make no prior international commitment about force, then refrain",
+      "deployable": true
+    }
+  ],
+  "control_arm_id": "no_commitment_then_refrain",
+  "primary_outcome_id": "support_for_future_us_military_agreement",
+  "outcome_question": "The United States is currently thinking about signing an agreement with this country that would involve cooperation over military issues. Would you support or oppose the United States signing a military agreement with this country?",
+  "outcome_family": "ordinal",
+  "response_options": [
+    {"raw_value": 1, "label": "Strongly support", "normalized_utility": 1.0},
+    {"raw_value": 2, "label": "Somewhat support", "normalized_utility": 0.75},
+    {"raw_value": 3, "label": "Neither support nor oppose", "normalized_utility": 0.5},
+    {"raw_value": 4, "label": "Somewhat oppose", "normalized_utility": 0.25},
+    {"raw_value": 5, "label": "Strongly oppose", "normalized_utility": 0.0}
+  ],
+  "scale_lower": 1,
+  "scale_upper": 5,
+  "direction": "lower_is_better",
+  "estimand": "study_weighted_intention_to_treat_hajek_mean_normalized_utility_within_frozen_military_cells_1_through_6",
+  "decision_maker": "a policymaker for the hypothetical target country choosing an ex ante legal-commitment and subsequent military-conduct strategy",
+  "beneficiary": "the target country's narrow reputational objective of obtaining future U.S. military cooperation",
+  "utility_rationale": "Lower raw Q1 responses mean greater U.S. public support for a future military agreement with the target country, so normalized utility reverses the source scale. This is a narrow target-country reputation objective, not a claim about U.S. welfare, peace, humanitarian outcomes, or the moral value of compliance.",
+  "truthfulness_scope": "The source presents a hypothetical sequence, and the contract compares the complete strategies and consequences exactly as fielded. It does not claim that a real country's legal and military choices would produce the fielded reputational consequences.",
+  "target_population": "general U.S. adult probability-panel population represented by the source sample weight",
+  "weighting_rule": "primary study-weighted Hajek arm means using source variable weight; report unweighted released-sample arm means as a prespecified sensitivity",
+  "missingness_rule": "complete case for Q1 after excluding source code -1 (Refused)",
+  "source_variable_mapping": {
+    "assignment_variable": "XTESS097",
+    "outcome_variable": "Q1",
+    "weight_variable": "weight",
+    "retained_assignment_values": [1, 2, 3, 4, 5, 6],
+    "valid_outcome_values": [1, 2, 3, 4, 5],
+    "missing_outcome_codes": [-1]
+  },
+  "primary_estimator": "Restrict to XTESS097 values 1 through 6. For each strategy, compute the Hajek weighted mean of reversed normalized Q1 utility using positive finite source weight values; effects subtract the no-commitment-then-refrain reference mean.",
+  "sensitivity_estimators": [
+    "unweighted complete-case mean normalized utility by retained randomized cell"
+  ],
+  "bootstrap_procedure": "Resample participants with replacement within each retained randomized cell, retain their source weights, and recompute weighted arm means, effects, winner, and regret; use the canonical benchmark bootstrap seed after split freeze.",
+  "tie_rule": "lexicographic_arm_id",
+  "practical_regret_tolerance": 0.05,
+  "released_rows_per_arm_before_outcome_missingness": {
+    "hard_treaty_then_use_force": 240,
+    "hard_treaty_then_refrain": 237,
+    "soft_guideline_then_use_force": 244,
+    "soft_guideline_then_refrain": 244,
+    "no_commitment_then_use_force": 251,
+    "no_commitment_then_refrain": 245
+  },
+  "source_data_mapping_status": "complete_outcome_blind_schema_and_design_mapping",
+  "source_hashes": {
+    "final_questionnaire_sha256": "b45e023efa0eea3b2274e49bc0a0da49fffad75d8203618b408d18632b964316",
+    "official_mixed_archive_sha256": "1353334cde493dc599a0e276b4081694176752244c99945ee6eff45f98bc1665"
+  },
+  "reconstruction_note": "The final instrument verifies all 12 cells, the deterministic military cells 1-6 subset, Q1 ordering, wording, and labels. The official SAV was read with zero rows to recover only its dictionary, then only XTESS097 and weight were read to verify pre-outcome support and weight availability. No Q1 value, outcome missingness count, response distribution, arm outcome statistic, effect, significance result, or winner was opened. The temporary participant file was deleted after mapping."
+}

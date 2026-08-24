@@ -1,0 +1,37 @@
+{
+  "payload": {
+    "accept_abstain_policy": "not_validated_not_deployed",
+    "automatic_next_stage": false,
+    "candidate_checkpoint_commit": "68faf511d618ef198fef186659617cfd2eb8e33a",
+    "candidate_model_id": "mistral_small_3_1_24b_cross_family",
+    "claim_boundary": "A future result may test whether cross-family disagreement predicts risk; this manifest alone establishes no validated trust policy.",
+    "development_evidence_payload_sha256": "0539f471b9dcff3eb97ee0b553c59322e847681fefaa55c4c03fdfe3d5b8e86d",
+    "development_result": "no_positive_retrospective_signal_do_not_deploy_or_tune_threshold",
+    "diagnostic_role": "secondary_unvalidated_failure_diagnostic",
+    "diagnostics": {
+      "arm_rank_disagreement": "one minus arm-rank correlation when defined",
+      "effect_sign_disagreement_rate": "one minus exact sign agreement over non-control contrasts; sign(0)=0",
+      "mean_absolute_effect_disagreement": "mean absolute primary-vs-candidate normalized effect difference over non-control contrasts",
+      "winner_disagreement": "primary_selected_arm_id != candidate_selected_arm_id"
+    },
+    "experiment_is_independent_unit": true,
+    "future_evaluation": {
+      "analysis": "report fixed-direction risk-coverage descriptively; do not fit or tune a threshold unless a separate prospective protocol authorizes it",
+      "minimum_label_gate": "classification metrics not_estimable unless both classes have at least three independent experiments",
+      "primary_target": "frozen_primary_normalized_decision_regret",
+      "secondary_target": "frozen_primary_exact_choice_error"
+    },
+    "hypothesized_direction": "more_disagreement_means_lower_trust",
+    "missing_candidate_rule": "mark_diagnostic_unavailable_never_impute_disagreement",
+    "model_switching_rule": "forbidden",
+    "models_calls_arms_and_seeds_do_not_increase_n": true,
+    "required_target_order": "freeze both recommendations and all disagreement diagnostics before reveal",
+    "schema_version": "intervenebench.cross_family_disagreement_diagnostic.v2",
+    "status": "frozen_for_future_untouched_replication_only",
+    "target_human_outcomes_must_be_hidden_until_diagnostic_freeze": true,
+    "task_eligibility": "diagnostic is available only when the frozen primary and exact candidate model both complete the same outcome-blind arm grid",
+    "trust_threshold": null,
+    "validated_on_development_panel": false
+  },
+  "sha256": "7e22ee9e1c6dd5af3ad48aa7fe406914fdb1ed41388a0d8a33943c14cf90d6f1"
+}

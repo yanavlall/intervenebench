@@ -1,0 +1,28 @@
+{
+  "aggregate_target_result_exposure_logged": true,
+  "candidate_count": 38,
+  "canonical_split": "unassigned",
+  "freeze_date": "2026-08-13",
+  "freeze_id": "benchmark-v1-readiness-20260813",
+  "modal_compute_spend_usd": 0,
+  "multi_candidate_paradigm_clusters": {
+    "demographic_change_status_threat": 4,
+    "inequality_and_power_framing": 2,
+    "racial_health_inequality_communication": 2
+  },
+  "new_participant_outcome_rows_opened": false,
+  "notes": "Outcome-blind engineering readiness and conservative paradigm dependency map. It does not assign canonical splits or certify unresolved source-data mappings. The 4w9pz human mapping is complete but its exact co-fielded sequence assets are missing. Aggregate egmxd target frequencies were accidentally exposed during workbook inspection; no participant row was opened, and the candidate is development-only.",
+  "paid_simulator_calls": 0,
+  "paradigm_cluster_count": 33,
+  "readiness_manifest": "benchmark_v1_readiness.csv",
+  "readiness_manifest_sha256": "5ba48608c79b1c75f081f50a5fc583f67b2ad2faaea41b9474b1e9109fc7358e",
+  "readiness_tier_counts": {
+    "development_only": 11,
+    "estimator_contract_pending": 2,
+    "interactive_or_longitudinal_later": 5,
+    "multimodal_contract_later": 8,
+    "runnable_sealed_contract": 6,
+    "sequence_source_assets_pending": 1,
+    "terminally_barred": 5
+  }
+}

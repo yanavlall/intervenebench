@@ -1,0 +1,3 @@
+vllm==0.8.5
+mistral-common[opencv]==1.5.4
+huggingface-hub[hf_xet]==0.30.2

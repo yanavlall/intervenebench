@@ -1,0 +1,63 @@
+{
+  "schema_version": "ordinal_decision_task_candidate.v1",
+  "task_id": "5vm8g:task-2",
+  "experiment_id": "5vm8g",
+  "source_id": "TESS-874-Haaland",
+  "source_question_id": "Q2",
+  "socsci210_task_num": 2,
+  "canonical_split_status": "unassigned",
+  "reveal_authorized": false,
+  "outcome_access": "sealed",
+  "paradigm_group": "racial_discrimination_beliefs",
+  "access_regime": "DESIGN_ONLY",
+  "design_type": "between_subject",
+  "randomization_unit": "participant",
+  "arms": [
+    {
+      "arm_id": "arm_0_no_additional_information",
+      "condition_num": 0,
+      "description": "No callback-discrimination result is shown after the common belief elicitation",
+      "deployable": true
+    },
+    {
+      "arm_id": "arm_1_callback_discrimination_information",
+      "condition_num": 1,
+      "description": "Show the verified callback-discrimination result after the common belief elicitation",
+      "deployable": true
+    }
+  ],
+  "control_arm_id": "arm_0_no_additional_information",
+  "primary_outcome_id": "perceived_seriousness_of_labor_market_discrimination",
+  "outcome_question": "In the United States today, do you think that racial discrimination against blacks in the labor market is a serious problem?",
+  "outcome_family": "ordinal",
+  "response_options": [
+    {"raw_value": 1, "label": "A very serious problem", "normalized_utility": 1.0},
+    {"raw_value": 2, "label": "A serious problem", "normalized_utility": 0.75},
+    {"raw_value": 3, "label": "A problem", "normalized_utility": 0.5},
+    {"raw_value": 4, "label": "A small problem", "normalized_utility": 0.25},
+    {"raw_value": 5, "label": "Not a problem at all", "normalized_utility": 0.0}
+  ],
+  "scale_lower": 1,
+  "scale_upper": 5,
+  "direction": "lower_is_better",
+  "estimand": "unadjusted_intention_to_treat_mean_normalized_utility",
+  "decision_maker": "a public-interest labor-market educator deciding whether to disclose the verified callback-discrimination result",
+  "beneficiary": "message recipients whose recognition of documented labor-market discrimination is the declared communication objective",
+  "utility_rationale": "Higher normalized utility means greater perceived seriousness of documented labor-market discrimination. This is a narrow awareness objective, not a claim that alarm or perceived severity is universally welfare-improving.",
+  "truthfulness_scope": "The treatment may be used only as a faithful reconstruction of the historically fielded audit-study result; it must not be generalized as a current labor-market estimate without independent verification.",
+  "target_population": "unweighted released SocSci210 analytic sample from the AmeriSpeak general-population panel",
+  "weighting_rule": "unweighted_released_analytic_sample",
+  "missingness_rule": "complete_case_for_declared_outcome",
+  "tie_rule": "lexicographic_arm_id",
+  "practical_regret_tolerance": 0.05,
+  "released_rows_per_arm_before_outcome_missingness": {
+    "arm_0_no_additional_information": 757,
+    "arm_1_callback_discrimination_information": 781
+  },
+  "source_hashes": {
+    "final_questionnaire_sha256": "45e90954d9e1564abc4eb44c2faaf9a2a1da598f841bad252728550091224ed6",
+    "codebook_sha256": "9dfa1244ce6d2986028c56726c232d8878745969fdc1a8b86a33832eaed36d5a",
+    "field_report_sha256": "15b83c5232b3f499073ceb57ebf447a9a9e52c62de2a0b863a62cb131bb7befe"
+  },
+  "reconstruction_note": "SocSci210 condition 0 is source control and condition 1 is source treatment. The released common-task stimulus omits the randomized information; the blinded bundle therefore transcribes the final fielded questionnaire. No response value was used to construct this contract."
+}

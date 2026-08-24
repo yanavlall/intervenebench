@@ -1,0 +1,87 @@
+{
+  "baselines": {
+    "classical_supervised_status": "implemented and fixture-tested; real-outcome fitting remains blocked until a valid canonical development split exists",
+    "required_before_paid_inference": [
+      "frozen no-effect control baseline",
+      "local zero-cost prompted simulator"
+    ]
+  },
+  "budget_id": "supported-ordinal-pilot-cap-20260813",
+  "current_recorded_spend_usd": 0.0,
+  "engineering_split_path": "data/manifests/splits/supported_ordinal_pilot.json",
+  "engineering_split_sha256": "92fe26a68082b85b631b171801ebb508fcb0d95cf4cb5476a856c26d0175caf0",
+  "excluded_from_this_cap": {
+    "4w9pz": "exact co-fielded Campbell teen sequence and visual assets unresolved",
+    "Blair1131": "two retained arms below strict 100-row pilot support floor",
+    "KlarS44": "long co-fielded sequence tier",
+    "ShannonS2": "long multi-module sequence tier",
+    "pb2rr": "image-capable inference and governed source-data scoring",
+    "tcg8p": "uncapped continuous outcome",
+    "z358z": "long sequence tier and released-checkpoint exposure"
+  },
+  "freeze_date": "2026-08-13",
+  "hard_total_cap_usd": 25.0,
+  "human_outcomes_opened": false,
+  "modal_compute_authorized": false,
+  "notes": "This record freezes a ceiling and execution prerequisites; it does not authorize expenditure. A separate explicit run decision is required after the local baseline passes.",
+  "paid_inference_authorized": false,
+  "reveal_authorized": false,
+  "schema_version": "engineering_pilot_compute_budget.v1",
+  "scope": [
+    "5vm8g",
+    "xc4yq",
+    "de5hx",
+    "turagaS11",
+    "wallaceS12"
+  ],
+  "simulator_freeze_requirements": {
+    "base_seed": 2102026,
+    "draws_per_arm": 3,
+    "parser": "strict structured probability output",
+    "persona_policy": "one fixed outcome-free roster reused across arms",
+    "prompt_templates": "use only the hash-pinned blinded bundles",
+    "provider_and_model_revision": "must be recorded before the first paid call",
+    "recommendation_tie_rule": "declared control arm on exact no-effect tie; otherwise contract tie rule",
+    "temperature": 0.35,
+    "top_p": 0.9
+  },
+  "status": "frozen_not_authorized_to_spend",
+  "stop_conditions": [
+    "stop before the first paid call unless provider, model revision, price basis, prompts, seed, and roster are frozen",
+    "stop immediately when cumulative paid cost reaches 25 USD",
+    "do not use paid retries for substantive answer variation",
+    "do not inspect any human target outcome under this budget",
+    "do not fit a classical baseline on real outcomes under the engineering split",
+    "do not launch Modal jobs or fine-tuning",
+    "do not interpret the five-task pilot as trust-model evidence"
+  ],
+  "tiers": [
+    {
+      "human_outcome_use": "none",
+      "maximum_usd": 0.0,
+      "methods": [
+        "frozen no-effect control baseline",
+        "local llama3.2:3b pilot",
+        "fixture-only hashed-ridge baseline"
+      ],
+      "tier_id": "local_and_no_effect_baselines"
+    },
+    {
+      "human_outcome_use": "none",
+      "maximum_usd": 18.0,
+      "methods": [
+        "one frozen text-capable prompted simulator configuration"
+      ],
+      "task_scope": "five bounded-ordinal engineering tasks only",
+      "tier_id": "one_inexpensive_prompted_simulator"
+    },
+    {
+      "human_outcome_use": "none",
+      "maximum_usd": 7.0,
+      "methods": [
+        "only predeclared retry of parse failures or interrupted calls"
+      ],
+      "tier_id": "retries_and_parser_reserve"
+    }
+  ]
+}

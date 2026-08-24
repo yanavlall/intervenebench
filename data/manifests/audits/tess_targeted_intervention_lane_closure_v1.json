@@ -1,0 +1,36 @@
+{
+  "schema_version": "intervenebench.targeted_tess_intervention_lane_closure.v1",
+  "status": "closed_low_yield_at_order_9_checkpoint",
+  "closure_date": "2026-08-14",
+  "targeted_universe_path": "data/manifests/audits/tess_targeted_intervention_universe_v1.json",
+  "targeted_universe_sha256": "814616012e2832e1232ae6cabb201419fe2be8bf0fefd88e90bf56b5e7278367",
+  "audit_registry_path": "data/manifests/audits/tess_targeted_intervention_audit_registry_v1.csv",
+  "audit_registry_sha256": "486f104bb4663cb7f830211a3f7669dda6cc971b6983388490c99e7d8c2edc4f",
+  "checkpoint_order": 9,
+  "minimum_scientific_survivors": 2,
+  "scientific_survivor_count": 1,
+  "scientific_survivor_ids": [
+    "dvwu7"
+  ],
+  "status_counts": {
+    "conditional": 1,
+    "ineligible": 1,
+    "source_blocked": 7
+  },
+  "result_text_exposed_count": 0,
+  "outcome_sealed_count": 9,
+  "stop_rule_triggered": true,
+  "remaining_authorized_batch_rows_not_opened": [
+    "jk96b",
+    "cwur6",
+    "h6m8g"
+  ],
+  "decision": "Close the title-targeted external lane after order 9. Preserve dvwu7 as a pristine scientific survivor requiring mechanical mapping and adapter work; do not open orders 10 through 12 under v1.",
+  "scientific_interpretation": "The action-title filter improved conceptual relevance but did not produce enough source-complete tasks to justify more manual auditing under the frozen resource rule. This is a corpus-qualification result, not a simulator or human-outcome result.",
+  "authority": {
+    "authorized_spend_usd": 0,
+    "model_calls_authorized": false,
+    "human_outcome_reveal_authorized": false,
+    "participant_row_access_authorized": false
+  }
+}

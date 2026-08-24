@@ -1,0 +1,114 @@
+{
+  "payload": {
+    "authority": {
+      "automatic_next_stage_authorized": false,
+      "automatic_retry_authorized": false,
+      "candidate_inference_authorized": false,
+      "human_outcome_access_authorized": false,
+      "modal_compute_authorized": false,
+      "modal_resource_creation_authorized": false,
+      "model_download_authorized": false,
+      "paid_inference_authorized": false,
+      "participant_row_access_authorized": false,
+      "participant_row_serialization_authorized": false,
+      "regression_scoring_authorized": false,
+      "reserve_call_authorized": false
+    },
+    "budget": {
+      "gpu_count": 1,
+      "gpu_type": "A100-80GB",
+      "hard_incremental_cost_cap_usd": 90.0,
+      "maximum_gpu_cost_usd": 69.4,
+      "maximum_gpu_seconds": 100000,
+      "no_nonpreemptible_multiplier": true,
+      "no_premium_region_multiplier": true,
+      "official_gpu_price_usd_per_second": 0.000694,
+      "pricing_source": "https://modal.com/pricing",
+      "provider": "modal",
+      "spending_is_not_a_target": true
+    },
+    "candidate_model_id": "mistral_small_3_1_24b_cross_family",
+    "claim_boundary": {
+      "adds_independent_experiments": false,
+      "changes_prospective_experiment_count": false,
+      "forbidden_claim": "new prospective validation or evidence for universal simulator reliability",
+      "permitted_claim": "architecture-family robustness on the already revealed six-task panel",
+      "prospective_confirmation": false
+    },
+    "experiment_ids": [
+      "tcg8p",
+      "pb2rr",
+      "z358z",
+      "ShannonS2",
+      "Blair1131",
+      "KlarS44"
+    ],
+    "failure_policy": {
+      "automatic_retries": 0,
+      "invalid_required_cell": "mark_model_task_unavailable_and_preserve_raw_output",
+      "missing_transport_call": "requires_separate_byte_identical_retry_authorization",
+      "primary_substitution_allowed": false,
+      "reserve_calls": 0,
+      "semantic_repair_allowed": false
+    },
+    "freeze_date": "2026-08-14",
+    "inference_contract": {
+      "interfaces": {
+        "continuous_integer": {
+          "max_new_tokens": 32,
+          "parser": "strict_nonnegative_integer_no_repair_no_clamp",
+          "semantic_repair_allowed": false,
+          "temperature": 0.7,
+          "top_p": 0.9
+        },
+        "forced_choice_next_token": {
+          "generation_allowed": false,
+          "preflight_requirement": "every answer code is one exact distinct tokenizer token",
+          "required_schema_validity": 1.0,
+          "semantic_repair_allowed": false,
+          "temperature": 1.0
+        }
+      },
+      "logical_replay_rule": "one candidate call for every nonreserve primary-policy source call",
+      "same_task_arm_nuisance_order_prompt_assets": true,
+      "source_prompt_hash_check_before_chat_formatting": true,
+      "source_prompt_text_mutation_allowed": false
+    },
+    "model_source_manifest_path": "data/manifests/simulators/mistral_small_3_1_24b_source_manifest_v1.json",
+    "planned_call_count": 624,
+    "preflight": {
+      "cache_file_hash_verification_required": true,
+      "candidate_runtime_dependency_lock_status": "unfrozen_pending_target_free_canary",
+      "exact_chat_template_verification_required": true,
+      "one_target_free_canary_per_adapter_modality": true,
+      "target_calls_before_preflight_pass": false,
+      "tokenizer_answer_code_gate_required": true,
+      "vision_asset_decode_canary_required": true
+    },
+    "regression_thresholds": {
+      "maximum_exact_choice_rate_drop": 0.1,
+      "maximum_practical_reliability_rate_drop": 0.1,
+      "maximum_schema_validity_rate_drop": 0.01,
+      "paired_mean_regret_noninferiority_margin": 0.01,
+      "worst_regret_increase_margin": 0.01
+    },
+    "schema_version": "intervenebench.cross_family_regression_protocol.v1",
+    "source_confirmation_call_plan_file_sha256": "31a82393d50ed0b49d39a87f7e18ccfec9b1563b0f7518227ce50c05752053ef",
+    "source_confirmation_call_plan_path": "data/manifests/simulators/confirmation_call_plan_v1.json",
+    "source_confirmation_call_plan_payload_sha256": "5de8890b4231247a2aeae51f216e3048defec6b1828ffdef46b23e470a38eebf",
+    "source_stage_excluded": "outcome_free_adaptive_reserve",
+    "source_stages_included": [
+      "base",
+      "primary_prompt_perturbation"
+    ],
+    "status": "frozen_no_authority",
+    "study_role": "retrospective_cross_family_robustness",
+    "system_instruction": {
+      "dynamic_date_allowed": false,
+      "sha256": "cbe23ded40874c8e9c3f4cddd0a90a1cffde3dccea83a7564c3cdd5f55aaa302",
+      "text": "You are a behavioral response simulator. Follow the user prompt exactly and predict only the requested response for the described population member. Do not use study titles, authors, reported findings, or human outcome data. Return only the response schema requested by the user prompt.",
+      "use_repository_system_prompt": false
+    }
+  },
+  "sha256": "a74daf32a0c42d13909e01c2b7c54766cf058e429aa3b69d3ff499614cd4904e"
+}

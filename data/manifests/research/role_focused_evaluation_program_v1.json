@@ -1,0 +1,44 @@
+{
+  "schema_version": "intervenebench.role_focused_program.v1",
+  "status": "evaluation_product_build_frozen",
+  "freeze_date": "2026-08-14",
+  "primary_artifact": "behavioral_simulator_evaluation_and_release_gating_system",
+  "thesis": "Behavioral simulators should be evaluated by whether their evidence supports low-regret intervention decisions, with explicit uncertainty, provenance, and release scope.",
+  "corpus_policy": {
+    "open_ended_search_closed": true,
+    "independent_replication_panel_required_for_completion": false,
+    "existing_completion_queue_status": "closed_without_execution",
+    "one_bounded_behavioral_extension": "wr7jg_schema_mapping_only"
+  },
+  "evidence_case_study": {
+    "development_experiment_count": 9,
+    "prospective_experiment_count": 6,
+    "recommendations_frozen_before_outcomes": true,
+    "planned_confirmation_calls": 1464,
+    "strictly_aggregated_confirmation_outputs": 1404,
+    "claim_boundary": "noncanonical_small_panel_prospective_case_study"
+  },
+  "deliverables": [
+    "unified_evaluation_lifecycle",
+    "scoped_release_gate",
+    "aggregate_only_public_demo",
+    "model_version_regression_suite",
+    "results_explorer",
+    "technical_report_and_reproducible_repository"
+  ],
+  "stopping_rules": {
+    "no_more_corpus_search": true,
+    "no_lora_without_credible_training_support": true,
+    "no_new_trust_classifier_on_six_confirmation_labels": true,
+    "no_same_family_sampling_without_outcome_free_instability_trigger": true,
+    "no_multi_agent_extension_without_group_behavior_ground_truth": true,
+    "wr7jg_mapping_time_cap_hours": 4
+  },
+  "authority": {
+    "authorized_spend_usd": 0,
+    "model_calls_authorized": false,
+    "human_outcome_reveal_authorized": false,
+    "participant_row_access_authorized": false,
+    "schema_only_mapping_authorized": false
+  }
+}

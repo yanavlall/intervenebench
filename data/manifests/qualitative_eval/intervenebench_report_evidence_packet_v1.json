@@ -1,0 +1,184 @@
+{
+  "schema_version": "intervenebench.evidence_packet.v1",
+  "packet_id": "intervenebench-report-evidence-v1",
+  "title": "InterveneBench aggregate behavioral-simulator evaluation evidence",
+  "facts": [
+    {
+      "fact_id": "f_panel_scope",
+      "category": "evidence_scope",
+      "statement": "The headline evidence is a noncanonical prospective confirmation panel of six independent randomized experiments, five of which have bounded normalized decision utility."
+    },
+    {
+      "fact_id": "f_output_integrity",
+      "category": "execution_integrity",
+      "statement": "Exactly 1,404 of 1,464 planned model outputs were strictly schema-valid; the 60 unavailable outputs were preserved without semantic repair or rerun."
+    },
+    {
+      "fact_id": "f_exact_choice",
+      "category": "decision_quality",
+      "statement": "The frozen primary simulator selected the exact sample-best intervention in 3 of 6 prospective experiments."
+    },
+    {
+      "fact_id": "f_exact_choice_chance",
+      "category": "uncertainty",
+      "statement": "The probability that uniform random action selection would meet or exceed the observed exact-choice count is 0.3734567901234568, so exact-choice accuracy is chance-compatible."
+    },
+    {
+      "fact_id": "f_primary_regret",
+      "category": "decision_quality",
+      "statement": "Across the five normalized tasks, primary mean normalized regret is 0.003520577798391078 and worst normalized regret is 0.008544627721005615."
+    },
+    {
+      "fact_id": "f_uniform_regret",
+      "category": "baseline_comparison",
+      "statement": "Uniform random action selection has mean normalized regret 0.040958979015419957; the primary-minus-uniform mean difference is -0.03743840121702888."
+    },
+    {
+      "fact_id": "f_uniform_tail",
+      "category": "uncertainty",
+      "statement": "Only 12 of 216 complete uniform-random action combinations achieved mean regret as low as the primary policy, for a finite-action tail probability of 0.05555555555555555."
+    },
+    {
+      "fact_id": "f_practical_reliability",
+      "category": "decision_quality",
+      "statement": "All 6 of 6 prospective choices satisfied their frozen task-specific practical-reliability rule."
+    },
+    {
+      "fact_id": "f_trust_ranking",
+      "category": "trust_diagnostics",
+      "statement": "The prespecified trust ranking was worse than random abstention: discrete AURC was 0.7111111111111111 versus a random-abstention expectation of 0.5, and exact-choice AUROC was 0.2222222222222222."
+    },
+    {
+      "fact_id": "f_trust_threshold",
+      "category": "trust_diagnostics",
+      "statement": "No prospectively validated trust threshold exists, and no confidence-based abstention policy is authorized."
+    },
+    {
+      "fact_id": "f_fallback_result",
+      "category": "human_fallback",
+      "statement": "No tested limited-human policy improved point regret over synthetic-only at any nonzero budget; human-only point estimates were worse at every tested nonzero budget."
+    },
+    {
+      "fact_id": "f_fallback_uncertainty",
+      "category": "human_fallback",
+      "statement": "Human-only pilots were resolved as worse at the 95 percent level for budgets 10, 25, 50, and 100."
+    },
+    {
+      "fact_id": "f_fallback_pattern",
+      "category": "human_fallback",
+      "statement": "Across 15 balanced empirical-Bayes task-by-budget cells, six updates were harmful, three corrective, and six unchanged; average harm was 13.59010662821557 times average correction, an exploratory pattern rather than a proven causal mechanism."
+    },
+    {
+      "fact_id": "f_cross_family_scope",
+      "category": "model_comparison",
+      "statement": "The Mistral cross-family comparison is retrospective and post-reveal, covers five experiments, and adds zero prospective experiment N."
+    },
+    {
+      "fact_id": "f_cross_family_choice",
+      "category": "model_comparison",
+      "statement": "On the five-task retrospective comparison, both the primary model and Mistral selected 40 percent of exact winners."
+    },
+    {
+      "fact_id": "f_cross_family_metrics",
+      "category": "model_comparison",
+      "statement": "Mistral treatment-effect MAE was 0.050255692268200404 versus 0.06370846108314762 for the primary, while Mistral mean regret was 0.004295147420206114 versus 0.003520577798391078 for the primary."
+    },
+    {
+      "fact_id": "f_development_scope",
+      "category": "evidence_scope",
+      "statement": "The nine-experiment development set produced 8 of 9 exact choices and mean normalized regret 0.002316616844669365, but it is method-development evidence and not held-out confirmation."
+    }
+  ],
+  "decision_scopes": [
+    {
+      "scope_id": "candidate_screening",
+      "decision": "limited_research_use",
+      "reasons": [
+        "low-regret screening criteria passed"
+      ]
+    },
+    {
+      "scope_id": "autonomous_intervention_selection",
+      "decision": "hold",
+      "reasons": [
+        "small prospective panel",
+        "insufficient normalized decision tasks",
+        "exact choice remains chance-compatible",
+        "uniform-action regret gate is not established",
+        "schema-validity rate is below autonomous threshold"
+      ]
+    },
+    {
+      "scope_id": "confidence_based_abstention",
+      "decision": "hold",
+      "reasons": [
+        "trust ranking did not beat random abstention",
+        "no prospectively validated trust threshold"
+      ]
+    },
+    {
+      "scope_id": "small_sample_human_fallback",
+      "decision": "hold",
+      "reasons": [
+        "tested limited-human fallback did not improve decisions"
+      ]
+    }
+  ],
+  "claim_boundaries": [
+    {
+      "boundary_id": "b_screening_supported",
+      "status": "supported",
+      "claim": "limited research-stage candidate screening"
+    },
+    {
+      "boundary_id": "b_low_regret_supported",
+      "status": "supported",
+      "claim": "a prospective low-regret signal on this six-experiment panel"
+    },
+    {
+      "boundary_id": "b_fallback_negative_supported",
+      "status": "supported",
+      "claim": "a prospectively replicated negative result for the tested fallback family"
+    },
+    {
+      "boundary_id": "b_autonomy_not_supported",
+      "status": "not_supported",
+      "claim": "autonomous intervention selection"
+    },
+    {
+      "boundary_id": "b_universal_trust_not_supported",
+      "status": "not_supported",
+      "claim": "universal simulator trust"
+    },
+    {
+      "boundary_id": "b_abstention_not_supported",
+      "status": "not_supported",
+      "claim": "validated confidence-based abstention"
+    },
+    {
+      "boundary_id": "b_fallback_not_supported",
+      "status": "not_supported",
+      "claim": "reliable small-sample human correction"
+    },
+    {
+      "boundary_id": "b_canonical_not_supported",
+      "status": "not_supported",
+      "claim": "a canonical benchmark or calibrated trust model"
+    }
+  ],
+  "required_disclosures": [
+    "The prospective panel is small and noncanonical: six experiments, five with bounded normalized utility.",
+    "Outcome-blind means target human outcomes were excluded before recommendation freeze; it does not prove absence from foundation-model pretraining.",
+    "The Mistral comparison was performed after outcomes were revealed and is architecture-sensitivity evidence, not prospective confirmation."
+  ],
+  "privacy": {
+    "contains_participant_rows": false,
+    "contains_experiment_level_human_scores": false
+  },
+  "source_artifacts": [
+    {
+      "path": "data/public/research_findings_v1.json",
+      "payload_sha256": "4e819978fca7634025b21e619a9c918def9bd66d0a2249b205c84f651a3383fb"
+    }
+  ]
+}

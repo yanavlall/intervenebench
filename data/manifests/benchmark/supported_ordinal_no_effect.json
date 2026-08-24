@@ -1,0 +1,79 @@
+{
+  "human_outcomes_opened": false,
+  "outcome_access": "sealed",
+  "pilot_id": "supported-ordinal-pilot-20260812",
+  "predictions": {
+    "5vm8g": {
+      "selected_arm_id": "arm_0_no_additional_information",
+      "selection_rule": "declared_control_arm_on_no_effect_tie",
+      "synthetic_arm_means": {
+        "arm_0_no_additional_information": 0.5,
+        "arm_1_callback_discrimination_information": 0.5
+      },
+      "synthetic_treatment_effects": {
+        "arm_1_callback_discrimination_information": 0.0
+      }
+    },
+    "de5hx": {
+      "selected_arm_id": "neutral_economy_article",
+      "selection_rule": "declared_control_arm_on_no_effect_tie",
+      "synthetic_arm_means": {
+        "inexperience_risk_article": 0.5,
+        "neutral_economy_article": 0.5,
+        "new_ideas_article": 0.5
+      },
+      "synthetic_treatment_effects": {
+        "inexperience_risk_article": 0.0,
+        "new_ideas_article": 0.0
+      }
+    },
+    "turagaS11": {
+      "selected_arm_id": "control_common_mercury_context",
+      "selection_rule": "declared_control_arm_on_no_effect_tie",
+      "synthetic_arm_means": {
+        "control_common_mercury_context": 0.5,
+        "household_responsibility_statistic": 0.5,
+        "state_contamination_statistic": 0.5
+      },
+      "synthetic_treatment_effects": {
+        "household_responsibility_statistic": 0.0,
+        "state_contamination_statistic": 0.0
+      }
+    },
+    "wallaceS12": {
+      "selected_arm_id": "no_commitment_then_refrain",
+      "selection_rule": "declared_control_arm_on_no_effect_tie",
+      "synthetic_arm_means": {
+        "hard_treaty_then_refrain": 0.5,
+        "hard_treaty_then_use_force": 0.5,
+        "no_commitment_then_refrain": 0.5,
+        "no_commitment_then_use_force": 0.5,
+        "soft_guideline_then_refrain": 0.5,
+        "soft_guideline_then_use_force": 0.5
+      },
+      "synthetic_treatment_effects": {
+        "hard_treaty_then_refrain": 0.0,
+        "hard_treaty_then_use_force": 0.0,
+        "no_commitment_then_use_force": 0.0,
+        "soft_guideline_then_refrain": 0.0,
+        "soft_guideline_then_use_force": 0.0
+      }
+    },
+    "xc4yq": {
+      "selected_arm_id": "arm_0_plain_low_fear",
+      "selection_rule": "declared_control_arm_on_no_effect_tie",
+      "synthetic_arm_means": {
+        "arm_0_plain_low_fear": 0.5,
+        "arm_1_high_fear": 0.5,
+        "arm_2_positive_protection": 0.5
+      },
+      "synthetic_treatment_effects": {
+        "arm_1_high_fear": 0.0,
+        "arm_2_positive_protection": 0.0
+      }
+    }
+  },
+  "reveal_authorized": false,
+  "schema_version": "multi_experiment_no_effect_baseline.v1",
+  "split_sha256": "92fe26a68082b85b631b171801ebb508fcb0d95cf4cb5476a856c26d0175caf0"
+}

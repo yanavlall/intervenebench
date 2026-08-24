@@ -1,0 +1,257 @@
+{
+  "access_regime": "DESIGN_ONLY",
+  "arms": [
+    {
+      "arm_id": "general_notification_policy",
+      "message": "Some ethics-board members argue for a written consent form covering the purpose, risks and benefits, alternatives, privacy, contact information, and voluntary participation. This adds time and effort and may make routine-care studies hard to conduct. Other members argue the study is very low risk because both drugs are commonly used, have similar side effects, and doctors do not know which is better. They recommend general notification through posters, brochures, and letters. Eligible patients would be automatically enrolled without being individually informed or asked; otherwise care would be unchanged except that a computer selects the treatment. Privately answer Q1: whether you would advise the ethics board definitely/probably toward Written Consent or probably/definitely toward General Notification. Then privately answer Q2: which you would personally prefer on the same four-point scale."
+    },
+    {
+      "arm_id": "verbal_consent_policy",
+      "message": "Some ethics-board members argue for a written consent form covering the purpose, risks and benefits, alternatives, privacy, contact information, and voluntary participation. This adds time and effort and may make routine-care studies hard to conduct. Other members argue the study is very low risk because both drugs are commonly used, have similar side effects, and doctors do not know which is better. They recommend brief verbal consent. The doctor would explain that the drugs are FDA-approved and widely used, discuss side effects, emphasize random assignment, ask whether the patient wants to participate, and record the decision. Privately answer Q1: whether you would advise the ethics board definitely/probably toward Written Consent or probably/definitely toward Verbal Consent. Then privately answer Q2: which you would personally prefer on the same four-point scale."
+    }
+  ],
+  "common_context": "Reconstruct the exact randomized Kalla/Nayak/Saperstein survey order and stop after Nayak Q3a. The same prior-module path must be paired across both consent-policy arms. Target Nayak context: The Learning Healthcare System integrates research into routine care. Patients are generally informed of this practice through letters, posters, and brochures, and an ethics review board protects patient rights and well-being. The proposed study concerns high blood pressure, which can lead to stroke, heart attacks, and kidney disease. CTD and TRT are both FDA-approved, widely used medicines with similar mostly non-serious side effects. It is not known which is more effective. A computer would randomly assign CTD or TRT, outcomes would be compared after one year, and the medication could be changed whenever the patient or doctor thought another medicine would be better.",
+  "experiment_id": "z358z",
+  "outcome_access": "sealed",
+  "outcome_question": "It is valuable to study whether one treatment option is more effective than the other for treating high blood pressure.",
+  "population": {
+    "description": "Adults in the United States represented by the KnowledgePanel general-population sample in 2014",
+    "roster_id": "aggregate-us-adult-v1"
+  },
+  "response_options": [
+    {
+      "label": "Strongly disagree",
+      "normalized_utility": 0.0,
+      "value": 1
+    },
+    {
+      "label": "2",
+      "normalized_utility": 0.16666666666666666,
+      "value": 2
+    },
+    {
+      "label": "3",
+      "normalized_utility": 0.3333333333333333,
+      "value": 3
+    },
+    {
+      "label": "Neutral",
+      "normalized_utility": 0.5,
+      "value": 4
+    },
+    {
+      "label": "5",
+      "normalized_utility": 0.6666666666666666,
+      "value": 5
+    },
+    {
+      "label": "6",
+      "normalized_utility": 0.8333333333333334,
+      "value": 6
+    },
+    {
+      "label": "Strongly agree",
+      "normalized_utility": 1.0,
+      "value": 7
+    }
+  ],
+  "reveal_authorized": false,
+  "schema_version": "sequence_ordinal_blinded_bundle.v1",
+  "sequence_contract": {
+    "paired_across_arms": true,
+    "prior_exposure_template": "{{nayak_module_order_prior}}",
+    "randomizations": [
+      {
+        "kind": "categorical",
+        "levels": [
+          {
+            "level_id": "kalla_nayak_saperstein",
+            "text": "{{kalla_module}}",
+            "weight": 0.25
+          },
+          {
+            "level_id": "nayak_kalla_saperstein",
+            "text": "",
+            "weight": 0.25
+          },
+          {
+            "level_id": "saperstein_kalla_nayak",
+            "text": "{{saperstein_module}}\n{{kalla_module}}",
+            "weight": 0.25
+          },
+          {
+            "level_id": "saperstein_nayak_kalla",
+            "text": "{{saperstein_module}}",
+            "weight": 0.25
+          }
+        ],
+        "randomization_id": "kalla_nayak_saperstein_module_order",
+        "token": "{{nayak_module_order_prior}}"
+      },
+      {
+        "candidate_labels": [
+          "Candidate A",
+          "Candidate B"
+        ],
+        "contexts": [
+          {
+            "level_id": "city_council",
+            "text": "city council",
+            "weight": 0.3333333333333333
+          },
+          {
+            "level_id": "congress",
+            "text": "Congress",
+            "weight": 0.3333333333333333
+          },
+          {
+            "level_id": "governor",
+            "text": "governor",
+            "weight": 0.3333333333333333
+          }
+        ],
+        "kind": "paired_profiles",
+        "pair_count": 3,
+        "questions": "Privately choose which candidate you would be more likely to support in the primary (Candidate A or Candidate B), then rate each candidate from 1=Very Unfavorable through 7=Very Favorable.",
+        "randomization_id": "kalla_candidate_profiles",
+        "token": "{{kalla_module}}",
+        "trait_order_randomized": true,
+        "traits": [
+          {
+            "label": "Current Occupation",
+            "levels": [
+              {
+                "level_id": "corporate_lawyer",
+                "text": "Corporate lawyer"
+              },
+              {
+                "level_id": "mayor",
+                "text": "Mayor"
+              },
+              {
+                "level_id": "state_legislator",
+                "text": "State legislator"
+              },
+              {
+                "level_id": "third_grade_teacher",
+                "text": "Third grade teacher"
+              }
+            ],
+            "trait_id": "occupation"
+          },
+          {
+            "label": "Gender",
+            "levels": [
+              {
+                "level_id": "male",
+                "text": "Male"
+              },
+              {
+                "level_id": "female",
+                "text": "Female"
+              }
+            ],
+            "trait_id": "gender"
+          },
+          {
+            "label": "Number of Years in Politics",
+            "levels": [
+              {
+                "level_id": "none",
+                "text": "None"
+              },
+              {
+                "level_id": "one",
+                "text": "1"
+              },
+              {
+                "level_id": "three",
+                "text": "3"
+              },
+              {
+                "level_id": "eight",
+                "text": "8"
+              }
+            ],
+            "trait_id": "political_experience"
+          },
+          {
+            "label": "Age",
+            "levels": [
+              {
+                "level_id": "29",
+                "text": "29"
+              },
+              {
+                "level_id": "45",
+                "text": "45"
+              },
+              {
+                "level_id": "65",
+                "text": "65"
+              }
+            ],
+            "trait_id": "age"
+          },
+          {
+            "label": "Number of Children",
+            "levels": [
+              {
+                "level_id": "zero",
+                "text": "0"
+              },
+              {
+                "level_id": "one",
+                "text": "1"
+              },
+              {
+                "level_id": "three",
+                "text": "3"
+              }
+            ],
+            "trait_id": "children"
+          },
+          {
+            "label": "Spouse's Occupation",
+            "levels": [
+              {
+                "level_id": "doctor",
+                "text": "Doctor"
+              },
+              {
+                "level_id": "farmer",
+                "text": "Farmer"
+              },
+              {
+                "level_id": "unmarried",
+                "text": "Unmarried"
+              }
+            ],
+            "trait_id": "spouse_occupation"
+          }
+        ]
+      },
+      {
+        "kind": "categorical",
+        "levels": [
+          {
+            "level_id": "sex_then_gender",
+            "text": "Q1. What sex were you assigned at birth (for example, on your birth certificate)? Answers: Female; Male; Intersex.\nQ2. What is your current gender? Answers: Woman; Man; Transgender; A gender not listed here (please specify).\nQ3. Some people consider themselves transgender if they have a different gender identity from their sex at birth. For example, a person born into a male body who feels female or lives as a woman. According to this definition, would you be considered transgender? Answers: Yes; No.",
+            "weight": 0.5
+          },
+          {
+            "level_id": "gender_then_sex",
+            "text": "Q2. What is your current gender? Answers: Woman; Man; Transgender; A gender not listed here (please specify).\nQ1. What sex were you assigned at birth (for example, on your birth certificate)? Answers: Female; Male; Intersex.\nQ3. Some people consider themselves transgender if they have a different gender identity from their sex at birth. For example, a person born into a male body who feels female or lives as a woman. According to this definition, would you be considered transgender? Answers: Yes; No.",
+            "weight": 0.5
+          }
+        ],
+        "randomization_id": "saperstein_question_order",
+        "token": "{{saperstein_module}}"
+      }
+    ],
+    "sequence_unit": "synthetic_persona",
+    "target_position": "stop_immediately_after_target_question"
+  },
+  "source_material_sha256": "129c0ebf5f49b54dff2abc63c3eed9c7e2f08ef1eed86f0ae38e522583d0b0bc",
+  "task_id": "z358z:task-2-drug-consent-policy"
+}

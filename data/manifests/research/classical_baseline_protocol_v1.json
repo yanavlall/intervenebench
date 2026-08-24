@@ -1,0 +1,64 @@
+{
+  "schema_version": "classical_baseline_protocol.v1",
+  "status": "retrospective_development_only_frozen",
+  "development_experiment_ids": [
+    "jf46x",
+    "5vm8g",
+    "xc4yq",
+    "de5hx",
+    "turagaS11",
+    "wallaceS12",
+    "nj5dx",
+    "es4xw",
+    "e2pyb"
+  ],
+  "excluded_confirmation_experiment_ids": [
+    "tcg8p",
+    "pb2rr",
+    "z358z",
+    "ShannonS2",
+    "Blair1131",
+    "KlarS44"
+  ],
+  "method": {
+    "target": "normalized_arm_effect_relative_to_frozen_control",
+    "model_family": "signed_hashed_ridge",
+    "feature_schema_version": "arm_contrast_text_metadata.v1",
+    "feature_dimension": 128,
+    "l2_penalty": 10.0,
+    "cross_fit_unit": "experiment",
+    "experiment_total_weight": 1.0,
+    "hyperparameter_search": "none",
+    "features": [
+      "response-blind treatment and control text unigram frequencies",
+      "response-blind treatment and control text bigram frequencies",
+      "signed treatment-minus-control text frequencies",
+      "response-blind common-context and outcome-question text frequencies",
+      "outcome family, design type, direction, modality, arm count, response-option count, and text lengths"
+    ],
+    "forbidden_predictors": [
+      "experiment identifiers",
+      "arm identifiers",
+      "source condition numbers",
+      "participant rows",
+      "target human effects, winners, outcomes, or regret"
+    ],
+    "multimodal_limit": "The classical model receives source-provided accessible text but no image pixels; visually indistinguishable text arms may tie.",
+    "tie_rule": "lexicographically smallest arm_id"
+  },
+  "evaluation": {
+    "development_predictions": "leave_one_experiment_out",
+    "final_confirmation_fit": "fit_once_on_all_nine_development_experiments_before_confirmation_scoring",
+    "headline_metrics": [
+      "treatment_effect_mae",
+      "correct_intervention_choice",
+      "decision_regret"
+    ],
+    "uncertainty_unit": "experiment",
+    "bootstrap_replicates": 10000,
+    "bootstrap_seed": 2026081401
+  },
+  "claim_boundary": "The specification was added after all nine development outcomes were available, so its development score is retrospective. It is frozen before any confirmation outcome access and may be evaluated prospectively only on the six sealed confirmation experiments.",
+  "participant_rows_required": false,
+  "confirmation_outcomes_accessed": false
+}

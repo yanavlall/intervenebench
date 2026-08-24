@@ -1,0 +1,30 @@
+{
+  "schema_version": "intervenebench.dvwu7_source_bundle.v1",
+  "candidate_id": "dvwu7",
+  "source_url": "https://osf.io/dvwu7/",
+  "data_materials_node_id": "g5ryd",
+  "proposal_node_id": "a9d8x",
+  "proposal_opened": false,
+  "source_archive": {
+    "filename": "Ferrer549.zip",
+    "osf_object_id": "58b043e2594d9001fde851d4",
+    "sha256": "4443127aab841afad43443dcbf9c4bb6b18c6ff8d814a30a20b5d136f8fbd050",
+    "retained": false
+  },
+  "retained_final_questionnaire": {
+    "source_member": "TESS3_177_Ferrer_Questionnaire_final.doc",
+    "path": "data/raw/sources/dvwu7/TESS3_177_Ferrer_Questionnaire_final.doc",
+    "sha256": "321fdc3fbae3827806f5adb97a6cd839b515eb7d64c8cdf3b20f3431bc75cd40",
+    "opening_basis": "filename_explicitly_identifies_questionnaire_and_final_version"
+  },
+  "listed_but_not_extracted_or_opened": [
+    "GfK Methodology - July 2014.pdf",
+    "TESS3 177 - Ferrer Response Rate Report.doc",
+    "TESS3_177_Ferrer_Client.sav"
+  ],
+  "participant_member_extracted": false,
+  "participant_member_opened": false,
+  "result_text_exposed": false,
+  "outcome_access": "sealed",
+  "model_calls_made": false
+}

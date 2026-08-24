@@ -1,0 +1,64 @@
+{
+  "schema_version": "bounded_numeric_multimodal_bundle.v1",
+  "task_id": "pb2rr:source-q4-prime-policy",
+  "experiment_id": "pb2rr",
+  "access_regime": "DESIGN_ONLY",
+  "population": {
+    "description": "Adults in the United States who identify as White or Black/African American, matching the source sample frame",
+    "roster_id": "aggregate-us-white-black-adult-v1"
+  },
+  "arms": [
+    {
+      "arm_id": "iphone_growth_control_article",
+      "accessible_text": "A Wall Street Journal-styled excerpt titled 'iPhone Shares Grow' says Apple iPhones accounted for more than half of U.S. smartphone growth in the past decade, and that ComScore said Apple's market share was set to double by 2016.",
+      "asset": {
+        "path": "data/raw/sources/pb2rr/controlprime_FINAL.pdf",
+        "mime_type": "application/pdf",
+        "sha256": "1c81b348fa757c5973f8b8c2ed0e8b67e63295b29a2e034c234c664c818e674e",
+        "page": 1
+      }
+    },
+    {
+      "arm_id": "hispanic_population_growth_article",
+      "accessible_text": "A Wall Street Journal-styled excerpt titled 'Latino Population Grows' says the U.S. Hispanic population grew faster than expected and accounted for more than half of U.S. population growth in the past decade, and that the Census Bureau said it was set to double by 2050.",
+      "asset": {
+        "path": "data/raw/sources/pb2rr/treatmentprime_new.pdf",
+        "mime_type": "application/pdf",
+        "sha256": "1b1a8187d7797da5184004a39f5fde0e60f6beac0e7fea60a8b2327394392f65",
+        "page": 1
+      }
+    }
+  ],
+  "common_context": "The participant first reads one exact source-formatted article image. The participant then receives a real $10 endowment and is paired with an unfamiliar person identified through whitepages.com. Any amount given will be mailed to that person; the participant keeps the remainder as Survey Complete Points. The participant and researchers do not receive identifying information about each other. The recipient's first name is independently randomized and must be paired across both article arms in simulation.",
+  "outcome_question": "The person you have been paired with is named as shown in the randomized recipient context. How many whole dollars from $0 to $10 would you like to give this person?",
+  "response_contract": {
+    "type": "integer",
+    "unit": "dollars_given_to_recipient",
+    "minimum": 0,
+    "maximum": 10
+  },
+  "nuisance_contract": {
+    "paired_across_arms": true,
+    "levels": [
+      {"nuisance_id": "carrie", "weight": 0.0625, "context": "The paired person is named Carrie."},
+      {"nuisance_id": "jill", "weight": 0.0625, "context": "The paired person is named Jill."},
+      {"nuisance_id": "laurie", "weight": 0.0625, "context": "The paired person is named Laurie."},
+      {"nuisance_id": "sarah", "weight": 0.0625, "context": "The paired person is named Sarah."},
+      {"nuisance_id": "brad", "weight": 0.0625, "context": "The paired person is named Brad."},
+      {"nuisance_id": "greg", "weight": 0.0625, "context": "The paired person is named Greg."},
+      {"nuisance_id": "jay", "weight": 0.0625, "context": "The paired person is named Jay."},
+      {"nuisance_id": "todd", "weight": 0.0625, "context": "The paired person is named Todd."},
+      {"nuisance_id": "aaliyah", "weight": 0.0625, "context": "The paired person is named Aaliyah."},
+      {"nuisance_id": "aisha", "weight": 0.0625, "context": "The paired person is named Aisha."},
+      {"nuisance_id": "jada", "weight": 0.0625, "context": "The paired person is named Jada."},
+      {"nuisance_id": "keisha", "weight": 0.0625, "context": "The paired person is named Keisha."},
+      {"nuisance_id": "darnell", "weight": 0.0625, "context": "The paired person is named Darnell."},
+      {"nuisance_id": "jamal", "weight": 0.0625, "context": "The paired person is named Jamal."},
+      {"nuisance_id": "jermaine", "weight": 0.0625, "context": "The paired person is named Jermaine."},
+      {"nuisance_id": "kareem", "weight": 0.0625, "context": "The paired person is named Kareem."}
+    ]
+  },
+  "source_material_sha256": "86b895939458c4c0b30754059a5e3801a88626a11091c91c64aaf71276fa7218",
+  "outcome_access": "sealed",
+  "reveal_authorized": false
+}

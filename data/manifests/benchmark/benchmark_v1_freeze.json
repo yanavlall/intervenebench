@@ -1,0 +1,34 @@
+{
+  "aggregate_target_result_exposure_logged_during_freeze": true,
+  "candidate_count": 38,
+  "candidate_manifest": "benchmark_v1_candidates.csv",
+  "candidate_manifest_sha256": "f39261f0b947f58ca7757017b450465ad66fc04dc20e5643eb38e20f9c6908b7",
+  "canonical_split": "unassigned",
+  "canonical_test_barred_structural_ineligibility_count": 3,
+  "canonical_test_barred_unresolved_recode_count": 2,
+  "canonical_test_eligible_after_contract_count": 22,
+  "dataset_stratum_counts": {
+    "external_archive_v1": 7,
+    "socsci210_primary": 31
+  },
+  "freeze_date": "2026-08-12",
+  "freeze_id": "benchmark-v1-scope-20260812",
+  "modal_compute_spend_during_freeze_usd": 0,
+  "new_participant_outcome_rows_opened_during_freeze": false,
+  "notes": "This freezes only the already audited Benchmark v1 candidate scope. It is not the canonical task registry or split. Contract, dependency, and fielding-cluster blockers must be resolved before splitting. A workbook sheet-selection failure exposed aggregate egmxd target frequencies; no participant row was opened, and egmxd is barred from canonical test evaluation.",
+  "outcome_access_counts": {
+    "development_only_portfolio_reveal": 5,
+    "development_only_result_exposure": 5,
+    "development_only_validation_reveal": 1,
+    "sealed": 27
+  },
+  "paid_simulator_calls_during_freeze": 0,
+  "scope_status": "candidate_scope_frozen_split_unassigned",
+  "source_registry_sha256": {
+    "cross_audit_adjudications.csv": "a20a216a911656742aed809fa1f23a395c6935333842aea60ec6c6a3bc20430d",
+    "external_source_audit_registry.csv": "fde2c3e390beeb8faec101c4e42b5e9dac2e278235c825c992a166ace5d4e55e",
+    "phase1_candidate_registry.csv": "77518c352d5d21a53c3c30591fdc9fcab8a624cca7a795b47b8d4a1a817fd25b",
+    "phase2_candidate_registry.csv": "c17ef8cdc3eb159fa68cc2579dc023fb7fb27cd0050768cdaab1ef32c976c1d2",
+    "response_recode_adjudications.csv": "c8beda4fada77ace710e81ef983c5ad861a5c2faf345091b636a1e38c508708e"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "schema_version": "external_ordinal_decision_task_candidate.v1",
+  "task_id": "turagaS11:q6a",
+  "experiment_id": "turagaS11",
+  "source_id": "euw7p",
+  "source_question_id": "Q6a",
+  "canonical_split_status": "unassigned",
+  "reveal_authorized": false,
+  "outcome_access": "sealed",
+  "paradigm_group": "environmental_risk_information_and_personal_responsibility",
+  "access_regime": "DESIGN_ONLY",
+  "design_type": "between_subject",
+  "randomization_unit": "participant",
+  "arms": [
+    {
+      "arm_id": "control_common_mercury_context",
+      "source_assignment": "XTESS030=3",
+      "description": "Show the common mercury-risk passage with no additional statistic",
+      "deployable": true
+    },
+    {
+      "arm_id": "state_contamination_statistic",
+      "source_assignment": "XTESS030=1",
+      "description": "Add the fielded national lake-area mercury-contamination statistic",
+      "deployable": true
+    },
+    {
+      "arm_id": "household_responsibility_statistic",
+      "source_assignment": "XTESS030=2",
+      "description": "Add the fielded household share of U.S. mercury-release statistic",
+      "deployable": true
+    }
+  ],
+  "control_arm_id": "control_common_mercury_context",
+  "primary_outcome_id": "willingness_to_write_mercury_policy_letter",
+  "outcome_question": "How unwilling or willing are you to write a letter to your local newspaper supporting stronger mercury control policies?",
+  "outcome_family": "ordinal",
+  "response_options": [
+    {"raw_value": 1, "label": "Very Unwilling", "normalized_utility": 0.0},
+    {"raw_value": 2, "label": "Somewhat Unwilling", "normalized_utility": 0.25},
+    {"raw_value": 3, "label": "Not Sure", "normalized_utility": 0.5},
+    {"raw_value": 4, "label": "Somewhat Willing", "normalized_utility": 0.75},
+    {"raw_value": 5, "label": "Very Willing", "normalized_utility": 1.0}
+  ],
+  "scale_lower": 1,
+  "scale_upper": 5,
+  "direction": "higher_is_better",
+  "estimand": "study_weighted_intention_to_treat_hajek_mean_normalized_utility",
+  "decision_maker": "an environmental or public-health communicator choosing which accurate mercury fact, if any, to add to a common risk message",
+  "beneficiary": "communities, future generations, and ecosystems protected by stronger mercury-control support under the declared communication objective",
+  "utility_rationale": "Higher normalized utility means greater willingness to publicly support stronger mercury-control policies. This is a narrow environmental-health communication objective, not a claim that every mercury policy or every persuasive message is welfare-improving.",
+  "truthfulness_scope": "This contract faithfully reconstructs facts as fielded in 2010. Any contemporary deployment must independently verify both statistics and preserve their scope; the benchmark does not treat historical claims as timeless facts.",
+  "target_population": "general U.S. adult probability-panel population represented by the study-specific post-stratification weight",
+  "weighting_rule": "primary study-weighted Hajek arm means using source variable weight; report unweighted released-sample arm means as a prespecified sensitivity",
+  "missingness_rule": "within each randomized arm use only its routed Q6a variable and exclude source code -1 (Refused); never coalesce a non-routed outcome field",
+  "source_variable_mapping": {
+    "assignment_variable": "XTESS030",
+    "weight_variable": "weight",
+    "arm_outcome_variables": {
+      "control_common_mercury_context": "Q6COa",
+      "state_contamination_statistic": "Q6STa",
+      "household_responsibility_statistic": "Q6ARa"
+    },
+    "valid_outcome_values": [1, 2, 3, 4, 5],
+    "missing_outcome_codes": [-1]
+  },
+  "primary_estimator": "For each arm, compute the Hajek weighted mean of normalized Q6a utility using positive finite source weight values; effects subtract the control weighted mean.",
+  "sensitivity_estimators": [
+    "unweighted complete-case mean normalized utility by randomized arm"
+  ],
+  "bootstrap_procedure": "Resample participants with replacement within randomized arm, retain their source weights, recompute weighted arm means, effects, winner, and regret; use the canonical benchmark bootstrap seed after split freeze.",
+  "tie_rule": "lexicographic_arm_id",
+  "practical_regret_tolerance": 0.05,
+  "released_rows_per_arm_before_outcome_missingness": {
+    "control_common_mercury_context": 247,
+    "state_contamination_statistic": 258,
+    "household_responsibility_statistic": 269
+  },
+  "source_data_mapping_status": "complete_outcome_blind_schema_and_design_mapping",
+  "source_hashes": {
+    "final_questionnaire_sha256": "8259b893cb29223cdaee42ee2c31f8abe340fc657d209cad228a44b0f7e81fa9",
+    "methodology_sha256": "2023a20ade50a4b775c28db714b8cd6ed876237599784ae5a3c5c5ff5c1f2b5f",
+    "official_mixed_archive_sha256": "1da9b8a4d6ec30fd8785741a1e9de3daf789e5974c7a84fc83e50f5ee7e14c66"
+  },
+  "reconstruction_note": "The final questionnaire verifies equal planned randomization, all three messages, Q6a, and its ordered labels. The official SAV was read with zero rows to recover only its dictionary, then only XTESS030 and weight were read to verify pre-outcome support and weight availability. No Q6 value, outcome missingness count, response distribution, arm outcome statistic, effect, significance result, or winner was opened. The temporary participant file was deleted after mapping."
+}

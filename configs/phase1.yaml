@@ -1,0 +1,28 @@
+dataset:
+  repository: socratesft/SocSci210
+  revision: 048481111a4425ed83dc0eacf15f8431f252b21a
+  access_regime: DESIGN_ONLY
+
+split:
+  seed: 2102026
+  train_fraction: 0.65
+  validation_fraction: 0.15
+  test_fraction: 0.20
+  unit: paradigm_group
+
+phase1:
+  selection_pool: curated_overlap_if_available
+  selection_rule: lexicographic_task_id
+  allowed_design: between_subject
+  allowed_modalities:
+    - text
+  minimum_observations_per_arm: 100
+  maximum_arms: 4
+
+evaluation:
+  estimand: unadjusted_intention_to_treat_mean_normalized_utility
+  include_control_in_action_set: true
+  tie_rule: lexicographic_arm_id
+  practical_regret_tolerance: 0.05
+  bootstrap_seed: 2102026
+

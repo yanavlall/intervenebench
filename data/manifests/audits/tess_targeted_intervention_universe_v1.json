@@ -1,0 +1,613 @@
+{
+  "schema_version": "intervenebench.targeted_tess_intervention_universe.v1",
+  "status": "outcome_blind_targeted_universe_frozen",
+  "freeze_date": "2026-08-14",
+  "protocol_revision": "1.0_high_precision_before_source_access",
+  "selection_order": "preserve source universe selection_sha256 order",
+  "inputs": {
+    "source_universe_path": "data/manifests/audits/tess_external_root_universe_v1.json",
+    "source_universe_sha256": "6c9ca3c6e471fa5e1bac37d486ad2d3919ec04131f85b79ed5b7835023b8e57a",
+    "source_registry_path": "data/manifests/audits/tess_external_root_audit_registry_v1.csv",
+    "source_registry_sha256": "52449fc91f9ac7fb96547d12333bf2207b23884d9b9e6bfc0d530d5897680f37",
+    "exposure_log_path": "data/manifests/audits/independent_replication_exposure_log_v1.json",
+    "exposure_log_sha256": "9f7a67b6832f278fc81a6c2ce197acea4df7080a88f19b3da3404e7fa2e4443c"
+  },
+  "selection_rule": {
+    "allowed_metadata": [
+      "osf_node_id",
+      "title",
+      "public source URL"
+    ],
+    "include_patterns": [
+      "\\bmessages?\\b",
+      "\\bmessaging\\b",
+      "\\bcommunicat(?:e|ed|es|ing|ion|ions)\\b",
+      "\\badvertis(?:e|ed|es|ing|ement|ements)\\b",
+      "\\bdisclos(?:e|ed|es|ing|ure|ures)\\b",
+      "\\btransparen(?:cy|t)\\b",
+      "\\bfact[ -]?checks?\\b",
+      "\\brhetori(?:c|cal)\\b",
+      "\\bnarratives?\\b",
+      "\\bportrayals?\\b",
+      "\\bappeals\\b",
+      "\\b(?:frame|framed|frames|framing|reframe|reframed|reframes|reframing)\\b",
+      "\\bself[ -]?affirmation\\b",
+      "\\bimplementation intentions?\\b",
+      "\\bmobiliz(?:e|ed|es|ing|ation)\\b",
+      "\\binvok(?:e|ed|es|ing|ation)\\b",
+      "\\breminders?\\b",
+      "\\bwarnings?\\b",
+      "\\bfeedback\\b",
+      "\\bnudges?\\b",
+      "\\brequests?\\b",
+      "\\bdonations?\\b",
+      "\\bdeliberat(?:e|ed|ion|ive)\\b",
+      "\\bpolicy justifications?\\b",
+      "\\binterventions? (?:to|for)\\b",
+      "\\ban intervention\\b"
+    ],
+    "exclude_patterns": [
+      "\\b(?:measure|measures|measuring|measurement)\\b",
+      "\\bquestion (?:wording|order|context)\\b",
+      "\\border effects?\\b",
+      "\\blist experiments?\\b",
+      "\\bitem count\\b",
+      "\\banchoring vignettes?\\b",
+      "\\bsurvey (?:instrument|estimation|mode)\\b",
+      "\\bphone modules?\\b",
+      "\\bdata collection procedures?\\b",
+      "\\bpanel conditioning\\b",
+      "\\bover[ -]?reporting\\b",
+      "\\bself[ -]?reported\\b",
+      "\\btest performance\\b",
+      "\\bresponse (?:quality|scale)\\b",
+      "\\bscale (?:direction|order)\\b"
+    ],
+    "normalization": "HTML-unescape; Unicode NFKC casefold; non-alphanumeric collapsed to spaces",
+    "exclude_all_previously_audited_ids": true,
+    "exclude_all_global_exposure_log_ids": true,
+    "deduplicate_normalized_titles": "retain minimum original source-universe selection_sha256",
+    "manual_additions_or_deletions_permitted": false,
+    "human_outcomes_or_simulator_results_used": false
+  },
+  "counts": {
+    "source_candidate_roots": 233,
+    "title_matches_before_prior_audit_exposure_and_duplicate_exclusion": 38,
+    "previously_audited_ids_excluded": 4,
+    "exposure_log_ids_excluded": 0,
+    "duplicate_normalized_titles_excluded": 0,
+    "eligible_targeted_candidates": 34,
+    "ordered_audit_batch": 12
+  },
+  "ordered_audit_protocol": {
+    "protocol_revision": "1.0",
+    "batch_candidate_ids": [
+      "w7qfa",
+      "jptdn",
+      "dvwu7",
+      "tfr7g",
+      "ug27f",
+      "zyqcj",
+      "6nqkd",
+      "zsdme",
+      "thpxf",
+      "jk96b",
+      "cwur6",
+      "h6m8g"
+    ],
+    "batch_size": 12,
+    "block_size": 3,
+    "audit_contiguously_in_freeze_order": true,
+    "no_selective_skipping": true,
+    "scientific_survivor_definition": "pristine source-faithful task that passes randomization, deployable fixed-world actions, bounded utility, exact stimuli, and fielding independence; only mechanical mapping or adapter implementation may remain",
+    "checkpoint_after_order_6": {
+      "minimum_scientific_survivors": 1,
+      "action_below_minimum": "close_lane_low_yield"
+    },
+    "checkpoint_after_order_9": {
+      "minimum_scientific_survivors": 2,
+      "action_below_minimum": "close_lane_low_yield"
+    },
+    "continue_after_order_9_only_if_checkpoint_passes": true,
+    "finish_current_block_after_scientific_survivor_count": 4,
+    "hard_stop_after_order_12": true,
+    "checkpoint_basis": "source-audit structure and reconstruction only; no human outcomes or simulator performance",
+    "result_exposure_is_automatic_prospective_failure": true
+  },
+  "candidate_universe": [
+    {
+      "osf_node_id": "w7qfa",
+      "title": "Internalized Consensus: The Effect of Episodic Narratives on HIV/AIDS attitudes among African Americans",
+      "source_url": "https://osf.io/w7qfa/",
+      "source_freeze_order": 26,
+      "selection_sha256": "1b1d4b0f99be28877870df689813125318ed4d10c0705ff4dc1d85acf0b4c060",
+      "title_include_matches": [
+        "\\bnarratives?\\b"
+      ],
+      "outcome_access": "sealed",
+      "result_text_exposed": false,
+      "source_audit_status": "pending_ordered_source_audit",
+      "freeze_order": 1
+    },
+    {
+      "osf_node_id": "jptdn",
+      "title": "Going Against the Grain: The Intersection of Framing, Source Credibility, and Predispositions",
+      "source_url": "https://osf.io/jptdn/",
+      "source_freeze_order": 38,
+      "selection_sha256": "2297e451438791d066285d7a4f21199c034640c0d030bf5e959cdaae533a4cfd",
+      "title_include_matches": [
+        "\\b(?:frame|framed|frames|framing|reframe|reframed|reframes|reframing)\\b"
+      ],
+      "outcome_access": "sealed",
+      "result_text_exposed": false,
+      "source_audit_status": "pending_ordered_source_audit",
+      "freeze_order": 2
+    },
+    {
+      "osf_node_id": "dvwu7",
+      "title": "Self-Affirmation and Defensiveness to Health Messages for the Self vs a Close Other",
+      "source_url": "https://osf.io/dvwu7/",
+      "source_freeze_order": 49,
+      "selection_sha256": "336bc7c42ad181ac10a355bbbb512c2520c0b21731be9fd78ce64ad212e2699d",
+      "title_include_matches": [
+        "\\bmessages?\\b",
+        "\\bself[ -]?affirmation\\b"
+      ],
+      "outcome_access": "sealed",
+      "result_text_exposed": false,
+      "source_audit_status": "pending_ordered_source_audit",
+      "freeze_order": 3
+    },
+    {
+      "osf_node_id": "tfr7g",
+      "title": "The Political Backlash Against Globalization? Framing Effects, Information, and Attitudes Toward International Trade",
+      "source_url": "https://osf.io/tfr7g/",
+      "source_freeze_order": 51,
+      "selection_sha256": "35b0dfa9aad6cd1ee02f68c0ef93d5690317f08020e9621fc583aebd2ddf7a25",
+      "title_include_matches": [
+        "\\b(?:frame|framed|frames|framing|reframe|reframed|reframes|reframing)\\b"
+      ],
+      "outcome_access": "sealed",
+      "result_text_exposed": false,
+      "source_audit_status": "pending_ordered_source_audit",
+      "freeze_order": 4
+    },
+    {
+      "osf_node_id": "ug27f",
+      "title": "Generalization of the Valence Framing Effect",
+      "source_url": "https://osf.io/ug27f/",
+      "source_freeze_order": 70,
+      "selection_sha256": "4cfb9e225efb96d64afa340acdc558af715badd4c682d5574c7952149fa803a7",
+      "title_include_matches": [
+        "\\b(?:frame|framed|frames|framing|reframe|reframed|reframes|reframing)\\b"
+      ],
+      "outcome_access": "sealed",
+      "result_text_exposed": false,
+      "source_audit_status": "pending_ordered_source_audit",
+      "freeze_order": 5
+    },
+    {
+      "osf_node_id": "zyqcj",
+      "title": "Does Self-affirmation Influence Health Message Processing through Changes in Construal Levels?",
+      "source_url": "https://osf.io/zyqcj/",
+      "source_freeze_order": 87,
+      "selection_sha256": "5e4fa9c6183045761cd15d475a5ee8f782da6e76be9fbd809b5e1e030dfe36b3",
+      "title_include_matches": [
+        "\\bmessages?\\b",
+        "\\bself[ -]?affirmation\\b"
+      ],
+      "outcome_access": "sealed",
+      "result_text_exposed": false,
+      "source_audit_status": "pending_ordered_source_audit",
+      "freeze_order": 6
+    },
+    {
+      "osf_node_id": "6nqkd",
+      "title": "Impact of Information Disclosure on the Attractiveness of a Social Network Site Profile",
+      "source_url": "https://osf.io/6nqkd/",
+      "source_freeze_order": 91,
+      "selection_sha256": "62af6c85c8e037b3c3f36588499db4f0a5a729867d9e415fe9af26d2482f56bf",
+      "title_include_matches": [
+        "\\bdisclos(?:e|ed|es|ing|ure|ures)\\b"
+      ],
+      "outcome_access": "sealed",
+      "result_text_exposed": false,
+      "source_audit_status": "pending_ordered_source_audit",
+      "freeze_order": 7
+    },
+    {
+      "osf_node_id": "zsdme",
+      "title": "American Attitudes Toward the International Criminal Court: Framing Effects, Endorsement Effects, and the Idea of Multilateral Justice",
+      "source_url": "https://osf.io/zsdme/",
+      "source_freeze_order": 98,
+      "selection_sha256": "6cd479e7e6e4cc87725f3e7cc0ca2a5487d25dcb20bc8777aaca669fd0bdbdde",
+      "title_include_matches": [
+        "\\b(?:frame|framed|frames|framing|reframe|reframed|reframes|reframing)\\b"
+      ],
+      "outcome_access": "sealed",
+      "result_text_exposed": false,
+      "source_audit_status": "pending_ordered_source_audit",
+      "freeze_order": 8
+    },
+    {
+      "osf_node_id": "thpxf",
+      "title": "Tone and Information in Negative Campaign Advertising",
+      "source_url": "https://osf.io/thpxf/",
+      "source_freeze_order": 104,
+      "selection_sha256": "6fd20dc96d7abf7c954a6bbdc9096647a2da2729ffde443865b3307b4ed44dbd",
+      "title_include_matches": [
+        "\\badvertis(?:e|ed|es|ing|ement|ements)\\b"
+      ],
+      "outcome_access": "sealed",
+      "result_text_exposed": false,
+      "source_audit_status": "pending_ordered_source_audit",
+      "freeze_order": 9
+    },
+    {
+      "osf_node_id": "jk96b",
+      "title": "Electoral Consequences of Policy Justifications",
+      "source_url": "https://osf.io/jk96b/",
+      "source_freeze_order": 106,
+      "selection_sha256": "708484bb7aa45724aaf454cab967ec57515a4b0bcbb77a6be93599814933c092",
+      "title_include_matches": [
+        "\\bpolicy justifications?\\b"
+      ],
+      "outcome_access": "sealed",
+      "result_text_exposed": false,
+      "source_audit_status": "pending_ordered_source_audit",
+      "freeze_order": 10
+    },
+    {
+      "osf_node_id": "cwur6",
+      "title": "The Victim Paradox: How Portrayals of Suffering Affect Attitudes about Gay People and Gay Rights",
+      "source_url": "https://osf.io/cwur6/",
+      "source_freeze_order": 111,
+      "selection_sha256": "7661123d52b7ef867cbc7e36a699e06fa72b3ca135f547ba8179727b1ae58f91",
+      "title_include_matches": [
+        "\\bportrayals?\\b"
+      ],
+      "outcome_access": "sealed",
+      "result_text_exposed": false,
+      "source_audit_status": "pending_ordered_source_audit",
+      "freeze_order": 11
+    },
+    {
+      "osf_node_id": "h6m8g",
+      "title": "Self-Affirmation Intervention for Weight Bias Internalization",
+      "source_url": "https://osf.io/h6m8g/",
+      "source_freeze_order": 112,
+      "selection_sha256": "76ef8b3577f45fa90f17e12ccd5a08b998eeb20bc85580e23d26c0622d95004f",
+      "title_include_matches": [
+        "\\bself[ -]?affirmation\\b",
+        "\\binterventions? (?:to|for)\\b"
+      ],
+      "outcome_access": "sealed",
+      "result_text_exposed": false,
+      "source_audit_status": "pending_ordered_source_audit",
+      "freeze_order": 12
+    },
+    {
+      "osf_node_id": "m3u4j",
+      "title": "The Effects of Racist and Racial Appeals on White Voters",
+      "source_url": "https://osf.io/m3u4j/",
+      "source_freeze_order": 114,
+      "selection_sha256": "7bdc3ab714a73620b81b67dc3535ea4c8829db41d4e92f3ef05d763e1b4a4c41",
+      "title_include_matches": [
+        "\\bappeals\\b"
+      ],
+      "outcome_access": "sealed",
+      "result_text_exposed": false,
+      "source_audit_status": "pending_ordered_source_audit",
+      "freeze_order": 13
+    },
+    {
+      "osf_node_id": "a693y",
+      "title": "Effects of deliberative minipublics on public opinion: experimental evidence from a survey on Social Security reform",
+      "source_url": "https://osf.io/a693y/",
+      "source_freeze_order": 115,
+      "selection_sha256": "7c801b556221f3f30805fa71aac072058ea58c424944ce1218291a4ebdb4de0f",
+      "title_include_matches": [
+        "\\bdeliberat(?:e|ed|ion|ive)\\b"
+      ],
+      "outcome_access": "sealed",
+      "result_text_exposed": false,
+      "source_audit_status": "pending_ordered_source_audit",
+      "freeze_order": 14
+    },
+    {
+      "osf_node_id": "jeyhd",
+      "title": "Ethnicity and Episodic Framing in the Wake of Hurricane Katrina",
+      "source_url": "https://osf.io/jeyhd/",
+      "source_freeze_order": 129,
+      "selection_sha256": "8aeeebbffa5c86e2d7e7431c18c08f01ff12a8f0aedce464f55e7ebc8191b6ed",
+      "title_include_matches": [
+        "\\b(?:frame|framed|frames|framing|reframe|reframed|reframes|reframing)\\b"
+      ],
+      "outcome_access": "sealed",
+      "result_text_exposed": false,
+      "source_audit_status": "pending_ordered_source_audit",
+      "freeze_order": 15
+    },
+    {
+      "osf_node_id": "4cgmv",
+      "title": "Mobilizing Collective Identity: Frames &amp; Rational Individuals",
+      "source_url": "https://osf.io/4cgmv/",
+      "source_freeze_order": 132,
+      "selection_sha256": "8bb1eb44c09093139bf825553713fb53c9c81ffd21dd58c81fe0535336d6ee3b",
+      "title_include_matches": [
+        "\\b(?:frame|framed|frames|framing|reframe|reframed|reframes|reframing)\\b",
+        "\\bmobiliz(?:e|ed|es|ing|ation)\\b"
+      ],
+      "outcome_access": "sealed",
+      "result_text_exposed": false,
+      "source_audit_status": "pending_ordered_source_audit",
+      "freeze_order": 16
+    },
+    {
+      "osf_node_id": "rx76u",
+      "title": "Public Attitudes Towards a Supplementary Income Program for Low-wage Workers: A Study of the Effects of Framing, Distributive Justice Criteria and Material Interests",
+      "source_url": "https://osf.io/rx76u/",
+      "source_freeze_order": 144,
+      "selection_sha256": "9770c8474cad591fa6b6122c638b91bac3f66cce0ffbc6e7df0cecf2b79519f4",
+      "title_include_matches": [
+        "\\b(?:frame|framed|frames|framing|reframe|reframed|reframes|reframing)\\b"
+      ],
+      "outcome_access": "sealed",
+      "result_text_exposed": false,
+      "source_audit_status": "pending_ordered_source_audit",
+      "freeze_order": 17
+    },
+    {
+      "osf_node_id": "m6fhx",
+      "title": "The Role of News Media and Stereotypes in Hip-hop’s Bad Rap: Insights into narratives, movements, public opinion, and U.S. race relations",
+      "source_url": "https://osf.io/m6fhx/",
+      "source_freeze_order": 154,
+      "selection_sha256": "a0b3677dfbb95b655a27a6f215e0178e2e2e6a0f224af765384b9c9b8698e0f0",
+      "title_include_matches": [
+        "\\bnarratives?\\b"
+      ],
+      "outcome_access": "sealed",
+      "result_text_exposed": false,
+      "source_audit_status": "pending_ordered_source_audit",
+      "freeze_order": 18
+    },
+    {
+      "osf_node_id": "r5d6k",
+      "title": "What Not to Say When Asking for Donations: How the Content of Requests Affects Participation",
+      "source_url": "https://osf.io/r5d6k/",
+      "source_freeze_order": 159,
+      "selection_sha256": "a9bb21a66c812297a927dc93528510e5a57b9ccc3b8952be0e2d3e99dabf0766",
+      "title_include_matches": [
+        "\\brequests?\\b",
+        "\\bdonations?\\b"
+      ],
+      "outcome_access": "sealed",
+      "result_text_exposed": false,
+      "source_audit_status": "pending_ordered_source_audit",
+      "freeze_order": 19
+    },
+    {
+      "osf_node_id": "96rnk",
+      "title": "Values-consistent messaging to a vaccine skeptical population",
+      "source_url": "https://osf.io/96rnk/",
+      "source_freeze_order": 164,
+      "selection_sha256": "ab9644a732513739261848fa7812e20b45760597504afc27cbd505fec2ec7e7a",
+      "title_include_matches": [
+        "\\bmessaging\\b"
+      ],
+      "outcome_access": "sealed",
+      "result_text_exposed": false,
+      "source_audit_status": "pending_ordered_source_audit",
+      "freeze_order": 20
+    },
+    {
+      "osf_node_id": "rt24p",
+      "title": "Value Choices in the Mass Public: Testing for Framing Effects and Hierarchical Structure",
+      "source_url": "https://osf.io/rt24p/",
+      "source_freeze_order": 165,
+      "selection_sha256": "ac3ebd53de2bf716249f996a5dae7628502e967a9542f660f9830b5fe058a72a",
+      "title_include_matches": [
+        "\\b(?:frame|framed|frames|framing|reframe|reframed|reframes|reframing)\\b"
+      ],
+      "outcome_access": "sealed",
+      "result_text_exposed": false,
+      "source_audit_status": "pending_ordered_source_audit",
+      "freeze_order": 21
+    },
+    {
+      "osf_node_id": "abvrj",
+      "title": "Black Elite Rhetoric and American Public Opinion",
+      "source_url": "https://osf.io/abvrj/",
+      "source_freeze_order": 168,
+      "selection_sha256": "afdff31902030f70d376b5108c49987ad55f729b48c8c7cfc68a579bbcd00830",
+      "title_include_matches": [
+        "\\brhetori(?:c|cal)\\b"
+      ],
+      "outcome_access": "sealed",
+      "result_text_exposed": false,
+      "source_audit_status": "pending_ordered_source_audit",
+      "freeze_order": 22
+    },
+    {
+      "osf_node_id": "hqgva",
+      "title": "Believing in \"global warming\" versus \"climate change\": Exploring the psychological mechanisms of a framing effect",
+      "source_url": "https://osf.io/hqgva/",
+      "source_freeze_order": 173,
+      "selection_sha256": "b4eec78b5c53db425b32d310007a0bd1b12b7f1069fb4ef66db8f4653f7ac827",
+      "title_include_matches": [
+        "\\b(?:frame|framed|frames|framing|reframe|reframed|reframes|reframing)\\b"
+      ],
+      "outcome_access": "sealed",
+      "result_text_exposed": false,
+      "source_audit_status": "pending_ordered_source_audit",
+      "freeze_order": 23
+    },
+    {
+      "osf_node_id": "ak35q",
+      "title": "Price Disclosure Laws for Direct-to-Consumer Pharmaceutical Advertising: Price Transparency, Information Asymmetry and Consumer Behavior",
+      "source_url": "https://osf.io/ak35q/",
+      "source_freeze_order": 175,
+      "selection_sha256": "b7469d12c210efecfa6f5b921157c5b76a9dc0e7cce8a032a8337625d224be5c",
+      "title_include_matches": [
+        "\\badvertis(?:e|ed|es|ing|ement|ements)\\b",
+        "\\bdisclos(?:e|ed|es|ing|ure|ures)\\b",
+        "\\btransparen(?:cy|t)\\b"
+      ],
+      "outcome_access": "sealed",
+      "result_text_exposed": false,
+      "source_audit_status": "pending_ordered_source_audit",
+      "freeze_order": 24
+    },
+    {
+      "osf_node_id": "q9e4s",
+      "title": "The Interaction of Fear and Framing in Influencing Perceptions of the Social Security Debate: An Internet Experiment",
+      "source_url": "https://osf.io/q9e4s/",
+      "source_freeze_order": 184,
+      "selection_sha256": "c6de188a5efb2aac82563c050dd12f2d22abfae0a5bc5c98a4caa16ced64602a",
+      "title_include_matches": [
+        "\\b(?:frame|framed|frames|framing|reframe|reframed|reframes|reframing)\\b"
+      ],
+      "outcome_access": "sealed",
+      "result_text_exposed": false,
+      "source_audit_status": "pending_ordered_source_audit",
+      "freeze_order": 25
+    },
+    {
+      "osf_node_id": "f2zvx",
+      "title": "Paternalism and Deliberation",
+      "source_url": "https://osf.io/f2zvx/",
+      "source_freeze_order": 187,
+      "selection_sha256": "cae45165de3d4b26f5f19ddbea89d50bd0082a3202731a401a3393a4cd7e1120",
+      "title_include_matches": [
+        "\\bdeliberat(?:e|ed|ion|ive)\\b"
+      ],
+      "outcome_access": "sealed",
+      "result_text_exposed": false,
+      "source_audit_status": "pending_ordered_source_audit",
+      "freeze_order": 26
+    },
+    {
+      "osf_node_id": "6rckv",
+      "title": "Ambiguous Rhetoric and Legislative Accountability",
+      "source_url": "https://osf.io/6rckv/",
+      "source_freeze_order": 194,
+      "selection_sha256": "d208a70f9a4036750df686ce25a5f7b2ee292778a0c64b735185fac1c9735f66",
+      "title_include_matches": [
+        "\\brhetori(?:c|cal)\\b"
+      ],
+      "outcome_access": "sealed",
+      "result_text_exposed": false,
+      "source_audit_status": "pending_ordered_source_audit",
+      "freeze_order": 27
+    },
+    {
+      "osf_node_id": "dkxy7",
+      "title": "The Case of the Stolen Initiative: Were the Voters Framed?",
+      "source_url": "https://osf.io/dkxy7/",
+      "source_freeze_order": 195,
+      "selection_sha256": "d21037655e8494e29945cccb44bd4e62eb0de983f5624a4ee3c1ec1de3101920",
+      "title_include_matches": [
+        "\\b(?:frame|framed|frames|framing|reframe|reframed|reframes|reframing)\\b"
+      ],
+      "outcome_access": "sealed",
+      "result_text_exposed": false,
+      "source_audit_status": "pending_ordered_source_audit",
+      "freeze_order": 28
+    },
+    {
+      "osf_node_id": "gf5sm",
+      "title": "Communicating Uncertainty in the Reports of the Intergovernmental Panel on Climate Change",
+      "source_url": "https://osf.io/gf5sm/",
+      "source_freeze_order": 207,
+      "selection_sha256": "e15cc2381d839ebca4ee4e201c20032a0176801c84e1ecc4995e5cc248b1001a",
+      "title_include_matches": [
+        "\\bcommunicat(?:e|ed|es|ing|ion|ions)\\b"
+      ],
+      "outcome_access": "sealed",
+      "result_text_exposed": false,
+      "source_audit_status": "pending_ordered_source_audit",
+      "freeze_order": 29
+    },
+    {
+      "osf_node_id": "prvfy",
+      "title": "Racial Appeals in a \"Post-Racial\" Environment",
+      "source_url": "https://osf.io/prvfy/",
+      "source_freeze_order": 214,
+      "selection_sha256": "e59c262770dfb14f9d960f825532ffa7c3c72d99371c61e2df0e6f87161ea57e",
+      "title_include_matches": [
+        "\\bappeals\\b"
+      ],
+      "outcome_access": "sealed",
+      "result_text_exposed": false,
+      "source_audit_status": "pending_ordered_source_audit",
+      "freeze_order": 30
+    },
+    {
+      "osf_node_id": "6npvs",
+      "title": "The Political Impact of Message Attributes from Religious Elites",
+      "source_url": "https://osf.io/6npvs/",
+      "source_freeze_order": 218,
+      "selection_sha256": "e98e6a8666ba9fdebfef8078fff8468878facc12cdde47ac85010220d103d003",
+      "title_include_matches": [
+        "\\bmessages?\\b"
+      ],
+      "outcome_access": "sealed",
+      "result_text_exposed": false,
+      "source_audit_status": "pending_ordered_source_audit",
+      "freeze_order": 31
+    },
+    {
+      "osf_node_id": "yb3wd",
+      "title": "Self-Affirmation and Implementation Intentions: The Moderating Role of Discrete Emotion",
+      "source_url": "https://osf.io/yb3wd/",
+      "source_freeze_order": 221,
+      "selection_sha256": "eea325ef826c8fe5551bac19eab6d07b3481936bb721defec6ceb119ba36a089",
+      "title_include_matches": [
+        "\\bself[ -]?affirmation\\b",
+        "\\bimplementation intentions?\\b"
+      ],
+      "outcome_access": "sealed",
+      "result_text_exposed": false,
+      "source_audit_status": "pending_ordered_source_audit",
+      "freeze_order": 32
+    },
+    {
+      "osf_node_id": "3cbdj",
+      "title": "Equality is Misperceived as Harmful to Advantaged Groups: An Intervention to Increase Vaccine Equity Support",
+      "source_url": "https://osf.io/3cbdj/",
+      "source_freeze_order": 224,
+      "selection_sha256": "f5e9d5764ceda4704d709e4661213ac335affdbd7fc7bbc35f2890cbb34cca2f",
+      "title_include_matches": [
+        "\\binterventions? (?:to|for)\\b",
+        "\\ban intervention\\b"
+      ],
+      "outcome_access": "sealed",
+      "result_text_exposed": false,
+      "source_audit_status": "pending_ordered_source_audit",
+      "freeze_order": 33
+    },
+    {
+      "osf_node_id": "m5adk",
+      "title": "Interventions to Help Citizens Identify Incremental Democratic Backsliding",
+      "source_url": "https://osf.io/m5adk/",
+      "source_freeze_order": 225,
+      "selection_sha256": "f729dcba4ac6bf93505f20aed6fac7787db01aca293fdf47901c93a36e36a932",
+      "title_include_matches": [
+        "\\binterventions? (?:to|for)\\b"
+      ],
+      "outcome_access": "sealed",
+      "result_text_exposed": false,
+      "source_audit_status": "pending_ordered_source_audit",
+      "freeze_order": 34
+    }
+  ],
+  "authority": {
+    "authorized_spend_usd": 0,
+    "model_calls_authorized": false,
+    "human_outcome_reveal_authorized": false,
+    "participant_row_access_authorized": false,
+    "public_design_source_acquisition_authorized": true,
+    "mixed_archive_member_listing_authorized": true,
+    "participant_member_extraction_authorized": false
+  }
+}

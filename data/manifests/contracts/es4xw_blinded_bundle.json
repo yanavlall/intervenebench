@@ -1,0 +1,46 @@
+{
+  "schema_version": "ordinal_png_multimodal_bundle.v1",
+  "task_id": "es4xw:source-q1-perceived-team-diversity",
+  "experiment_id": "es4xw",
+  "access_regime": "DESIGN_ONLY",
+  "population": {
+    "description": "Adults in the United States represented by the source KnowledgePanel general-population sample",
+    "roster_id": "aggregate-us-adult-v1"
+  },
+  "arms": [
+    {
+      "arm_id": "picture_1",
+      "accessible_text": "Exact source Picture 1: a two-row by three-column composite of six business headshots. Four faces are shared across all four source pictures and two positions contain the source-specific candidate faces. No protected identity is assigned from appearance.",
+      "asset": {"path": "data/derived/stimuli/es4xw/image1.png", "mime_type": "image/png", "sha256": "600f037ef7dc3f7035df97d8d4a18ce4ec58a6d93e7a471cd0e9bf9cf15bfa63"}
+    },
+    {
+      "arm_id": "picture_2",
+      "accessible_text": "Exact source Picture 2: a two-row by three-column composite of six business headshots. Four faces are shared across all four source pictures and two positions contain the source-specific candidate faces. No protected identity is assigned from appearance.",
+      "asset": {"path": "data/derived/stimuli/es4xw/image2.png", "mime_type": "image/png", "sha256": "44ccf32fb582ddb87072d04ba1fd3e74a7a6acc93a1e3b16308aceef1bdc8a1d"}
+    },
+    {
+      "arm_id": "picture_3",
+      "accessible_text": "Exact source Picture 3: a two-row by three-column composite of six business headshots. Four faces are shared across all four source pictures and two positions contain the source-specific candidate faces. No protected identity is assigned from appearance.",
+      "asset": {"path": "data/derived/stimuli/es4xw/image3.png", "mime_type": "image/png", "sha256": "cd71dd953d9586256d551e9592104acdb636344a159442e904297a07db970a22"}
+    },
+    {
+      "arm_id": "picture_4",
+      "accessible_text": "Exact source Picture 4: a two-row by three-column composite of six business headshots. Four faces are shared across all four source pictures and two positions contain the source-specific candidate faces. No protected identity is assigned from appearance.",
+      "asset": {"path": "data/derived/stimuli/es4xw/image4.png", "mime_type": "image/png", "sha256": "41103aa199879185b811a5730410d2d5bd381755f3420d8f8ce4d1dbfba2a4fa"}
+    }
+  ],
+  "common_context": "Imagine that you work for a large manufacturing company and are asked to select a six-person management team. View exactly one source-fielded candidate team image before evaluating it.",
+  "outcome_question": "This team includes a high degree of ethnic diversity.",
+  "response_options": [
+    {"value": 1, "label": "Strongly disagree", "normalized_utility": 0.0},
+    {"value": 2, "label": "Disagree", "normalized_utility": 0.16666666666666666},
+    {"value": 3, "label": "Somewhat disagree", "normalized_utility": 0.3333333333333333},
+    {"value": 4, "label": "Neither agree nor disagree", "normalized_utility": 0.5},
+    {"value": 5, "label": "Somewhat agree", "normalized_utility": 0.6666666666666666},
+    {"value": 6, "label": "Agree", "normalized_utility": 0.8333333333333334},
+    {"value": 7, "label": "Strongly agree", "normalized_utility": 1.0}
+  ],
+  "source_material_sha256": "0a2a50e66624952864ca9a4f756551006727219783e5891a222b7805f8f7a669",
+  "outcome_access": "sealed",
+  "reveal_authorized": false
+}

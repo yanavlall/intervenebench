@@ -1,0 +1,32 @@
+{
+  "schema_version": "ordinal_blinded_bundle.v1",
+  "task_id": "5vm8g:task-2",
+  "experiment_id": "5vm8g",
+  "access_regime": "DESIGN_ONLY",
+  "population": {
+    "description": "Adults in the United States represented by a probability-based general-population online panel",
+    "roster_id": "aggregate-us-adult-v1"
+  },
+  "arms": [
+    {
+      "arm_id": "arm_0_no_additional_information",
+      "message": "No additional information about the researchers' callback result is shown."
+    },
+    {
+      "arm_id": "arm_1_callback_discrimination_information",
+      "message": "The researchers found that resumes with black-sounding names on average had to be sent out 15 times to get one callback for an interview. Since resumes with white-sounding names on average only had to be sent out 10 times to get one callback for an interview, this means that employers were 50 percent more likely to give callbacks to applicants with white-sounding names compared to applicants with black-sounding names."
+    }
+  ],
+  "common_context": "Researchers from Harvard University and the University of Chicago conducted an experiment to study racial discrimination in the labor market by sending fictitious resumes to help-wanted ads in Boston and Chicago newspapers. The resumes were identical except that half had typically white-sounding names and half had typically black-sounding names. Respondents were first told that resumes with white-sounding names had to be sent out on average 10 times to get one callback and were asked to privately estimate the corresponding number for black-sounding names.",
+  "outcome_question": "In the United States today, do you think that racial discrimination against blacks in the labor market is a serious problem?",
+  "response_options": [
+    {"value": 1, "label": "A very serious problem", "normalized_utility": 1.0},
+    {"value": 2, "label": "A serious problem", "normalized_utility": 0.75},
+    {"value": 3, "label": "A problem", "normalized_utility": 0.5},
+    {"value": 4, "label": "A small problem", "normalized_utility": 0.25},
+    {"value": 5, "label": "Not a problem at all", "normalized_utility": 0.0}
+  ],
+  "source_material_sha256": "45e90954d9e1564abc4eb44c2faaf9a2a1da598f841bad252728550091224ed6",
+  "outcome_access": "sealed",
+  "reveal_authorized": false
+}

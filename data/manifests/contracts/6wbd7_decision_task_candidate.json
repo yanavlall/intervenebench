@@ -1,0 +1,66 @@
+{
+  "schema_version": "bounded_integer_png_decision_task_candidate.v1",
+  "task_id": "6wbd7:task-3-provisional-direct-plutocracy",
+  "experiment_id": "6wbd7",
+  "source": "SocSci210",
+  "socsci210_task_num": 3,
+  "split": "unassigned",
+  "scientific_status": "eligible_extension",
+  "contract_status": "design_only_adapter_ready_scoring_blocked",
+  "randomization_unit": "participant",
+  "assignment_variable_from_instrument": "P_CONDITION",
+  "arms": [
+    {
+      "arm_id": "giving_rising_total_amount",
+      "source_condition": 1,
+      "action": "Show the exact rising-total-giving chart and accompanying source prose."
+    },
+    {
+      "arm_id": "giving_stagnant_percentage_income",
+      "source_condition": 2,
+      "action": "Show the exact stagnant-percentage-giving chart and accompanying source prose."
+    },
+    {
+      "arm_id": "neutral_necktie_history_control",
+      "source_condition": 3,
+      "action": "Show the exact neutral necktie-history story without a chart."
+    }
+  ],
+  "decision_maker": "A pro-democratic public-interest communicator selecting one truthful historical information package.",
+  "stable_beneficiary": "The public under the narrow objective of retaining democratic rather than wealth-concentrated decision-making.",
+  "provisional_adapter_target": {
+    "status": "source_grounded_but_not_frozen_for_scoring",
+    "source_item_block": "PLUT_VS_DEM",
+    "question": "We should shift more decision-making from everyday people toward wealthy people.",
+    "outcome_family": "bounded_integer",
+    "minimum": 0,
+    "maximum": 100,
+    "anchors": {
+      "0": "Strongly Disagree",
+      "100": "Strongly Agree"
+    },
+    "utility": "(100 - Y) / 100",
+    "utility_direction": "lower_is_better"
+  },
+  "source_data_mapping_status": "blocked_pending_separate_outcome_blind_schema_authorization",
+  "mapping_blocker": "The primary outcome versus composite hierarchy, stored outcome variable, source missing codes, analysis weight, source-to-SocSci condition crosswalk, and arm support are unresolved. The only local mapping workbook is explicitly frequency-bearing and was not opened; the released SocSci210 task and condition metadata contain no 6wbd7 entry. This task must not be scored or simulated until a separately authorized outcome-blind schema inspection freezes those fields.",
+  "representation_status": {
+    "status": "source_faithful_derived_composite",
+    "provenance_path": "data/manifests/stimuli/6wbd7_derived_composite_v1.json",
+    "provenance_sha256": "03e0491ad1072a1ebd1217b653cbdb550f28066ae57c3933d38427bbbc7a00e5",
+    "limitation": "The PNGs preserve verbatim source prose and exact 1:1 chart pixels but are not fielded browser screenshots; typography, wrapping, whitespace, and chart/text placement are derived."
+  },
+  "source_hashes": {
+    "source_description_sha256": "522fdfd8e5f4e146df39d08ba0a7e9fdff79218c7aa3c03745574992d686925e",
+    "final_simple_questionnaire_sha256": "7be42a2e531783a7e00e9ed8862bf1c9029f41fb1aad238430d97b1174a135ac",
+    "final_programming_questionnaire_sha256": "1748d555a7da4f3490871d53f9c59050f939e4e73c3d85faa245cdb91102312a",
+    "rising_chart_member_sha256": "e424896138eacd2f9e71125da3ca6d456ef5933c9e30d8ebaed55e1d90834051",
+    "stagnant_chart_member_sha256": "98282a83a5bd496e90c6ced6f8f3a313c5ce8abc82f012628a14ed937b8df04b",
+    "rising_composite_sha256": "91ad97391418d4ea8831d3a09dfbf9b8cbebf648c290ad6d141678d6a34558a4",
+    "stagnant_composite_sha256": "d8fcde5c34864e9a8c46c7471604525bc00183bfc83d3912e3768f8cf0b3d857",
+    "neutral_composite_sha256": "aa3a8516b8957e3c63194ec162fcf2aaec771fdb0c8968b071c9a2c2d93b36bc"
+  },
+  "outcome_access": "sealed",
+  "reveal_authorized": false,
+  "simulation_authorized": false
+}

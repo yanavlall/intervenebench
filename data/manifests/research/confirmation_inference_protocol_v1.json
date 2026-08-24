@@ -1,0 +1,286 @@
+{
+  "schema_version": "confirmation_inference_protocol.v1",
+  "status": "frozen_outcome_blind_not_authorized_to_execute",
+  "freeze_date": "2026-08-14",
+  "experiment_ids": [
+    "tcg8p",
+    "pb2rr",
+    "z358z",
+    "ShannonS2",
+    "Blair1131",
+    "KlarS44"
+  ],
+  "authority": {
+    "automatic_next_stage_authorized": false,
+    "confirmation_outcome_reveal_authorized": false,
+    "fine_tuning_authorized": false,
+    "modal_compute_authorized": false,
+    "model_download_authorized": false,
+    "paid_inference_authorized": false,
+    "participant_row_access_authorized": false,
+    "participant_row_serialization_authorized": false
+  },
+  "model_sources": {
+    "text_config_path": "configs/simulators/balanced_full_action_v1.json",
+    "text_model_manifest_path": "data/manifests/simulators/model_file_manifests_v1.json",
+    "multimodal_config_path": "configs/simulators/prospective_multimodal_v4.json",
+    "multimodal_model_manifest_path": "data/manifests/simulators/multimodal_model_file_manifests_v1.json",
+    "classical_model_path": "artifacts/development/classical_baseline_final_model_v1.json"
+  },
+  "tasks": [
+    {
+      "experiment_id": "tcg8p",
+      "adapter": "continuous_integer_draw.v1",
+      "arm_count": 3,
+      "base_cells_per_arm": 20,
+      "base_model_ids": [
+        "qwen3_8b_generic",
+        "qwen3_14b_generic",
+        "qwen2_5_14b_generic",
+        "socrates_qwen2_5_14b_sft"
+      ],
+      "primary_model_id": "qwen3_8b_generic",
+      "primary_prompt_perturbation_cells_per_arm": 20,
+      "adaptive_reserve_cells_per_arm": 20,
+      "base_calls": 240,
+      "primary_prompt_perturbation_calls": 60,
+      "outcome_free_adaptive_reserve_calls": 60,
+      "response_orders": 1,
+      "nuisance_rule": "twenty constrained integer draws per arm, paired seeds across arms",
+      "reserve_action": "increase primary-model draws from 20 to 40 per arm"
+    },
+    {
+      "experiment_id": "pb2rr",
+      "adapter": "bounded_numeric_png_multimodal.v1",
+      "arm_count": 2,
+      "base_cells_per_arm": 32,
+      "base_model_ids": [
+        "qwen3_vl_8b_primary",
+        "qwen2_5_vl_7b_comparator",
+        "qwen3_8b_text_ablation"
+      ],
+      "primary_model_id": "qwen3_vl_8b_primary",
+      "primary_prompt_perturbation_cells_per_arm": 32,
+      "adaptive_reserve_cells_per_arm": 0,
+      "base_calls": 192,
+      "primary_prompt_perturbation_calls": 64,
+      "outcome_free_adaptive_reserve_calls": 0,
+      "response_orders": 2,
+      "nuisance_rule": "all sixteen source names paired across arms and source/reverse answer order",
+      "reserve_action": "none"
+    },
+    {
+      "experiment_id": "z358z",
+      "adapter": "sequence_ordinal.v1",
+      "arm_count": 2,
+      "base_cells_per_arm": 16,
+      "base_model_ids": [
+        "qwen3_8b_generic",
+        "qwen3_14b_generic",
+        "qwen2_5_14b_generic"
+      ],
+      "primary_model_id": "qwen3_8b_generic",
+      "primary_prompt_perturbation_cells_per_arm": 16,
+      "adaptive_reserve_cells_per_arm": 16,
+      "base_calls": 96,
+      "primary_prompt_perturbation_calls": 32,
+      "outcome_free_adaptive_reserve_calls": 32,
+      "response_orders": 2,
+      "nuisance_rule": "eight deterministic paired sequence episodes and source/reverse answer order",
+      "reserve_action": "increase deterministic paired sequence episodes from 8 to 16"
+    },
+    {
+      "experiment_id": "ShannonS2",
+      "adapter": "sequence_ordinal.v1",
+      "arm_count": 6,
+      "base_cells_per_arm": 16,
+      "base_model_ids": [
+        "qwen3_8b_generic",
+        "qwen3_14b_generic",
+        "qwen2_5_14b_generic",
+        "socrates_qwen2_5_14b_sft"
+      ],
+      "primary_model_id": "qwen3_8b_generic",
+      "primary_prompt_perturbation_cells_per_arm": 16,
+      "adaptive_reserve_cells_per_arm": 16,
+      "base_calls": 384,
+      "primary_prompt_perturbation_calls": 96,
+      "outcome_free_adaptive_reserve_calls": 96,
+      "response_orders": 2,
+      "nuisance_rule": "eight deterministic paired sequence episodes and source/reverse answer order",
+      "reserve_action": "increase deterministic paired sequence episodes from 8 to 16"
+    },
+    {
+      "experiment_id": "Blair1131",
+      "adapter": "ordinal_message_variant.v1",
+      "arm_count": 3,
+      "base_cells_per_arm": 4,
+      "base_model_ids": [
+        "qwen3_8b_generic",
+        "qwen3_14b_generic",
+        "qwen2_5_14b_generic",
+        "socrates_qwen2_5_14b_sft"
+      ],
+      "primary_model_id": "qwen3_8b_generic",
+      "primary_prompt_perturbation_cells_per_arm": 4,
+      "adaptive_reserve_cells_per_arm": 0,
+      "base_calls": 48,
+      "primary_prompt_perturbation_calls": 12,
+      "outcome_free_adaptive_reserve_calls": 0,
+      "response_orders": 2,
+      "nuisance_rule": "both exact president-name variants and source/reverse answer order",
+      "reserve_action": "none"
+    },
+    {
+      "experiment_id": "KlarS44",
+      "adapter": "sequence_ordinal.v1",
+      "arm_count": 3,
+      "base_cells_per_arm": 16,
+      "base_model_ids": [
+        "qwen3_8b_generic",
+        "qwen3_14b_generic",
+        "qwen2_5_14b_generic",
+        "socrates_qwen2_5_14b_sft"
+      ],
+      "primary_model_id": "qwen3_8b_generic",
+      "primary_prompt_perturbation_cells_per_arm": 16,
+      "adaptive_reserve_cells_per_arm": 16,
+      "base_calls": 192,
+      "primary_prompt_perturbation_calls": 48,
+      "outcome_free_adaptive_reserve_calls": 48,
+      "response_orders": 2,
+      "nuisance_rule": "eight deterministic paired sequence episodes and source/reverse answer order",
+      "reserve_action": "increase deterministic paired sequence episodes from 8 to 16"
+    }
+  ],
+  "prompt_perturbation": {
+    "count": 1,
+    "scope": "primary model only",
+    "rule": "Use one alternate formatting wrapper while preserving every source word, response option, option-to-value mapping, nuisance episode, and image.",
+    "semantic_repair_allowed": false
+  },
+  "adaptive_reserve": {
+    "human_outcomes_used": false,
+    "eligible_experiment_ids": [
+      "tcg8p",
+      "z358z",
+      "ShannonS2",
+      "KlarS44"
+    ],
+    "trigger": "Run the task reserve only if the primary winner differs between deterministic first and second base halves or the primary normalized top-two margin is below 0.05.",
+    "automatic_retries": 0,
+    "completed_call_rerun_forbidden": true
+  },
+  "call_plan": {
+    "base_calls": 1152,
+    "primary_prompt_perturbation_calls": 312,
+    "outcome_free_adaptive_reserve_calls": 236,
+    "planned_calls": 1464,
+    "maximum_attempts": 1700
+  },
+  "compute_ceiling": {
+    "gpu": "NVIDIA L40S:1",
+    "l40s_price_per_second_usd": 0.000542,
+    "maximum_aggregate_gpu_seconds": 180000,
+    "maximum_gpu_cost_usd": 97.56,
+    "ancillary_reserve_usd": 27.44,
+    "hard_incremental_cost_cap_usd": 125.0,
+    "maximum_checkpoint_loads": 6
+  },
+  "trust_evaluation": {
+    "unit": "experiment",
+    "primary_model_rule": "qwen3_8b_generic for text/sequence/continuous; qwen3_vl_8b_primary for pb2rr",
+    "confidence_components": [
+      {
+        "diagnostic": "primary_normalized_top_two_margin",
+        "direction": "larger_is_more_reliable"
+      },
+      {
+        "diagnostic": "primary_resampled_winner_stability",
+        "direction": "larger_is_more_reliable"
+      },
+      {
+        "diagnostic": "primary_prompt_interface_sensitivity",
+        "direction": "smaller_is_more_reliable"
+      },
+      {
+        "diagnostic": "cross_model_winner_agreement",
+        "direction": "larger_is_more_reliable"
+      },
+      {
+        "diagnostic": "cross_model_arm_rank_dispersion",
+        "direction": "smaller_is_more_reliable"
+      }
+    ],
+    "composite": "equal mean of direction-aligned midranks across the six experiments",
+    "final_tie_rule": "lexicographic experiment_id",
+    "secondary_diagnostic": "primary chosen-arm normalized response entropy",
+    "continuous_margin_normalization": "absolute top-two location gap divided by max(1, absolute best location, absolute second-best location)",
+    "bounded_margin_normalization": "top-two expected normalized-utility gap",
+    "bootstrap_resamples": 2000,
+    "bootstrap_seed": 2026081402,
+    "learned_threshold": null,
+    "accept_abstain_policy": "not_validated_not_deployed",
+    "coverage_counts": {
+      "50_percent": 3,
+      "75_percent": 5,
+      "100_percent": 6
+    },
+    "metrics_after_reveal": [
+      "risk_coverage",
+      "AURC",
+      "excess_AURC_vs_random_abstention",
+      "mean_decision_regret_at_fixed_coverage",
+      "correct_intervention_choice_at_fixed_coverage"
+    ],
+    "classifier_or_calibration_claim": false
+  },
+  "human_fallback": {
+    "budgets": [
+      0,
+      10,
+      25,
+      50,
+      100,
+      250
+    ],
+    "partitions": 20,
+    "fold_count": 10,
+    "seed": 2026081403,
+    "pilot_evaluation_people_disjoint": true,
+    "nested_without_replacement_pilot_prefixes": true,
+    "same_folds_draws_and_seeds_across_policies": true,
+    "primary_policies": [
+      "synthetic_only",
+      "human_only_balanced"
+    ],
+    "frozen_negative_ablation_policies": [
+      "synthetic_plus_balanced_fixed10",
+      "synthetic_plus_hedged_fixed10",
+      "synthetic_plus_balanced_eb",
+      "synthetic_plus_hedged_eb"
+    ],
+    "fusion_tuning": "stopped_after_negative_development_result",
+    "allocation_tuning": "none_after_confirmation_freeze",
+    "balanced_allocation": "source_order_largest_remainder",
+    "hedged_allocation": "25_percent_uniform_floor_then_laplace_smoothed_outcome_free_model_winner_votes",
+    "fixed_fusion_pseudocount_per_arm": 10,
+    "effect_prior": "fit once on all nine development experiments; confirmation outcomes excluded",
+    "pooled_normalized_experiment_ids": [
+      "pb2rr",
+      "z358z",
+      "ShannonS2",
+      "Blair1131",
+      "KlarS44"
+    ],
+    "raw_unit_separate_experiment_ids": [
+      "tcg8p"
+    ],
+    "experiment_cluster_bootstrap": {
+      "replicates": 10000,
+      "seed": 2026081404,
+      "paired_policy_resampling": true
+    }
+  },
+  "claim_boundary": "This is a six-experiment noncanonical prospective confirmation panel. It can provide bounded evidence about decision fidelity, outcome-free risk ranking, and limited-human fallback, but it cannot establish a universally calibrated trust threshold or a full canonical benchmark claim."
+}

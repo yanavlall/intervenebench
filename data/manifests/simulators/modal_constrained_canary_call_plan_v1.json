@@ -1,0 +1,133 @@
+{
+  "calls": [
+    {
+      "arm_id": "arm_0_no_additional_information",
+      "artifact_relative_path": "qwen3_8b_generic/5vm8g/arm_0_no_additional_information.json",
+      "bundle_payload_sha256": "00c6d05656df9dbfc982d820e70b0a3807aab4e5bc17f671ca14258caf8090f8",
+      "call_id": "canary--qwen3_8b_generic--5vm8g--arm_0_no_additional_information",
+      "constraint_backend": "outlines_core_json_schema",
+      "experiment_id": "5vm8g",
+      "json_schema_sha256": "97e50fd18843cfce5df3d3c26acc0770d3253d32c6453b1b8d0c5ccabaef64dc",
+      "maximum_output_tokens": 128,
+      "model_id": "qwen3_8b_generic",
+      "parser_id": "parse_ordinal_relative_weights.v1",
+      "prompt_sha256": "93dabe7ba86e83ba711b1fda98909a6a5d00b1af908c429e1a0f61f1fa15b013",
+      "seed": 21026000,
+      "temperature": 0.2,
+      "top_p": 0.95,
+      "variant_id": "direct"
+    },
+    {
+      "arm_id": "arm_0_no_additional_information",
+      "artifact_relative_path": "qwen3_14b_generic/5vm8g/arm_0_no_additional_information.json",
+      "bundle_payload_sha256": "00c6d05656df9dbfc982d820e70b0a3807aab4e5bc17f671ca14258caf8090f8",
+      "call_id": "canary--qwen3_14b_generic--5vm8g--arm_0_no_additional_information",
+      "constraint_backend": "outlines_core_json_schema",
+      "experiment_id": "5vm8g",
+      "json_schema_sha256": "97e50fd18843cfce5df3d3c26acc0770d3253d32c6453b1b8d0c5ccabaef64dc",
+      "maximum_output_tokens": 128,
+      "model_id": "qwen3_14b_generic",
+      "parser_id": "parse_ordinal_relative_weights.v1",
+      "prompt_sha256": "93dabe7ba86e83ba711b1fda98909a6a5d00b1af908c429e1a0f61f1fa15b013",
+      "seed": 21026010,
+      "temperature": 0.2,
+      "top_p": 0.95,
+      "variant_id": "direct"
+    },
+    {
+      "arm_id": "arm_0_no_additional_information",
+      "artifact_relative_path": "qwen2_5_14b_generic/5vm8g/arm_0_no_additional_information.json",
+      "bundle_payload_sha256": "00c6d05656df9dbfc982d820e70b0a3807aab4e5bc17f671ca14258caf8090f8",
+      "call_id": "canary--qwen2_5_14b_generic--5vm8g--arm_0_no_additional_information",
+      "constraint_backend": "outlines_core_json_schema",
+      "experiment_id": "5vm8g",
+      "json_schema_sha256": "97e50fd18843cfce5df3d3c26acc0770d3253d32c6453b1b8d0c5ccabaef64dc",
+      "maximum_output_tokens": 128,
+      "model_id": "qwen2_5_14b_generic",
+      "parser_id": "parse_ordinal_relative_weights.v1",
+      "prompt_sha256": "93dabe7ba86e83ba711b1fda98909a6a5d00b1af908c429e1a0f61f1fa15b013",
+      "seed": 21026020,
+      "temperature": 0.2,
+      "top_p": 0.95,
+      "variant_id": "direct"
+    },
+    {
+      "arm_id": "arm_0_no_additional_information",
+      "artifact_relative_path": "socrates_qwen2_5_14b_sft/5vm8g/arm_0_no_additional_information.json",
+      "bundle_payload_sha256": "00c6d05656df9dbfc982d820e70b0a3807aab4e5bc17f671ca14258caf8090f8",
+      "call_id": "canary--socrates_qwen2_5_14b_sft--5vm8g--arm_0_no_additional_information",
+      "constraint_backend": "outlines_core_json_schema",
+      "experiment_id": "5vm8g",
+      "json_schema_sha256": "97e50fd18843cfce5df3d3c26acc0770d3253d32c6453b1b8d0c5ccabaef64dc",
+      "maximum_output_tokens": 128,
+      "model_id": "socrates_qwen2_5_14b_sft",
+      "parser_id": "parse_ordinal_relative_weights.v1",
+      "prompt_sha256": "93dabe7ba86e83ba711b1fda98909a6a5d00b1af908c429e1a0f61f1fa15b013",
+      "seed": 21026030,
+      "temperature": 0.2,
+      "top_p": 0.95,
+      "variant_id": "direct"
+    }
+  ],
+  "experiment_ids": [
+    "5vm8g"
+  ],
+  "freeze_date": "2026-08-13",
+  "json_schema": {
+    "additionalProperties": false,
+    "properties": {
+      "relative_weights": {
+        "additionalProperties": false,
+        "properties": {
+          "1": {
+            "maximum": 100,
+            "minimum": 1,
+            "type": "integer"
+          },
+          "2": {
+            "maximum": 100,
+            "minimum": 1,
+            "type": "integer"
+          },
+          "3": {
+            "maximum": 100,
+            "minimum": 1,
+            "type": "integer"
+          },
+          "4": {
+            "maximum": 100,
+            "minimum": 1,
+            "type": "integer"
+          },
+          "5": {
+            "maximum": 100,
+            "minimum": 1,
+            "type": "integer"
+          }
+        },
+        "required": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "type": "object"
+      }
+    },
+    "required": [
+      "relative_weights"
+    ],
+    "type": "object"
+  },
+  "model_ids": [
+    "qwen3_8b_generic",
+    "qwen3_14b_generic",
+    "qwen2_5_14b_generic",
+    "socrates_qwen2_5_14b_sft"
+  ],
+  "plan_id": "intervenebench-four-model-constrained-canary-20260813-v1",
+  "schema_version": "modal_constrained_canary_call_plan.v1",
+  "selection_rule": "same first source-order arm of 5vm8g for every model",
+  "status": "frozen_nonexecuting_zero_authority"
+}

@@ -1,0 +1,66 @@
+{
+  "schema_version": "categorical_multimodal_bundle.v1",
+  "task_id": "egmxd:task-0-low-climate-menu-choice",
+  "experiment_id": "egmxd",
+  "access_regime": "DESIGN_ONLY",
+  "population": {
+    "description": "Adults in the United States represented by the AmeriSpeak general-population sample",
+    "roster_id": "aggregate-us-adult-v1"
+  },
+  "arms": [
+    {
+      "arm_id": "qr_code_control_menu",
+      "accessible_text": "The exact fielded restaurant menu shows 14 food items with calories, prices, and a QR-code symbol beside every item. It contains no climate-impact wording.",
+      "asset": {
+        "path": "data/derived/stimuli/egmxd/control_qr_menu.png",
+        "mime_type": "image/png",
+        "sha256": "5d6d56f30ba4fb235c913ff6e513adf3f51eec29848ee8597c7906a2bb8ca2a4",
+        "source_container_path": "data/raw/sources/egmxd/9089.108_TESS-Wolfson_v5clean.docx",
+        "source_member": "word/media/image3.png"
+      }
+    },
+    {
+      "arm_id": "low_climate_impact_label_menu",
+      "accessible_text": "The same 14-item menu places green LOW CLIMATE IMPACT labels beside the Impossible Whopper, chicken items, nuggets, fish, and salads; calories and prices remain visible.",
+      "asset": {
+        "path": "data/derived/stimuli/egmxd/low_climate_impact_menu.png",
+        "mime_type": "image/png",
+        "sha256": "295cf39f36521297ca84440b1ef5534a71efbdca2d633336a8b73b8b33d64e3e",
+        "source_container_path": "data/raw/sources/egmxd/9089.108_TESS-Wolfson_v5clean.docx",
+        "source_member": "word/media/image4.png"
+      }
+    },
+    {
+      "arm_id": "high_climate_impact_warning_menu",
+      "accessible_text": "The same 14-item menu places red HIGH CLIMATE IMPACT warning labels beside the beef items; calories and prices remain visible.",
+      "asset": {
+        "path": "data/derived/stimuli/egmxd/high_climate_impact_menu.png",
+        "mime_type": "image/png",
+        "sha256": "26d44646365a50a50ff492aba81f256c2dfda64cfd00c16e9ce4a4ad31391ef5",
+        "source_container_path": "data/raw/sources/egmxd/9089.108_TESS-Wolfson_v5clean.docx",
+        "source_member": "word/media/image5.png"
+      }
+    }
+  ],
+  "common_context": "Imagine you are at a restaurant and about to order dinner. View the attached exact fielded menu for at least five seconds, inspect all 14 menu items, and choose the ONE item you want to order for yourself.",
+  "outcome_question": "Which one menu item would you order for yourself?",
+  "response_options": [
+    {"option_id": "1", "label": "Whopper", "normalized_utility": 0.0},
+    {"option_id": "2", "label": "Impossible Whopper", "normalized_utility": 1.0},
+    {"option_id": "3", "label": "Whopper Jr.", "normalized_utility": 0.0},
+    {"option_id": "4", "label": "Double Whopper with Cheese", "normalized_utility": 0.0},
+    {"option_id": "5", "label": "Bacon Double Cheeseburger", "normalized_utility": 0.0},
+    {"option_id": "6", "label": "Cheeseburger", "normalized_utility": 0.0},
+    {"option_id": "7", "label": "Crispy Chicken Sandwich", "normalized_utility": 1.0},
+    {"option_id": "8", "label": "Spicy Crispy Chicken Sandwich", "normalized_utility": 1.0},
+    {"option_id": "9", "label": "Original Chicken Sandwich", "normalized_utility": 1.0},
+    {"option_id": "10", "label": "Chicken Jr.", "normalized_utility": 1.0},
+    {"option_id": "11", "label": "10 Pc. Nuggets", "normalized_utility": 1.0},
+    {"option_id": "12", "label": "Big Fish", "normalized_utility": 1.0},
+    {"option_id": "13", "label": "Chicken Garden Salad", "normalized_utility": 1.0},
+    {"option_id": "14", "label": "Side Garden Salad", "normalized_utility": 1.0}
+  ],
+  "source_material_sha256": "3143eb314e5b08785c052c989d8f03440bce6712d49b920e6405d6fc0c9b2fd6",
+  "outcome_access": "result_text_exposed_non_test",
+  "reveal_authorized": false
+}

@@ -1,0 +1,77 @@
+{
+  "schema_version": "intervenebench.h6txz_truthfulness_adjudication.v1",
+  "candidate_id": "h6txz",
+  "completion_queue_order": 4,
+  "adjudication_date": "2026-08-14",
+  "evidence_scope": "final_questionnaire_only",
+  "source_manifest": "data/manifests/audits/h6txz_source_bundle_v1.json",
+  "source_questionnaire_sha256": "93d1ddeaa210eb7d0312dfe176e5d242289960455eebda3585ab6e87ed060b9f",
+  "preliminary_design_reconstruction": {
+    "assignment_variable_as_labeled_in_instrument": "XTESS096",
+    "arms_as_labeled_in_instrument": [
+      {
+        "assignment_value": 1,
+        "label": "CONDITION ONE (C)",
+        "policy_description": "program transcript fact-checking Senator Brown's tax-cut-cost claim"
+      },
+      {
+        "assignment_value": 2,
+        "label": "CONDITION 2 (L)",
+        "policy_description": "program transcript fact-checking Senator Coats's public-opinion claim"
+      },
+      {
+        "assignment_value": 3,
+        "label": "CONDITION 3 (B)",
+        "policy_description": "program transcript presenting both political claims without either fact-check"
+      }
+    ],
+    "candidate_control_assignment_value": 3,
+    "candidate_outcome_question": "Q11",
+    "candidate_outcome_construct": "belief in the information and analysis presented in the program",
+    "candidate_scale_bounds": [
+      1,
+      10
+    ],
+    "candidate_scale_orientation": "higher_means_more_perceived_program_credibility",
+    "candidate_objective_scope": "narrow_outlet_program_credibility_only_not_public_welfare_or_factual_accuracy",
+    "status": "observed_in_source_but_not_frozen_as_a_decision_task"
+  },
+  "fixed_world_truthfulness_gate": {
+    "required": true,
+    "passed": false,
+    "decisive_arm_assignment_value": 1,
+    "instrument_location": "XTESS096=1, CONDITION ONE (C), transcript immediately preceding Q11",
+    "broadcast_dateline_in_instrument": "December 6, 2010 Monday, 7:00 PM EST",
+    "postdated_evidence_statement_in_instrument": "The analyst says the best estimate comes from Joint Committee projections released on Dec. 10.",
+    "calendar_conflict": "The exact transcript uses a source released four calendar days after the broadcast dateline.",
+    "adjudication": "The final questionnaire internally contradicts the chronology needed for the exact arm-1 transcript to be truthful as dated. No external source, report, methodology file, proposal, manuscript, result, or participant file may be used to repair or reinterpret the fielded text. The complete three-arm action set therefore cannot be certified as truthful under one fixed historical world.",
+    "claim_boundary": "This adjudication does not determine whether the substantive tax-cost conclusion was correct. It determines only that the exact source-faithful message cannot pass the benchmark's strict temporal truthfulness gate from the permitted instrument evidence."
+  },
+  "disposition": {
+    "scientific_survivor": false,
+    "status": "excluded_fail_closed",
+    "reason_code": "instrument_internal_postdated_evidence_breaks_historical_truthfulness",
+    "runnable_decision_task_created": false,
+    "blinded_bundle_created": false,
+    "simulator_adapter_created": false,
+    "human_mapping_pursued": false,
+    "future_schema_only_request_created": false,
+    "outcome_reveal_authorized": false,
+    "eligible_for_independent_replication_panel": false
+  },
+  "exposure_attestation": {
+    "participant_file_extracted": false,
+    "participant_file_opened": false,
+    "participant_row_opened": false,
+    "human_outcome_value_opened": false,
+    "human_outcome_summary_opened": false,
+    "winner_or_treatment_effect_opened": false,
+    "report_opened": false,
+    "methodology_file_opened": false,
+    "proposal_opened": false,
+    "manuscript_opened": false,
+    "model_call_made": false,
+    "paid_compute_spend_usd": 0,
+    "outcome_access": "sealed"
+  }
+}

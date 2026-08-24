@@ -1,0 +1,223 @@
+{
+  "payload": {
+    "aggregate_only_output": true,
+    "aggregation_payload_sha256": "03d824f757593e4d51940567086c7cd3a526ca51bb590886c086cbc5860237e4",
+    "claim_boundary": "Six-experiment noncanonical prospective confirmation; no universal trust calibration or canonical benchmark claim.",
+    "development_evidence_payload_sha256": "e2411b32d922dc6af0869e0b5dbf4d0b8fbc80b8f7487b34137d2395dcffd0e8",
+    "diagnostics_may_change": false,
+    "experiment_ids": [
+      "tcg8p",
+      "pb2rr",
+      "z358z",
+      "ShannonS2",
+      "Blair1131",
+      "KlarS44"
+    ],
+    "human_fallback": {
+      "budgets": [
+        0,
+        10,
+        25,
+        50,
+        100,
+        250
+      ],
+      "effect_prior_frozen_on_all_development_experiments": {
+        "alpha": 0.7285052566105565,
+        "contrast_count": 19,
+        "minimum_variance": 1e-06,
+        "residual_variance": 0.0041888515950426536,
+        "training_experiment_ids": [
+          "jf46x",
+          "5vm8g",
+          "xc4yq",
+          "de5hx",
+          "turagaS11",
+          "wallaceS12",
+          "nj5dx",
+          "es4xw",
+          "e2pyb"
+        ]
+      },
+      "fixed_fusion_pseudocount_per_arm": 10,
+      "fold_count": 10,
+      "negative_ablation_policies": [
+        "synthetic_plus_balanced_fixed10",
+        "synthetic_plus_hedged_fixed10",
+        "synthetic_plus_balanced_eb",
+        "synthetic_plus_hedged_eb"
+      ],
+      "participant_rows_serialized": 0,
+      "partitions": 20,
+      "pilot_evaluation_people_disjoint": true,
+      "predeclared_infeasible_task_budgets": {
+        "Blair1131": {
+          "250": "smallest retained arm has 88 assigned rows before missingness; a disjoint ten-fold 84-per-arm pilot is impossible"
+        }
+      },
+      "primary_policies": [
+        "synthetic_only",
+        "human_only_balanced"
+      ],
+      "sampling_without_replacement": true,
+      "seed": 2026081403,
+      "tcg8p_exclusion_from_eb_reason": "uncapped raw-unit outcome is not commensurate with the normalized development effect prior",
+      "tcg8p_policy_scope": [
+        "synthetic_only",
+        "human_only_balanced"
+      ]
+    },
+    "human_scoring": {
+      "arm_estimator": "frozen_task_specific_hajek_or_unweighted_mean",
+      "choice_rule": "maximize_frozen_decision_score_with_source_arm_order_ties",
+      "experiment_cluster_bootstrap": {
+        "confidence_level": 0.95,
+        "replicates": 10000,
+        "seed": 2026081404
+      },
+      "headline_metrics": [
+        "mean_absolute_treatment_effect_error",
+        "treatment_effect_sign_accuracy",
+        "correct_intervention_choice",
+        "decision_regret"
+      ],
+      "participant_within_arm_bootstrap": {
+        "confidence_level": 0.95,
+        "replicates": 2000,
+        "seed": 2026081405
+      },
+      "pooled_normalized_experiment_ids": [
+        "pb2rr",
+        "z358z",
+        "ShannonS2",
+        "Blair1131",
+        "KlarS44"
+      ],
+      "primary_unit": "experiment",
+      "tcg8p": "raw_usd_per_month_lower_is_better_reported_separately",
+      "treatment_effect_reference": "task_control_arm_id"
+    },
+    "modal_compute_authorized": false,
+    "model_calls_authorized": false,
+    "participant_rows_may_be_serialized": false,
+    "recommendations_may_change": false,
+    "schema_version": "confirmation_scoring_protocol.v1",
+    "source_projection": {
+      "Blair1131": {
+        "columns": [
+          "WEIGHT",
+          "BLAIR",
+          "RND_02",
+          "PARTYID7",
+          "Q3"
+        ],
+        "member": "8041.045_TESS045_Blair.csv",
+        "member_sha256": "ec153dd3ffc257a2de031da4b7f609dbd294d43a6b21d89733d239b6e9ed86ca",
+        "member_size_bytes": 497969,
+        "outer_sha256": "66ec9b7b879a2858f4445cf60eadc1d3b04e32343e8c0c1955dc22d7dc3762c0",
+        "path": ".work/confirmation_reveal/Blair1131.zip"
+      },
+      "KlarS44": {
+        "columns": [
+          "P_KLAR",
+          "RND_00",
+          "WEIGHT",
+          "Q2_KLAR"
+        ],
+        "member": "PN8041.043_TESS043_Klar_20200109.sav",
+        "member_sha256": "dbeb6a5d54e57a34fcd192c17fd92686290319280ac30934db29dca10e502f80",
+        "member_size_bytes": 1914842,
+        "outer_sha256": "8337694961dffa3f95e16c7b0e6f26ca29b86951a5191260ec7c03fdbd620a6c",
+        "path": ".work/confirmation_reveal/KlarS44.zip"
+      },
+      "ShannonS2": {
+        "columns": [
+          "GROUP",
+          "Q1",
+          "Q4",
+          "Q7",
+          "Q10",
+          "Q13",
+          "Q16",
+          "WEIGHT2"
+        ],
+        "member": "ShannonS2/TESS 001_SHANNON_05March17.sav",
+        "member_sha256": "f03e64213e6167a6c99278be4b827f177f4c4626b9e8619f3399f0f179bd6341",
+        "member_size_bytes": 682543,
+        "outer_sha256": "755bb9261008e2704c1fe33c24dc2b407a50f8e2ad3b98c78bfa4bdef071bae0",
+        "path": ".work/confirmation_reveal/ShannonS2.zip"
+      },
+      "pb2rr": {
+        "columns": [
+          "XTESS187",
+          "DOV_INSERT_NAME",
+          "Q4",
+          "weight"
+        ],
+        "member": "TESS3_187_Abascal_Client.sav",
+        "member_sha256": "0ffb58b22babb648d339f2755b37ab3fdf6c12b1432ca15d0b4c4c467d682137",
+        "member_size_bytes": 200189,
+        "outer_sha256": "010b2b9413214458046f7f152ad5ed7625291e014ddc01d0dbc5e5910c6bc24e",
+        "path": "data/raw/sources/pb2rr/Abascal635.zip"
+      },
+      "tcg8p": {
+        "columns": [
+          "study_id",
+          "sample_id",
+          "participant",
+          "condition_num",
+          "task_num",
+          "response"
+        ],
+        "filters": {
+          "study_id": "tcg8p",
+          "task_num": 0
+        },
+        "revision": "048481111a4425ed83dc0eacf15f8431f252b21a",
+        "source": "SocSci210"
+      },
+      "z358z": {
+        "columns": [
+          "XTESS175",
+          "DOV_OPTION",
+          "Q3a",
+          "weight"
+        ],
+        "member": "TESS3_175 Nayak_Client.sav",
+        "member_sha256": "0da32a838d3bd06d1244f1bf2a17d84b9646cbd66469be78f8a23d913f2d081f",
+        "member_size_bytes": 199187,
+        "outer_sha256": "091236a19b521a4ca02f6edf6601e40532a89aee71b1ebfcf951688e402999fc",
+        "path": "data/raw/sources/z358z/Nayak609.zip"
+      }
+    },
+    "status": "frozen_before_confirmation_outcome_access",
+    "threshold_tuning": "forbidden",
+    "trust_evaluation": {
+      "accept_abstain_policy": "not_validated_not_deployed",
+      "coverage_counts": {
+        "100_percent": 6,
+        "50_percent": 3,
+        "75_percent": 5
+      },
+      "exact_error_risk_coverage_experiment_ids": [
+        "tcg8p",
+        "pb2rr",
+        "z358z",
+        "ShannonS2",
+        "Blair1131",
+        "KlarS44"
+      ],
+      "learned_threshold": null,
+      "minimum_class_count_for_auc": 3,
+      "normalized_regret_risk_coverage_experiment_ids": [
+        "pb2rr",
+        "z358z",
+        "ShannonS2",
+        "Blair1131",
+        "KlarS44"
+      ],
+      "ranking_source": "frozen_confirmation_aggregation"
+    }
+  },
+  "sha256": "a5d42c118518ce3275e1ddaf47512f7f181d55b96a13472d83a23f54752a1d6a"
+}

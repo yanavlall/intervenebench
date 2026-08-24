@@ -1,0 +1,178 @@
+{
+  "authority": {
+    "automatic_next_stage_authorized": false,
+    "automatic_retry_authorized": false,
+    "candidate_inference_authorized": false,
+    "human_outcome_access_authorized": false,
+    "modal_compute_authorized": false,
+    "modal_image_materialization_authorized": false,
+    "model_download_authorized": false,
+    "paid_inference_authorized": false,
+    "participant_row_access_authorized": false,
+    "participant_row_serialization_authorized": false,
+    "regression_scoring_authorized": false,
+    "reserve_call_authorized": false,
+    "target_call_authorized": false
+  },
+  "cache": {
+    "all_cached_files_attested_with_content_sha256": true,
+    "automatic_retries": 0,
+    "cache_client_deadline_seconds": 7200,
+    "hard_incremental_cost_cap_usd": 12.0,
+    "local_heartbeat_seconds": 60,
+    "maximum_download_bytes": 48054896911,
+    "network_access": "checkpoint_download_only",
+    "public_ungated_checkpoint_only": true,
+    "small_git_files_verified_by_git_blob_sha1": true,
+    "startup_smoke_client_deadline_seconds": 180,
+    "startup_smoke_required": true,
+    "unexpected_repository_files_downloaded": false
+  },
+  "canary": {
+    "automatic_retries": 0,
+    "forced_choice_engine_probe": {
+      "all_allowed_token_logprobs_required": true,
+      "allowed_token_mask_required": true,
+      "engine_probe_tokens": 1,
+      "equivalence_claim_status": "pending_target_free_canary_adjudication",
+      "semantic_free_generation_allowed": false
+    },
+    "hard_incremental_cost_cap_usd": 15.0,
+    "interface_adjudication_required_after_pass": true,
+    "manifest": {
+      "human_data_included": false,
+      "planned_call_count": 3,
+      "requests": [
+        {
+          "adapter": "forced_choice_next_token_softmax.v1",
+          "answer_codes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "canary_id": "synthetic_text_forced_choice_v1",
+          "maximum_engine_probe_tokens": 1,
+          "modality": "text",
+          "prompt": "This is a synthetic parser check, not a study. Choose exactly one response code. A = option one; B = option two; C = option three. Return one code only.",
+          "prompt_sha256": "66a2cf1093b27bf0a02beb64e5e8cc91687abc3b53b70b478c9d52fb8feb7e9a",
+          "seed": 174901,
+          "temperature": 1.0
+        },
+        {
+          "adapter": "forced_choice_next_token_softmax.v1",
+          "answer_codes": [
+            "A",
+            "B"
+          ],
+          "asset": {
+            "base64": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=",
+            "mime_type": "image/png",
+            "sha256": "431ced6916a2a21a156e38701afe55bbd7f88969fbbfc56d7fe099d47f265460"
+          },
+          "canary_id": "synthetic_png_forced_choice_v1",
+          "maximum_engine_probe_tokens": 1,
+          "modality": "exact_png_vision",
+          "prompt": "This is a synthetic image-decoding check, not a study. Inspect the attached tiny PNG and choose exactly one response code. A = visible; B = not visible. Return one code only.",
+          "prompt_sha256": "133dc2aab0a3107e69457198c1c28feb1ececb5f183f4de14e49a37c0a85686b",
+          "seed": 174902,
+          "temperature": 1.0
+        },
+        {
+          "adapter": "continuous_constrained_integer_generation.v1",
+          "canary_id": "synthetic_continuous_integer_v1",
+          "max_new_tokens": 32,
+          "modality": "text",
+          "prompt": "This is a synthetic strict-parser check, not a study. Predict a non-negative whole number. Return digits only, with no punctuation, spaces, or explanation.",
+          "prompt_sha256": "4194033bdb9365ecda1056ffbba3dcc772aa39241195ad9ede5677a8a16d695e",
+          "seed": 174903,
+          "temperature": 0.7,
+          "top_p": 0.9
+        }
+      ],
+      "schema_version": "intervenebench.cross_family_synthetic_canary_manifest.v1",
+      "status": "target_free",
+      "target_assets_included": false,
+      "target_prompts_included": false
+    },
+    "manifest_payload_sha256": "5cd7d4844ece978ae02506bc5da050bc815d980520d354ddff1482ee86a15b69",
+    "maximum_attempt_count": 3,
+    "planned_call_count": 3,
+    "target_assets_included": false,
+    "target_execution_after_pass_is_automatic": false,
+    "target_prompts_included": false
+  },
+  "freeze_date": "2026-08-14",
+  "human_outcomes_accessed": false,
+  "implementation_hashes": {
+    "infra/modal/cross-family-requirements.in": "68d613122601b03ea0dd5409b96e48532443b171ed21967154b3e8fd6f9cc4c9",
+    "infra/modal/cross-family-requirements.lock": "5d0b314c40e9e2ded4fbc3f704107ece7f5c02209f70c9ae926c5765797e895a",
+    "infra/modal/cross_family_app.py": "4d27579880bcfb9175deca1a15a30f835cfe902fb7ee0b5e683f3da8c6a9c361",
+    "scripts/build_cross_family_modal_freeze.py": "9f2d68f202799666c9b15509860509a7567bd0b0bec839b6dc7db35836bb221a",
+    "scripts/run_cross_family_preflight.py": "808400ddc1686fe6a5edc0e0348358063432de858218f3f69bca762b77150ad9",
+    "src/intervenebench/cross_family_modal.py": "e0634836bf5c105aaa9c720d424d432fabf9180ac67b0e98a693bae30217375e"
+  },
+  "inference_calls_made": 0,
+  "modal_resources_created": false,
+  "model": {
+    "checkpoint_commit": "68faf511d618ef198fef186659617cfd2eb8e33a",
+    "dtype": "bfloat16",
+    "hf_repository": "mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+    "load_format": "mistral_original_consolidated",
+    "model_id": "mistral_small_3_1_24b_cross_family",
+    "quantization": "none",
+    "source_manifest_file_sha256": "10af92f316deec9a5155bc9c0643230714f71e958720042630cf65ef7e1982c0",
+    "source_manifest_payload_sha256": "7db967c1cba5af9a7c9429a93e2f7a2d6869f6f86c9884ebee5e25f003561fce"
+  },
+  "model_downloaded": false,
+  "participant_rows_read": 0,
+  "protocol_payload_sha256": "a74daf32a0c42d13909e01c2b7c54766cf058e429aa3b69d3ff499614cd4904e",
+  "runtime": {
+    "app_name": "intervenebench-cross-family-preflight-v1",
+    "config_format": "mistral",
+    "dependency_lock_sha256": "5d0b314c40e9e2ded4fbc3f704107ece7f5c02209f70c9ae926c5765797e895a",
+    "dtype": "bfloat16",
+    "gpu": "A100-80GB:1",
+    "image_recipe": {
+      "base": "modal.Image.debian_slim",
+      "checkpoint_volume_during_canary": "read_only",
+      "dependency_lock_sha256": "5d0b314c40e9e2ded4fbc3f704107ece7f5c02209f70c9ae926c5765797e895a",
+      "network_during_canary": "blocked",
+      "python": "3.11",
+      "requirements_require_hashes": true,
+      "uv_version": "0.12.4"
+    },
+    "image_recipe_sha256": "d37a7e843a8d47458fd196fc41631a48a4231824f8f2fab86889e0bf31cd12a6",
+    "load_format": "mistral",
+    "maximum_model_length": 16384,
+    "mistral_common_version": "1.5.4",
+    "model_cache_subdirectory": "mistral_small_3_1_24b_cross_family",
+    "model_volume_name": "intervenebench-model-cache-v1",
+    "python_version": "3.11",
+    "requirements_input_sha256": "68d613122601b03ea0dd5409b96e48532443b171ed21967154b3e8fd6f9cc4c9",
+    "tensor_parallel_size": 1,
+    "tokenizer_mode": "mistral",
+    "torch_version": "2.6.0",
+    "transformers_version": "4.53.3",
+    "trust_remote_code": false,
+    "vllm_version": "0.8.5"
+  },
+  "schema_version": "intervenebench.cross_family_modal_preflight_freeze.v1",
+  "status": "frozen_nonexecuting_zero_authority",
+  "study_role": "retrospective_cross_family_robustness_preflight",
+  "system_instruction": {
+    "dynamic_date_allowed": false,
+    "sha256": "cbe23ded40874c8e9c3f4cddd0a90a1cffde3dccea83a7564c3cdd5f55aaa302",
+    "text": "You are a behavioral response simulator. Follow the user prompt exactly and predict only the requested response for the described population member. Do not use study titles, authors, reported findings, or human outcome data. Return only the response schema requested by the user prompt.",
+    "use_repository_system_prompt": false
+  },
+  "target_execution": {
+    "authorized": false,
+    "call_plan_file_sha256": "a0171780a90cd7e2edefd9e99fa62cc06260afb403415ba8fbd2cb04473fad85",
+    "call_plan_payload_sha256": "54674e78e1c3dc78222f0d890aa373eb15982f8500721a1eea1593ad78272142",
+    "planned_call_count": 624,
+    "requires_separate_execution_freeze": true,
+    "requires_separate_interface_adjudication": true,
+    "requires_separate_user_authorization": true,
+    "target_prompt_or_asset_uploaded_by_this_package": false
+  }
+}

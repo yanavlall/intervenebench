@@ -1,0 +1,112 @@
+{
+  "payload": {
+    "claim_boundary": {
+      "not_supported": [
+        "autonomous intervention selection",
+        "validated confidence-based abstention",
+        "reliable small-sample human correction",
+        "universal simulator trust"
+      ],
+      "panel_status": "small noncanonical prospective confirmation panel",
+      "supported": "limited research-stage candidate screening"
+    },
+    "decision_evidence": {
+      "exact_choice": {
+        "count": 3,
+        "experiment_count": 6,
+        "uniform_random_tail_probability": 0.3734567901234568
+      },
+      "limited_human_fallback": {
+        "budgets": [
+          0,
+          10,
+          25,
+          50,
+          100,
+          250
+        ],
+        "improved_over_synthetic_only": false
+      },
+      "normalized_regret": {
+        "classical_mean": 0.07967138854518399,
+        "control_mean": 0.027383226489566925,
+        "primary_mean": 0.003520577798391078,
+        "primary_minus_control_confidence_interval": [
+          -0.07446525382997879,
+          0.005435042911760402
+        ],
+        "primary_minus_uniform_confidence_interval": [
+          -0.0867458356533333,
+          -0.0004638499775899991
+        ],
+        "primary_minus_uniform_mean": -0.03743840121702888,
+        "primary_worst": 0.008544627721005615,
+        "uniform_mean": 0.040958979015419957,
+        "uniform_random_action_tail_probability": 0.05555555555555555
+      },
+      "practical_reliability": {
+        "count": 6,
+        "experiment_count": 6
+      },
+      "trust_diagnostics": {
+        "aurc": 0.7111111111111111,
+        "exact_choice_auroc": 0.2222222222222222,
+        "random_abstention_expected_aurc": 0.5,
+        "validated_threshold": false
+      }
+    },
+    "evidence_scope": {
+      "development_experiment_count": 9,
+      "normalized_confirmation_task_count": 5,
+      "prospective_confirmation_experiment_count": 6
+    },
+    "privacy": {
+      "contains_experiment_level_human_scores": false,
+      "contains_human_arm_means": false,
+      "contains_human_treatment_effects": false,
+      "contains_participant_rows": false
+    },
+    "provenance": {
+      "role_program_file_sha256": "519ced6fcf5425df3b73544e5b85ff4dc33ae39bbc03ef5da52487c9de925253",
+      "role_program_path": "data/manifests/research/role_focused_evaluation_program_v1.json",
+      "source_artifacts": [
+        {
+          "file_sha256": "8562d148ce04bc44af1481858b94f5a43f62edf94120199b2156c8920a51c2ec",
+          "path": "artifacts/confirmation/confirmation_20260814_v1/score_v1.json",
+          "payload_sha256": "fa2acc4661f8397658178a1b4d53e7806b2a35acf032520e625ffdcb79aaf1a7"
+        },
+        {
+          "file_sha256": "90607378fc2eb3c7143c0b45811b6a5fb79651af1c25b1edb1f530d28033b4ed",
+          "path": "artifacts/confirmation/confirmation_20260814_v1/value_audit_v1.json",
+          "payload_sha256": "970d900bfb56f46b04babcbf252815a53f2aba9515234e2a844e8d17f3fec5e3"
+        },
+        {
+          "file_sha256": "3353a876392218eb91e1e4b14a4e6ef673d206b22f0c39d56b00fd33e10e2e39",
+          "path": "artifacts/confirmation/confirmation_20260814_v1/strict_parse_audit.json",
+          "payload_sha256": "f9e601cfbdda92291692d21b3e1605b5476bfdfe5949149175802c706591e407"
+        },
+        {
+          "file_sha256": "458305866b887524beaafe2c2dad7d8d0eb2014a3e95c3ababbccaadd88d503e",
+          "path": "artifacts/confirmation/confirmation_20260814_v1/aggregation_v1.json",
+          "payload_sha256": "03d824f757593e4d51940567086c7cd3a526ca51bb590886c086cbc5860237e4"
+        }
+      ]
+    },
+    "run_integrity": {
+      "automatic_reruns_made": 0,
+      "model_experiment_recommendation_count": 21,
+      "participant_rows_serialized": 0,
+      "planned_model_outputs": 1464,
+      "primary_recommendations_frozen_before_reveal": true,
+      "schema_valid_model_outputs": 1404,
+      "semantic_repairs_made": 0,
+      "trust_diagnostics_frozen_before_reveal": true,
+      "unavailable_model_outputs": 60,
+      "unavailable_model_task_cell": "Socrates x tcg8p"
+    },
+    "schema_version": "intervenebench.public_case_study.v1",
+    "status": "aggregate_only_public_evidence",
+    "title": "Prospective behavioral-simulator decision evaluation"
+  },
+  "sha256": "e52dbb86f7df8350d70c683ea62c65a40c850ada7e53749cbe3aba19452602b1"
+}

@@ -1,0 +1,238 @@
+{
+  "authority": {
+    "fine_tuning_authorized": false,
+    "image_materialization_authorized": false,
+    "modal_execution_authorized": false,
+    "model_download_authorized": false,
+    "next_stage_authorized": false,
+    "outcome_access_authorized": false,
+    "paid_inference_authorized": false,
+    "sealed_task_inference_authorized": false
+  },
+  "call_plan_payload_sha256": "e877c84864d5e66ac8d2e765fadb577e50c2ee321e2a45b56c3ef5cc33835cab",
+  "dependency_lock": {
+    "input_file_sha256": "afdd6da4d8eac6fbf291e5cbad2027c8a67b931a1c1ac65f52b28be15b41e73d",
+    "input_path": "infra/modal/preflight-requirements.in",
+    "lock_file_sha256": "8aa147fe25e3f3370879dfc987b6419ed830bead952ffddfbd30555189895d36",
+    "lock_path": "infra/modal/preflight-requirements.lock",
+    "resolver": "uv==0.12.4",
+    "target": "CPython 3.11 x86_64 manylinux_2_28"
+  },
+  "freeze_date": "2026-08-13",
+  "freeze_id": "intervenebench-modal-forced-choice-20260813-v1",
+  "implementation_hashes": [
+    {
+      "file_sha256": "6ef790ec802ad86801b9da0277b9ba869e29999d7421ad68f2c90e1056a209bc",
+      "path": "src/intervenebench/modal_forced_choice.py"
+    },
+    {
+      "file_sha256": "b15f8b6b68f2c3e62e7304abc07f308e3158df0a8bb29fbce0b40d48e8a7d199",
+      "path": "scripts/build_modal_forced_choice_plan.py"
+    },
+    {
+      "file_sha256": "c5254bdcf153fae3f2ffd430275e99204eb9faa7ea3c7cc0f66c051dc36f20ce",
+      "path": "scripts/build_modal_forced_choice_freeze.py"
+    },
+    {
+      "file_sha256": "ee86f9fc865952a8c2b829bb87fcb7ee889c77806431a55d8e25d95e26623ba3",
+      "path": "infra/modal/forced_choice_app.py"
+    },
+    {
+      "file_sha256": "c74def60834cbecf0cbf914932ea0fe2f20db2482fa7b0d871aa2e01c01261e6",
+      "path": "scripts/run_modal_forced_choice_canary.py"
+    }
+  ],
+  "limits": {
+    "ancillary_reserve_usd": 0.2496,
+    "hard_incremental_cost_cap_usd": 0.9,
+    "l40s_price_per_second_usd": 0.000542,
+    "maximum_aggregate_gpu_seconds": 1200,
+    "maximum_gpu_cost_usd": 0.6504,
+    "maximum_gpu_seconds_per_call": 300,
+    "maximum_model_attempts": 4,
+    "maximum_planned_calls": 4,
+    "maximum_wall_clock_seconds": 1000
+  },
+  "method": {
+    "answer_codes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "generation_calls": 0,
+    "method_id": "forced_choice_next_token_softmax.v1",
+    "probability_rule": "softmax of final-position logits restricted to five answer-code token IDs",
+    "repair_allowed": false,
+    "semantic_retry_allowed": false,
+    "temperature": 1.0,
+    "token_contract": "each code must append as exactly one distinct token and decode exactly",
+    "transport_retry_allowed": false
+  },
+  "model_file_manifest": {
+    "file_sha256": "560bed418f73630aa3a06774b5e844cadda6aed0e894653d1c1193a9c688009b",
+    "path": "data/manifests/simulators/model_file_manifests_v1.json",
+    "payload_sha256": "ec7ab4cf15d9bade09af7a3465de04ecf824a0d564f4b6bb351090655596d7f6"
+  },
+  "models": [
+    {
+      "chat_template_sha256": "46b150267cce1a1cfb0543078b45e2267a34b361c3df26afe288636f31f83351",
+      "checkpoint_commit": "b968826d9c46dd6066d109eabc6255188de91218",
+      "config_sha256": "f7c4eadfbbf522470667b797a3c89be2524832d2d599797248dc304fff447c30",
+      "dtype": "bfloat16",
+      "exposure_by_experiment": {
+        "5vm8g": "unknown_pretraining_exposure_development_only",
+        "de5hx": "unknown_pretraining_exposure_development_only",
+        "turagaS11": "unknown_pretraining_exposure_development_only",
+        "wallaceS12": "unknown_pretraining_exposure_development_only",
+        "xc4yq": "unknown_pretraining_exposure_development_only"
+      },
+      "hf_repository": "Qwen/Qwen3-8B",
+      "license_id": "apache-2.0",
+      "maximum_context_tokens": 16384,
+      "model_id": "qwen3_8b_generic",
+      "quantization": "none",
+      "repository_gated": false,
+      "repository_private": false,
+      "thinking_mode": "disabled_via_apply_chat_template_enable_thinking_false",
+      "tokenizer_manifest_sha256": "2e3e3c562d882ddb1292502a3f67c4ec055a02b45debbf267df670a39dbbeddb",
+      "trust_remote_code": false,
+      "weight_file_manifest_sha256": "f937a0a857cbcba6521736b29c1c84cf665ddcc5a69b00a0c2c7ec6b09865965"
+    },
+    {
+      "chat_template_sha256": "46b150267cce1a1cfb0543078b45e2267a34b361c3df26afe288636f31f83351",
+      "checkpoint_commit": "40c069824f4251a91eefaf281ebe4c544efd3e18",
+      "config_sha256": "e73c3664ca09b10a673fef0c22e8a6b456201d49bd4713c9691f775720e8857a",
+      "dtype": "bfloat16",
+      "exposure_by_experiment": {
+        "5vm8g": "unknown_pretraining_exposure_development_only",
+        "de5hx": "unknown_pretraining_exposure_development_only",
+        "turagaS11": "unknown_pretraining_exposure_development_only",
+        "wallaceS12": "unknown_pretraining_exposure_development_only",
+        "xc4yq": "unknown_pretraining_exposure_development_only"
+      },
+      "hf_repository": "Qwen/Qwen3-14B",
+      "license_id": "apache-2.0",
+      "maximum_context_tokens": 16384,
+      "model_id": "qwen3_14b_generic",
+      "quantization": "none",
+      "repository_gated": false,
+      "repository_private": false,
+      "thinking_mode": "disabled_via_apply_chat_template_enable_thinking_false",
+      "tokenizer_manifest_sha256": "2e3e3c562d882ddb1292502a3f67c4ec055a02b45debbf267df670a39dbbeddb",
+      "trust_remote_code": false,
+      "weight_file_manifest_sha256": "b46e6385b85708f27e2567370306a649bb16b35942f4cbd8c40d62a61700b7ce"
+    },
+    {
+      "chat_template_sha256": "718d67db7e7b8db25e9beb07550e548e941da07b804d12322bfc406212670e70",
+      "checkpoint_commit": "cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8",
+      "config_sha256": "0f2085dbbe2ee251bd6a6a0797d84a6ce34436044d629aa3cba793b43d311a9e",
+      "dtype": "bfloat16",
+      "exposure_by_experiment": {
+        "5vm8g": "unknown_pretraining_exposure_development_only",
+        "de5hx": "unknown_pretraining_exposure_development_only",
+        "turagaS11": "unknown_pretraining_exposure_development_only",
+        "wallaceS12": "unknown_pretraining_exposure_development_only",
+        "xc4yq": "unknown_pretraining_exposure_development_only"
+      },
+      "hf_repository": "Qwen/Qwen2.5-14B-Instruct",
+      "license_id": "apache-2.0",
+      "maximum_context_tokens": 16384,
+      "model_id": "qwen2_5_14b_generic",
+      "quantization": "none",
+      "repository_gated": false,
+      "repository_private": false,
+      "thinking_mode": "not_applicable",
+      "tokenizer_manifest_sha256": "689740ec1c67978a7529a6d3d599b5823921566a9505531bf38753a3d16b7a8c",
+      "trust_remote_code": false,
+      "weight_file_manifest_sha256": "293dd76644bf390efd8ef9b2a5ace3afab9c616ca4708b534195e91b52805836"
+    },
+    {
+      "chat_template_sha256": "718d67db7e7b8db25e9beb07550e548e941da07b804d12322bfc406212670e70",
+      "checkpoint_commit": "6666d399b373dd37a2691a921550732f2fdddb20",
+      "config_sha256": "856349c65e3fa633e8c828e4f36996be6c3f63421e1b8c87603b8302d8fda221",
+      "dtype": "bfloat16",
+      "exposure_by_experiment": {
+        "5vm8g": "checkpoint_compatibility_review_required_development_only",
+        "de5hx": "known_training_exposure_not_primary_comparison",
+        "turagaS11": "checkpoint_compatibility_review_required_development_only",
+        "wallaceS12": "checkpoint_compatibility_review_required_development_only",
+        "xc4yq": "known_training_exposure_not_primary_comparison"
+      },
+      "hf_repository": "socratesft/socrates-qwen2.5-14b-sft",
+      "license_id": "apache-2.0",
+      "maximum_context_tokens": 16384,
+      "model_id": "socrates_qwen2_5_14b_sft",
+      "quantization": "none",
+      "repository_gated": false,
+      "repository_private": false,
+      "thinking_mode": "not_applicable",
+      "tokenizer_manifest_sha256": "e988e63b4aa1ddaedbf30995554b07fe628eb2c41d701b96b6a4f4ffc1bdff80",
+      "trust_remote_code": false,
+      "weight_file_manifest_sha256": "dcdf8c3d99494ddb443842d1f1c1c4e20182c023d967374765c05cad532db11c"
+    }
+  ],
+  "parent_hashes": {
+    "constrained_canary_failure_file_sha256": "78aaf4ad74a7cf929e8ebc5fed0d5128aa7b823bd3346b6c2e78b272f3410e12",
+    "constrained_canary_payload_sha256": "58f04fae1cedc94b561bbe3008ba03a73267dbcb72f702d9faf468f1ba8d4222"
+  },
+  "purpose": "Test a parser-free next-token probability interface with one identical blinded forward pass per frozen model; stop after four calls.",
+  "runtime": {
+    "app_name": "intervenebench-forced-choice-canary-v1",
+    "expected_cuda_runtime_version": "12.8",
+    "function_timeout_seconds": 300,
+    "gpu_count": 1,
+    "gpu_fallback_allowed": false,
+    "gpu_type": "L40S",
+    "image_recipe": {
+      "base": "debian_slim",
+      "dependency_lock": "infra/modal/preflight-requirements.lock",
+      "python_version": "3.11",
+      "source_date_epoch": "2026-08-13T00:00:00Z"
+    },
+    "inference_backend": "single_forward_pass_next_token_softmax",
+    "maximum_total_model_containers": 4,
+    "modal_sdk_version": "1.5.4",
+    "model_cache_policy": "reuse_existing_pinned_hash_verified_read_only_volume",
+    "network_during_inference": "blocked",
+    "packages": [
+      "modal==1.5.4",
+      "torch==2.9.1",
+      "transformers==4.57.6",
+      "accelerate==1.14.0",
+      "safetensors==0.8.0",
+      "huggingface-hub==0.36.2",
+      "hf-xet==1.6.0",
+      "tokenizers==0.22.2",
+      "numpy==2.3.5"
+    ],
+    "provider": "modal",
+    "scaledown_window_seconds": 2,
+    "startup_timeout_seconds": 900,
+    "worker_shape": "one_forward_pass_one_model_one_single_use_container"
+  },
+  "schema_version": "modal_forced_choice_freeze.v1",
+  "status": "frozen_nonexecuting_zero_authority",
+  "success_gate": {
+    "allow_partial_pass": false,
+    "next_stage_automatic": false,
+    "required_calls_per_model": 1,
+    "required_valid_results": 4,
+    "stop_after_pass_or_fail": true
+  },
+  "task_scope": {
+    "access_regime": "DESIGN_ONLY",
+    "all_unlisted_experiments_denied": true,
+    "experiment_ids": [
+      "5vm8g"
+    ],
+    "mode": "single_exact_blinded_bundle",
+    "packaged_file": {
+      "experiment_id": "5vm8g",
+      "file_sha256": "3d6fdf257cd0660aef8dda84bb0142ae42da39fb690a09d349b43f13d38f31dc",
+      "path": "data/manifests/contracts/5vm8g_blinded_bundle.json",
+      "payload_sha256": "00c6d05656df9dbfc982d820e70b0a3807aab4e5bc17f671ca14258caf8090f8"
+    }
+  }
+}

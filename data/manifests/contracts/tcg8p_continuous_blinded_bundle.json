@@ -1,0 +1,35 @@
+{
+  "schema_version": "continuous_blinded_bundle.v1",
+  "task_id": "tcg8p:task-0",
+  "experiment_id": "tcg8p",
+  "access_regime": "DESIGN_ONLY",
+  "population": {
+    "description": "Adults represented by the source study's U.S. online survey sample",
+    "roster_id": "aggregate-us-adult-v1"
+  },
+  "common_context": "Imagine that your electric utility notifies you that in the next year you will experience two power outages, each lasting approximately 40 hours between September and November, similar to previous wildfire-related power shutoffs in California. The two outages are distinct and happen weeks or months apart.",
+  "arms": [
+    {
+      "arm_id": "arm_0_no_notice",
+      "message": "You are provided no advance notice before these two power outages occur at your home."
+    },
+    {
+      "arm_id": "arm_1_day_notice",
+      "message": "You are provided 24 hours advance notice before these two power outages occur at your home."
+    },
+    {
+      "arm_id": "arm_2_week_notice",
+      "message": "You are provided one week advance notice before these two power outages occur at your home."
+    }
+  ],
+  "outcome_question": "How much would you be willing to pay, per month, to avoid these two outages?",
+  "response_contract": {
+    "type": "integer",
+    "unit": "usd_per_month",
+    "minimum": 0,
+    "maximum": null
+  },
+  "source_material_sha256": "10848b27e0a52f53db50336eb93ef831c1c0c02d82a733e7b302d401bcddfe6c",
+  "outcome_access": "sealed",
+  "reveal_authorized": false
+}

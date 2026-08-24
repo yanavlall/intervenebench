@@ -1,0 +1,277 @@
+{
+  "authority": {
+    "automatic_next_stage_authorized": false,
+    "confirmation_outcome_reveal_authorized": false,
+    "fine_tuning_authorized": false,
+    "modal_compute_authorized": false,
+    "model_download_authorized": false,
+    "paid_inference_authorized": false,
+    "participant_row_access_authorized": false,
+    "participant_row_serialization_authorized": false
+  },
+  "cache_model_ids": [
+    "qwen3_8b_generic",
+    "qwen3_14b_generic",
+    "qwen2_5_14b_generic",
+    "socrates_qwen2_5_14b_sft",
+    "qwen3_vl_8b_primary",
+    "qwen2_5_vl_7b_comparator"
+  ],
+  "call_plan": {
+    "conditional_reserve_call_count": 236,
+    "file_sha256": "31a82393d50ed0b49d39a87f7e18ccfec9b1563b0f7518227ce50c05752053ef",
+    "maximum_attempt_count": 1700,
+    "path": "data/manifests/simulators/confirmation_call_plan_v1.json",
+    "payload_sha256": "5de8890b4231247a2aeae51f216e3048defec6b1828ffdef46b23e470a38eebf",
+    "planned_call_count": 1464,
+    "planned_call_ids_sha256": "1982a03127bc3aded8b923365986f3097c3d07a34f8a264a4ec1030d2cd5270c"
+  },
+  "claim_boundary": "This is a six-experiment noncanonical prospective confirmation panel. It can provide bounded evidence about decision fidelity, outcome-free risk ranking, and limited-human fallback, but it cannot establish a universally calibrated trust threshold or a full canonical benchmark claim.",
+  "conditional_reserve_calls_by_cache_model": {
+    "qwen2_5_14b_generic": 0,
+    "qwen2_5_vl_7b_comparator": 0,
+    "qwen3_14b_generic": 0,
+    "qwen3_8b_generic": 236,
+    "qwen3_vl_8b_primary": 0,
+    "socrates_qwen2_5_14b_sft": 0
+  },
+  "confirmation_outcomes_accessed": false,
+  "freeze_date": "2026-08-14",
+  "implementation_hashes": {
+    "infra/modal/confirmation_app.py": "36e84392b9c91959abfe3c24c9262e6d743e3d3b278f14ffbe7430b79fb0f48f",
+    "scripts/run_confirmation.py": "1e103532343c2bb3b1a4a1534d56b3f0c7c901655288d52a91b7d584275f008e",
+    "src/intervenebench/confirmation_calls.py": "88eb8cc580b5bb1c1b918c1baee8055f45d7a134cdfd2a46e4299c5cf13680b4",
+    "src/intervenebench/confirmation_execution.py": "8a4abad5581ecfb2b9e7225de1bb780bbc7da7377849d6931798d262598a203e"
+  },
+  "limits": {
+    "ancillary_reserve_usd": 27.44,
+    "automatic_retries": 0,
+    "completed_call_rerun_forbidden": true,
+    "gpu": "NVIDIA L40S:1",
+    "hard_incremental_cost_cap_usd": 125.0,
+    "l40s_price_per_second_usd": 0.000542,
+    "maximum_aggregate_gpu_seconds": 180000,
+    "maximum_checkpoint_loads": 6,
+    "maximum_gpu_cost_usd": 97.56,
+    "maximum_gpu_seconds_per_checkpoint_group": 9000,
+    "maximum_wall_clock_seconds": 10800,
+    "semantic_repair_allowed": false
+  },
+  "model_download_policy": "reuse_verified_cache_only_no_download_function",
+  "model_manifests": [
+    {
+      "file_sha256": "560bed418f73630aa3a06774b5e844cadda6aed0e894653d1c1193a9c688009b",
+      "path": "data/manifests/simulators/model_file_manifests_v1.json"
+    },
+    {
+      "file_sha256": "0f656efc361bd7c7115727b074bd523a371b27e56276229aba130f0f97c7e5d5",
+      "path": "data/manifests/simulators/multimodal_model_file_manifests_v1.json"
+    }
+  ],
+  "models": [
+    {
+      "cache_model_id": "qwen2_5_14b_generic",
+      "chat_template_sha256": "718d67db7e7b8db25e9beb07550e548e941da07b804d12322bfc406212670e70",
+      "checkpoint_commit": "cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8",
+      "config_sha256": "0f2085dbbe2ee251bd6a6a0797d84a6ce34436044d629aa3cba793b43d311a9e",
+      "dtype": "bfloat16",
+      "exposure_by_experiment": {
+        "5vm8g": "unknown_pretraining_exposure_development_only",
+        "de5hx": "unknown_pretraining_exposure_development_only",
+        "turagaS11": "unknown_pretraining_exposure_development_only",
+        "wallaceS12": "unknown_pretraining_exposure_development_only",
+        "xc4yq": "unknown_pretraining_exposure_development_only"
+      },
+      "hf_repository": "Qwen/Qwen2.5-14B-Instruct",
+      "license_id": "apache-2.0",
+      "maximum_context_tokens": 16384,
+      "modality": "text",
+      "model_id": "qwen2_5_14b_generic",
+      "quantization": "none",
+      "repository_gated": false,
+      "repository_private": false,
+      "thinking_mode": "not_applicable",
+      "tokenizer_manifest_sha256": "689740ec1c67978a7529a6d3d599b5823921566a9505531bf38753a3d16b7a8c",
+      "trust_remote_code": false,
+      "weight_file_manifest_sha256": "293dd76644bf390efd8ef9b2a5ace3afab9c616ca4708b534195e91b52805836"
+    },
+    {
+      "cache_model_id": "qwen2_5_vl_7b_comparator",
+      "checkpoint_commit": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+      "hf_repository": "Qwen/Qwen2.5-VL-7B-Instruct",
+      "license_id": "apache-2.0",
+      "maximum_context_tokens": 16384,
+      "modality": "exact_png_vision",
+      "model_id": "qwen2_5_vl_7b_comparator",
+      "role": "multimodal_robustness_comparator",
+      "training_exposure": "unknown_pretraining_exposure"
+    },
+    {
+      "cache_model_id": "qwen3_14b_generic",
+      "chat_template_sha256": "46b150267cce1a1cfb0543078b45e2267a34b361c3df26afe288636f31f83351",
+      "checkpoint_commit": "40c069824f4251a91eefaf281ebe4c544efd3e18",
+      "config_sha256": "e73c3664ca09b10a673fef0c22e8a6b456201d49bd4713c9691f775720e8857a",
+      "dtype": "bfloat16",
+      "exposure_by_experiment": {
+        "5vm8g": "unknown_pretraining_exposure_development_only",
+        "de5hx": "unknown_pretraining_exposure_development_only",
+        "turagaS11": "unknown_pretraining_exposure_development_only",
+        "wallaceS12": "unknown_pretraining_exposure_development_only",
+        "xc4yq": "unknown_pretraining_exposure_development_only"
+      },
+      "hf_repository": "Qwen/Qwen3-14B",
+      "license_id": "apache-2.0",
+      "maximum_context_tokens": 16384,
+      "modality": "text",
+      "model_id": "qwen3_14b_generic",
+      "quantization": "none",
+      "repository_gated": false,
+      "repository_private": false,
+      "thinking_mode": "disabled_via_apply_chat_template_enable_thinking_false",
+      "tokenizer_manifest_sha256": "2e3e3c562d882ddb1292502a3f67c4ec055a02b45debbf267df670a39dbbeddb",
+      "trust_remote_code": false,
+      "weight_file_manifest_sha256": "b46e6385b85708f27e2567370306a649bb16b35942f4cbd8c40d62a61700b7ce"
+    },
+    {
+      "cache_model_id": "qwen3_8b_generic",
+      "chat_template_sha256": "46b150267cce1a1cfb0543078b45e2267a34b361c3df26afe288636f31f83351",
+      "checkpoint_commit": "b968826d9c46dd6066d109eabc6255188de91218",
+      "config_sha256": "f7c4eadfbbf522470667b797a3c89be2524832d2d599797248dc304fff447c30",
+      "dtype": "bfloat16",
+      "exposure_by_experiment": {
+        "5vm8g": "unknown_pretraining_exposure_development_only",
+        "de5hx": "unknown_pretraining_exposure_development_only",
+        "turagaS11": "unknown_pretraining_exposure_development_only",
+        "wallaceS12": "unknown_pretraining_exposure_development_only",
+        "xc4yq": "unknown_pretraining_exposure_development_only"
+      },
+      "hf_repository": "Qwen/Qwen3-8B",
+      "license_id": "apache-2.0",
+      "maximum_context_tokens": 16384,
+      "modality": "text",
+      "model_id": "qwen3_8b_generic",
+      "quantization": "none",
+      "repository_gated": false,
+      "repository_private": false,
+      "thinking_mode": "disabled_via_apply_chat_template_enable_thinking_false",
+      "tokenizer_manifest_sha256": "2e3e3c562d882ddb1292502a3f67c4ec055a02b45debbf267df670a39dbbeddb",
+      "trust_remote_code": false,
+      "weight_file_manifest_sha256": "f937a0a857cbcba6521736b29c1c84cf665ddcc5a69b00a0c2c7ec6b09865965"
+    },
+    {
+      "cache_model_id": "qwen3_8b_generic",
+      "checkpoint_commit": "b968826d9c46dd6066d109eabc6255188de91218",
+      "hf_repository": "Qwen/Qwen3-8B",
+      "license_id": "apache-2.0",
+      "maximum_context_tokens": 16384,
+      "modality": "text",
+      "model_id": "qwen3_8b_text_ablation",
+      "role": "frozen_discovery_winner_modality_ablation",
+      "training_exposure": "unknown_pretraining_exposure"
+    },
+    {
+      "cache_model_id": "qwen3_vl_8b_primary",
+      "checkpoint_commit": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+      "hf_repository": "Qwen/Qwen3-VL-8B-Instruct",
+      "license_id": "apache-2.0",
+      "maximum_context_tokens": 16384,
+      "modality": "exact_png_vision",
+      "model_id": "qwen3_vl_8b_primary",
+      "role": "primary_multimodal",
+      "training_exposure": "unknown_pretraining_exposure"
+    },
+    {
+      "cache_model_id": "socrates_qwen2_5_14b_sft",
+      "chat_template_sha256": "718d67db7e7b8db25e9beb07550e548e941da07b804d12322bfc406212670e70",
+      "checkpoint_commit": "6666d399b373dd37a2691a921550732f2fdddb20",
+      "config_sha256": "856349c65e3fa633e8c828e4f36996be6c3f63421e1b8c87603b8302d8fda221",
+      "dtype": "bfloat16",
+      "exposure_by_experiment": {
+        "5vm8g": "checkpoint_compatibility_review_required_development_only",
+        "de5hx": "known_training_exposure_not_primary_comparison",
+        "turagaS11": "checkpoint_compatibility_review_required_development_only",
+        "wallaceS12": "checkpoint_compatibility_review_required_development_only",
+        "xc4yq": "known_training_exposure_not_primary_comparison"
+      },
+      "hf_repository": "socratesft/socrates-qwen2.5-14b-sft",
+      "license_id": "apache-2.0",
+      "maximum_context_tokens": 16384,
+      "modality": "text",
+      "model_id": "socrates_qwen2_5_14b_sft",
+      "quantization": "none",
+      "repository_gated": false,
+      "repository_private": false,
+      "thinking_mode": "not_applicable",
+      "tokenizer_manifest_sha256": "e988e63b4aa1ddaedbf30995554b07fe628eb2c41d701b96b6a4f4ffc1bdff80",
+      "trust_remote_code": false,
+      "weight_file_manifest_sha256": "dcdf8c3d99494ddb443842d1f1c1c4e20182c023d967374765c05cad532db11c"
+    }
+  ],
+  "participant_rows_read": 0,
+  "participant_rows_serialized": 0,
+  "planned_calls_by_cache_model": {
+    "qwen2_5_14b_generic": 248,
+    "qwen2_5_vl_7b_comparator": 64,
+    "qwen3_14b_generic": 248,
+    "qwen3_8b_generic": 560,
+    "qwen3_vl_8b_primary": 128,
+    "socrates_qwen2_5_14b_sft": 216
+  },
+  "preparation": {
+    "file_sha256": "d6099e18d0f2604c80df4ffcefe407b127e4b399d1be7064fabc4ef112402cd7",
+    "path": "artifacts/confirmation/confirmation_preparation_v1.json",
+    "payload_sha256": "7df6716e2f933853e9199d36f67ed2e2b6772fe1d6f833aa9ade3b9913858ead"
+  },
+  "public_assets": [
+    {
+      "arm_id": "iphone_growth_control_article",
+      "png_height": 1200,
+      "png_path": "data/derived/stimuli/pb2rr/iphone_growth_control_article.png",
+      "png_sha256": "9479a84d348522ce3c99b340d632a937f7c0874a0bb7eda9b57711b6d0e26a18",
+      "png_width": 1600,
+      "rendering": "pdftoppm_160_dpi_png",
+      "source_page": 1,
+      "source_pdf_path": "data/raw/sources/pb2rr/controlprime_FINAL.pdf",
+      "source_pdf_sha256": "1c81b348fa757c5973f8b8c2ed0e8b67e63295b29a2e034c234c664c818e674e",
+      "visual_qa": "passed_full_page_no_clipping"
+    },
+    {
+      "arm_id": "hispanic_population_growth_article",
+      "png_height": 1200,
+      "png_path": "data/derived/stimuli/pb2rr/hispanic_population_growth_article.png",
+      "png_sha256": "8d40187401625ca591b0f02e93fd5b14187908cad0ca4210cc38c8aaadd68a3e",
+      "png_width": 1600,
+      "rendering": "pdftoppm_160_dpi_png",
+      "source_page": 1,
+      "source_pdf_path": "data/raw/sources/pb2rr/treatmentprime_new.pdf",
+      "source_pdf_sha256": "1b1a8187d7797da5184004a39f5fde0e60f6beac0e7fea60a8b2327394392f65",
+      "visual_qa": "passed_full_page_no_clipping"
+    }
+  ],
+  "runtime": {
+    "app_name": "intervenebench-confirmation-v1",
+    "dependency_lock_path": "infra/modal/multimodal-requirements.lock",
+    "dependency_lock_sha256": "2a48942504275c937719a64b0e1c35abec3389870cc8e5eab3a83752fe8dce34",
+    "gpu": "NVIDIA L40S:1",
+    "image_recipe": {
+      "base": "modal.Image.debian_slim",
+      "checkpoint_volume": "read_only",
+      "embedded_files": [
+        "configs/simulators/confirmation_execution_v1.json",
+        "data/manifests/simulators/confirmation_call_plan_v1.json",
+        "data/manifests/simulators/model_file_manifests_v1.json",
+        "data/manifests/simulators/multimodal_model_file_manifests_v1.json",
+        "infra/modal/multimodal-requirements.lock",
+        "infra/modal/confirmation_app.py",
+        "data/derived/stimuli/pb2rr"
+      ],
+      "network_during_inference": "blocked",
+      "python": "3.11",
+      "requirements_require_hashes": true,
+      "uv": "0.12.4"
+    },
+    "model_volume_name": "intervenebench-model-cache-v1"
+  },
+  "schema_version": "confirmation_execution_freeze.v1",
+  "status": "frozen_nonexecuting_zero_authority"
+}

@@ -1,0 +1,239 @@
+{
+  "assets": [
+    {
+      "file_sha256": "f018646bd4ddad514a2551e34b5d2de006ea40b243f42cd3a48bfa01e7ba7be0",
+      "path": "data/derived/stimuli/e2pyb/belonging_disparities.png"
+    },
+    {
+      "file_sha256": "824579567d3a78ed67de6326203245c2c815da51d5a1527e3d8479060911c360",
+      "path": "data/derived/stimuli/e2pyb/economic_disparities.png"
+    },
+    {
+      "file_sha256": "915ae6b57de8f1de25bf545abfc8618bf2c08baccbea74f5d76e616b171dab59",
+      "path": "data/derived/stimuli/e2pyb/health_disparities.png"
+    },
+    {
+      "file_sha256": "600f037ef7dc3f7035df97d8d4a18ce4ec58a6d93e7a471cd0e9bf9cf15bfa63",
+      "path": "data/derived/stimuli/es4xw/image1.png"
+    },
+    {
+      "file_sha256": "44ccf32fb582ddb87072d04ba1fd3e74a7a6acc93a1e3b16308aceef1bdc8a1d",
+      "path": "data/derived/stimuli/es4xw/image2.png"
+    },
+    {
+      "file_sha256": "cd71dd953d9586256d551e9592104acdb636344a159442e904297a07db970a22",
+      "path": "data/derived/stimuli/es4xw/image3.png"
+    },
+    {
+      "file_sha256": "41103aa199879185b811a5730410d2d5bd381755f3420d8f8ce4d1dbfba2a4fa",
+      "path": "data/derived/stimuli/es4xw/image4.png"
+    },
+    {
+      "file_sha256": "cbc82160ab6fb5d93c78a7e21c8300accf903c8ad9d930fed76c05604c8c825c",
+      "path": "data/derived/stimuli/nj5dx/lower_class_disadvantage.png"
+    },
+    {
+      "file_sha256": "45dfeb94e9626170f694518470c89c76370496a951ae4f9155f798f61ecf8cc6",
+      "path": "data/derived/stimuli/nj5dx/upper_class_privilege.png"
+    }
+  ],
+  "authority": {
+    "automatic_next_stage_authorized": false,
+    "human_outcome_access_authorized": false,
+    "image_materialization_authorized": false,
+    "modal_execution_authorized": false,
+    "model_download_authorized": false,
+    "outcome_reveal_authorized": false,
+    "paid_inference_authorized": false,
+    "trust_threshold_selection_authorized": false
+  },
+  "claim_boundary": "The three target experiments are prospective development evidence, not a canonical held-out test. Vision-model choice, prompts, orders, action sets, and diagnostics are frozen before target human outcomes.",
+  "diagnostics": {
+    "directions": {
+      "per_arm_two_vlm_expected_utility_dispersion": "smaller_hypothesized_more_reliable",
+      "primary_model_balanced_winner_margin": "larger_hypothesized_more_reliable",
+      "primary_model_chosen_arm_normalized_response_entropy": "smaller_hypothesized_more_reliable",
+      "primary_model_mean_arm_source_reverse_total_variation": "smaller_hypothesized_more_reliable",
+      "primary_model_source_reverse_choice_stability": "stable_hypothesized_more_reliable",
+      "two_vlm_complete_action_choice_agreement": "agreement_hypothesized_more_reliable",
+      "vision_vs_accessible_text_choice_agreement": "agreement_hypothesized_more_reliable"
+    },
+    "evaluation": "continuous regret ranking and fixed risk-coverage only; no classifier, calibration, or threshold claim from three experiments",
+    "frozen_before_target_outcomes": true,
+    "model_rows_do_not_inflate_experiment_count": true,
+    "primary": [
+      "primary_model_balanced_winner_margin",
+      "primary_model_source_reverse_choice_stability",
+      "primary_model_mean_arm_source_reverse_total_variation",
+      "two_vlm_complete_action_choice_agreement",
+      "vision_vs_accessible_text_choice_agreement"
+    ],
+    "secondary": [
+      "primary_model_chosen_arm_normalized_response_entropy",
+      "per_arm_two_vlm_expected_utility_dispersion"
+    ]
+  },
+  "discovery_selection_basis": {
+    "envelope_payload_sha256": "633243f03ee4e759566ffbdf5728b5abd14e4c2544eb92efd45bf74e82c5241e",
+    "path": "artifacts/balanced_full_action/balanced_full_action_20260813_v1/retrospective_discovery_score.json",
+    "selected_text_model_id": "qwen3_8b_generic",
+    "transfer_boundary": "The revealed text-only result selects the Qwen3 family baseline, not a vision model's prospective accuracy. The target VLM choice is frozen before all three target outcomes."
+  },
+  "evidence_tier": "prospective_development_outcome_sealed",
+  "experiment_ids": [
+    "nj5dx",
+    "es4xw",
+    "e2pyb"
+  ],
+  "freeze_date": "2026-08-13",
+  "freeze_id": "intervenebench-prospective-multimodal-20260813-v4",
+  "future_score_fields": [
+    "human_arm_mean_normalized_utility",
+    "human_treatment_effect_vs_frozen_reference",
+    "synthetic_arm_mean_normalized_utility",
+    "synthetic_treatment_effect_vs_frozen_reference",
+    "treatment_effect_absolute_error",
+    "human_best_arm",
+    "synthetic_selected_arm",
+    "correct_intervention_choice",
+    "decision_regret",
+    "practically_reliable_at_contract_tolerance",
+    "outcome_free_diagnostics"
+  ],
+  "implementation_hashes": [
+    {
+      "file_sha256": "58daf297c699eb77e8eea3a2ec5b537ba4625261bcdc54c07e8242756f1d76fd",
+      "path": "src/intervenebench/simulators.py"
+    },
+    {
+      "file_sha256": "7f8b909ee20ea81e17a6e0483d27abcc89e7437875ae52e1cc433ed9e9994568",
+      "path": "src/intervenebench/multimodal_prospective.py"
+    },
+    {
+      "file_sha256": "0d315b8403fa7f8f496e3c2427934d952b900b57df4aad8c21a7f65bf6ba9462",
+      "path": "src/intervenebench/multimodal_freeze.py"
+    },
+    {
+      "file_sha256": "0d9825ef6b38155a707d63b5effc8ec91a15fa8a695aba62be6b0807b94b1b3c",
+      "path": "scripts/build_multimodal_prospective_plan.py"
+    },
+    {
+      "file_sha256": "46cfa548dc3be3c6b274b06f32d8a2a446ca6efa90396c5a14b811897cfb2f86",
+      "path": "scripts/build_multimodal_prospective_freeze.py"
+    },
+    {
+      "file_sha256": "354f8dff29acd014fa9ddbefa9c0cedd074edcb48cc4181c83b1700259c62d9e",
+      "path": "infra/modal/prospective_multimodal_app.py"
+    },
+    {
+      "file_sha256": "189a72e9d8b258d1f414ca9a74b29662e5959b20a36ae7c64abb203470739d78",
+      "path": "scripts/authorize_prospective_multimodal.py"
+    },
+    {
+      "file_sha256": "ee8a87ffd978f100f494a2e68f8ef3eed994ca9f314768320c20e19b9cb0213f",
+      "path": "scripts/run_prospective_multimodal.py"
+    }
+  ],
+  "limits": {
+    "automatic_retries": 0,
+    "hard_incremental_execution_cap_usd": 5.0,
+    "l40s_price_per_second_usd": 0.000542,
+    "maximum_aggregate_gpu_seconds": 3600,
+    "maximum_gpu_cost_usd": 1.9512,
+    "maximum_model_attempts": 54,
+    "maximum_model_loads": 3,
+    "maximum_planned_calls": 54
+  },
+  "method": {
+    "aggregation_formula": "p_balanced(y|arm)=0.5*p_source(y|arm)+0.5*p_reverse(y|arm)",
+    "arbitrary_permutation_invariance_claimed": false,
+    "comparator_model_id": "qwen2_5_vl_7b_comparator",
+    "generation_calls": 0,
+    "method_id": "forced_choice_next_token_softmax.v1",
+    "orders": [
+      "source",
+      "reverse"
+    ],
+    "primary_model_id": "qwen3_vl_8b_primary",
+    "recommendation_rule": "maximize balanced expected normalized utility over all source arms; tie by source arm order",
+    "repair_allowed": false,
+    "semantic_retry_allowed": false,
+    "temperature": 1.0,
+    "text_ablation_model_id": "qwen3_8b_text_ablation",
+    "transport_retry_allowed": false
+  },
+  "model_manifest": {
+    "file_sha256": "0f656efc361bd7c7115727b074bd523a371b27e56276229aba130f0f97c7e5d5",
+    "path": "data/manifests/simulators/multimodal_model_file_manifests_v1.json",
+    "payload_sha256": "1ef5d2f4f08081cd5f731b1c7b1ca078c349af8f6b1d97452930aa57e1f7a58f"
+  },
+  "models": [
+    {
+      "checkpoint_commit": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+      "hf_repository": "Qwen/Qwen3-VL-8B-Instruct",
+      "license_id": "apache-2.0",
+      "modality": "exact_png_vision",
+      "model_id": "qwen3_vl_8b_primary",
+      "role": "primary_multimodal",
+      "training_exposure": "unknown_pretraining_exposure"
+    },
+    {
+      "checkpoint_commit": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+      "hf_repository": "Qwen/Qwen2.5-VL-7B-Instruct",
+      "license_id": "apache-2.0",
+      "modality": "exact_png_vision",
+      "model_id": "qwen2_5_vl_7b_comparator",
+      "role": "multimodal_robustness_comparator",
+      "training_exposure": "unknown_pretraining_exposure"
+    },
+    {
+      "checkpoint_commit": "b968826d9c46dd6066d109eabc6255188de91218",
+      "hf_repository": "Qwen/Qwen3-8B",
+      "license_id": "apache-2.0",
+      "modality": "accessible_text_only",
+      "model_id": "qwen3_8b_text_ablation",
+      "role": "frozen_discovery_winner_modality_ablation",
+      "training_exposure": "unknown_pretraining_exposure"
+    }
+  ],
+  "plan": {
+    "file_sha256": "f4d72f28e69dd765d813e109866ad0840896713d5ec044fc34b4d8f8d2f4e44e",
+    "logical_call_count": 54,
+    "path": "data/manifests/simulators/prospective_multimodal_plan_v1.json",
+    "payload_sha256": "d74920321f4c95ee19839e19812f55e32938ea8adbcbd3c31ac0aa05dd11b025",
+    "text_ablation_call_count": 18,
+    "vision_call_count": 36
+  },
+  "runtime": {
+    "dependency_input_path": "infra/modal/multimodal-requirements.in",
+    "dependency_input_sha256": "05170f2f8a8a3c6ec0a52ee90fb493fdab40e2a6f9138d850b3ffccce2d0bd0b",
+    "dependency_lock_path": "infra/modal/multimodal-requirements.lock",
+    "dependency_lock_sha256": "2a48942504275c937719a64b0e1c35abec3389870cc8e5eab3a83752fe8dce34",
+    "gpu": "NVIDIA L40S:1",
+    "image_recipe": {
+      "base": "modal.Image.debian_slim",
+      "embedded_files": [
+        "data/manifests/simulators/multimodal_model_file_manifests_v1.json",
+        "configs/simulators/prospective_multimodal_v4.json",
+        "infra/modal/multimodal-requirements.lock",
+        "infra/modal/prospective_multimodal_app.py"
+      ],
+      "embedded_stimuli_root": "data/derived/stimuli",
+      "installer": "uv_pip_install",
+      "lock_path": "infra/modal/multimodal-requirements.lock",
+      "modal_volume": "intervenebench-model-cache-v1",
+      "python_version": "3.11",
+      "require_hashes": true,
+      "uv_version": "0.12.4"
+    },
+    "network_during_inference": false,
+    "pillow": "11.3.0",
+    "python": "3.11",
+    "torch": "2.9.1",
+    "torchvision": "0.24.1",
+    "transformers": "4.57.6",
+    "trust_remote_code": false
+  },
+  "schema_version": "prospective_multimodal_freeze.v4",
+  "status": "frozen_nonexecuting_zero_authority"
+}

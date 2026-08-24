@@ -1,0 +1,186 @@
+{
+  "schema_version": "intervenebench.research_program.v1",
+  "program_id": "depth-first-v1-20260813",
+  "status": "active_scope_frozen",
+  "frozen_at_utc": "2026-08-13T18:06:09Z",
+  "objective": "Evaluate intervention decisions, prospective abstention, and independent human fallback across a bounded set of source-verified randomized experiments.",
+  "claim_scope": "initial multi-experiment benchmark; trust prediction is exploratory",
+  "task_count_target": {
+    "minimum": 15,
+    "preferred": 15,
+    "maximum_without_scope_review": 18
+  },
+  "split_strategy": {
+    "development_method": "nested leave-one-paradigm-out analysis",
+    "prospective_method": "one frozen six-experiment evaluation after every model, diagnostic, fallback, and reporting decision is committed",
+    "canonical_65_15_20_claim": false,
+    "reason": "With fifteen experiments, a nominal three-way split would make validation and test inference too unstable. Development uses grouped resampling while six paradigm-disjoint experiments remain prospective."
+  },
+  "discovery_tasks": [
+    {
+      "candidate_id": "socsci210:5vm8g",
+      "paradigm_group": "racial_discrimination_beliefs",
+      "outcome_access": "development_only_portfolio_reveal",
+      "contract_status": "complete"
+    },
+    {
+      "candidate_id": "socsci210:jf46x",
+      "paradigm_group": "vaccine_risk_trust",
+      "outcome_access": "development_only_validation_reveal",
+      "contract_status": "complete"
+    },
+    {
+      "candidate_id": "socsci210:xc4yq",
+      "paradigm_group": "terrorism_threat_emotion",
+      "outcome_access": "development_only_portfolio_reveal",
+      "contract_status": "complete"
+    },
+    {
+      "candidate_id": "socsci210:de5hx",
+      "paradigm_group": "electoral_risk_framing",
+      "outcome_access": "development_only_portfolio_reveal",
+      "contract_status": "complete"
+    },
+    {
+      "candidate_id": "external_archive_v1:turagaS11",
+      "paradigm_group": "environmental_risk_information_and_personal_responsibility",
+      "outcome_access": "development_only_portfolio_reveal",
+      "contract_status": "complete"
+    },
+    {
+      "candidate_id": "external_archive_v1:wallaceS12",
+      "paradigm_group": "international_law_commitment_compliance_and_reputation",
+      "outcome_access": "development_only_portfolio_reveal",
+      "contract_status": "complete"
+    }
+  ],
+  "prospective_development_tasks": [
+    {
+      "candidate_id": "socsci210:e2pyb",
+      "paradigm_group": "racial_disparity_dimension_messaging",
+      "outcome_access": "sealed",
+      "contract_status": "complete"
+    },
+    {
+      "candidate_id": "socsci210:nj5dx",
+      "paradigm_group": "inequality_and_power_framing",
+      "outcome_access": "sealed",
+      "contract_status": "complete"
+    },
+    {
+      "candidate_id": "socsci210:es4xw",
+      "paradigm_group": "workplace_diversity_composition",
+      "outcome_access": "sealed",
+      "contract_status": "complete"
+    }
+  ],
+  "prospective_development_replacement_queue": [
+    "socsci210:kryns",
+    "socsci210:6wbd7",
+    "socsci210:9fehm",
+    "socsci210:ztwqy"
+  ],
+  "applied_replacements": [
+    {
+      "replaced_candidate_id": "socsci210:jtgyq",
+      "replacement_candidate_id": "socsci210:es4xw",
+      "reason": "source_control_arm_outcomes_unavailable_full_action_set_unscoreable"
+    },
+    {
+      "replaced_candidate_id": "socsci210:a42yg",
+      "replacement_candidate_id": "socsci210:e2pyb",
+      "reason": "bounded_speed_pivot_from_interactive_sequence_multimodal_adapter_to_existing_ordinal_png_adapter"
+    }
+  ],
+  "prospective_evaluation_tasks": [
+    {
+      "candidate_id": "socsci210:tcg8p",
+      "paradigm_group": "power_outage_notice_policy",
+      "outcome_access": "sealed",
+      "contract_status": "continuous_scale_tier_pending"
+    },
+    {
+      "candidate_id": "socsci210:pb2rr",
+      "paradigm_group": "demographic_change_status_threat",
+      "outcome_access": "sealed",
+      "contract_status": "complete"
+    },
+    {
+      "candidate_id": "socsci210:z358z",
+      "paradigm_group": "research_consent_policy",
+      "outcome_access": "sealed",
+      "contract_status": "complete"
+    },
+    {
+      "candidate_id": "external_archive_v1:ShannonS2",
+      "paradigm_group": "public_benefit_immigrant_cue_and_savings",
+      "outcome_access": "sealed",
+      "contract_status": "complete"
+    },
+    {
+      "candidate_id": "external_archive_v1:Blair1131",
+      "paradigm_group": "crisis_response_strategy_and_public_approval",
+      "outcome_access": "sealed",
+      "contract_status": "complete"
+    },
+    {
+      "candidate_id": "external_archive_v1:KlarS44",
+      "paradigm_group": "abortion_issue_framing_and_civic_efficacy",
+      "outcome_access": "sealed",
+      "contract_status": "complete"
+    }
+  ],
+  "corpus_gates": {
+    "stop_now": "Do not search a new external corpus while the fifteen-task scope remains achievable from already-audited candidates.",
+    "contract_completion_cap_hours": 20,
+    "replacement_attempt_cap": 6,
+    "pivot_if": "Fewer than fifteen independent, paradigm-valid tasks remain after the cap, one batch yields zero runnable contracts, or two consecutive replacement candidates fail for the same structural reason.",
+    "pivot_to": "Freeze the smaller corpus, narrow the claim, and move effort to simulator and fallback depth; do not restore ambiguous tasks."
+  },
+  "simulator_gates": {
+    "development_families": [
+      "no_effect_control",
+      "uniform_random_choice",
+      "classical_cross_experiment",
+      "small_open_llm",
+      "strong_open_or_hosted_llm"
+    ],
+    "minimum_parse_success": 0.98,
+    "pilot_tasks_per_configuration": 2,
+    "prune_if": "A configuration breaches its cost cap, has parse success below 0.98, or adds no distinct decision-level hypothesis beyond a cheaper configuration.",
+    "fine_tuning_gate": "No LoRA run unless the prompted suite is complete and a specific development result predicts a decision-level benefit."
+  },
+  "trust_gates": {
+    "status": "exploratory",
+    "primary_diagnostics": [
+      "synthetic_winner_margin",
+      "ranking_stability",
+      "cross_model_disagreement"
+    ],
+    "validation": "nested leave-one-paradigm-out on development tasks; one frozen policy on the prospective tasks",
+    "pivot_if": "The frozen diagnostic policy fails to improve both risk-coverage area and regret at a prespecified coverage over random abstention in development resampling.",
+    "pivot_to": "Report confident failure as a negative result and use a conservative human-validation policy instead of fitting more diagnostics."
+  },
+  "fallback_gates": {
+    "budgets": [0, 10, 25, 50, 100, 250],
+    "required_policies": [
+      "synthetic_only",
+      "human_only",
+      "uniform_human_validation",
+      "synthetic_informed_human_validation"
+    ],
+    "evaluation": "pilot participants are disjoint from evaluation participants in every replicate",
+    "pivot_if": "The synthetic-informed policy fails to reduce development regret relative to human-only or uniform validation at every nonzero budget.",
+    "pivot_to": "Preserve the negative result and report the human-only cost curve as the operational fallback."
+  },
+  "compute_boundary": {
+    "budget_usd": 500,
+    "authorized_spend_usd": 0,
+    "paid_or_modal_execution_requires_separate_authorization": true,
+    "abort_conditions": [
+      "projected run cost exceeds its frozen ceiling",
+      "model outputs fail the parser gate",
+      "the run duplicates a cheaper configuration without a new hypothesis"
+    ]
+  }
+}

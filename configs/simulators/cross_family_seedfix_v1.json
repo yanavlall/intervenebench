@@ -1,0 +1,60 @@
+{
+  "payload": {
+    "automatic_next_stage_authorized": false,
+    "automatic_retry_authorized": false,
+    "cache_attestation_payload_sha256": "df0ab5014389b04c65c1d6a403f52d49eecf03d0e74c268495abacc0a9ec0164",
+    "chunk_count": 63,
+    "chunk_size": 8,
+    "completed_target_inference_count_before_correction": 0,
+    "correction": {
+      "affected_method_id": "forced_choice_next_token_softmax.v1",
+      "application_point": "after_request_hash_validation_before_sampling_params",
+      "continuous_interface_changed": false,
+      "effective_engine_seed": 0,
+      "prompt_or_asset_changed": false,
+      "request_hashes_changed": false,
+      "request_payloads_changed": false,
+      "semantic_repair": false,
+      "source_generation_seed": null
+    },
+    "human_outcome_access_authorized": false,
+    "implementation_hashes": {
+      "infra/modal/cross_family_target_app.py": "d7eb4e3695d96995aefc913fdcb292d93ebae1ea7d467c7b7400f8d38ef6302e",
+      "infra/modal/cross_family_target_seedfix_app.py": "46547bfbee975dd5ddf0bc34dcc17506fcb518600182de6989a3e836ced8b4b6"
+    },
+    "modal_compute_authorized": false,
+    "modal_image_materialization_authorized": false,
+    "model_download_authorized": false,
+    "null_seed_failure_location": "forced_choice SamplingParams construction before llm.chat",
+    "null_seed_failure_payload_sha256": "8b0b1bc3c8a72cda6b4064c561faa62b74f995270aa3054dc021066678d8b7ed",
+    "paid_inference_authorized": false,
+    "parent_execution_freeze_payload_sha256": "cd778a207eec9a0ece19005c1ce1a70f1f0f4e6624c5a7a2e999fd06a33da744",
+    "parent_json_canary_payload_sha256": "0e350e92e4d339aa0849f245c79b80b960a373e8b891302e364c12c34abc8792",
+    "parent_materialization_payload_sha256": "b4a9e4adb917d3ae2e68d0ad1a56c2fc53cd475dd278f18853c561fabeec5bd4",
+    "participant_row_access_authorized": false,
+    "participant_row_serialization_authorized": false,
+    "preserved_target_output_count_before_correction": 0,
+    "recommendation_aggregation_authorized": false,
+    "regression_scoring_authorized": false,
+    "remaining_call_count": 504,
+    "remaining_call_ids_sha256": "f25334b3f55e7722c53354e96877951053d8b17bd29c155bf4973702835d7a3c",
+    "remaining_target_calls_authorized": false,
+    "reserve_call_authorized": false,
+    "runtime": {
+      "app_name": "intervenebench-cross-family-seedfix-v1",
+      "automatic_retries": 0,
+      "gpu": "A100-80GB:1",
+      "model_downloads": 0,
+      "parent_modal_image_id": "im-i3mpp9JaYMOTOvkbrLwQzt"
+    },
+    "schema_version": "intervenebench.cross_family_seedfix_freeze.v1",
+    "seedfix_canary_authorized": false,
+    "status": "frozen_null_seed_runtime_correction_zero_authority",
+    "strict_parse_authorized": false,
+    "tcg8p_rerun_authorized": false,
+    "tcg8p_transport_failure_payload_sha256": "75c60d1dbd021926b0daa94723ad1d6f663fef5155236c80c0838c789c9f96f7",
+    "unavailable_call_count": 120,
+    "unavailable_experiment_id": "tcg8p"
+  },
+  "sha256": "fc8f0ae1a226b49a2e1ebfd2564af48bcb700b63d26fe7419589a5f00a0872b5"
+}

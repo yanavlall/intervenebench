@@ -1,0 +1,137 @@
+{
+  "schema_version": "intervenebench.independent_replication_completion_queue.v1",
+  "status": "outcome_blind_completion_queue_frozen",
+  "freeze_date": "2026-08-14",
+  "objective": "Attempt to produce at least 12 distinct runnable outcome-sealed tasks without further open-ended corpus search.",
+  "panel_gate": {
+    "minimum_runnable_tasks": 12,
+    "strong_target_tasks": 16,
+    "minimum_socsci210_at_12": 8,
+    "minimum_socsci210_at_16": 10,
+    "one_task_per_fielding": true,
+    "one_task_per_conservative_paradigm": true,
+    "no_reveal_below_minimum": true
+  },
+  "ordering_basis": [
+    "existing outcome-blind scientific audit status",
+    "exact source material availability",
+    "human mapping completeness",
+    "adapter reuse and bounded engineering cost",
+    "never human outcomes treatment effects winners or simulator performance"
+  ],
+  "wave_1": [
+    {
+      "queue_order": 1,
+      "candidate_id": "9tv2b",
+      "source_stratum": "socsci210",
+      "status": "clean_source_mapped",
+      "next_bounded_task": "freeze text bounded-numeric task contract bundle and replay tests"
+    },
+    {
+      "queue_order": 2,
+      "candidate_id": "dvwu7",
+      "source_stratum": "external_tess_targeted",
+      "status": "scientific_survivor_mapping_and_adapter_pending",
+      "next_bounded_task": "build interactive self-affirmation bundle and schema-only mapping request"
+    },
+    {
+      "queue_order": 3,
+      "candidate_id": "6wbd7",
+      "source_stratum": "socsci210",
+      "status": "source_faithful_derived_visual_contract_pending",
+      "next_bounded_task": "build provenance-bound derived composites and bounded-integer VLM adapter"
+    },
+    {
+      "queue_order": 4,
+      "candidate_id": "h6txz",
+      "source_stratum": "external_tess_random_lane",
+      "status": "scientific_survivor_mapping_and_truth_audit_pending",
+      "next_bounded_task": "freeze Q11 credibility contract and resolve schema mapping without outcomes"
+    },
+    {
+      "queue_order": 5,
+      "candidate_id": "wr7jg",
+      "source_stratum": "external_tess_random_lane",
+      "status": "scientific_survivor_turnout_mapping_and_sequence_adapter_pending",
+      "next_bounded_task": "build verb-versus-noun sequence contract and resolve matched-turnout schema"
+    },
+    {
+      "queue_order": 6,
+      "candidate_id": "a42yg",
+      "source_stratum": "socsci210",
+      "status": "scientific_survivor_interactive_sequence_contract_pending",
+      "next_bounded_task": "freeze fixed-context palliative-care message subset and sequence-aware ordinal adapter"
+    }
+  ],
+  "wave_2": [
+    {
+      "queue_order": 7,
+      "candidate_id": "zx5b8",
+      "source_stratum": "socsci210",
+      "status": "conditional_factorial_nuisance_sequence"
+    },
+    {
+      "queue_order": 8,
+      "candidate_id": "sffyb",
+      "source_stratum": "socsci210",
+      "status": "conditional_prior_audit"
+    },
+    {
+      "queue_order": 9,
+      "candidate_id": "9n7hj",
+      "source_stratum": "socsci210",
+      "status": "conditional_prior_audit"
+    },
+    {
+      "queue_order": 10,
+      "candidate_id": "9fehm",
+      "source_stratum": "socsci210",
+      "status": "conditional_prior_audit"
+    },
+    {
+      "queue_order": 11,
+      "candidate_id": "v6kqy",
+      "source_stratum": "socsci210",
+      "status": "conditional_source_asset_audit"
+    },
+    {
+      "queue_order": 12,
+      "candidate_id": "326nv",
+      "source_stratum": "socsci210",
+      "status": "conditional_source_asset_audit"
+    },
+    {
+      "queue_order": 13,
+      "candidate_id": "ac9jm",
+      "source_stratum": "socsci210",
+      "status": "conditional_source_asset_audit"
+    },
+    {
+      "queue_order": 14,
+      "candidate_id": "yh2ef",
+      "source_stratum": "socsci210",
+      "status": "pristine_source_blocked"
+    },
+    {
+      "queue_order": 15,
+      "candidate_id": "ndjc8",
+      "source_stratum": "external_tess_random_lane",
+      "status": "conditional_multi_image_sequence_mapping"
+    }
+  ],
+  "stop_rules": {
+    "no_additional_corpus_search": true,
+    "hard_stop_after_queue_order": 15,
+    "after_wave_1": "continue only with already-frozen wave_2 rows; do not open a new corpus",
+    "after_queue": "if fewer than 12 tasks pass all gates stop before inference and report corpus insufficiency",
+    "no_gate_relaxation": true
+  },
+  "authority": {
+    "authorized_spend_usd": 0,
+    "model_calls_authorized": false,
+    "human_outcome_reveal_authorized": false,
+    "participant_row_access_authorized": false,
+    "schema_only_participant_container_extraction_authorized": false,
+    "public_design_source_acquisition_authorized": true
+  }
+}

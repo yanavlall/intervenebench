@@ -1,0 +1,47 @@
+{
+  "schema_version": "intervenebench.external_tess_random_lane_closure.v1",
+  "status": "closed_low_yield_at_frozen_checkpoint",
+  "closure_date": "2026-08-14",
+  "source_universe_path": "data/manifests/audits/tess_external_root_universe_v1.json",
+  "source_universe_sha256": "6c9ca3c6e471fa5e1bac37d486ad2d3919ec04131f85b79ed5b7835023b8e57a",
+  "audit_registry_path": "data/manifests/audits/tess_external_root_audit_registry_v1.csv",
+  "audit_registry_sha256": "52449fc91f9ac7fb96547d12333bf2207b23884d9b9e6bfc0d530d5897680f37",
+  "checkpoint_order": 20,
+  "frozen_minimum_clean_passes": 2,
+  "clean_pass_count": 0,
+  "conditional_count": 3,
+  "conditional_ids": [
+    "ndjc8",
+    "h6txz",
+    "wr7jg"
+  ],
+  "terminal_or_blocked_count": 17,
+  "status_counts": {
+    "conditional": 3,
+    "duplicate": 1,
+    "ineligible": 10,
+    "prospective_fail": 4,
+    "source_blocked": 2
+  },
+  "stop_rule_triggered": true,
+  "remaining_original_batch_rows_not_opened": [
+    "7r43t",
+    "qbd8p",
+    "nw2dp",
+    "u5dvm",
+    "ctmz7",
+    "w7qfa",
+    "yjvpn",
+    "qzv8b",
+    "g2jcy",
+    "tz36m"
+  ],
+  "decision": "Do not audit random-root orders 21 through 30. Preserve the three conditional survivors for separate contract work, and replace random-root search with the separately frozen title-only intervention-focused lane.",
+  "scientific_interpretation": "The random-root TESS source is too low-yield for continued manual audit under the replication timeline. This is a corpus-construction result, not evidence about simulator performance or human treatment effects.",
+  "authority": {
+    "authorized_spend_usd": 0,
+    "model_calls_authorized": false,
+    "human_outcome_reveal_authorized": false,
+    "participant_row_access_authorized": false
+  }
+}

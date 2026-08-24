@@ -1,0 +1,136 @@
+{
+  "schema_version": "portfolio_development_reveal.v1",
+  "authorization_id": "intervenebench-portfolio-development-reveal-20260813",
+  "authorization_date": "2026-08-13",
+  "status": "development_reveal_authorized",
+  "authorization_basis": "The user explicitly authorized continuing from the verified five-experiment blind run to development-only outcome scoring.",
+  "portfolio_scope_sha256": "f6cea2492cac24189d4f745df5a01b1595ff680a0fec4fbb26961d76c4ac581a",
+  "blind_run_manifest_path": "artifacts/portfolio_pilot/local_llama3_2_3b_20260813_v2/run_manifest.json",
+  "blind_run_manifest_sha256": "3aee7ca7ab72f8bf626b8610e8aa7a28a66526d5b16a7f3d32d6bb790b1bddf6",
+  "experiment_ids": [
+    "5vm8g",
+    "xc4yq",
+    "de5hx",
+    "turagaS11",
+    "wallaceS12"
+  ],
+  "recommendation_sha256": {
+    "5vm8g": "2c1ef0a390d4a4556f2181ace866ab0a1d17a9a9a963d927de5e2fea3392d55b",
+    "xc4yq": "994ec939145c52b7f96edbd16b44f17b84d51d7fb248c83584b28110021c4aa4",
+    "de5hx": "00f454349d86fb9a1045895d44c1a8741b0acb734ef77cad99698d7e6e3f3507",
+    "turagaS11": "64ffca936c0f3e9c5636f605c94f51fcd2d35d6b594d99ddf500b4aa217638b7",
+    "wallaceS12": "f8b1dad6599f3cfeff923175b3430eafa481a52a3e3e1ccdcd8fd2fde0b942ca"
+  },
+  "permanent_role": "development_only_portfolio_reveal",
+  "canonical_split_status": "unassigned",
+  "canonical_test_eligible": false,
+  "other_runnable_contracts_must_remain_sealed": [
+    "socsci210:tcg8p",
+    "socsci210:pb2rr",
+    "socsci210:z358z",
+    "external_archive_v1:ShannonS2",
+    "external_archive_v1:Blair1131",
+    "external_archive_v1:KlarS44"
+  ],
+  "outcome_column_allowlist": {
+    "5vm8g": {
+      "source": "socsci210",
+      "study_id": "5vm8g",
+      "task_num": 2,
+      "columns": [
+        "study_id",
+        "sample_id",
+        "participant",
+        "condition_num",
+        "task_num",
+        "response"
+      ]
+    },
+    "xc4yq": {
+      "source": "socsci210",
+      "study_id": "xc4yq",
+      "task_num": 7,
+      "columns": [
+        "study_id",
+        "sample_id",
+        "participant",
+        "condition_num",
+        "task_num",
+        "response"
+      ]
+    },
+    "de5hx": {
+      "source": "socsci210",
+      "study_id": "de5hx",
+      "task_num": 0,
+      "columns": [
+        "study_id",
+        "sample_id",
+        "participant",
+        "condition_num",
+        "task_num",
+        "response"
+      ]
+    },
+    "turagaS11": {
+      "source": "official_source_sav",
+      "assignment_column": "XTESS030",
+      "outcome_columns": [
+        "Q6COa",
+        "Q6STa",
+        "Q6ARa"
+      ],
+      "weight_column": "weight"
+    },
+    "wallaceS12": {
+      "source": "official_source_sav",
+      "assignment_column": "XTESS097",
+      "outcome_columns": [
+        "Q1"
+      ],
+      "weight_column": "weight"
+    }
+  },
+  "uncertainty_contract": {
+    "bootstrap_replicates": 5000,
+    "bootstrap_seed": 2102026,
+    "resampling_unit": "participant_within_randomized_arm",
+    "weighted_tasks_retain_source_value_weight_pairs": true,
+    "tie_rule": "lexicographic_arm_id"
+  },
+  "human_fallback_contract": {
+    "budgets_total_participants_per_experiment": [
+      0,
+      10,
+      25,
+      50,
+      100,
+      250
+    ],
+    "monte_carlo_replicates": 1000,
+    "seed": 2102027,
+    "pilot_evaluation_people_disjoint": true,
+    "evaluation_partition": "Within each Monte Carlo replicate, freeze one stratified random third of every arm as the evaluation set for every nonzero budget; draw all pilot samples from the other two thirds.",
+    "zero_human_rule": "Humans-only selects the declared control arm; both synthetic-plus-human policies reduce exactly to the frozen synthetic recommendation.",
+    "humans_only_allocation": "balanced_across_arms_then_lexicographic_remainder; sample randomly within arm",
+    "synthetic_plus_random_humans_allocation": "balanced_across_arms_then_lexicographic_remainder; sample randomly within arm",
+    "synthetic_plus_intelligent_humans_allocation": "one participant per arm, then allocate the remainder alternately to the frozen synthetic top-two arms; sample randomly within arm",
+    "fusion_rule": "For each arm, combine its frozen synthetic mean as 10 pseudo-observations with the pilot human mean and actual pilot count; never tune the pseudo-count.",
+    "synthetic_prior_pseudocount_per_arm": 10,
+    "evaluation_rule": "Select using pilot data only and compute regret on the fixed disjoint evaluation third with the task's frozen primary weighting rule.",
+    "no_outcome_adaptive_allocation": true
+  },
+  "post_reveal_protocol_correction": {
+    "status": "methodological_correction_before_final_report",
+    "reason": "The first generated fallback artifact changed the evaluation remainder as budget increased, confounding budget comparisons. The corrected scorer freezes one disjoint evaluation third per replicate across every nonzero budget; two thirds remain available so the prespecified 250-person intelligent allocation remains feasible.",
+    "outcome_independence": "The correction changes no simulator recommendation, outcome contract, utility, arm set, human allocation policy, fusion rule, or reported task result; it only holds the evaluation target fixed across budgets.",
+    "superseded_artifact_retained": true,
+    "superseded_artifact_path": "artifacts/portfolio_pilot/development_score.json",
+    "corrected_artifact_path": "artifacts/portfolio_pilot/development_score_v2.json"
+  },
+  "claim_boundary": "These five experiments provide development evidence and a complete prospective demonstration. They do not constitute a canonical held-out test or support a general trust-model claim.",
+  "paid_inference_authorized": false,
+  "modal_compute_authorized": false,
+  "fine_tuning_authorized": false,
+  "trust_model_claim_authorized": false
+}

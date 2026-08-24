@@ -1,0 +1,72 @@
+{
+  "schema_version": "ordinal_decision_task_candidate.v1",
+  "task_id": "xc4yq:task-7",
+  "experiment_id": "xc4yq",
+  "source_id": "TESS-157-Thompson",
+  "source_question_id": "Q35",
+  "socsci210_task_num": 7,
+  "canonical_split_status": "unassigned",
+  "reveal_authorized": false,
+  "outcome_access": "sealed",
+  "paradigm_group": "terrorism_threat_emotion",
+  "access_regime": "DESIGN_ONLY",
+  "design_type": "between_subject",
+  "randomization_unit": "participant",
+  "arms": [
+    {
+      "arm_id": "arm_0_plain_low_fear",
+      "condition_num": 0,
+      "description": "Plain low-fear preparedness message",
+      "deployable": true
+    },
+    {
+      "arm_id": "arm_1_high_fear",
+      "condition_num": 1,
+      "description": "High-fear threat and preparedness message",
+      "deployable": true
+    },
+    {
+      "arm_id": "arm_2_positive_protection",
+      "condition_num": 2,
+      "description": "Low-fear preparedness message with a positive protective example",
+      "deployable": true
+    }
+  ],
+  "control_arm_id": "arm_0_plain_low_fear",
+  "primary_outcome_id": "home_emergency_kit_readiness",
+  "outcome_question": "How likely is it that you will put together a home emergency kit with food, water, and other items?",
+  "outcome_family": "ordinal",
+  "response_options": [
+    {"raw_value": 1, "label": "Very unlikely", "normalized_utility": 0.0},
+    {"raw_value": 2, "label": "2", "normalized_utility": 0.14285714285714285},
+    {"raw_value": 3, "label": "3", "normalized_utility": 0.2857142857142857},
+    {"raw_value": 4, "label": "4", "normalized_utility": 0.42857142857142855},
+    {"raw_value": 5, "label": "5", "normalized_utility": 0.5714285714285714},
+    {"raw_value": 6, "label": "6", "normalized_utility": 0.7142857142857143},
+    {"raw_value": 7, "label": "Very likely", "normalized_utility": 0.8571428571428571},
+    {"raw_value": 8, "label": "I already do", "normalized_utility": 1.0}
+  ],
+  "scale_lower": 1,
+  "scale_upper": 8,
+  "direction": "higher_is_better",
+  "estimand": "unadjusted_intention_to_treat_mean_normalized_utility",
+  "decision_maker": "an emergency-preparedness communicator choosing among three fielded public messages",
+  "beneficiary": "households receiving preparedness information",
+  "utility_rationale": "Higher normalized utility means greater readiness to assemble a home emergency kit, including already having one. The task measures preparedness intention, not broader counterterrorism policy welfare.",
+  "truthfulness_scope": "The three messages are benchmarked as historically fielded communication policies. Any present-day deployment would require a separate factual and safety review.",
+  "target_population": "unweighted released SocSci210 analytic sample from the Knowledge Networks general-population panel",
+  "weighting_rule": "unweighted_released_analytic_sample",
+  "missingness_rule": "complete_case_for_declared_outcome",
+  "tie_rule": "lexicographic_arm_id",
+  "practical_regret_tolerance": 0.05,
+  "released_rows_per_arm_before_outcome_missingness": {
+    "arm_0_plain_low_fear": 198,
+    "arm_1_high_fear": 204,
+    "arm_2_positive_protection": 187
+  },
+  "source_hashes": {
+    "final_questionnaire_sha256": "b7467979e24199e1d9e19373c6a8d1aae981e524ab62ea767a2b07f72ae8f5d2",
+    "proposal_sha256": "6ddf11b27494a9cecdb674ded8a38c4c59d0f154986f176b8c751cc8c7c019d5"
+  },
+  "reconstruction_note": "SocSci210 condition 0 maps to the source plain low-fear message, condition 1 to high fear, and condition 2 to low-fear positive protection. Released treatment strings are truncated, so the blinded bundle transcribes the final fielded questionnaire. No response value was used to construct this contract."
+}

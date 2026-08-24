@@ -1,0 +1,102 @@
+{
+  "schema_version": "intervenebench.independent_replication_exposure_log.v1",
+  "created_date": "2026-08-14",
+  "purpose": "Outcome-access incidents encountered while qualifying a second prospective replication corpus.",
+  "policy": {
+    "pristine_replication_requires_no_result_text_exposure": true,
+    "exposed_candidates_may_not_enter_prospective_replication": true,
+    "result_content_must_not_be_transcribed_or_used": true
+  },
+  "incidents": [
+    {
+      "candidate_id": "gzdnf",
+      "source_lookup_alias": "swim059",
+      "incident_type": "search_result_snippet_exposed_aggregate_finding_text",
+      "participant_file_opened": false,
+      "participant_row_opened": false,
+      "result_content_recorded": false,
+      "replication_disposition": "excluded_from_pristine_replication"
+    },
+    {
+      "candidate_id": "ux8qt",
+      "source_lookup_alias": "newman062",
+      "incident_type": "search_result_snippet_exposed_aggregate_finding_text",
+      "participant_file_opened": false,
+      "participant_row_opened": false,
+      "result_content_recorded": false,
+      "replication_disposition": "excluded_from_pristine_replication"
+    },
+    {
+      "candidate_id": "waq4m",
+      "source_lookup_alias": "perez102",
+      "incident_type": "search_result_snippet_exposed_aggregate_finding_text",
+      "participant_file_opened": false,
+      "participant_row_opened": false,
+      "result_content_recorded": false,
+      "replication_disposition": "excluded_from_pristine_replication"
+    },
+    {
+      "candidate_id": "mkgvp",
+      "source_lookup_alias": "mkgvp",
+      "incident_type": "search_result_snippet_exposed_aggregate_finding_text",
+      "participant_file_opened": false,
+      "participant_row_opened": false,
+      "result_content_recorded": false,
+      "replication_disposition": "excluded_from_pristine_replication"
+    },
+    {
+      "candidate_id": "gx6hp",
+      "source_lookup_alias": "gx6hp",
+      "incident_type": "prior_pilot_result_text_encountered_during_earlier_source_audit",
+      "participant_file_opened": false,
+      "participant_row_opened": false,
+      "result_content_recorded": false,
+      "replication_disposition": "excluded_from_pristine_replication"
+    },
+    {
+      "candidate_id": "hgmu6",
+      "source_lookup_alias": "hgmu6",
+      "incident_type": "prior_pilot_result_text_encountered_during_earlier_source_audit",
+      "participant_file_opened": false,
+      "participant_row_opened": false,
+      "result_content_recorded": false,
+      "replication_disposition": "excluded_from_pristine_replication"
+    },
+    {
+      "candidate_id": "wdmbn",
+      "source_lookup_alias": "wdmbn",
+      "incident_type": "same_experiment_prior_cohort_aggregate_embedded_in_final_instrument",
+      "participant_file_opened": false,
+      "participant_row_opened": false,
+      "result_content_recorded": false,
+      "replication_disposition": "excluded_from_pristine_replication"
+    },
+    {
+      "candidate_id": "6zx9c",
+      "source_lookup_alias": "Schneider377",
+      "incident_type": "apparent_instrument_was_manuscript_with_pilot_result_text",
+      "participant_file_opened": false,
+      "participant_row_opened": false,
+      "result_content_recorded": false,
+      "replication_disposition": "excluded_from_pristine_replication"
+    },
+    {
+      "candidate_id": "74ahy",
+      "source_lookup_alias": "Creighton022",
+      "incident_type": "prior_study_aggregate_results_embedded_in_final_instrument",
+      "participant_file_opened": false,
+      "participant_row_opened": false,
+      "result_content_recorded": false,
+      "replication_disposition": "excluded_from_pristine_replication"
+    },
+    {
+      "candidate_id": "r2hbd",
+      "source_lookup_alias": "TESS03_Schuman_Module",
+      "incident_type": "instrument_like_file_was_production_output_with_response_frequencies",
+      "participant_file_opened": false,
+      "participant_row_opened": false,
+      "result_content_recorded": false,
+      "replication_disposition": "excluded_from_pristine_replication"
+    }
+  ]
+}
